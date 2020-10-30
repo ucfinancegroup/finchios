@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
+		80725CFF254C71FE0054787C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFE254C71FE0054787C /* ContentView.swift */; };
+		80725D01254C72010054787C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D00254C72010054787C /* Assets.xcassets */; };
+		80725D04254C72010054787C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D03254C72010054787C /* Preview Assets.xcassets */; };
+		80725D06254C72010054787C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D05254C72010054787C /* Persistence.swift */; };
+		80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80725D07254C72010054787C /* finchios.xcdatamodeld */; };
+		80725D14254C72020054787C /* finchiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D13254C72020054787C /* finchiosTests.swift */; };
+		80725D1F254C72020054787C /* finchiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D1E254C72020054787C /* finchiosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80725D10254C72020054787C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80725CF1254C71FE0054787C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80725CF8254C71FE0054787C;
+			remoteInfo = finchios;
+		};
+		80725D1B254C72020054787C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80725CF1254C71FE0054787C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80725CF8254C71FE0054787C;
+			remoteInfo = finchios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80725CFC254C71FE0054787C /* finchiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosApp.swift; sourceTree = "<group>"; };
+		80725CFE254C71FE0054787C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		80725D00254C72010054787C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80725D03254C72010054787C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		80725D05254C72010054787C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		80725D08254C72010054787C /* finchios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = finchios.xcdatamodel; sourceTree = "<group>"; };
+		80725D0A254C72010054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80725D0F254C72020054787C /* finchiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finchiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80725D13254C72020054787C /* finchiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosTests.swift; sourceTree = "<group>"; };
+		80725D15254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80725D1A254C72020054787C /* finchiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finchiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80725D1E254C72020054787C /* finchiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosUITests.swift; sourceTree = "<group>"; };
+		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80725CF6254C71FE0054787C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80725D0C254C72020054787C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80725D17254C72020054787C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80725CF0254C71FE0054787C = {
+			isa = PBXGroup;
+			children = (
+				80725CFB254C71FE0054787C /* finchios */,
+				80725D12254C72020054787C /* finchiosTests */,
+				80725D1D254C72020054787C /* finchiosUITests */,
+				80725CFA254C71FE0054787C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80725CFA254C71FE0054787C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80725CF9254C71FE0054787C /* finchios.app */,
+				80725D0F254C72020054787C /* finchiosTests.xctest */,
+				80725D1A254C72020054787C /* finchiosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80725CFB254C71FE0054787C /* finchios */ = {
+			isa = PBXGroup;
+			children = (
+				80725CFC254C71FE0054787C /* finchiosApp.swift */,
+				80725CFE254C71FE0054787C /* ContentView.swift */,
+				80725D00254C72010054787C /* Assets.xcassets */,
+				80725D05254C72010054787C /* Persistence.swift */,
+				80725D0A254C72010054787C /* Info.plist */,
+				80725D07254C72010054787C /* finchios.xcdatamodeld */,
+				80725D02254C72010054787C /* Preview Content */,
+			);
+			path = finchios;
+			sourceTree = "<group>";
+		};
+		80725D02254C72010054787C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				80725D03254C72010054787C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80725D12254C72020054787C /* finchiosTests */ = {
+			isa = PBXGroup;
+			children = (
+				80725D13254C72020054787C /* finchiosTests.swift */,
+				80725D15254C72020054787C /* Info.plist */,
+			);
+			path = finchiosTests;
+			sourceTree = "<group>";
+		};
+		80725D1D254C72020054787C /* finchiosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80725D1E254C72020054787C /* finchiosUITests.swift */,
+				80725D20254C72020054787C /* Info.plist */,
+			);
+			path = finchiosUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80725CF8254C71FE0054787C /* finchios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80725D23254C72020054787C /* Build configuration list for PBXNativeTarget "finchios" */;
+			buildPhases = (
+				80725CF5254C71FE0054787C /* Sources */,
+				80725CF6254C71FE0054787C /* Frameworks */,
+				80725CF7254C71FE0054787C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = finchios;
+			productName = finchios;
+			productReference = 80725CF9254C71FE0054787C /* finchios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80725D0E254C72020054787C /* finchiosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80725D26254C72020054787C /* Build configuration list for PBXNativeTarget "finchiosTests" */;
+			buildPhases = (
+				80725D0B254C72020054787C /* Sources */,
+				80725D0C254C72020054787C /* Frameworks */,
+				80725D0D254C72020054787C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80725D11254C72020054787C /* PBXTargetDependency */,
+			);
+			name = finchiosTests;
+			productName = finchiosTests;
+			productReference = 80725D0F254C72020054787C /* finchiosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80725D19254C72020054787C /* finchiosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80725D29254C72020054787C /* Build configuration list for PBXNativeTarget "finchiosUITests" */;
+			buildPhases = (
+				80725D16254C72020054787C /* Sources */,
+				80725D17254C72020054787C /* Frameworks */,
+				80725D18254C72020054787C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80725D1C254C72020054787C /* PBXTargetDependency */,
+			);
+			name = finchiosUITests;
+			productName = finchiosUITests;
+			productReference = 80725D1A254C72020054787C /* finchiosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80725CF1254C71FE0054787C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					80725CF8254C71FE0054787C = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					80725D0E254C72020054787C = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 80725CF8254C71FE0054787C;
+					};
+					80725D19254C72020054787C = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 80725CF8254C71FE0054787C;
+					};
+				};
+			};
+			buildConfigurationList = 80725CF4254C71FE0054787C /* Build configuration list for PBXProject "finchios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80725CF0254C71FE0054787C;
+			productRefGroup = 80725CFA254C71FE0054787C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80725CF8254C71FE0054787C /* finchios */,
+				80725D0E254C72020054787C /* finchiosTests */,
+				80725D19254C72020054787C /* finchiosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80725CF7254C71FE0054787C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80725D04254C72010054787C /* Preview Assets.xcassets in Resources */,
+				80725D01254C72010054787C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80725D0D254C72020054787C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80725D18254C72020054787C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80725CF5254C71FE0054787C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
+				80725D06254C72010054787C /* Persistence.swift in Sources */,
+				80725CFF254C71FE0054787C /* ContentView.swift in Sources */,
+				80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80725D0B254C72020054787C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80725D14254C72020054787C /* finchiosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80725D16254C72020054787C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80725D1F254C72020054787C /* finchiosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80725D11254C72020054787C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80725CF8254C71FE0054787C /* finchios */;
+			targetProxy = 80725D10254C72020054787C /* PBXContainerItemProxy */;
+		};
+		80725D1C254C72020054787C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80725CF8254C71FE0054787C /* finchios */;
+			targetProxy = 80725D1B254C72020054787C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		80725D21254C72020054787C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80725D22254C72020054787C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80725D24254C72020054787C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"finchios/Preview Content\"";
+				DEVELOPMENT_TEAM = C5GK8DGYP5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = finchios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finchapp.finchios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80725D25254C72020054787C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"finchios/Preview Content\"";
+				DEVELOPMENT_TEAM = C5GK8DGYP5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = finchios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finchapp.finchios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80725D27254C72020054787C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C5GK8DGYP5;
+				INFOPLIST_FILE = finchiosTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finchapp.finchiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/finchios.app/finchios";
+			};
+			name = Debug;
+		};
+		80725D28254C72020054787C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C5GK8DGYP5;
+				INFOPLIST_FILE = finchiosTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finchapp.finchiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/finchios.app/finchios";
+			};
+			name = Release;
+		};
+		80725D2A254C72020054787C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C5GK8DGYP5;
+				INFOPLIST_FILE = finchiosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finchapp.finchiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = finchios;
+			};
+			name = Debug;
+		};
+		80725D2B254C72020054787C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C5GK8DGYP5;
+				INFOPLIST_FILE = finchiosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finchapp.finchiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = finchios;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80725CF4254C71FE0054787C /* Build configuration list for PBXProject "finchios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80725D21254C72020054787C /* Debug */,
+				80725D22254C72020054787C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80725D23254C72020054787C /* Build configuration list for PBXNativeTarget "finchios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80725D24254C72020054787C /* Debug */,
+				80725D25254C72020054787C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80725D26254C72020054787C /* Build configuration list for PBXNativeTarget "finchiosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80725D27254C72020054787C /* Debug */,
+				80725D28254C72020054787C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80725D29254C72020054787C /* Build configuration list for PBXNativeTarget "finchiosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80725D2A254C72020054787C /* Debug */,
+				80725D2B254C72020054787C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80725D07254C72010054787C /* finchios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80725D08254C72010054787C /* finchios.xcdatamodel */,
+			);
+			currentVersion = 80725D08254C72010054787C /* finchios.xcdatamodel */;
+			path = finchios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80725CF1254C71FE0054787C /* Project object */;
+}
