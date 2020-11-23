@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
 		80725CFF254C71FE0054787C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFE254C71FE0054787C /* ContentView.swift */; };
 		80725D01254C72010054787C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D00254C72010054787C /* Assets.xcassets */; };
@@ -34,6 +35,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		80046827256B4C5E0085B289 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725CFC254C71FE0054787C /* finchiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosApp.swift; sourceTree = "<group>"; };
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80399A9D256B4D750014E2D9 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +91,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80046832256B4D230085B289 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		80725CF0254C71FE0054787C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,7 @@
 				80725D12254C72020054787C /* finchiosTests */,
 				80725D1D254C72020054787C /* finchiosUITests */,
 				80725CFA254C71FE0054787C /* Products */,
+				80046832256B4D230085B289 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,12 +169,16 @@
 				80725CF5254C71FE0054787C /* Sources */,
 				80725CF6254C71FE0054787C /* Frameworks */,
 				80725CF7254C71FE0054787C /* Resources */,
+				80046827256B4C5E0085B289 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = finchios;
+			packageProductDependencies = (
+				80399A9C256B4D750014E2D9 /* Charts */,
+			);
 			productName = finchios;
 			productReference = 80725CF9254C71FE0054787C /* finchios.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +250,9 @@
 				Base,
 			);
 			mainGroup = 80725CF0254C71FE0054787C;
+			packageReferences = (
+				80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 80725CFA254C71FE0054787C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -588,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = exactVersion;
+				version = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80399A9C256B4D750014E2D9 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		80725D07254C72010054787C /* finchios.xcdatamodeld */ = {
