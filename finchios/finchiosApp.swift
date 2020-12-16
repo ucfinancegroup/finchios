@@ -13,7 +13,7 @@ struct finchiosApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartUpView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

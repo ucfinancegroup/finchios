@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */; };
+		8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */; };
+		8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6AA258A5FF1006CB2FB /* SignUpModel.swift */; };
+		8026B6BA258A5FF2006CB2FB /* SignUpUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6AC258A5FF1006CB2FB /* SignUpUsernameView.swift */; };
+		8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6AE258A5FF1006CB2FB /* StartUpView.swift */; };
+		8026B6BC258A5FF2006CB2FB /* StartUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6AF258A5FF1006CB2FB /* StartUpViewModel.swift */; };
+		8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B1258A5FF1006CB2FB /* IntroductionView.swift */; };
+		8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B2258A5FF1006CB2FB /* IntroductionViewModel.swift */; };
+		8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B4258A5FF1006CB2FB /* LogInViewModel.swift */; };
+		8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B5258A5FF1006CB2FB /* LogInView.swift */; };
+		8026B6C5258A64B8006CB2FB /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8026B6C4258A64B8006CB2FB /* OpenAPIClient */; };
+		8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6CA258A652D006CB2FB /* CredentialsObject.swift */; };
+		8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6D1258A6743006CB2FB /* AppTabView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
 		80725CFF254C71FE0054787C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFE254C71FE0054787C /* ContentView.swift */; };
@@ -49,6 +62,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
+		8026B6AA258A5FF1006CB2FB /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		8026B6AC258A5FF1006CB2FB /* SignUpUsernameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUsernameView.swift; sourceTree = "<group>"; };
+		8026B6AE258A5FF1006CB2FB /* StartUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
+		8026B6AF258A5FF1006CB2FB /* StartUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewModel.swift; sourceTree = "<group>"; };
+		8026B6B1258A5FF1006CB2FB /* IntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		8026B6B2258A5FF1006CB2FB /* IntroductionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewModel.swift; sourceTree = "<group>"; };
+		8026B6B4258A5FF1006CB2FB /* LogInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		8026B6B5258A5FF1006CB2FB /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		8026B6CA258A652D006CB2FB /* CredentialsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsObject.swift; sourceTree = "<group>"; };
+		8026B6D1258A6743006CB2FB /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725CFC254C71FE0054787C /* finchiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosApp.swift; sourceTree = "<group>"; };
 		80725CFE254C71FE0054787C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8026B6C5258A64B8006CB2FB /* OpenAPIClient in Frameworks */,
 				80399A9D256B4D750014E2D9 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +122,112 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8026B695258A5FB8006CB2FB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6D0258A6739006CB2FB /* AppTab */,
+				8026B6B0258A5FF1006CB2FB /* IntroductionView */,
+				8026B6B3258A5FF1006CB2FB /* LogIn */,
+				8026B6A2258A5FF1006CB2FB /* SignUpFlow */,
+				8026B6AD258A5FF1006CB2FB /* StartUp */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8026B6A2258A5FF1006CB2FB /* SignUpFlow */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6A3258A5FF1006CB2FB /* SignUpEmail */,
+				8026B6A5258A5FF1006CB2FB /* SignUpPassword */,
+				8026B6A9258A5FF1006CB2FB /* Model */,
+				8026B6AB258A5FF1006CB2FB /* SignUpUsername */,
+			);
+			path = SignUpFlow;
+			sourceTree = "<group>";
+		};
+		8026B6A3258A5FF1006CB2FB /* SignUpEmail */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */,
+			);
+			path = SignUpEmail;
+			sourceTree = "<group>";
+		};
+		8026B6A5258A5FF1006CB2FB /* SignUpPassword */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */,
+			);
+			path = SignUpPassword;
+			sourceTree = "<group>";
+		};
+		8026B6A9258A5FF1006CB2FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6AA258A5FF1006CB2FB /* SignUpModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8026B6AB258A5FF1006CB2FB /* SignUpUsername */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6AC258A5FF1006CB2FB /* SignUpUsernameView.swift */,
+			);
+			path = SignUpUsername;
+			sourceTree = "<group>";
+		};
+		8026B6AD258A5FF1006CB2FB /* StartUp */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6AE258A5FF1006CB2FB /* StartUpView.swift */,
+				8026B6AF258A5FF1006CB2FB /* StartUpViewModel.swift */,
+			);
+			path = StartUp;
+			sourceTree = "<group>";
+		};
+		8026B6B0258A5FF1006CB2FB /* IntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6B1258A5FF1006CB2FB /* IntroductionView.swift */,
+				8026B6B2258A5FF1006CB2FB /* IntroductionViewModel.swift */,
+			);
+			path = IntroductionView;
+			sourceTree = "<group>";
+		};
+		8026B6B3258A5FF1006CB2FB /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6B4258A5FF1006CB2FB /* LogInViewModel.swift */,
+				8026B6B5258A5FF1006CB2FB /* LogInView.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		8026B6C8258A6514006CB2FB /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6C9258A651C006CB2FB /* Singleton */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		8026B6C9258A651C006CB2FB /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6CA258A652D006CB2FB /* CredentialsObject.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		8026B6D0258A6739006CB2FB /* AppTab */ = {
+			isa = PBXGroup;
+			children = (
+				8026B6D1258A6743006CB2FB /* AppTabView.swift */,
+			);
+			path = AppTab;
 			sourceTree = "<group>";
 		};
 		80725CF0254C71FE0054787C = {
@@ -126,6 +258,8 @@
 				80725CFE254C71FE0054787C /* ContentView.swift */,
 				80725D00254C72010054787C /* Assets.xcassets */,
 				80725D05254C72010054787C /* Persistence.swift */,
+				8026B6C8258A6514006CB2FB /* Business */,
+				8026B695258A5FB8006CB2FB /* Presentation */,
 				80725D0A254C72010054787C /* Info.plist */,
 				80725D07254C72010054787C /* finchios.xcdatamodeld */,
 				80725D02254C72010054787C /* Preview Content */,
@@ -178,6 +312,7 @@
 			name = finchios;
 			packageProductDependencies = (
 				80399A9C256B4D750014E2D9 /* Charts */,
+				8026B6C4258A64B8006CB2FB /* OpenAPIClient */,
 			);
 			productName = finchios;
 			productReference = 80725CF9254C71FE0054787C /* finchios.app */;
@@ -252,6 +387,7 @@
 			mainGroup = 80725CF0254C71FE0054787C;
 			packageReferences = (
 				80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */,
+				8026B6C3258A64B8006CB2FB /* XCRemoteSwiftPackageReference "FinchSwiftClient" */,
 			);
 			productRefGroup = 80725CFA254C71FE0054787C /* Products */;
 			projectDirPath = "";
@@ -295,10 +431,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */,
+				8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */,
+				8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
+				8026B6BA258A5FF2006CB2FB /* SignUpUsernameView.swift in Sources */,
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
+				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
+				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
+				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
+				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
 				80725CFF254C71FE0054787C /* ContentView.swift in Sources */,
+				8026B6BC258A5FF2006CB2FB /* StartUpViewModel.swift in Sources */,
 				80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */,
+				8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */,
+				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
+				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +768,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8026B6C3258A64B8006CB2FB /* XCRemoteSwiftPackageReference "FinchSwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ucfinancegroup/FinchSwiftClient";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts";
@@ -631,6 +787,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8026B6C4258A64B8006CB2FB /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8026B6C3258A64B8006CB2FB /* XCRemoteSwiftPackageReference "FinchSwiftClient" */;
+			productName = OpenAPIClient;
+		};
 		80399A9C256B4D750014E2D9 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */;
