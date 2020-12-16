@@ -24,7 +24,7 @@ struct LogInView: View {
                 EmptyView()
             }
 
-            Color(colorScheme == .light ? .uBumpLightBlue : .black)
+            Color(colorScheme == .light ? .green : .black)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
@@ -69,7 +69,7 @@ struct LogInView: View {
                         .font(.headline)
                         .foregroundColor(Color.white)
                         .padding()
-                        .background(Color(.uBumpBlue))
+                        .background(Color.green)
                         .cornerRadius(40)
                 }
             }

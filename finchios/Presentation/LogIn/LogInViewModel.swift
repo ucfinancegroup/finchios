@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import OpenAPIClient
 
 class LogInViewModel: ObservableObject, Identifiable {
 
@@ -19,16 +20,19 @@ class LogInViewModel: ObservableObject, Identifiable {
 
     // Try to perform user log-in.
     func logInTapped() {
-        LogInService.logIn(email: email, password: password) { (status) in
+        
+        let payload = LoginPayload(email: email, password: password)
+        
+        OpenAPIClient.UserAPI.loginUser(loginPayload: payload) { (response, error) in
             DispatchQueue.main.async {
-                if status {
-                    // login success
-                    self.logInSuccess = true
-                    self.logInError = false
-                } else {
+                if error != nil {
                     // login failed
                     self.logInSuccess = false
                     self.logInError = true
+                } else {
+                    // login success
+                    self.logInSuccess = true
+                    self.logInError = false
                 }
             }
         }
