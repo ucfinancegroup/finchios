@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct AppTabView: View {
+
+    @Binding var navBarHidden: Bool
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+
+        }
+        .onAppear {
+            self.navBarHidden = true
+        }
+        //TODO(): Not properly hiding on transition from signUp
+        .navigationBarTitle("")
+        .navigationBarHidden(self.navBarHidden)
+        .navigationBarBackButtonHidden(self.navBarHidden)
+    }
+}
+
+struct AppTabViewPreviewer: View {
+    @State private var value = false
+
+    var body: some View {
+        AppTabView(navBarHidden: $value)
     }
 }
 
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
-        AppTabView()
+        AppTabViewPreviewer()
     }
 }

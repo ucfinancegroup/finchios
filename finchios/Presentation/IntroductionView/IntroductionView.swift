@@ -32,7 +32,7 @@ struct IntroductionView: View {
 
                 Spacer()
 
-                NavigationLink(destination: SignUpTagView(navBarHidden: $navBarHidden)) {
+                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden)) {
 
                     Text("Sign Up")
                         .frame(width: 100)
