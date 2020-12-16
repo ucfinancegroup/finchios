@@ -25,7 +25,7 @@ struct IntroductionView: View {
                 Spacer()
                     .frame(height: 50)
 
-                Text("Welcome to uBump\nThe Future of Networking")
+                Text("Welcome to Finch")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .accessibility(identifier: "introductionLabel")

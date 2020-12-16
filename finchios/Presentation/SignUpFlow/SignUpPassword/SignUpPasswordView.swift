@@ -66,7 +66,7 @@ struct SignUpPasswordView: View {
             //TODO(): Better errors if signUp failed.
             switch model.creationErrorType {
             case .activate:
-                return Alert(title: Text("Account created but tag failed to register."), message: Text("Your uBump account was successfully created but your uBump failed to register (our fault not yours). Please go into the \"Scan\" page and select \"activate a new uBump\" to associate your uBump with your account!"), dismissButton: .destructive(Text("Okay")) {
+                return Alert(title: Text("Account created but tag failed to register."), message: Text("Your Finch account was successfully created but your Finch failed to register (our fault not yours). Please go into the \"Scan\" page and select \"activate a new Finch\" to associate your Finch with your account!"), dismissButton: .destructive(Text("Okay")) {
                     self.model.creationFailed = false
                     self.model.accountCreated = true
                     })

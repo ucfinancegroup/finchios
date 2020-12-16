@@ -31,12 +31,12 @@ struct LogInView: View {
                 Spacer()
 
                 //TODO(): ubumpWhite isn't a pdf
-                Image(colorScheme == .light ? "uBumpBlack" : "uBumpWhite")
+                //Image(colorScheme == .light ? "uBumpBlack" : "uBumpWhite")
 
                 Spacer()
                     .frame(height: 50)
 
-                Text("Login to your uBump account!")
+                Text("Login to your Finch account!")
                     .font(.headline)
 
                 Spacer()
