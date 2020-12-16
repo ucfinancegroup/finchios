@@ -1,34 +1,32 @@
 //
-//  SignUpUsernameView.swift
-//  ubump-ios
+//  SignUpNameView.swift
+//  finchios
 //
-//  Created by Brett Fazio on 8/29/20.
-//  Copyright © 2020 Brett Fazio. All rights reserved.
+//  Created by Brett Fazio on 12/16/20.
 //
 
 import SwiftUI
 
-struct SignUpUsernameView: View {
+struct SignUpNameView: View {
+
     @Binding var navBarHidden: Bool
 
     @EnvironmentObject private var model: SignUpModel
 
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
 
-    //TODO(): Maybe give each slide in the sequence its own mini model?
     var body: some View {
         ZStack {
             Color(colorScheme == .light ? .green : .black)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
-                Text("Choose your username")
+                Text("What is your full name (First space Last)?")
                     .font(.title)
 
                 Spacer()
 
-                //TODO(): Need to restrict spaces
-                TextField("Username", text: $model.username, onEditingChanged: { (_) in
+                TextField("Name", text: $model.name, onEditingChanged: { (_) in
 
                 })
                     .multilineTextAlignment(.center)
@@ -38,7 +36,7 @@ struct SignUpUsernameView: View {
                 Spacer()
 
                 Button(action: {
-                    self.model.validateUsername()
+                    self.model.validateEmail()
                 }) {
                     Text("Continue")
                         .frame(width: 100)
@@ -49,7 +47,7 @@ struct SignUpUsernameView: View {
                         .cornerRadius(40)
                 }
 
-                NavigationLink(destination: SignUpPasswordView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.usernameValid) {
+                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.emailValid) {
                     EmptyView()
                 }
             }
@@ -60,26 +58,23 @@ struct SignUpUsernameView: View {
         .onDisappear {
             self.model.onDisappaer()
         }
-        .alert(isPresented: $model.usernameError) { () -> Alert in
+        .alert(isPresented: $model.emailError) { () -> Alert in
             //TODO(): provide better errors
-            return Alert(title: Text("\(self.model.username) is not available. Please choose another."), message: nil, dismissButton: .default(Text("Okay")))
+            return Alert(title: Text("\(self.model.name) is either not a valid email or is already associated with an account. Please enter a different email."), message: nil, dismissButton: .default(Text("Okay")))
         }
     }
 }
 
-struct SignUpUsernameViewPreviewer: View {
+struct SignUpNameViewPreviewer: View {
     @State private var value = false
 
-    @ObservedObject var model = SignUpModel()
-
     var body: some View {
-        SignUpUsernameView(navBarHidden: $value)
-            .environmentObject(model)
+        SignUpEmailView(navBarHidden: $value)
     }
 }
 
-struct SignUpUsernameView_Previews: PreviewProvider {
+struct SignUpNameView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpUsernameViewPreviewer()
+        SignUpEmailViewPreviewer()
     }
 }

@@ -13,17 +13,20 @@ import OpenAPIClient
 class SignUpModel: ObservableObject, Identifiable {
 
     // Input data
-    @Published var uBumpCode: String = ""
     @Published var email: String = ""
-    @Published var username: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
+    @Published var name: String = ""
 
     // For account creation success/failure
     @Published var accountCreated: Bool = false
     @Published var creationFailed: Bool = false
     @Published var creationErrorType: CreationErrorType = .signUp
 
+    // For name input success/failure (SignUpNameView)
+    @Published var nameValid: Bool = false
+    @Published var nameError: Bool = false
+    
     // For email input success/failure (SignUpEmailView)
     @Published var emailError: Bool = false
     @Published var emailValid: Bool = false
@@ -36,10 +39,22 @@ class SignUpModel: ObservableObject, Identifiable {
     // For code activation success/failure
     @Published var activateError: Bool = false
 
+    func getName() -> (first: String, last: String) {
+        let split = name.split(separator: " ")
+        
+        if split.count == 1 {
+            return (first: String(split[0]), last: "")
+        }
+        
+        return (first: String(split[0]), last: String(split[1]))
+    }
+    
     // Try to perform user sign up.
     func createAccount() {
         
-        let payload = SignupPayload(email: email, password: password, firstName: "temp", lastName: "temp", income: 0.0)
+        let (first, last) = getName()
+        
+        let payload = SignupPayload(email: email, password: password, firstName: first, lastName: last, income: 0.0)
         
         OpenAPIClient.UserAPI.signupUser(signupPayload: payload) { (response, error) in
             DispatchQueue.main.async {
@@ -52,6 +67,11 @@ class SignUpModel: ObservableObject, Identifiable {
                 }
             }
         }
+    }
+    
+    //TODO(): implement
+    func validateName() {
+        
     }
 
     func validateEmail() {

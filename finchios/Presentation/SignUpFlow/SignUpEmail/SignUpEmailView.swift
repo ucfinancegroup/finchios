@@ -49,7 +49,7 @@ struct SignUpEmailView: View {
                         .cornerRadius(40)
                 }
 
-                NavigationLink(destination: SignUpUsernameView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.emailValid) {
+                NavigationLink(destination: SignUpPasswordView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.emailValid) {
                     EmptyView()
                 }
             }
@@ -62,7 +62,7 @@ struct SignUpEmailView: View {
         }
         .alert(isPresented: $model.emailError) { () -> Alert in
             //TODO(): provide better errors
-            return Alert(title: Text("\(self.model.username) is either not a valid email or is already associated with an account. Please enter a different email."), message: nil, dismissButton: .default(Text("Okay")))
+            return Alert(title: Text("\(self.model.email) is either not a valid email or is already associated with an account. Please enter a different email."), message: nil, dismissButton: .default(Text("Okay")))
         }
     }
 }
