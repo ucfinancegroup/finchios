@@ -32,6 +32,7 @@
 		80725D1F254C72020054787C /* finchiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D1E254C72020054787C /* finchiosUITests.swift */; };
 		80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8928258AD81F00291B23 /* SettingsView.swift */; };
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
+		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AF8928258AD81F00291B23 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80AF892E258AD83700291B23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		80AF8932258ADA0900291B23 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		80AF8926258AD7F000291B23 /* Projection */ = {
 			isa = PBXGroup;
 			children = (
+				80AF8932258ADA0900291B23 /* ProjectionView.swift */,
 			);
 			path = Projection;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
+				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
 				80725CFF254C71FE0054787C /* ContentView.swift in Sources */,

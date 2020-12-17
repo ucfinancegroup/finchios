@@ -14,14 +14,14 @@ struct AppTabView: View {
     var body: some View {
         TabView {
             // Projection
+            ProjectionView(navBarHidden: $navBarHidden)
+                .tabItem { Text("Projection") }
             
             // Statistics
             
             // Settings
             SettingsView(navBarHidden: $navBarHidden)
-                .tabItem {
-                    Text("Scan")
-                }
+                .tabItem { Text("Settings") }
         }
         .onAppear {
             self.navBarHidden = true
