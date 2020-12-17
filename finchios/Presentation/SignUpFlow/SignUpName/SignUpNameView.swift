@@ -36,7 +36,7 @@ struct SignUpNameView: View {
                 Spacer()
 
                 Button(action: {
-                    self.model.validateEmail()
+                    self.model.validateName()
                 }) {
                     Text("Continue")
                         .frame(width: 100)
@@ -47,7 +47,7 @@ struct SignUpNameView: View {
                         .cornerRadius(40)
                 }
 
-                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.emailValid) {
+                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.nameValid) {
                     EmptyView()
                 }
             }
@@ -60,7 +60,7 @@ struct SignUpNameView: View {
         }
         .alert(isPresented: $model.emailError) { () -> Alert in
             //TODO(): provide better errors
-            return Alert(title: Text("\(self.model.name) is either not a valid email or is already associated with an account. Please enter a different email."), message: nil, dismissButton: .default(Text("Okay")))
+            return Alert(title: Text("\(self.model.name) is not a valid name."), message: nil, dismissButton: .default(Text("Okay")))
         }
     }
 }

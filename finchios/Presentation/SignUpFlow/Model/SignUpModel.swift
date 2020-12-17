@@ -69,9 +69,15 @@ class SignUpModel: ObservableObject, Identifiable {
         }
     }
     
-    //TODO(): implement
     func validateName() {
+        if self.name.isEmpty {
+            self.nameValid = false
+            self.nameError = true
+            return
+        }
         
+        self.nameValid = true
+        self.nameError = false
     }
 
     func validateEmail() {
@@ -88,25 +94,6 @@ class SignUpModel: ObservableObject, Identifiable {
 //                    // not available
 //                    self.emailError = true
 //                    self.emailValid = false
-//                }
-//            }
-//        }
-    }
-
-    func validateUsername() {
-        // TODO(): Valid symbol check
-
-        // Make sure it is available
-//        AuthAvailableService.usernameAvailable(username: username) { (result) in
-//            DispatchQueue.main.async {
-//                if result {
-//                    // is available
-//                    self.usernameError = false
-//                    self.usernameValid = true
-//                } else {
-//                    // not available
-//                    self.usernameError = true
-//                    self.usernameValid = false
 //                }
 //            }
 //        }

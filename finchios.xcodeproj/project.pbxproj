@@ -131,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				8026B6D0258A6739006CB2FB /* AppTab */,
-				8026B6B0258A5FF1006CB2FB /* IntroductionView */,
 				8026B6B3258A5FF1006CB2FB /* LogIn */,
+				8026B6B0258A5FF1006CB2FB /* IntroductionView */,
 				8026B6A2258A5FF1006CB2FB /* SignUpFlow */,
 				8026B6AD258A5FF1006CB2FB /* StartUp */,
 			);
