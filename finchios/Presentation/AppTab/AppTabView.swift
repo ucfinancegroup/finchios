@@ -13,7 +13,15 @@ struct AppTabView: View {
 
     var body: some View {
         TabView {
-
+            // Projection
+            
+            // Statistics
+            
+            // Settings
+            SettingsView(navBarHidden: $navBarHidden)
+                .tabItem {
+                    Text("Scan")
+                }
         }
         .onAppear {
             self.navBarHidden = true
