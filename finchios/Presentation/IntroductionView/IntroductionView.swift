@@ -37,9 +37,7 @@ struct IntroductionView: View {
                     Text("Sign Up")
                         .frame(width: 100)
                         .font(.headline)
-                        .foregroundColor(Color.white)
                         .padding()
-                        .background(Color(.white))
                         .cornerRadius(40)
                 }
                 .accessibility(identifier: "introductionSignUpLink")
