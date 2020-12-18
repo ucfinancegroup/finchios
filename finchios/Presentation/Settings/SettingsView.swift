@@ -22,6 +22,9 @@ struct SettingsView: View {
 
             // Content
             Form {
+                
+                
+                
                 Button(action: {
                     // Log out
                     navBarHidden = true
