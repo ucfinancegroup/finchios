@@ -18,6 +18,8 @@ struct AppTabView: View {
                 .tabItem { Text("Projection") }
             
             // Statistics
+            StatisticsView(navBarHidden: $navBarHidden)
+                .tabItem { Text("Stats") }
             
             // Settings
             SettingsView(navBarHidden: $navBarHidden)
