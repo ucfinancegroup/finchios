@@ -11,6 +11,8 @@ struct ProjectionView: View {
 
     @Binding var navBarHidden: Bool
 
+    @ObservedObject var model: ProjectionViewModel = ProjectionViewModel()
+    
     var body: some View {
         ZStack {
             // Graph

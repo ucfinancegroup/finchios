@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F8961258C4461003B1A2D /* ProjectionViewModel.swift */; };
 		8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */; };
 		8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */; };
 		8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6AA258A5FF1006CB2FB /* SignUpModel.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		801F8961258C4461003B1A2D /* ProjectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionViewModel.swift; sourceTree = "<group>"; };
 		8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
 		8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
 		8026B6AA258A5FF1006CB2FB /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				80AF8932258ADA0900291B23 /* ProjectionView.swift */,
+				801F8961258C4461003B1A2D /* ProjectionViewModel.swift */,
 			);
 			path = Projection;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
+				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
 				8026B6BC258A5FF2006CB2FB /* StartUpViewModel.swift in Sources */,
