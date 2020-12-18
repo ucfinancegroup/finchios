@@ -26,9 +26,6 @@ struct SettingsView: View {
                     // Log out
                     navBarHidden = true
                     self.model.logOut()
-
-                    print(model.resetApp)
-                    print("what")
                 }) {
                     Text("Log Out")
                 }
