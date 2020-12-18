@@ -81,6 +81,8 @@ class SignUpModel: ObservableObject, Identifiable {
     }
 
     func validateEmail() {
+        self.emailError = false
+        self.emailValid = true
         // TODO(): Make sure the email is a real email (format)
 
         // Make sure it is available
