@@ -58,9 +58,9 @@ struct SignUpNameView: View {
         .onDisappear {
             self.model.onDisappaer()
         }
-        .alert(isPresented: $model.emailError) { () -> Alert in
+        .alert(isPresented: $model.nameError) { () -> Alert in
             //TODO(): provide better errors
-            return Alert(title: Text("\(self.model.name) is not a valid name."), message: nil, dismissButton: .default(Text("Okay")))
+            return Alert(title: Text("\(self.model.name) is not a valid name or is empty."), message: nil, dismissButton: .default(Text("Okay")))
         }
     }
 }
