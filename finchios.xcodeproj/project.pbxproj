@@ -22,7 +22,7 @@
 		8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6DE258A6C71006CB2FB /* SignUpNameView.swift */; };
 		8026B6E7258A7BA4006CB2FB /* LinkKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8026B6E6258A7BA4006CB2FB /* LinkKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D658258C2DD7007A44E1 /* StatisticsView.swift */; };
-		8029D664258C3730007A44E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* ViewController.swift */; };
+		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
 		80725D01254C72010054787C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D00254C72010054787C /* Assets.xcassets */; };
@@ -82,7 +82,7 @@
 		8026B6DE258A6C71006CB2FB /* SignUpNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameView.swift; sourceTree = "<group>"; };
 		8026B6E6258A7BA4006CB2FB /* LinkKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LinkKit.xcframework; sourceTree = "<group>"; };
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
-		8029D663258C3730007A44E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725CFC254C71FE0054787C /* finchiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosApp.swift; sourceTree = "<group>"; };
 		80725D00254C72010054787C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		8029D662258C3714007A44E1 /* ViewRepresentable */ = {
 			isa = PBXGroup;
 			children = (
-				8029D663258C3730007A44E1 /* ViewController.swift */,
+				8029D663258C3730007A44E1 /* PlaidView.swift */,
 			);
 			path = ViewRepresentable;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
-				8029D664258C3730007A44E1 /* ViewController.swift in Sources */,
+				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
