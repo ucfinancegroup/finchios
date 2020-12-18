@@ -12,14 +12,13 @@ struct CredentialsObject {
     var jwt: String
     var email: String
     var password: String
-    var username: String
 
     static let CREDENTIALS = "Credentials"
 
     private static let BLANK = "_"
 
     static var shared: CredentialsObject = {
-        let base = CredentialsObject(jwt: BLANK, email: BLANK, password: BLANK, username: BLANK)
+        let base = CredentialsObject(jwt: BLANK, email: BLANK, password: BLANK)
 
         let managedContext = PersistenceController.shared.container.viewContext
 
@@ -38,9 +37,8 @@ struct CredentialsObject {
 
             if let jwt = first.value(forKey: "jwt") as? String,
                 let email = first.value(forKey: "email") as? String,
-                let password = first.value(forKey: "password") as? String,
-                let username = first.value(forKey: "username") as? String {
-                return CredentialsObject(jwt: jwt, email: email, password: password, username: username)
+                let password = first.value(forKey: "password") as? String {
+                return CredentialsObject(jwt: jwt, email: email, password: password)
             }
 
             return base
@@ -55,7 +53,7 @@ struct CredentialsObject {
         // First clear the current credentials from Core Data
         deleteCurrentCredentials { (_) in }
 
-        let cred = CredentialsObject(jwt: jwt, email: email, password: password, username: username)
+        let cred = CredentialsObject(jwt: jwt, email: email, password: password)
         CredentialsObject.shared = cred
 
         let managedContext = PersistenceController.shared.container.viewContext
@@ -66,7 +64,6 @@ struct CredentialsObject {
         newEntity.setValue(jwt, forKey: "jwt")
         newEntity.setValue(email, forKey: "email")
         newEntity.setValue(password, forKey: "password")
-        newEntity.setValue(username, forKey: "username")
 
         do {
             try managedContext.save()
@@ -80,7 +77,7 @@ struct CredentialsObject {
     }
 
     static func deleteCurrentCredentials(completion: @escaping ((Bool) -> Void)) {
-        CredentialsObject.shared = CredentialsObject(jwt: BLANK, email: BLANK, password: BLANK, username: BLANK)
+        CredentialsObject.shared = CredentialsObject(jwt: BLANK, email: BLANK, password: BLANK)
 
         let managedContext = PersistenceController.shared.container.viewContext
         
@@ -108,7 +105,6 @@ struct CredentialsObject {
         return jwt != CredentialsObject.BLANK
             && email != CredentialsObject.BLANK
             && password != CredentialsObject.BLANK
-            && username != CredentialsObject.BLANK
     }
 
     func setUp() {
