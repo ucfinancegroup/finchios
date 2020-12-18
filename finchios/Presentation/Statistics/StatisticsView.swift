@@ -12,9 +12,11 @@ struct StatisticsView: View {
 
     var body: some View {
         ZStack {
-
+            // Insights / Product card
+            
+            // Leaderboard
         }
-        .navigationBarTitle(navBarHidden ? "" : "Settings")
+        .navigationBarTitle(navBarHidden ? "" : "Statistics")
         .navigationBarHidden(navBarHidden)
         .navigationBarBackButtonHidden(navBarHidden)
     }

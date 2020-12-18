@@ -13,9 +13,19 @@ struct ProjectionView: View {
 
     var body: some View {
         ZStack {
-
+            // Graph
+            
+            // Allocation
+            
+            // Accounts
+            
+            // Expenses
+            
+            // Recurring
+            
+            // Events
         }
-        .navigationBarTitle(navBarHidden ? "" : "Settings")
+        .navigationBarTitle(navBarHidden ? "" : "Projection")
         .navigationBarHidden(navBarHidden)
         .navigationBarBackButtonHidden(navBarHidden)
     }
