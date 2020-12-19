@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D1E258EC32900B12CA2 /* GraphView.swift */; };
+		80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D24258EC33000B12CA2 /* GraphViewModel.swift */; };
 		801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F8961258C4461003B1A2D /* ProjectionViewModel.swift */; };
 		8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */; };
 		8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80168D1E258EC32900B12CA2 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		80168D24258EC33000B12CA2 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		801F8961258C4461003B1A2D /* ProjectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionViewModel.swift; sourceTree = "<group>"; };
 		8026B6A4258A5FF1006CB2FB /* SignUpEmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
 		8026B6A6258A5FF1006CB2FB /* SignUpPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80168D1D258EC31C00B12CA2 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				80168D1E258EC32900B12CA2 /* GraphView.swift */,
+				80168D24258EC33000B12CA2 /* GraphViewModel.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
@@ -343,6 +356,7 @@
 		80AF8926258AD7F000291B23 /* Projection */ = {
 			isa = PBXGroup;
 			children = (
+				80168D1D258EC31C00B12CA2 /* Graph */,
 				80AF8932258ADA0900291B23 /* ProjectionView.swift */,
 				801F8961258C4461003B1A2D /* ProjectionViewModel.swift */,
 			);
@@ -511,6 +525,7 @@
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
+				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
 				8026B6BC258A5FF2006CB2FB /* StartUpViewModel.swift in Sources */,
 				80576F9A258DA7FA00210895 /* LineView.swift in Sources */,
@@ -519,6 +534,7 @@
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 				80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */,
+				80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

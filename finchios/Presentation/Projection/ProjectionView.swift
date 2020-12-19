@@ -14,8 +14,9 @@ struct ProjectionView: View {
     @ObservedObject var model: ProjectionViewModel = ProjectionViewModel()
     
     var body: some View {
-        ZStack {
+        VStack {
             // Graph
+            GraphView()
             
             // Allocation
             
