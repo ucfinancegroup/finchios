@@ -14,7 +14,7 @@ class GraphViewModel: ObservableObject, Identifiable {
     
     
     // Fetch timeseries from backend
-    func viewDidAppear() {
+    func onAppear() {
         
     }
     
