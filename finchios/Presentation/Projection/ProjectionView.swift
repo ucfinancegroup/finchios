@@ -29,6 +29,7 @@ struct ProjectionView: View {
             RecurringSummaryView()
             
             // Events
+            EventSummaryView()
         }
         .navigationBarTitle(navBarHidden ? "" : "Projection")
         .navigationBarHidden(navBarHidden)
