@@ -8,7 +8,7 @@
 import Foundation
 import Charts
 
-class AllocationViewModel: ObservableObject, Identifiable {
+class AllocationSummaryViewModel: ObservableObject, Identifiable {
     
     @Published var allocationConfiguration: [PieChartDataEntry] = []
     

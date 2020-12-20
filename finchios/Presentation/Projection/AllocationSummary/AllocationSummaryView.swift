@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AllocationView: View {
+struct AllocationSummaryView: View {
     
-    @ObservedObject var model: AllocationViewModel = AllocationViewModel()
+    @ObservedObject var model: AllocationSummaryViewModel = AllocationSummaryViewModel()
     
     var body: some View {
         VStack {
@@ -21,8 +21,8 @@ struct AllocationView: View {
     }
 }
 
-struct AllocationView_Previews: PreviewProvider {
+struct AllocationSummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        AllocationView()
+        AllocationSummaryView()
     }
 }

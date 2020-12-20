@@ -19,6 +19,7 @@ struct ProjectionView: View {
             GraphView()
             
             // Allocation
+            AllocationSummaryView()
             
             // Accounts
             
