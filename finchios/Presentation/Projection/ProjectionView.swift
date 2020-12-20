@@ -26,6 +26,7 @@ struct ProjectionView: View {
             // Expenses
             
             // Recurring
+            RecurringSummaryView()
             
             // Events
         }
