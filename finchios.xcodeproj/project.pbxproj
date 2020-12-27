@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80097003258FCB48000B2A90 /* EventItemSummaryView.swift */; };
+		80097008258FCB7E000B2A90 /* EventItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80097007258FCB7E000B2A90 /* EventItemSummaryViewModel.swift */; };
 		80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D1E258EC32900B12CA2 /* GraphView.swift */; };
 		80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D24258EC33000B12CA2 /* GraphViewModel.swift */; };
 		80168D2A258EC50700B12CA2 /* AllocationSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D29258EC50700B12CA2 /* AllocationSummaryViewModel.swift */; };
@@ -79,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80097003258FCB48000B2A90 /* EventItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemSummaryView.swift; sourceTree = "<group>"; };
+		80097007258FCB7E000B2A90 /* EventItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		80168D1E258EC32900B12CA2 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		80168D24258EC33000B12CA2 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		80168D29258EC50700B12CA2 /* AllocationSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationSummaryViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +161,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		80097002258FCB35000B2A90 /* EventItemSummaryView */ = {
+			isa = PBXGroup;
+			children = (
+				80097003258FCB48000B2A90 /* EventItemSummaryView.swift */,
+				80097007258FCB7E000B2A90 /* EventItemSummaryViewModel.swift */,
+			);
+			path = EventItemSummaryView;
+			sourceTree = "<group>";
+		};
 		80168D1D258EC31C00B12CA2 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,15 +191,16 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				8029D662258C3714007A44E1 /* ViewRepresentable */,
-				8029D657258C2DCA007A44E1 /* Statistics */,
-				80AF8927258AD7F700291B23 /* Settings */,
-				80AF8926258AD7F000291B23 /* Projection */,
 				8026B6D0258A6739006CB2FB /* AppTab */,
-				8026B6B3258A5FF1006CB2FB /* LogIn */,
+				80097002258FCB35000B2A90 /* EventItemSummaryView */,
 				8026B6B0258A5FF1006CB2FB /* IntroductionView */,
+				8026B6B3258A5FF1006CB2FB /* LogIn */,
+				80AF8926258AD7F000291B23 /* Projection */,
+				80AF8927258AD7F700291B23 /* Settings */,
 				8026B6A2258A5FF1006CB2FB /* SignUpFlow */,
 				8026B6AD258A5FF1006CB2FB /* StartUp */,
+				8029D657258C2DCA007A44E1 /* Statistics */,
+				8029D662258C3714007A44E1 /* ViewRepresentable */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -552,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80097008258FCB7E000B2A90 /* EventItemSummaryViewModel.swift in Sources */,
 				8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */,
 				8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */,
 				80168D2A258EC50700B12CA2 /* AllocationSummaryViewModel.swift in Sources */,
@@ -567,6 +582,7 @@
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
+				80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */,
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
