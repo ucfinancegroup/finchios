@@ -23,7 +23,6 @@
 		8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B2258A5FF1006CB2FB /* IntroductionViewModel.swift */; };
 		8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B4258A5FF1006CB2FB /* LogInViewModel.swift */; };
 		8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6B5258A5FF1006CB2FB /* LogInView.swift */; };
-		8026B6C5258A64B8006CB2FB /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8026B6C4258A64B8006CB2FB /* OpenAPIClient */; };
 		8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6CA258A652D006CB2FB /* CredentialsObject.swift */; };
 		8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6D1258A6743006CB2FB /* AppTabView.swift */; };
 		8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6DE258A6C71006CB2FB /* SignUpNameView.swift */; };
@@ -47,6 +46,9 @@
 		80F936FC258F070600BBBE57 /* RecurringSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F936FB258F070600BBBE57 /* RecurringSummaryViewModel.swift */; };
 		80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F93700258F0B8700BBBE57 /* EventSummaryView.swift */; };
 		80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F93706258F0B9100BBBE57 /* EventSummaryViewModel.swift */; };
+		80F9EE2C25993A58007CD06C /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80F9EE2B25993A58007CD06C /* OpenAPIClient */; };
+		80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3025994349007CD06C /* BusinessConstants.swift */; };
+		80F9EE3825994394007CD06C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3725994394007CD06C /* SignUpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		80F936FB258F070600BBBE57 /* RecurringSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSummaryViewModel.swift; sourceTree = "<group>"; };
 		80F93700258F0B8700BBBE57 /* EventSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSummaryView.swift; sourceTree = "<group>"; };
 		80F93706258F0B9100BBBE57 /* EventSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSummaryViewModel.swift; sourceTree = "<group>"; };
+		80F9EE3025994349007CD06C /* BusinessConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessConstants.swift; sourceTree = "<group>"; };
+		80F9EE3725994394007CD06C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8026B6C5258A64B8006CB2FB /* OpenAPIClient in Frameworks */,
+				80F9EE2C25993A58007CD06C /* OpenAPIClient in Frameworks */,
 				80399A9D256B4D750014E2D9 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +274,8 @@
 		8026B6C8258A6514006CB2FB /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				80F9EE3625994379007CD06C /* Services */,
+				80F9EE2F2599433D007CD06C /* Constants */,
 				8026B6C9258A651C006CB2FB /* Singleton */,
 			);
 			path = Business;
@@ -428,6 +434,22 @@
 			path = EventSummary;
 			sourceTree = "<group>";
 		};
+		80F9EE2F2599433D007CD06C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				80F9EE3025994349007CD06C /* BusinessConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		80F9EE3625994379007CD06C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				80F9EE3725994394007CD06C /* SignUpService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,7 +469,7 @@
 			name = finchios;
 			packageProductDependencies = (
 				80399A9C256B4D750014E2D9 /* Charts */,
-				8026B6C4258A64B8006CB2FB /* OpenAPIClient */,
+				80F9EE2B25993A58007CD06C /* OpenAPIClient */,
 			);
 			productName = finchios;
 			productReference = 80725CF9254C71FE0054787C /* finchios.app */;
@@ -522,7 +544,7 @@
 			mainGroup = 80725CF0254C71FE0054787C;
 			packageReferences = (
 				80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */,
-				8026B6C3258A64B8006CB2FB /* XCRemoteSwiftPackageReference "FinchSwiftClient" */,
+				80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */,
 			);
 			productRefGroup = 80725CFA254C71FE0054787C /* Products */;
 			projectDirPath = "";
@@ -582,9 +604,11 @@
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
+				80F9EE3825994394007CD06C /* SignUpService.swift in Sources */,
 				80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */,
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
+				80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				80168D30258EC50E00B12CA2 /* AllocationSummaryView.swift in Sources */,
@@ -920,14 +944,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8026B6C3258A64B8006CB2FB /* XCRemoteSwiftPackageReference "FinchSwiftClient" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ucfinancegroup/FinchSwiftClient";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts";
@@ -936,18 +952,26 @@
 				version = 3.6.0;
 			};
 		};
+		80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ucfinancegroup/FinchSwiftClient";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8026B6C4258A64B8006CB2FB /* OpenAPIClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8026B6C3258A64B8006CB2FB /* XCRemoteSwiftPackageReference "FinchSwiftClient" */;
-			productName = OpenAPIClient;
-		};
 		80399A9C256B4D750014E2D9 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		80F9EE2B25993A58007CD06C /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */;
+			productName = OpenAPIClient;
 		};
 /* End XCSwiftPackageProductDependency section */
 

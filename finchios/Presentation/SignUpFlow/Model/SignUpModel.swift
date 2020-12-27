@@ -51,22 +51,11 @@ class SignUpModel: ObservableObject, Identifiable {
     
     // Try to perform user sign up.
     func createAccount() {
-        print("here?")
         let (first, last) = getName()
         
-        let payload = SignupPayload(email: email, password: password, firstName: first, lastName: last, income: 0.0)
-        
-        OpenAPIClient.UserAPI.signupUser(signupPayload: payload) { (response, error) in
-            print(response)
-            DispatchQueue.main.async {
-                print(response)
-                if error != nil {
-                    // handle
-                    self.creationFailed = true
-                }else {
-                    self.accountCreated = true
-                    self.creationFailed = false
-                }
+        SignUpService.signUp(email: email, firstName: first, lastName: last, password: password) { (success) in
+            if success {
+                
             }
         }
     }
