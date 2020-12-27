@@ -13,8 +13,11 @@ struct EventItemSummaryView: View {
     @ObservedObject var model : EventItemSummaryViewModel
     
     var body: some View {
-        VStack {
-            Text("placeholder")
+        VStack(alignment: .leading) {
+            Text(model.event.name)
+                .font(.title3)
+            
+            Text("Starts \(model.event.start) day(s) from now")
         }
     }
 }

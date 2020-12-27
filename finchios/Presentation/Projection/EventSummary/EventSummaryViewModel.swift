@@ -28,8 +28,12 @@ class EventSummaryViewModel: ObservableObject, Identifiable {
                     return
                 }
                 
+                // Get only events, which are items where the `events` is non-nil
                 let filtered = plans.filter( { $0.events != nil} )
                 self.events = filtered.flatMap { $0.events! }
+                
+                // Get only 3 or less events.
+                self.events = Array(self.events.prefix(3))
             }
         }
     }

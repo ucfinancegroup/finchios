@@ -12,7 +12,11 @@ struct EventSummaryView: View {
     @ObservedObject var model: EventSummaryViewModel = EventSummaryViewModel()
     
     var body: some View {
-        Text("Temp")
+        VStack {
+            ForEach(model.events.indices) { index in
+                EventItemSummaryView(model: EventItemSummaryViewModel(event: model.events[index]))
+            }
+        }
     }
 }
 
