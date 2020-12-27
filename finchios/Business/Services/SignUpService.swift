@@ -56,7 +56,7 @@ struct SignUpService {
     }
 
     private static func getSignUpURL() -> URL? {
-        let address = "https://finchapp.eastus.cloudapp.azure.com/api/signup"
+        let address = "\(BusinessConstants.SERVER)/signup"
 
         return URL(string: address)
     }
