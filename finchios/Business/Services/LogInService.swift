@@ -1,15 +1,15 @@
 //
-//  SignUpService.swift
+//  LogInService.swift
 //  finchios
 //
-//  Created by Brett Fazio on 12/27/20.
+//  Created by Brett Fazio on 12/28/20.
 //
 
 import Foundation
 
-struct SignUpService {
+struct LogInService {
 
-    static func signUp(email: String, firstName: String, lastName: String, password: String, completion: @escaping ((Bool, Error?, String?) -> Void)) {
+    static func logIn(email: String, password: String, completion: @escaping ((Bool, Error?, String?) -> Void)) {
         guard let url = getURL() else {
             completion(false, nil, nil)
             return
@@ -19,14 +19,10 @@ struct SignUpService {
         request.httpMethod = "POST"
         
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
-
         
         let body: [String: Any] = [
             "email": email,
-            "first_name": firstName,
-            "last_name": lastName,
             "password": password,
-            "income": 5
         ]
 
         let jsonBody = try? JSONSerialization.data(withJSONObject: body)
@@ -56,7 +52,6 @@ struct SignUpService {
             // TODO(): Get the cookie and set it in a singleton
             completion(true, nil, cookie)
             return
-
         }
 
         task.resume()
@@ -64,7 +59,7 @@ struct SignUpService {
     }
 
     private static func getURL() -> URL? {
-        let address = "\(BusinessConstants.SERVER)/signup"
+        let address = "\(BusinessConstants.SERVER)/login"
 
         return URL(string: address)
     }

@@ -52,6 +52,7 @@ struct LogInView: View {
                         .textContentType(.emailAddress)
                         .multilineTextAlignment(.center)
                         .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
 
                     Text("Password:")
                     SecureField("Password", text: $model.password)

@@ -53,7 +53,7 @@ class SignUpModel: ObservableObject, Identifiable {
     func createAccount() {
         let (first, last) = getName()
         
-        SignUpService.signUp(email: email, firstName: first, lastName: last, password: password) { (success) in
+        SignUpService.signUp(email: email, firstName: first, lastName: last, password: password) { (success, error, response) in
             if success {
                 
             }
