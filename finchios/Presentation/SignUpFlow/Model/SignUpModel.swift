@@ -8,7 +8,6 @@
 
 import Foundation
 import Combine
-import OpenAPIClient
 
 class SignUpModel: ObservableObject, Identifiable {
 

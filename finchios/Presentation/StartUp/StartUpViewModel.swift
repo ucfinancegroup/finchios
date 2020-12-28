@@ -8,7 +8,6 @@
 
 import Foundation
 import Combine
-import OpenAPIClient
 
 class StartUpViewModel: ObservableObject, Identifiable {
 
