@@ -31,17 +31,16 @@ class StartUpViewModel: ObservableObject, Identifiable {
         //TODO(Will): Give route to verify JWT
 
         // If the JWT doesn't work try the username/password
-        let payload = LoginPayload(email: cred.email, password: cred.password)
-        
-        OpenAPIClient.UserAPI.loginUser(loginPayload: payload) { (response, error) in
+        LogInService.logIn(email: cred.email, password: cred.password) { (success, _, _) in
             DispatchQueue.main.async {
-                if error != nil {
-                    self.segueLanding = true
-                }else {
+                if success {
                     self.segueApp = true
+                }else {
+                    self.segueLanding = true
                 }
             }
         }
+
     }
 
 }
