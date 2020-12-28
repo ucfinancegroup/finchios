@@ -30,6 +30,7 @@
 		8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D658258C2DD7007A44E1 /* StatisticsView.swift */; };
 		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
+		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -106,6 +107,7 @@
 		8026B6E6258A7BA4006CB2FB /* LinkKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LinkKit.xcframework; sourceTree = "<group>"; };
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
+		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -449,6 +451,7 @@
 			children = (
 				80F9EE3725994394007CD06C /* SignUpService.swift */,
 				80D942F9259A3CA6001EA1B6 /* LogInService.swift */,
+				80479C48259A51AE00CDA3DA /* PlansService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				80168D30258EC50E00B12CA2 /* AllocationSummaryView.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
+				80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */,
 				80F936FC258F070600BBBE57 /* RecurringSummaryViewModel.swift in Sources */,
 				8026B6BC258A5FF2006CB2FB /* StartUpViewModel.swift in Sources */,
 				80576F9A258DA7FA00210895 /* LineView.swift in Sources */,
