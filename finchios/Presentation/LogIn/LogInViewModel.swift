@@ -20,7 +20,7 @@ class LogInViewModel: ObservableObject, Identifiable {
 
     // Try to perform user log-in.
     func logInTapped() {
-        LogInService.logIn(email: email, password: password) { (success) in
+        LogInService.logIn(email: email, password: password) { (success, _, _) in
             
         }
     }

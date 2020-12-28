@@ -49,7 +49,7 @@ struct CredentialsObject {
         return base
     }()
 
-    static func resetCredentials(jwt: String, email: String, password: String, username: String) -> Bool {
+    static func resetCredentials(jwt: String, email: String, password: String) -> Bool {
         // First clear the current credentials from Core Data
         deleteCurrentCredentials { (_) in }
 

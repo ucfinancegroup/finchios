@@ -53,7 +53,12 @@ struct SignUpService {
             // TODO(): Parse out the token portion of the cookie
             let cookie = httpResponse.allHeaderFields["Set-Cookie"] as! String
      
-            // TODO(): Get the cookie and set it in a singleton
+            DispatchQueue.main.async {
+                _ = CredentialsObject.resetCredentials(jwt: cookie,
+                                                       email: email,
+                                                       password: password)
+            }
+
             completion(true, nil, cookie)
             return
 
