@@ -38,6 +38,7 @@
 		80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */; };
 		80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */; };
 		80479C6F259AC36400CDA3DA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C6E259AC36400CDA3DA /* UIColor.swift */; };
+		80479C75259AC60C00CDA3DA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C74259AC60C00CDA3DA /* Color.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -122,6 +123,7 @@
 		80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryView.swift; sourceTree = "<group>"; };
 		80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryViewModel.swift; sourceTree = "<group>"; };
 		80479C6E259AC36400CDA3DA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		80479C74259AC60C00CDA3DA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,8 +285,8 @@
 		8026B6B3258A5FF1006CB2FB /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				8026B6B4258A5FF1006CB2FB /* LogInViewModel.swift */,
 				8026B6B5258A5FF1006CB2FB /* LogInView.swift */,
+				8026B6B4258A5FF1006CB2FB /* LogInViewModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				80479C6E259AC36400CDA3DA /* UIColor.swift */,
+				80479C74259AC60C00CDA3DA /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */,
 				8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */,
 				8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */,
+				80479C75259AC60C00CDA3DA /* Color.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
 				80479C59259AC29900CDA3DA /* ExpensesSummaryView.swift in Sources */,
 				8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */,

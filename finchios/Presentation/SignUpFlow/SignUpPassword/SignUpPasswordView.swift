@@ -17,7 +17,7 @@ struct SignUpPasswordView: View {
 
     var body: some View {
         ZStack {
-            Color(colorScheme == .light ? .green : .black)
+            Color(colorScheme == .light ? .teal : .black)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
@@ -53,6 +53,8 @@ struct SignUpPasswordView: View {
                         .background(Color.green)
                         .cornerRadius(40)
                 }
+                
+                Spacer()
 
                 NavigationLink(destination: AppTabView(navBarHidden: $navBarHidden), isActive: $model.accountCreated) {
                     EmptyView()

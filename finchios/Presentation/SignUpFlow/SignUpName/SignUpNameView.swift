@@ -17,11 +17,11 @@ struct SignUpNameView: View {
 
     var body: some View {
         ZStack {
-            Color(colorScheme == .light ? .green : .black)
+            Color(colorScheme == .light ? .teal : .black)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
-                Text("What is your full name (First space Last)?")
+                Text("What is your full name?")
                     .font(.title)
 
                 Spacer()
@@ -46,6 +46,8 @@ struct SignUpNameView: View {
                         .background(Color.green)
                         .cornerRadius(40)
                 }
+                
+                Spacer()
 
                 NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.nameValid) {
                     EmptyView()

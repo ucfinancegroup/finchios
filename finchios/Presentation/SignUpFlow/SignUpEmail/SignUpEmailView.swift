@@ -18,7 +18,7 @@ struct SignUpEmailView: View {
 
     var body: some View {
         ZStack {
-            Color(colorScheme == .light ? .green : .black)
+            Color(colorScheme == .light ? .teal : .black)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {

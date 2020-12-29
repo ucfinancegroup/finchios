@@ -39,6 +39,7 @@ struct IntroductionView: View {
                         .font(.headline)
                         .padding()
                         .cornerRadius(40)
+                        .foregroundColor(Color.teal)
                 }
                 .accessibility(identifier: "introductionSignUpLink")
 

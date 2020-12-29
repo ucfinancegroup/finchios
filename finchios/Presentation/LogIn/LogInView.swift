@@ -24,7 +24,7 @@ struct LogInView: View {
                 EmptyView()
             }
 
-            Color(colorScheme == .light ? .green : .black)
+            Color(colorScheme == .light ? .teal : .black)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
