@@ -37,6 +37,7 @@
 		80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C5E259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift */; };
 		80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */; };
 		80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */; };
+		80479C6F259AC36400CDA3DA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C6E259AC36400CDA3DA /* UIColor.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -120,6 +121,7 @@
 		80479C5E259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesSummaryViewModel.swift; sourceTree = "<group>"; };
 		80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryView.swift; sourceTree = "<group>"; };
 		80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryViewModel.swift; sourceTree = "<group>"; };
+		80479C6E259AC36400CDA3DA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +367,14 @@
 			path = AccountsSummary;
 			sourceTree = "<group>";
 		};
+		80479C6D259AC35600CDA3DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80479C6E259AC36400CDA3DA /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		80576F90258D879600210895 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +412,7 @@
 				80725CFC254C71FE0054787C /* finchiosApp.swift */,
 				80725D00254C72010054787C /* Assets.xcassets */,
 				80725D05254C72010054787C /* Persistence.swift */,
+				80479C6D259AC35600CDA3DA /* Extensions */,
 				8026B6C8258A6514006CB2FB /* Business */,
 				8026B695258A5FB8006CB2FB /* Presentation */,
 				80725D0A254C72010054787C /* Info.plist */,
@@ -665,6 +676,7 @@
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				80168D30258EC50E00B12CA2 /* AllocationSummaryView.swift in Sources */,
+				80479C6F259AC36400CDA3DA /* UIColor.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
 				80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */,
 				80F936FC258F070600BBBE57 /* RecurringSummaryViewModel.swift in Sources */,
