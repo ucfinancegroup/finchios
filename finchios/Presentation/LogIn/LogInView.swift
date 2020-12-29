@@ -28,24 +28,21 @@ struct LogInView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
-                Spacer()
 
                 //TODO(): ubumpWhite isn't a pdf
                 //Image(colorScheme == .light ? "uBumpBlack" : "uBumpWhite")
 
-                Spacer()
-                    .frame(height: 50)
-
                 Text("Login to your Finch account!")
                     .font(.headline)
+                    .foregroundColor(.white)
 
                 Spacer()
                     .frame(height: 50)
+
 
                 // TODO(): Move this group up on keyboard up
                 Group {
 
-                    Text("Email:")
 
                     TextField("Email", text: $model.email, onEditingChanged: { (_) in
                     })
@@ -53,11 +50,15 @@ struct LogInView: View {
                         .multilineTextAlignment(.center)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
+                        .foregroundColor(.gray)
 
-                    Text("Password:")
+                    Spacer()
+                        .frame(height: 50)
+                    
                     SecureField("Password", text: $model.password)
                         .textContentType(.password)
                         .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
                 }
 
                 Spacer()
@@ -68,9 +69,9 @@ struct LogInView: View {
                     Text("Log in!")
                         .frame(width: 100)
                         .font(.headline)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.teal)
                         .padding()
-                        .background(Color.green)
+                        .background(Color.white)
                         .cornerRadius(40)
                 }
             }

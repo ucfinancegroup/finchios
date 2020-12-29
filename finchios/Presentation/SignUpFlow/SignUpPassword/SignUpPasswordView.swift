@@ -23,6 +23,7 @@ struct SignUpPasswordView: View {
             VStack {
                 Text("Create your password")
                     .font(.title)
+                    .foregroundColor(.white)
 
                 Spacer()
 
@@ -48,9 +49,9 @@ struct SignUpPasswordView: View {
                     Text("Create Account")
                         .frame(width: 200)
                         .font(.headline)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.teal)
                         .padding()
-                        .background(Color.green)
+                        .background(Color.white)
                         .cornerRadius(40)
                 }
                 

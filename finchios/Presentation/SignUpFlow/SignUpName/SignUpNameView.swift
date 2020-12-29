@@ -23,6 +23,7 @@ struct SignUpNameView: View {
             VStack {
                 Text("What is your full name?")
                     .font(.title)
+                    .foregroundColor(.white)
 
                 Spacer()
 
@@ -41,9 +42,9 @@ struct SignUpNameView: View {
                     Text("Continue")
                         .frame(width: 100)
                         .font(.headline)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.teal)
                         .padding()
-                        .background(Color.green)
+                        .background(Color.white)
                         .cornerRadius(40)
                 }
                 

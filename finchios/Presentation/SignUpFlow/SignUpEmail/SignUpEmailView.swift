@@ -24,6 +24,7 @@ struct SignUpEmailView: View {
             VStack {
                 Text("What is your email?")
                     .font(.title)
+                    .foregroundColor(.white)
 
                 Spacer()
 
@@ -43,9 +44,9 @@ struct SignUpEmailView: View {
                     Text("Continue")
                         .frame(width: 100)
                         .font(.headline)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.teal)
                         .padding()
-                        .background(Color.green)
+                        .background(Color.white)
                         .cornerRadius(40)
                 }
 
