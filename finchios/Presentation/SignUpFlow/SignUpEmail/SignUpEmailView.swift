@@ -49,6 +49,8 @@ struct SignUpEmailView: View {
                         .background(Color.white)
                         .cornerRadius(40)
                 }
+                
+                Spacer()
 
                 NavigationLink(destination: SignUpPasswordView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.emailValid) {
                     EmptyView()
