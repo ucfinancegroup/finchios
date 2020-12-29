@@ -22,11 +22,16 @@ struct ProjectionView: View {
             AllocationSummaryView()
             
             // Accounts
+            AccountsSummaryView()
             
             // Expenses
+            ExpensesSummaryView()
             
             // Recurring
             RecurringSummaryView()
+            
+            // Goals
+            GoalSummaryView()
             
             // Events
             EventSummaryView()

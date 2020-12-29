@@ -31,6 +31,12 @@
 		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
+		80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */; };
+		80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C53259AC22000CDA3DA /* GoalSummaryView.swift */; };
+		80479C59259AC29900CDA3DA /* ExpensesSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C58259AC29900CDA3DA /* ExpensesSummaryView.swift */; };
+		80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C5E259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift */; };
+		80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */; };
+		80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -108,6 +114,12 @@
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
 		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
+		80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryViewModel.swift; sourceTree = "<group>"; };
+		80479C53259AC22000CDA3DA /* GoalSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryView.swift; sourceTree = "<group>"; };
+		80479C58259AC29900CDA3DA /* ExpensesSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesSummaryView.swift; sourceTree = "<group>"; };
+		80479C5E259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesSummaryViewModel.swift; sourceTree = "<group>"; };
+		80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryView.swift; sourceTree = "<group>"; };
+		80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryViewModel.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +338,33 @@
 			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
+		80479C4C259AC20C00CDA3DA /* GoalSummary */ = {
+			isa = PBXGroup;
+			children = (
+				80479C53259AC22000CDA3DA /* GoalSummaryView.swift */,
+				80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */,
+			);
+			path = GoalSummary;
+			sourceTree = "<group>";
+		};
+		80479C57259AC28300CDA3DA /* ExpensesSummary */ = {
+			isa = PBXGroup;
+			children = (
+				80479C58259AC29900CDA3DA /* ExpensesSummaryView.swift */,
+				80479C5E259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift */,
+			);
+			path = ExpensesSummary;
+			sourceTree = "<group>";
+		};
+		80479C62259AC2DA00CDA3DA /* AccountsSummary */ = {
+			isa = PBXGroup;
+			children = (
+				80479C63259AC2EA00CDA3DA /* AccountsSummaryView.swift */,
+				80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */,
+			);
+			path = AccountsSummary;
+			sourceTree = "<group>";
+		};
 		80576F90258D879600210895 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +440,9 @@
 		80AF8926258AD7F000291B23 /* Projection */ = {
 			isa = PBXGroup;
 			children = (
+				80479C62259AC2DA00CDA3DA /* AccountsSummary */,
+				80479C57259AC28300CDA3DA /* ExpensesSummary */,
+				80479C4C259AC20C00CDA3DA /* GoalSummary */,
 				80F936FF258F0B5F00BBBE57 /* EventSummary */,
 				80F936F6258F06E500BBBE57 /* RecurringSummary */,
 				80168D28258EC4FC00B12CA2 /* AllocationSummary */,
@@ -595,12 +637,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				80097008258FCB7E000B2A90 /* EventItemSummaryViewModel.swift in Sources */,
+				80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */,
 				8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */,
 				8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */,
 				80168D2A258EC50700B12CA2 /* AllocationSummaryViewModel.swift in Sources */,
+				80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */,
 				8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */,
 				8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
+				80479C59259AC29900CDA3DA /* ExpensesSummaryView.swift in Sources */,
 				8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */,
 				80F936F8258F06F500BBBE57 /* RecurringSummaryView.swift in Sources */,
 				80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */,
@@ -608,6 +653,7 @@
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
+				80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */,
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
@@ -626,9 +672,11 @@
 				80576F9A258DA7FA00210895 /* LineView.swift in Sources */,
 				80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */,
 				8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */,
+				80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */,
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
+				80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */,
 				80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */,
 				80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */,
 			);
