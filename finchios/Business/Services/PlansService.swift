@@ -18,20 +18,7 @@ struct PlansService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        request.allHTTPHeaderFields = ["Content-Type": "application/json"]
-        
-        let body: [String: Any] = [
-            "cookie": CredentialsObject.shared.jwt
-        ]
-
-        let jsonBody = try? JSONSerialization.data(withJSONObject: body)
-
-        guard let unwrappedJsonBody = jsonBody else {
-            completion(false, nil, nil)
-            return
-        }
-
-        request.httpBody = unwrappedJsonBody
+        request.allHTTPHeaderFields = ["cookie": CredentialsObject.shared.jwt]
 
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard data != nil else {
