@@ -39,6 +39,10 @@
 		80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */; };
 		80479C6F259AC36400CDA3DA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C6E259AC36400CDA3DA /* UIColor.swift */; };
 		80479C75259AC60C00CDA3DA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C74259AC60C00CDA3DA /* Color.swift */; };
+		80479C7A259AC9FF00CDA3DA /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C79259AC9FF00CDA3DA /* LeaderboardView.swift */; };
+		80479C80259ACA0900CDA3DA /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C7F259ACA0900CDA3DA /* LeaderboardViewModel.swift */; };
+		80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C85259ACA8700CDA3DA /* LeaderboardService.swift */; };
+		80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -124,6 +128,10 @@
 		80479C69259AC2F300CDA3DA /* AccountsSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSummaryViewModel.swift; sourceTree = "<group>"; };
 		80479C6E259AC36400CDA3DA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		80479C74259AC60C00CDA3DA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		80479C79259AC9FF00CDA3DA /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		80479C7F259ACA0900CDA3DA /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
+		80479C85259ACA8700CDA3DA /* LeaderboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardService.swift; sourceTree = "<group>"; };
+		80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItemView.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,6 +336,7 @@
 		8029D657258C2DCA007A44E1 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				80479C78259AC9EE00CDA3DA /* Leaderboard */,
 				8029D658258C2DD7007A44E1 /* StatisticsView.swift */,
 			);
 			path = Statistics;
@@ -376,6 +385,24 @@
 				80479C74259AC60C00CDA3DA /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80479C78259AC9EE00CDA3DA /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				80479C89259ACB1E00CDA3DA /* LeaderboardItem */,
+				80479C79259AC9FF00CDA3DA /* LeaderboardView.swift */,
+				80479C7F259ACA0900CDA3DA /* LeaderboardViewModel.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		80479C89259ACB1E00CDA3DA /* LeaderboardItem */ = {
+			isa = PBXGroup;
+			children = (
+				80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */,
+			);
+			path = LeaderboardItem;
 			sourceTree = "<group>";
 		};
 		80576F90258D879600210895 /* Charts */ = {
@@ -508,6 +535,7 @@
 				80F9EE3725994394007CD06C /* SignUpService.swift */,
 				80D942F9259A3CA6001EA1B6 /* LogInService.swift */,
 				80479C48259A51AE00CDA3DA /* PlansService.swift */,
+				80479C85259ACA8700CDA3DA /* LeaderboardService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -659,7 +687,9 @@
 				8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */,
 				8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */,
 				80479C75259AC60C00CDA3DA /* Color.swift in Sources */,
+				80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
+				80479C80259ACA0900CDA3DA /* LeaderboardViewModel.swift in Sources */,
 				80479C59259AC29900CDA3DA /* ExpensesSummaryView.swift in Sources */,
 				8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */,
 				80F936F8258F06F500BBBE57 /* RecurringSummaryView.swift in Sources */,
@@ -688,8 +718,10 @@
 				80576F9A258DA7FA00210895 /* LineView.swift in Sources */,
 				80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */,
 				8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */,
+				80479C7A259AC9FF00CDA3DA /* LeaderboardView.swift in Sources */,
 				80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */,
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
+				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 				80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */,
