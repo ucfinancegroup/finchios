@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import OpenAPIClient
 
 struct PlansService {
 
-    static func events(completion: @escaping ((Bool, Error?, Any?) -> Void)) {
+    private static func plans(completion: @escaping ((Bool, Error?, Plan?) -> Void)) {
         guard let url = getURL() else {
             completion(false, nil, nil)
             return
@@ -25,12 +26,17 @@ struct PlansService {
                 completion(false, error, nil)
                 return
             }
-            guard let urlResponse = urlResponse, let data = data else {
+            guard let _ = urlResponse, let data = data else {
                 completion(false, error, nil)
                 return
             }
             
-           
+            guard let response = try? JSONDecoder().decode(Plan.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, response)
             
             completion(true, nil, nil)
             return
@@ -38,6 +44,59 @@ struct PlansService {
 
         task.resume()
 
+    }
+    
+    static func events(completion: @escaping ((Bool, Error?, [Event]?) -> Void)) {
+        plans { (success, error, plan) in
+            guard let plan = plan else {
+                completion(success, error, nil)
+                return
+            }
+            
+            guard let events = plan.events else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, events)
+            return
+        }
+    }
+    
+    //TODO() BUG() This should be an allocation not a transform
+    //static func allocations(completion: @escaping ((Bool, Error?, [Allocation]?) -> Void)) {
+    static func allocations(completion: @escaping ((Bool, Error?, [Any]?) -> Void)) {
+        plans { (success, error, plan) in
+            guard let plan = plan else {
+                completion(success, error, nil)
+                return
+            }
+            
+            guard let allocations = plan.allocations else {
+                completion(false, error, nil)
+                return
+            }
+
+            completion(true, nil, allocations)
+            return
+        }
+    }
+    
+    static func recurrings(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        plans { (success, error, plan) in
+            guard let plan = plan else {
+                completion(success, error, nil)
+                return
+            }
+            
+            guard let recurrings = plan.recurrings else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, recurrings)
+            return
+        }
     }
 
     private static func getURL() -> URL? {
