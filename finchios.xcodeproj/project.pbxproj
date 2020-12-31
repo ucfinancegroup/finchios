@@ -195,13 +195,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		80097002258FCB35000B2A90 /* EventItemSummaryView */ = {
+		80097002258FCB35000B2A90 /* EventItemSummary */ = {
 			isa = PBXGroup;
 			children = (
 				80097003258FCB48000B2A90 /* EventItemSummaryView.swift */,
 				80097007258FCB7E000B2A90 /* EventItemSummaryViewModel.swift */,
 			);
-			path = EventItemSummaryView;
+			path = EventItemSummary;
 			sourceTree = "<group>";
 		};
 		80168D1D258EC31C00B12CA2 /* Graph */ = {
@@ -225,10 +225,10 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				80EF127A259E67A500E0543B /* ExpensesItemSummaryView */,
+				80EF127A259E67A500E0543B /* ExpensesItemSummary */,
 				8026B6D0258A6739006CB2FB /* AppTab */,
-				80097002258FCB35000B2A90 /* EventItemSummaryView */,
-				8026B6B0258A5FF1006CB2FB /* IntroductionView */,
+				80097002258FCB35000B2A90 /* EventItemSummary */,
+				8026B6B0258A5FF1006CB2FB /* Introduction */,
 				8026B6B3258A5FF1006CB2FB /* LogIn */,
 				80AF8926258AD7F000291B23 /* Projection */,
 				80AF8927258AD7F700291B23 /* Settings */,
@@ -284,13 +284,13 @@
 			path = StartUp;
 			sourceTree = "<group>";
 		};
-		8026B6B0258A5FF1006CB2FB /* IntroductionView */ = {
+		8026B6B0258A5FF1006CB2FB /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
 				8026B6B1258A5FF1006CB2FB /* IntroductionView.swift */,
 				8026B6B2258A5FF1006CB2FB /* IntroductionViewModel.swift */,
 			);
-			path = IntroductionView;
+			path = Introduction;
 			sourceTree = "<group>";
 		};
 		8026B6B3258A5FF1006CB2FB /* LogIn */ = {
@@ -506,12 +506,12 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		80EF127A259E67A500E0543B /* ExpensesItemSummaryView */ = {
+		80EF127A259E67A500E0543B /* ExpensesItemSummary */ = {
 			isa = PBXGroup;
 			children = (
 				80EF127B259E67BA00E0543B /* ExpensesItemSummaryView.swift */,
 			);
-			path = ExpensesItemSummaryView;
+			path = ExpensesItemSummary;
 			sourceTree = "<group>";
 		};
 		80F936F6258F06E500BBBE57 /* RecurringSummary */ = {
