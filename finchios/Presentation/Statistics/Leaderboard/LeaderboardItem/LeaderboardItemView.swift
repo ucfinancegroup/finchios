@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct LeaderboardItemView: View {
     
@@ -13,7 +14,7 @@ struct LeaderboardItemView: View {
     
     var body: some View {
         VStack {
-            Text(board.leaderboard_type)
+            Text(board.leaderboardType)
             Text("\(board.percentile)")
         }
     }

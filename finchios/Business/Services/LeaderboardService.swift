@@ -6,8 +6,4 @@
 //
 
 import Foundation
-
-struct LeaderboardResponse: Codable {
-    var leaderboard_type: String
-    var percentile: Double
-}
+import OpenAPIClient
