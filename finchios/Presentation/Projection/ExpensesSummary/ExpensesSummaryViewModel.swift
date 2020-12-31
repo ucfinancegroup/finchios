@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import OpenAPIClient
 
 class ExpensesSummaryViewModel: ObservableObject, Identifiable {
+    
+    @Published var expenses: [Recurring] = []
     
 }

@@ -12,7 +12,11 @@ struct ExpensesSummaryView: View {
     @ObservedObject var model = ExpensesSummaryViewModel()
     
     var body: some View {
-        Text("expenses")
+        VStack {
+            ForEach(model.expenses.indices) { index in
+                ExpensesItemSummaryView(data: $model.expenses[index])
+            }
+        }
     }
 }
 
