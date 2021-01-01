@@ -13,12 +13,17 @@ struct GoalItemSummaryView: View {
     @Binding var goal: Goal
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("\(goal.name)")
+        }
     }
 }
 
-//struct GoalItemSummaryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GoalItemSummaryView()
-//    }
-//}
+struct GoalItemSummaryView_Previews: PreviewProvider {
+
+    @State static var goal = Goal.dummy
+
+    static var previews: some View {
+        GoalItemSummaryView(goal: $goal)
+    }
+}
