@@ -6,7 +6,14 @@
 //
 
 import Foundation
+import OpenAPIClient
 
 class GoalSummaryViewModel: ObservableObject, Identifiable {
+    
+    @Published var goals: [Goal] = []
+    
+    func fetch() {
+        
+    }
     
 }

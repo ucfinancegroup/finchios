@@ -12,7 +12,9 @@ struct GoalSummaryView: View {
     @ObservedObject var model: GoalSummaryViewModel = GoalSummaryViewModel()
     
     var body: some View {
-        Text("Goals")
+        ForEach(model.goals.indices) { index in
+            GoalItemSummaryView(goal: $model.goals[index])
+        }
     }
 }
 
