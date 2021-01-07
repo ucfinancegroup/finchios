@@ -14,12 +14,12 @@ struct RecurringSummaryView: View {
     var body: some View {
         VStack {
             
-            RecurringSubsectionView(type: .income, recurring: self.$model.incomes)
+            RecurringSubsectionView(type: .income, recurrings: self.$model.incomes)
             
             Spacer()
                 .frame(height: 30)
             
-            RecurringSubsectionView(type: .expense, recurring: self.$model.expenses)
+            RecurringSubsectionView(type: .expense, recurrings: self.$model.expenses)
             
         }
     }

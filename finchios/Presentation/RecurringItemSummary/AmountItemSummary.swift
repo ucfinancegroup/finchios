@@ -15,7 +15,9 @@ struct AmountItemSummary: View {
     @Binding var recurring: Recurring
     
     var body: some View {
-        Text("hello")
+        VStack {
+            Text(recurring.name)
+        }
     }
 }
 

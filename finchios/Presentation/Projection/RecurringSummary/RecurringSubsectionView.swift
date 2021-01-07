@@ -12,19 +12,31 @@ struct RecurringSubsectionView: View {
     
     @State var type: RecurringItemType
     
-    @Binding var recurring: [Recurring]
+    @Binding var recurrings: [Recurring]
     
     var body: some View {
         Text(type.rawValue)
         
-        ForEach(recurring.indices) { index in
-            AmountItemSummary(type: $type, recurring: $recurring[index])
+        ForEach(recurrings.indices) { index in
+            AmountItemSummary(type: $type, recurring: $recurrings[index])
         }
     }
 }
 
-//struct RecurringSubsectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecurringSummaryViewItem()
-//    }
-//}
+struct RecurringSubsectionViewPreview: View {
+    
+    @State var type: RecurringItemType = .income
+    
+    @State var recurrings: [Recurring] = [.dummyIncome, .dummyIncome]
+    
+    var body: some View {
+        RecurringSubsectionView(type: type, recurrings: $recurrings)
+    }
+    
+}
+
+struct RecurringSubsectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecurringSubsectionViewPreview()
+    }
+}
