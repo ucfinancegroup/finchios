@@ -33,6 +33,28 @@ struct RecurringService {
         }
     }
     
+    public static func expenses(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        recurrings { (success, error, result) in
+            if let error = error {
+                completion(false, error, nil)
+                return
+            }
+            if !success {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let result = result else {
+                completion(false, error, nil)
+                return
+            }
+            
+            let incomes = result.filter( { $0.amount < 0 })
+            
+            completion(true, nil, incomes)
+        }
+    }
+    
     private static func recurrings(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         guard let url = getAllRecurringURL() else {
             completion(false, nil, nil)
