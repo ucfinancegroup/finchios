@@ -48,6 +48,7 @@
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		8071DCF225A759630056107B /* RecurringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF125A759630056107B /* RecurringService.swift */; };
+		8071DCF625A769DA0056107B /* RecurringSummaryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF525A769DA0056107B /* RecurringSummaryItemView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
 		80725D01254C72010054787C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D00254C72010054787C /* Assets.xcassets */; };
 		80725D04254C72010054787C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D03254C72010054787C /* Preview Assets.xcassets */; };
@@ -141,6 +142,7 @@
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		8071DCF125A759630056107B /* RecurringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringService.swift; sourceTree = "<group>"; };
+		8071DCF525A769DA0056107B /* RecurringSummaryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSummaryItemView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725CFC254C71FE0054787C /* finchiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosApp.swift; sourceTree = "<group>"; };
 		80725D00254C72010054787C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			children = (
 				80F936F7258F06F500BBBE57 /* RecurringSummaryView.swift */,
 				80F936FB258F070600BBBE57 /* RecurringSummaryViewModel.swift */,
+				8071DCF525A769DA0056107B /* RecurringSummaryItemView.swift */,
 			);
 			path = RecurringSummary;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				80F936F8258F06F500BBBE57 /* RecurringSummaryView.swift in Sources */,
 				80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */,
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
+				8071DCF625A769DA0056107B /* RecurringSummaryItemView.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
