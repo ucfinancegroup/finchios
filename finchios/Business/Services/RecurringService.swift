@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET recurrings
 struct RecurringService {
     
-    public static func helper(operand: @escaping (Int, Int) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+    private static func helper(operand: @escaping (Int, Int) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in
             if let error = error {
                 completion(false, error, nil)

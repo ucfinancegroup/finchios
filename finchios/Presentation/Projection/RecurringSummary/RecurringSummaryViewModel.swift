@@ -10,25 +10,26 @@ import OpenAPIClient
 
 class RecurringSummaryViewModel: ObservableObject, Identifiable {
     
-    @Published var recurrings: [Recurring] = []
+    @Published var incomes: [Recurring] = []
+    @Published var expenses: [Recurring] = []
     
     // Fetch subset of recurrings
     func onAppear() {
-        RecurringAPI.getRecurrings { (results, error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    // Error occured, report to user
-                    print(error)
-                    return
-                }
-                
-                guard let results = results else {
-                    // Error
-                    return
-                }
-                
-                self.recurrings = Array(results.prefix(3))
+        
+        RecurringService.incomes { (success, error, result) in
+            guard let result = result else {
+                return
             }
+            
+            self.incomes = Array(result.prefix(3))
+        }
+        
+        RecurringService.expenses { (success, error, result) in
+            guard let result = result else {
+                return
+            }
+            
+            self.expenses = Array(result.prefix(3))
         }
     }
     
