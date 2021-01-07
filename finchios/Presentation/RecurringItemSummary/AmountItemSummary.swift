@@ -15,8 +15,11 @@ struct AmountItemSummary: View {
     @Binding var recurring: Recurring
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(recurring.name)
+                .font(.title2)
+            
+            Text("\(type == .expense ? "Income" : "Expense") of $\(String(format:"%.02f", Double(hundredOffsetInt: recurring.amount))) \(recurring.amountFreq.typ.rawValue)")
         }
     }
 }
