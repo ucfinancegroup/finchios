@@ -55,6 +55,13 @@ struct RecurringService {
     
 }
 
+// POST recurring/new
 extension RecurringService {
+    
+    private static func getNewRecurringURL() -> URL? {
+        let address = "\(BusinessConstants.SERVER)/recurring/new"
+        
+        return URL(string: address)
+    }
     
 }
