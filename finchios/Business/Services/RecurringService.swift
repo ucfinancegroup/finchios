@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET recurrings
 struct RecurringService {
     
-    public static func incomes(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+    public static func helper(operand: @escaping (Int, Int) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in
             if let error = error {
                 completion(false, error, nil)
@@ -27,31 +27,24 @@ struct RecurringService {
                 return
             }
             
-            let incomes = result.filter( { $0.amount > 0 })
+            let incomes = result.filter( { operand($0.amount, 0) })
             
             completion(true, nil, incomes)
         }
     }
     
+    
+    public static func incomes(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        // Greater than 0
+        helper(operand: >) { (success, error, result) in
+            completion(success, error, result)
+        }
+    }
+    
     public static func expenses(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
-        recurrings { (success, error, result) in
-            if let error = error {
-                completion(false, error, nil)
-                return
-            }
-            if !success {
-                completion(false, error, nil)
-                return
-            }
-            
-            guard let result = result else {
-                completion(false, error, nil)
-                return
-            }
-            
-            let incomes = result.filter( { $0.amount < 0 })
-            
-            completion(true, nil, incomes)
+        // Less than 0
+        helper(operand: <) { (success, error, result) in
+            completion(success, error, result)
         }
     }
     
