@@ -8,8 +8,8 @@
 import SwiftUI
 import OpenAPIClient
 
-enum RecurringSummaryItemType {
-    case income, expense
+enum RecurringSummaryItemType: String {
+    case income = "Income", expense = "Expense"
 }
 
 struct RecurringSummaryItemView: View {
