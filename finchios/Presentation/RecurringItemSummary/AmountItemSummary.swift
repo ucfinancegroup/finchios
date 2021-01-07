@@ -19,8 +19,20 @@ struct AmountItemSummary: View {
     }
 }
 
-//struct AmountItemSummary_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AmountItemSummary()
-//    }
-//}
+struct AmountItemSummaryPreviews: View {
+    
+    @State var type: RecurringItemType = .income
+    
+    @State var recurring: Recurring = .dummyIncome
+    
+    var body: some View {
+        AmountItemSummary(type: $type, recurring: $recurring)
+    }
+    
+}
+
+struct AmountItemSummary_Previews: PreviewProvider {
+    static var previews: some View {
+        AmountItemSummaryPreviews()
+    }
+}
