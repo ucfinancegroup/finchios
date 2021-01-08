@@ -14,7 +14,9 @@ struct ProjectionView: View {
     @ObservedObject var model: ProjectionViewModel = ProjectionViewModel()
     
     var body: some View {
-        VStack {
+        ScrollView {
+            VStack {
+
             // Graph
             GraphView()
             
@@ -35,6 +37,8 @@ struct ProjectionView: View {
             
             // Events
             EventSummaryView()
+            
+            }
         }
         .navigationBarTitle(navBarHidden ? "" : "Projection")
         .navigationBarHidden(navBarHidden)
