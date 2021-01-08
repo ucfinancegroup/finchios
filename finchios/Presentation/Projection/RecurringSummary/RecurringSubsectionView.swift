@@ -15,10 +15,12 @@ struct RecurringSubsectionView: View {
     @Binding var recurrings: [Recurring]
     
     var body: some View {
-        Text(type.rawValue)
-        
-        ForEach(recurrings.indices) { index in
-            AmountItemSummary(type: $type, recurring: $recurrings[index])
+        VStack {
+            Text(type.rawValue)
+            
+            ForEach(recurrings.indices) { index in
+                AmountItemSummary(type: $type, recurring: $recurrings[index])
+            }
         }
     }
 }
