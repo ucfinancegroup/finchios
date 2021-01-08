@@ -16,6 +16,7 @@ struct GraphView: View {
         VStack {
             LineView(entries: model.timeseries)
         }
+        .frame(height: 300)
         .onAppear() {
             model.onAppear()
         }
