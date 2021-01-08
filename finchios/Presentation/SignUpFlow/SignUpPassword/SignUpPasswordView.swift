@@ -68,13 +68,12 @@ struct SignUpPasswordView: View {
         .alert(isPresented: $model.creationFailed) { () -> Alert in
             //TODO(): Better errors if signUp failed.
             switch model.creationErrorType {
-            case .activate:
-                return Alert(title: Text("Account created but tag failed to register."), message: Text("Your Finch account was successfully created but your Finch failed to register (our fault not yours). Please go into the \"Scan\" page and select \"activate a new Finch\" to associate your Finch with your account!"), dismissButton: .destructive(Text("Okay")) {
-                    self.model.creationFailed = false
-                    self.model.accountCreated = true
-                    })
             case .signUp:
                 return Alert(title: Text("Failed to create account"), message: Text("Account creation failed. Please go back and make sure all the information you entered is valid or ensure you have a proper internet connection."), dismissButton: .destructive(Text("Okay")) {
+                    self.model.creationFailed = false
+                    })
+            case .str:
+                return Alert(title: Text("Failed to create account"), message: Text(self.model.creationErrorStr), dismissButton: .destructive(Text("Okay")) {
                     self.model.creationFailed = false
                     })
             }

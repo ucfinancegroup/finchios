@@ -21,6 +21,7 @@ class SignUpModel: ObservableObject, Identifiable {
     @Published var accountCreated: Bool = false
     @Published var creationFailed: Bool = false
     @Published var creationErrorType: CreationErrorType = .signUp
+    @Published var creationErrorStr: String = ""
 
     // For name input success/failure (SignUpNameView)
     @Published var nameValid: Bool = false
@@ -54,7 +55,13 @@ class SignUpModel: ObservableObject, Identifiable {
         
         SignUpService.signUp(email: email, firstName: first, lastName: last, password: password) { (success, error, response) in
             if success {
-                
+                self.accountCreated = true
+            }else {
+                self.accountCreated = false
+                self.creationFailed = true
+                if let error = error {
+                    self.creationErrorStr = "\(error)"
+                }
             }
         }
     }
@@ -109,5 +116,5 @@ class SignUpModel: ObservableObject, Identifiable {
 }
 
 enum CreationErrorType {
-    case signUp, activate
+    case signUp, str
 }
