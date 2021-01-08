@@ -18,9 +18,15 @@ struct RecurringSubsectionView: View {
         VStack(alignment: .leading) {
             Text(type.rawValue)
             
-            ForEach(recurrings.indices) { index in
-                AmountItemSummary(type: $type, recurring: $recurrings[index])
+            // Make sure there are indices.
+            if recurrings.count > 0 {
+                ForEach(recurrings.indices) { index in
+                    AmountItemSummary(type: $type, recurring: $recurrings[index])
+                }
+            }else {
+                
             }
+            
         }
     }
 }
