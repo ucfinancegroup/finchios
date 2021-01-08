@@ -24,6 +24,11 @@ struct GraphView: View {
     }
 }
 
+
+// TODO(): reason why this view is hard to be a previewprovider
+// is that all views should just have a binding provided if possible.
+// here the binding should be passed model.timeseries instead of
+// creating a model itself.
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         GraphView()
