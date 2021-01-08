@@ -30,6 +30,11 @@ struct RecurringView: View {
         .onAppear() {
             model.onAppear()
         }
+        .navigationBarItems(trailing: NavigationLink(
+                                destination: Text("destin"),
+                                label: {
+                                    Image("Plus")
+                                }))
         
     }
 }
