@@ -20,7 +20,17 @@ struct RecurringView: View {
     }
     
     var body: some View {
-        Text(type.rawValue)
+        ScrollView {
+            VStack {
+                ForEach(model.recurrings.indices) { index in
+                    AmountItemSummary(type: $type, recurring: $model.recurrings[index])
+                }
+            }
+        }
+        .onAppear() {
+            model.onAppear()
+        }
+        
     }
 }
 

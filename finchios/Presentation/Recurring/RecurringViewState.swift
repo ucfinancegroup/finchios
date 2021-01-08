@@ -12,8 +12,33 @@ class RecurringViewState: ObservableObject, Identifiable {
     
     @Binding var type: RecurringItemType
     
+    @Published var recurrings: [Recurring] = []
+    
     init(type: Binding<RecurringItemType>) {
         _type = type
+    }
+    
+    func onAppear() {
+        
+        switch type {
+        case .expense:
+            RecurringService.expenses { (success, error, result) in
+                DispatchQueue.main.async {
+                    if let result = result {
+                        self.recurrings = result
+                    }
+                }
+            }
+        case .income:
+            RecurringService.incomes { (success, error, result) in
+                DispatchQueue.main.async {
+                    if let result = result {
+                        self.recurrings = result
+                    }
+                }
+            }
+        }
+        
     }
     
 }
