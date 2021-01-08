@@ -15,7 +15,7 @@ struct RecurringSubsectionView: View {
     @Binding var recurrings: [Recurring]
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(type.rawValue)
             
             ForEach(recurrings.indices) { index in
