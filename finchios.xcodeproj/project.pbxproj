@@ -45,6 +45,8 @@
 		80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */; };
 		804AEA66259FC222005D414C /* GoalItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AEA65259FC222005D414C /* GoalItemSummaryView.swift */; };
 		804AEA6D259FC2E8005D414C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AEA6C259FC2E8005D414C /* Goal.swift */; };
+		80535FA025A91679006521D4 /* RecurringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535F9F25A91679006521D4 /* RecurringView.swift */; };
+		80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FA525A916F2006521D4 /* RecurringViewState.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		8071DCF225A759630056107B /* RecurringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF125A759630056107B /* RecurringService.swift */; };
@@ -143,6 +145,8 @@
 		80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItemView.swift; sourceTree = "<group>"; };
 		804AEA65259FC222005D414C /* GoalItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemSummaryView.swift; sourceTree = "<group>"; };
 		804AEA6C259FC2E8005D414C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		80535F9F25A91679006521D4 /* RecurringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringView.swift; sourceTree = "<group>"; };
+		80535FA525A916F2006521D4 /* RecurringViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringViewState.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		8071DCF125A759630056107B /* RecurringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringService.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				80535F9E25A9166E006521D4 /* Recurring */,
 				80C97BA425A76EB2008729A7 /* RecurringItemSummary */,
 				804AEA64259FC20C005D414C /* GoalItemSummary */,
 				80EF127A259E67A500E0543B /* ExpensesItemSummary */,
@@ -444,6 +449,15 @@
 				80C97BB425A7701F008729A7 /* Recurring.swift */,
 			);
 			path = OpenAPIClient;
+			sourceTree = "<group>";
+		};
+		80535F9E25A9166E006521D4 /* Recurring */ = {
+			isa = PBXGroup;
+			children = (
+				80535F9F25A91679006521D4 /* RecurringView.swift */,
+				80535FA525A916F2006521D4 /* RecurringViewState.swift */,
+			);
+			path = Recurring;
 			sourceTree = "<group>";
 		};
 		80576F90258D879600210895 /* Charts */ = {
@@ -770,6 +784,7 @@
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
 				80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */,
+				80535FA025A91679006521D4 /* RecurringView.swift in Sources */,
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
@@ -796,6 +811,7 @@
 				80479C7A259AC9FF00CDA3DA /* LeaderboardView.swift in Sources */,
 				80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */,
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
+				80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */,
 				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
