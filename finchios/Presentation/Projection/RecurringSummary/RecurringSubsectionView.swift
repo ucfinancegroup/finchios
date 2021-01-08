@@ -22,11 +22,12 @@ struct RecurringSubsectionView: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    
-                }, label: {
-                    Image("RightArrow")
-                })
+                NavigationLink(
+                    destination: RecurringView(type: $type),
+                    label: {
+                        Image("RightArrow")
+                    })
+
             }
 
             
