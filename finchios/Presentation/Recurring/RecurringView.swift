@@ -39,8 +39,18 @@ struct RecurringView: View {
     }
 }
 
-//struct RecurringView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecurringView()
-//    }
-//}
+struct RecurringViewProvider: View {
+    
+    @State var type: RecurringItemType = .income
+    
+    var body: some View {
+        RecurringView(type: $type)
+    }
+    
+}
+
+struct RecurringView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecurringViewProvider()
+    }
+}
