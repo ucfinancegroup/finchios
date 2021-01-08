@@ -22,7 +22,11 @@ struct RecurringSubsectionView: View {
                 
                 Spacer()
                 
-                
+                Button(action: {
+                    
+                }, label: {
+                    Image("RightArrow")
+                })
             }
 
             
