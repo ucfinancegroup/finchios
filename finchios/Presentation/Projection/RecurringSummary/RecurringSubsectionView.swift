@@ -17,6 +17,7 @@ struct RecurringSubsectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(type.rawValue)
+                .font(.title)
             
             // Make sure there are indices.
             if recurrings.count > 0 {
