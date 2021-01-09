@@ -22,6 +22,9 @@ struct RecurringSummaryView: View {
             RecurringSubsectionView(type: .expense, recurrings: self.$model.expenses)
             
         }
+        .onAppear() {
+            model.onAppear()
+        }
     }
 }
 

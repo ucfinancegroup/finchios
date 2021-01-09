@@ -21,7 +21,9 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
                 return
             }
             
-            self.incomes = Array(result.prefix(3))
+            DispatchQueue.main.async {
+                self.incomes = Array(result.prefix(3))
+            }
         }
         
         RecurringService.expenses { (success, error, result) in
@@ -29,7 +31,9 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
                 return
             }
             
-            self.expenses = Array(result.prefix(3))
+            DispatchQueue.main.async {
+                self.expenses = Array(result.prefix(3))
+            }
         }
     }
     
