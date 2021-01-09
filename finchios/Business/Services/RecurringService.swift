@@ -76,7 +76,6 @@ struct RecurringService {
             
             completion(true, nil, response)
             
-            completion(true, nil, nil)
             return
         }
 
