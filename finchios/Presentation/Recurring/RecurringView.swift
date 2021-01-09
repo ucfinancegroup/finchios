@@ -22,7 +22,7 @@ struct RecurringView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(model.recurrings.indices) { index in
+                ForEach(model.recurrings.indices, id: \.self) { index in
                     AmountItemSummary(type: $type, recurring: $model.recurrings[index])
                 }
             }
