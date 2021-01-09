@@ -50,7 +50,7 @@ struct LogInView: View {
                         .multilineTextAlignment(.center)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
 
                     Spacer()
                         .frame(height: 50)
@@ -58,7 +58,7 @@ struct LogInView: View {
                     SecureField("Password", text: $model.password)
                         .textContentType(.password)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                 }
 
                 Spacer()
