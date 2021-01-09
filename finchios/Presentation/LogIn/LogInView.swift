@@ -83,7 +83,7 @@ struct LogInView: View {
             .navigationBarHidden(self.navBarHidden)
             .navigationBarBackButtonHidden(self.navBarHidden)
             .alert(isPresented: $model.logInError) { () -> Alert in
-                return Alert(title: Text("Failed to Log In"), message: Text("Please ensure that the username and password entered are correct and try again."), dismissButton: .default(Text("Okay")))
+                return Alert(title: Text("Failed to Log In"), message: Text("Please ensure that the username and password entered are correct and try again. Error: \(self.model.errorStr)"), dismissButton: .default(Text("Okay")))
             }
         }
     }

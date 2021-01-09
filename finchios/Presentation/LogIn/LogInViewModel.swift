@@ -16,10 +16,11 @@ class LogInViewModel: ObservableObject, Identifiable {
 
     @Published var logInSuccess: Bool = false
     @Published var logInError: Bool = false
+    @Published var errorStr: String = ""
 
     // Try to perform user log-in.
     func logInTapped() {
-        LogInService.logIn(email: email, password: password) { (success, _, _) in
+        LogInService.logIn(email: email, password: password) { (success, error, _) in
             DispatchQueue.main.async {
                 if success {
                     // login success
@@ -29,6 +30,9 @@ class LogInViewModel: ObservableObject, Identifiable {
                     // login failed
                     self.logInSuccess = false
                     self.logInError = true
+                    if let error = error {
+                        self.errorStr = "\(error)"
+                    }
                 }
             }
         }
