@@ -19,7 +19,7 @@ struct AmountItemSummary: View {
             Text(recurring.name)
                 .font(.title2)
             
-            Text("\(type == .expense ? "Income" : "Expense") of $\(String(format:"%.02f", Double(hundredOffsetInt: recurring.amount))) \(recurring.amountFreq.typ.rawValue)")
+            Text("\(type == .expense ? "Income" : "Expense") of $\(String(format:"%.02f", Double(hundredOffsetInt: Int(recurring.amount)))) \(recurring.frequency.typ.rawValue)")
         }
     }
 }

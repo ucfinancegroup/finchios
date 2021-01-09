@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET recurrings
 struct RecurringService {
     
-    private static func helper(operand: @escaping (Int, Int) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+    private static func helper(operand: @escaping (Int64, Int64) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in
             if let error = error {
                 completion(false, error, nil)
@@ -60,11 +60,7 @@ struct RecurringService {
         request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
 
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-            guard data != nil else {
-                completion(false, error, nil)
-                return
-            }
-            guard let _ = urlResponse, let data = data else {
+            guard let data = data else {
                 completion(false, error, nil)
                 return
             }
@@ -73,7 +69,7 @@ struct RecurringService {
                 completion(false, error, nil)
                 return
             }
-            
+
             completion(true, nil, response)
             
             return
