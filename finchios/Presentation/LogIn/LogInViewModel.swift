@@ -16,7 +16,7 @@ class LogInViewModel: ObservableObject, Identifiable {
 
     @Published var logInSuccess: Bool = false
     @Published var logInError: Bool = false
-    @Published var errorStr: String = ""
+    @Published var errorStr: String = "Unidentified"
 
     // Try to perform user log-in.
     func logInTapped() {
