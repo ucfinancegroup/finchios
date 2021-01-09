@@ -24,6 +24,7 @@ struct RecurringView: View {
             VStack {
                 ForEach(model.recurrings.indices, id: \.self) { index in
                     AmountItemSummary(type: $type, recurring: $model.recurrings[index])
+                        .padding()
                 }
             }
         }
