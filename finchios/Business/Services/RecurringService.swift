@@ -57,10 +57,8 @@ struct RecurringService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        request.allHTTPHeaderFields = ["Set-Cookie": CredentialsObject.shared.jwt]
+        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
 
-        print(request.allHTTPHeaderFields)
-        
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard data != nil else {
                 completion(false, error, nil)
@@ -70,13 +68,6 @@ struct RecurringService {
                 completion(false, error, nil)
                 return
             }
-            
-            print("start")
-            print(data)
-            print(String(data: data, encoding: .utf8))
-            print(urlResponse)
-            print(error)
-            print("end")
             
             guard let response = try? JSONDecoder().decode([Recurring].self, from: data) else {
                 completion(false, error, nil)

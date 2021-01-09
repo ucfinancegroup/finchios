@@ -47,7 +47,7 @@ struct LogInService {
             let httpResponse = urlResponse as! HTTPURLResponse
             
             // TODO(): Parse out the token portion of the cookie
-            let cookie = httpResponse.allHeaderFields["Set-Cookie"] as! String
+            let cookie = httpResponse.allHeaderFields[BusinessConstants.SET_COOKIE] as! String
      
             DispatchQueue.main.async {
                 _ = CredentialsObject.resetCredentials(jwt: cookie,
