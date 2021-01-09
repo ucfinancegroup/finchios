@@ -19,7 +19,7 @@ struct PlansService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        request.allHTTPHeaderFields = ["cookie": CredentialsObject.shared.jwt]
+        request.allHTTPHeaderFields = ["Set-Cookie": CredentialsObject.shared.jwt]
 
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard data != nil else {
