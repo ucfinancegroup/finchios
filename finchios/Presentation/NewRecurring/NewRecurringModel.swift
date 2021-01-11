@@ -26,6 +26,8 @@ class NewRecurringModel: ObservableObject, Identifiable {
     @Published var showError: Bool = false
     var errorString: String = ""
     
+    @Published var showSuccess: Bool = false
+    
     func create() {
         
         // Create a payload and pass it to the service.
@@ -50,6 +52,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
                 self.errorString = ""
                 
                 if success {
+                    self.showSuccess = true
                     // TODO(): Dismiss
                     // Potentionally show a success alert and then from there set the presentation bool to false.
                 }else {

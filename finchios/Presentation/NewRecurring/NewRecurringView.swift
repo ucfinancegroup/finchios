@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NewRecurringView: View {
     
+    @Binding var present: Bool
+    
     @Binding var type: RecurringItemType
     
     @ObservedObject var model = NewRecurringModel()
@@ -63,12 +65,20 @@ struct NewRecurringView: View {
         }
         .padding()
         .alert(isPresented: $model.showError) { () -> Alert in
-            return Alert(title: Text("Failed to create"),
-                         message: Text("All fields are filled in and you have internet access. Error: \(self.model.errorString)"),
-                         dismissButton: .destructive(Text("Okay")) {
-                self.model.showError = false
-                })
+                return Alert(title: Text("Failed to create"),
+                             message: Text("All fields are filled in and you have internet access. Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showError = false
+                             })
         }
+        .alert(isPresented: $model.showSuccess, content: {
+                return Alert(title: Text("Success!"),
+                             message: Text("This \(self.type.rawValue) has been successfully created!"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.present = false
+                                self.model.showError = false
+                             })
+        })
     }
 }
 

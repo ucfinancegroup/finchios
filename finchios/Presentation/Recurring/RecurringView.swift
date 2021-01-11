@@ -41,7 +41,7 @@ struct RecurringView: View {
                                     Image("Plus")
                                 })
                                 .sheet(isPresented: self.$modalCreate, content: {
-                                    NewRecurringView(type: self.$type)
+                                    NewRecurringView(present: self.$modalCreate, type: self.$type)
                                 }))
         
     }
