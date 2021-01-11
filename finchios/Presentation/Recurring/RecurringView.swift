@@ -39,7 +39,7 @@ struct RecurringView: View {
                                 }, label: {
                                     Image("Plus")
                                 })
-                                .sheet(isPresented: self.modalCreate, content: {
+                                .sheet(isPresented: self.$modalCreate, content: {
                                     RecurringSelectionView()
                                 }))
         
