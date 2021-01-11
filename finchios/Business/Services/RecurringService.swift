@@ -90,6 +90,45 @@ struct RecurringService {
 // POST recurring/new
 extension RecurringService {
     
+    public static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?) -> Void)) {
+        guard let url = getNewRecurringURL() else {
+            completion(false, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+
+        let jsonBody = try? JSONSerialization.data(withJSONObject: payload)
+
+        guard let unwrappedJsonBody = jsonBody else {
+            completion(false, nil)
+            return
+        }
+
+        request.httpBody = unwrappedJsonBody
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard data != nil else {
+                completion(false, error)
+                return
+            }
+            
+            if let error = error {
+                completion(false, error)
+                return
+            }
+
+            completion(true, nil)
+            
+            return
+        }
+
+        task.resume()
+    }
+    
     private static func getNewRecurringURL() -> URL? {
         let address = "\(BusinessConstants.SERVER)/recurring/new"
         
