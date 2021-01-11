@@ -52,9 +52,8 @@ class NewRecurringModel: ObservableObject, Identifiable {
                 self.errorString = ""
                 
                 if success {
+                    // show a success alert and then from there set the presentation bool to false.
                     self.showSuccess = true
-                    // TODO(): Dismiss
-                    // Potentionally show a success alert and then from there set the presentation bool to false.
                 }else {
                     if let error = error {
                         self.errorString = "\(error)"
