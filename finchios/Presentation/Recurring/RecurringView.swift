@@ -13,6 +13,8 @@ struct RecurringView: View {
     
     @ObservedObject var model: RecurringViewState
     
+    @State var modalCreate: Bool = false
+    
     init(type: Binding<RecurringItemType>) {
         _type = type
         
@@ -31,10 +33,14 @@ struct RecurringView: View {
         .onAppear() {
             model.onAppear()
         }
-        .navigationBarItems(trailing: NavigationLink(
-                                destination: Text("destin"),
-                                label: {
+        .navigationBarItems(trailing:
+                                Button(action: {
+                                    self.modalCreate = true
+                                }, label: {
                                     Image("Plus")
+                                })
+                                .sheet(isPresented: self.modalCreate, content: {
+                                    RecurringSelectionView()
                                 }))
         
     }
