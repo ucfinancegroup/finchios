@@ -8,5 +8,5 @@
 import Foundation
 
 enum RecurringItemType: String {
-    case income = "Income", expense = "Expense"
+    case income = "Income", expense = "Expense", debt = "Debt"
 }

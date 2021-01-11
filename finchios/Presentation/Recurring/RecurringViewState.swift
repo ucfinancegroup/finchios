@@ -29,6 +29,7 @@ class RecurringViewState: ObservableObject, Identifiable {
                     }
                 }
             }
+            break
         case .income:
             RecurringService.incomes { (success, error, result) in
                 DispatchQueue.main.async {
@@ -37,6 +38,10 @@ class RecurringViewState: ObservableObject, Identifiable {
                     }
                 }
             }
+            break
+        case .debt:
+            //TODO():
+            break
         }
         
     }

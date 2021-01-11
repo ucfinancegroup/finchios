@@ -33,6 +33,7 @@ struct RecurringView: View {
         .onAppear() {
             model.onAppear()
         }
+        .navigationTitle(Text(type.rawValue))
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalCreate = true
@@ -40,7 +41,7 @@ struct RecurringView: View {
                                     Image("Plus")
                                 })
                                 .sheet(isPresented: self.$modalCreate, content: {
-                                    RecurringSelectionView()
+                                    NewRecurringView(type: self.$type)
                                 }))
         
     }

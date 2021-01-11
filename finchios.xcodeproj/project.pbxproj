@@ -47,7 +47,8 @@
 		804AEA6D259FC2E8005D414C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AEA6C259FC2E8005D414C /* Goal.swift */; };
 		80535FA025A91679006521D4 /* RecurringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535F9F25A91679006521D4 /* RecurringView.swift */; };
 		80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FA525A916F2006521D4 /* RecurringViewState.swift */; };
-		80535FB825ACA079006521D4 /* RecurringSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FB725ACA079006521D4 /* RecurringSelectionView.swift */; };
+		80535FBE25AD0B43006521D4 /* NewRecurringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FBD25AD0B43006521D4 /* NewRecurringView.swift */; };
+		80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		8071DCF225A759630056107B /* RecurringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF125A759630056107B /* RecurringService.swift */; };
@@ -148,7 +149,8 @@
 		804AEA6C259FC2E8005D414C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		80535F9F25A91679006521D4 /* RecurringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringView.swift; sourceTree = "<group>"; };
 		80535FA525A916F2006521D4 /* RecurringViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringViewState.swift; sourceTree = "<group>"; };
-		80535FB725ACA079006521D4 /* RecurringSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSelectionView.swift; sourceTree = "<group>"; };
+		80535FBD25AD0B43006521D4 /* NewRecurringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringView.swift; sourceTree = "<group>"; };
+		80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringModel.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		8071DCF125A759630056107B /* RecurringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringService.swift; sourceTree = "<group>"; };
@@ -466,7 +468,8 @@
 		80535FB625ACA06A006521D4 /* NewRecurring */ = {
 			isa = PBXGroup;
 			children = (
-				80535FB725ACA079006521D4 /* RecurringSelectionView.swift */,
+				80535FBD25AD0B43006521D4 /* NewRecurringView.swift */,
+				80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */,
 			);
 			path = NewRecurring;
 			sourceTree = "<group>";
@@ -771,7 +774,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80097008258FCB7E000B2A90 /* EventItemSummaryViewModel.swift in Sources */,
-				80535FB825ACA079006521D4 /* RecurringSelectionView.swift in Sources */,
 				80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */,
 				8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */,
 				8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */,
@@ -790,6 +792,7 @@
 				80F936F8258F06F500BBBE57 /* RecurringSummaryView.swift in Sources */,
 				80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */,
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
+				80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */,
 				8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */,
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
@@ -827,6 +830,7 @@
 				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
+				80535FBE25AD0B43006521D4 /* NewRecurringView.swift in Sources */,
 				80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */,
 				80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */,
 				80C97BB925A775B7008729A7 /* Double.swift in Sources */,
