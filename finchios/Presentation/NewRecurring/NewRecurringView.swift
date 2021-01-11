@@ -17,13 +17,19 @@ struct NewRecurringView: View {
         
         VStack {
             
+            Spacer()
+            
             TextField("Name", text: self.$model.name)
             
             Spacer()
             
             DatePicker("Start", selection: self.$model.start)
             
+            Spacer()
+            
             DatePicker("End", selection: self.$model.end)
+            
+            Spacer()
             
             Group {
                 if self.type == .income || self.type == .expense {
@@ -36,12 +42,15 @@ struct NewRecurringView: View {
                     TextField("Principal", text: self.$model.principalField)
                         .keyboardType(.numberPad)
                     
+                    Spacer()
+                    
                     TextField("Interest (Percent)", text: self.$model.interestField)
                         .keyboardType(.numberPad)
                     
                 }
+                
+                Spacer()
             }
-
             
             Button(action: {
                 self.model.create()
@@ -49,7 +58,10 @@ struct NewRecurringView: View {
                 Text("Create")
             })
             
+            Spacer()
+            
         }
+        .padding()
     }
 }
 
