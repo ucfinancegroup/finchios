@@ -62,6 +62,13 @@ struct NewRecurringView: View {
             
         }
         .padding()
+        .alert(isPresented: $model.showError) { () -> Alert in
+            return Alert(title: Text("Failed to create"),
+                         message: Text("All fields are filled in and you have internet access. Error: \(self.model.errorString)"),
+                         dismissButton: .destructive(Text("Okay")) {
+                self.model.showError = false
+                })
+        }
     }
 }
 

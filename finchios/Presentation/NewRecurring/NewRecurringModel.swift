@@ -23,6 +23,9 @@ class NewRecurringModel: ObservableObject, Identifiable {
     @Published var typ: String = "monthly"
     @Published var freqContentField: String = ""
     
+    @Published var showError: Bool = false
+    var errorString: String = ""
+    
     func create() {
         
     }
