@@ -51,12 +51,16 @@ struct NewRecurringView: View {
                     
                 }
                 
-                Spacer()
+                Picker("Interval", selection: self.$model.typ) {
+                    ForEach(RecurringIntervalType.allCases) { type in
+                        Text(type.rawValue.capitalized)
+                    }
+                }
                 
-                // TODO() typ
-                
-                TextField("Interval", text: self.$model.freqContentField)
+                TextField("Interval Frequency", text: self.$model.freqContentField)
                     .keyboardType(.numberPad)
+                
+                Spacer()
             }
             
             Button(action: {

@@ -20,7 +20,8 @@ class NewRecurringModel: ObservableObject, Identifiable {
     @Published var principalField: String = ""
     @Published var interestField: String = ""
     
-    @Published var typ: String = "monthly"
+    //TODO(): need to change this to TimeInterval.Typ to make payload
+    @Published var typ: RecurringIntervalType = .monthly
     @Published var freqContentField: String = "1"
     
     @Published var showError: Bool = false

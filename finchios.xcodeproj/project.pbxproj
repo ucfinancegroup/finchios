@@ -63,6 +63,7 @@
 		80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8928258AD81F00291B23 /* SettingsView.swift */; };
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
+		80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */; };
 		80C97BA625A76ECF008729A7 /* AmountItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */; };
 		80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BAE25A76F27008729A7 /* RecurringItemType.swift */; };
 		80C97BB525A7701F008729A7 /* Recurring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BB425A7701F008729A7 /* Recurring.swift */; };
@@ -171,6 +172,7 @@
 		80AF8928258AD81F00291B23 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80AF892E258AD83700291B23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		80AF8932258ADA0900291B23 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
+		80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringIntervalType.swift; sourceTree = "<group>"; };
 		80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountItemSummary.swift; sourceTree = "<group>"; };
 		80C97BAE25A76F27008729A7 /* RecurringItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringItemType.swift; sourceTree = "<group>"; };
 		80C97BB425A7701F008729A7 /* Recurring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurring.swift; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				80C97BAE25A76F27008729A7 /* RecurringItemType.swift */,
+				80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */,
 				8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */,
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
+				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
