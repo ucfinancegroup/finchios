@@ -90,39 +90,39 @@ struct RecurringService {
 // POST recurring/new
 extension RecurringService {
     
-    public static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?) -> Void)) {
+    public static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
         guard let url = getNewRecurringURL() else {
-            completion(false, nil)
+            completion(false, nil, nil)
             return
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
-        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
 
-        let jsonBody = try? JSONSerialization.data(withJSONObject: payload)
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+
+        let jsonBody = try? JSONEncoder().encode(payload)
 
         guard let unwrappedJsonBody = jsonBody else {
-            completion(false, nil)
+            completion(false, nil, nil)
             return
         }
 
         request.httpBody = unwrappedJsonBody
         
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-            guard data != nil else {
-                completion(false, error)
+            guard let data = data else {
+                completion(false, error, nil)
                 return
             }
             
-            if let error = error {
-                completion(false, error)
+            guard let response = try? JSONDecoder().decode(Recurring.self, from: data) else {
+                completion(false, error, nil)
                 return
             }
-
-            completion(true, nil)
             
+            completion(true, nil, response)
             return
         }
 

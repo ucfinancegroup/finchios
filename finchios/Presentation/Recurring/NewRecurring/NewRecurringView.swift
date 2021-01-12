@@ -52,6 +52,11 @@ struct NewRecurringView: View {
                 }
                 
                 Spacer()
+                
+                // TODO() typ
+                
+                TextField("Interval", text: self.$model.freqContentField)
+                    .keyboardType(.numberPad)
             }
             
             Button(action: {
@@ -74,7 +79,7 @@ struct NewRecurringView: View {
         .alert(isPresented: $model.showSuccess, content: {
                 return Alert(title: Text("Success!"),
                              message: Text("This \(self.type.rawValue) has been successfully created!"),
-                             dismissButton: .destructive(Text("Okay")) {
+                             dismissButton: .default(Text("Okay")) {
                                 self.present = false
                                 self.model.showError = false
                              })

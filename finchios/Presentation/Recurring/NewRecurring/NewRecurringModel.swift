@@ -21,7 +21,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
     @Published var interestField: String = ""
     
     @Published var typ: String = "monthly"
-    @Published var freqContentField: String = ""
+    @Published var freqContentField: String = "1"
     
     @Published var showError: Bool = false
     var errorString: String = ""
@@ -35,6 +35,21 @@ class NewRecurringModel: ObservableObject, Identifiable {
         
         if incomeEmpty() && debtEmpty() {
             financialInformationNotFilledError()
+            return
+        }
+        
+        if freqContentEmpty() {
+            showError = true
+            errorString = "The interval field was unable to be parsed. Please ensure it is a real number."
+        }
+        
+        var content: Int = 0
+        
+        if let parse = Int(freqContentField) {
+            content = parse
+        }else {
+            showError = true
+            errorString = "Failed to parse the interval field. Please ensure it is a valid number."
             return
         }
         
@@ -77,7 +92,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
         }
         
         //TODO(): Fill in and then test whole method.
-        let timeInterval = TimeInterval(typ: .monthly, content: 5)
+        let timeInterval = TimeInterval(typ: .monthly, content: content)
         
         let payload = RecurringNewPayload(name: name,
                                           start: Int64(start.timeIntervalSince1970),
@@ -87,7 +102,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
                                           interest: interest,
                                           frequency: timeInterval)
         
-        RecurringService.newRecurring(payload: payload) { (success, error) in
+        RecurringService.newRecurring(payload: payload) { (success, error, _) in
             DispatchQueue.main.async {
                 self.errorString = ""
                 
@@ -117,5 +132,9 @@ class NewRecurringModel: ObservableObject, Identifiable {
     
     private func debtEmpty() -> Bool {
         return self.principalField.count == 0 && self.interestField.count == 0
+    }
+    
+    private func freqContentEmpty() -> Bool {
+        return self.freqContentField.count == 0
     }
 }
