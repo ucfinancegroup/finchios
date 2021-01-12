@@ -25,8 +25,13 @@ struct RecurringView: View {
         ScrollView {
             VStack {
                 ForEach(model.recurrings.indices, id: \.self) { index in
-                    AmountItemSummary(type: $type, recurring: $model.recurrings[index])
-                        .padding()
+                    if self.type == .income || self.type == .expense {
+                        AmountItemSummary(type: $type, recurring: $model.recurrings[index])
+                            .padding()
+                    }else { // is debt
+                        
+                    }
+                    
                 }
             }
         }
