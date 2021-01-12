@@ -42,14 +42,26 @@ class NewRecurringModel: ObservableObject, Identifiable {
         var principal: Int64 = 0
         var interest: Double = 0.0
         
-        // TODO(): If the amount is non-empty, fill the principal & interest as 0.
-        
         // Assume this is a debt object
         if incomeEmpty() {
             // Attempt to parse the principal and interest.
+            
+            if let parse = Double(principalField) {
+                principal = Int64(parse * 100)
+            }else {
+                showError = true
+                errorString = "Failed to parse the principal. Please ensure it is a valid number."
+                return
+            }
+            
+            if let parse = Double(interestField) {
+                interest = parse / 100.0
+            }else {
+                showError = true
+                errorString = "Failed to parse the interest. Please ensure it is a valid number."
+                return
+            }
         }
-        
-        // TODO(): Do the same for amount.
         
         // Assume this is an amount object
         if debtEmpty() {
@@ -60,6 +72,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             }else {
                 showError = true
                 errorString = "Failed to parse the amount. Please ensure it is a valid number."
+                return
             }
         }
         
