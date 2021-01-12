@@ -93,7 +93,17 @@ class NewRecurringModel: ObservableObject, Identifiable {
         }
         
         //TODO(): Fill in and then test whole method.
-        let timeInterval = TimeInterval(typ: .monthly, content: content)
+        var timeInterval = TimeInterval(typ: .monthly, content: content)
+        switch typ {
+        case .annually:
+            timeInterval.typ = .annually
+        case .monthly:
+            timeInterval.typ = .monthly
+        case .weekly:
+            timeInterval.typ = .weekly
+        case .daily:
+            timeInterval.typ = .daily
+        }
         
         let payload = RecurringNewPayload(name: name,
                                           start: Int64(start.timeIntervalSince1970),
