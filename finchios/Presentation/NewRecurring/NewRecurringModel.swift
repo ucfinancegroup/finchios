@@ -54,6 +54,13 @@ class NewRecurringModel: ObservableObject, Identifiable {
         // Assume this is an amount object
         if debtEmpty() {
             // Attempt to parse the amount
+            
+            if let parse = Double(amountField) {
+                amount = Int64(parse * 100)
+            }else {
+                showError = true
+                errorString = "Failed to parse the amount. Please ensure it is a valid number."
+            }
         }
         
         let timeInterval = TimeInterval(typ: .monthly, content: 5)
