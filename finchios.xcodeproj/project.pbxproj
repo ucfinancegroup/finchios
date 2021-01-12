@@ -249,9 +249,7 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				80535FB625ACA06A006521D4 /* NewRecurring */,
-				80535F9E25A9166E006521D4 /* Recurring */,
-				80C97BA425A76EB2008729A7 /* RecurringItemSummary */,
+				80B7B8D525AD2160007F605F /* Recurring */,
 				804AEA64259FC20C005D414C /* GoalItemSummary */,
 				80EF127A259E67A500E0543B /* ExpensesItemSummary */,
 				8026B6D0258A6739006CB2FB /* AppTab */,
@@ -570,6 +568,16 @@
 				80AF892E258AD83700291B23 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		80B7B8D525AD2160007F605F /* Recurring */ = {
+			isa = PBXGroup;
+			children = (
+				80535FB625ACA06A006521D4 /* NewRecurring */,
+				80535F9E25A9166E006521D4 /* Recurring */,
+				80C97BA425A76EB2008729A7 /* RecurringItemSummary */,
+			);
+			path = Recurring;
 			sourceTree = "<group>";
 		};
 		80C97BA425A76EB2008729A7 /* RecurringItemSummary */ = {
