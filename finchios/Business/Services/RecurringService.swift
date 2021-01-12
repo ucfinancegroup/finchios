@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET recurrings
 struct RecurringService {
     
-    private static func helper(operand: @escaping (Int64, Int64) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+    private static func income_helper(operand: @escaping (Int64, Int64) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in
             if let error = error {
                 completion(false, error, nil)
@@ -33,17 +33,44 @@ struct RecurringService {
         }
     }
     
+    private static func debt_helper(operand: @escaping (Int64, Int64) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        recurrings { (success, error, result) in
+            if let error = error {
+                completion(false, error, nil)
+                return
+            }
+            if !success {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let result = result else {
+                completion(false, error, nil)
+                return
+            }
+            
+            let incomes = result.filter( { operand($0.principal, 0) })
+            
+            completion(true, nil, incomes)
+        }
+    }
     
     public static func incomes(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         // Greater than 0
-        helper(operand: >) { (success, error, result) in
+        income_helper(operand: >) { (success, error, result) in
             completion(success, error, result)
         }
     }
     
     public static func expenses(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         // Less than 0
-        helper(operand: <) { (success, error, result) in
+        income_helper(operand: <) { (success, error, result) in
+            completion(success, error, result)
+        }
+    }
+    
+    public static func debt(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        debt_helper(operand: <) { (success, error, result) in
             completion(success, error, result)
         }
     }
