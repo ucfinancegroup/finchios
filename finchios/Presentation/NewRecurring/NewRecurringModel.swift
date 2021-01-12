@@ -33,18 +33,37 @@ class NewRecurringModel: ObservableObject, Identifiable {
         // Create a payload and pass it to the service.
         // Just need to ensure all ints / doubles are valid and non-empty.
         
+        if incomeEmpty() && debtEmpty() {
+            financialInformationNotFilledError()
+            return
+        }
+        
+        var amount: Int64 = 0
+        var principal: Int64 = 0
+        var interest: Double = 0.0
+        
         // TODO(): If the amount is non-empty, fill the principal & interest as 0.
         
+        // Assume this is a debt object
+        if incomeEmpty() {
+            // Attempt to parse the principal and interest.
+        }
+        
         // TODO(): Do the same for amount.
+        
+        // Assume this is an amount object
+        if debtEmpty() {
+            // Attempt to parse the amount
+        }
         
         let timeInterval = TimeInterval(typ: .monthly, content: 5)
         
         let payload = RecurringNewPayload(name: name,
                                           start: Int64(start.timeIntervalSince1970),
                                           end: Int64(start.timeIntervalSince1970),
-                                          principal: 0,
-                                          amount: 0,
-                                          interest: 0.0,
+                                          principal: principal,
+                                          amount: amount,
+                                          interest: interest,
                                           frequency: timeInterval)
         
         RecurringService.newRecurring(payload: payload) { (success, error) in
@@ -64,5 +83,18 @@ class NewRecurringModel: ObservableObject, Identifiable {
 
         }
         
+    }
+    
+    private func financialInformationNotFilledError() {
+        showError = true
+        errorString = "You did not fill out the financial information (amount or principal)."
+    }
+    
+    private func incomeEmpty() -> Bool {
+        return self.amountField.count == 0
+    }
+    
+    private func debtEmpty() -> Bool {
+        return self.principalField.count == 0 && self.interestField.count == 0
     }
 }
