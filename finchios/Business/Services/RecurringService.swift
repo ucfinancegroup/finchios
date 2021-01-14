@@ -163,3 +163,54 @@ extension RecurringService {
     }
     
 }
+
+// Update
+// POST recurring/{id}
+extension RecurringService {
+    
+    public static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
+        guard let url = getNewRecurringURL() else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+
+        let jsonBody = try? JSONEncoder().encode(payload)
+
+        guard let unwrappedJsonBody = jsonBody else {
+            completion(false, nil, nil)
+            return
+        }
+
+        request.httpBody = unwrappedJsonBody
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(Recurring.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, response)
+            return
+        }
+
+        task.resume()
+    }
+    
+    private static func getUpdateRecurringURL(id: String) -> URL? {
+        let address = "\(BusinessConstants.SERVER)/recurring/\(id)"
+        
+        return URL(string: address)
+    }
+    
+}
