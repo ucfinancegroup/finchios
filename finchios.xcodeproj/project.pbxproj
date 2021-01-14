@@ -51,6 +51,7 @@
 		80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
+		8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */; };
 		8071DCF225A759630056107B /* RecurringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF125A759630056107B /* RecurringService.swift */; };
 		8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF525A769DA0056107B /* RecurringSubsectionView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -154,6 +155,7 @@
 		80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringModel.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalItemSummary.swift; sourceTree = "<group>"; };
 		8071DCF125A759630056107B /* RecurringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringService.swift; sourceTree = "<group>"; };
 		8071DCF525A769DA0056107B /* RecurringSubsectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSubsectionView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -586,6 +588,7 @@
 			isa = PBXGroup;
 			children = (
 				80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */,
+				8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */,
 			);
 			path = RecurringItemSummary;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */,
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
 				80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */,
+				8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */,
 				8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */,
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,

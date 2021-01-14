@@ -1,14 +1,14 @@
 //
-//  IncomeItemSummary.swift
+//  PrincipalItemSummary.swift
 //  finchios
 //
-//  Created by Brett Fazio on 1/7/21.
+//  Created by Brett Fazio on 1/14/21.
 //
 
 import SwiftUI
 import OpenAPIClient
 
-struct AmountItemSummary: View {
+struct PrincipalItemSummary: View {
     
     @Binding var type: RecurringItemType
     
@@ -25,25 +25,25 @@ struct AmountItemSummary: View {
             
             
             //TODO(): Add how many times annually
-            Text("\(self.type.rawValue) of $$\(Double.formatOffset(amt: recurring.amount)) \(recurring.frequency.typ.rawValue)")
+            Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
         }
     }
 }
 
-struct AmountItemSummaryPreviews: View {
+struct PrincipalItemSummaryPreviews: View {
     
     @State var type: RecurringItemType = .income
     
     @State var recurring: Recurring = .dummyIncome
     
     var body: some View {
-        AmountItemSummary(type: $type, recurring: $recurring)
+        PrincipalItemSummary(type: $type, recurring: $recurring)
     }
     
 }
 
-struct AmountItemSummary_Previews: PreviewProvider {
+struct PrincipalItemSummary_Previews: PreviewProvider {
     static var previews: some View {
-        AmountItemSummaryPreviews()
+        PrincipalItemSummaryPreviews()
     }
 }

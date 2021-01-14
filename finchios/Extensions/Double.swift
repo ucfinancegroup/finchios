@@ -15,4 +15,16 @@ extension Double {
         self.init(convert / 100)
     }
     
+    static func formatOffset(amt: Double) -> String {
+        return format(amt: Double(hundredOffsetInt: Int(amt)))
+    }
+    
+    static func formatOffset(amt: Int64) -> String {
+        return format(amt: Double(hundredOffsetInt: Int(amt)))
+    }
+    
+    static func format(amt: Double) -> String {
+        return "\(String(format:"%.02f", amt))"
+    }
+    
 }
