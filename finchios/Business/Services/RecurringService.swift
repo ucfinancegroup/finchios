@@ -169,7 +169,7 @@ extension RecurringService {
 extension RecurringService {
     
     public static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
-        guard let url = getNewRecurringURL() else {
+        guard let url = getUpdateRecurringURL(id: id) else {
             completion(false, nil, nil)
             return
         }
@@ -208,6 +208,47 @@ extension RecurringService {
     }
     
     private static func getUpdateRecurringURL(id: String) -> URL? {
+        let address = "\(BusinessConstants.SERVER)/recurring/\(id)"
+        
+        return URL(string: address)
+    }
+    
+}
+
+// DELETE recurring/{id}
+extension RecurringService {
+    
+    public static func deleteRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
+        guard let url = getDeleteRecurringURL(id: id) else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(Recurring.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, response)
+            return
+        }
+
+        task.resume()
+    }
+    
+    private static func getDeleteRecurringURL(id: String) -> URL? {
         let address = "\(BusinessConstants.SERVER)/recurring/\(id)"
         
         return URL(string: address)

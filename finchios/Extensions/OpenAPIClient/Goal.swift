@@ -12,10 +12,9 @@ extension Goal {
     
     static let dummy: Goal = Goal(id: MongoObjectID(oid: "ffff"),
                                   name: "Personal Savings Goal",
-                                  period: TimePeriod(start: 0, end: 50),
-                                  threshold: 500,
-                                  goalSide: .above,
-                                  completed: false,
-                                  feasible: nil)
+                                  start: 5000,
+                                  end: 6000,
+                                  threshold: 5000,
+                                  metric: .savings)
     
 }
