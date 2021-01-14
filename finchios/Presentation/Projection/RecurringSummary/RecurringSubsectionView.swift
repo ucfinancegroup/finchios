@@ -37,7 +37,7 @@ struct RecurringSubsectionView: View {
                     AmountItemSummary(type: $type, recurring: $recurrings[index])
                 }
             }else {
-                
+                //TODO(): Display to the user that there is nothing of this type.
             }
             
         }
