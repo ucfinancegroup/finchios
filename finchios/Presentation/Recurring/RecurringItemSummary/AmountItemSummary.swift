@@ -24,6 +24,7 @@ struct AmountItemSummary: View {
             }
             
             
+            //TODO(): Add how many times annually
             Text("\(self.type.rawValue) of $\(String(format:"%.02f", Double(hundredOffsetInt: Int(recurring.amount)))) \(recurring.frequency.typ.rawValue)")
         }
     }
