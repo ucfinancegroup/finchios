@@ -24,7 +24,7 @@ struct AmountItemSummary: View {
             }
             
             
-            Text("\(type == .expense ? "Income" : "Expense") of $\(String(format:"%.02f", Double(hundredOffsetInt: Int(recurring.amount)))) \(recurring.frequency.typ.rawValue)")
+            Text("\(self.type.rawValue) of $\(String(format:"%.02f", Double(hundredOffsetInt: Int(recurring.amount)))) \(recurring.frequency.typ.rawValue)")
         }
     }
 }
