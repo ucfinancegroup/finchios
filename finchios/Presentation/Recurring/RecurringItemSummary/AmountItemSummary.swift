@@ -15,18 +15,19 @@ struct AmountItemSummary: View {
     @Binding var recurring: Recurring
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(recurring.name)
-                    .font(.title2)
+        NavigationLink(destination: RecurringDetailView(type: $type, recurring: $recurring)) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(recurring.name)
+                        .font(.title2)
+                    
+                    Spacer()
+                }
                 
-                Spacer()
+                //TODO(): Add how many times annually
+                Text("\(self.type.rawValue) of $\(Double.formatOffset(amt: recurring.amount)) \(recurring.frequency.typ.rawValue)")
             }
-            
-            
-            //TODO(): Add how many times annually
-            Text("\(self.type.rawValue) of $$\(Double.formatOffset(amt: recurring.amount)) \(recurring.frequency.typ.rawValue)")
-        }
+        }.foregroundColor(.primary)
     }
 }
 
