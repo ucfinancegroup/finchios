@@ -14,8 +14,23 @@ struct RecurringDetailView: View {
     
     @Binding var recurring: Recurring
     
+    @ObservedObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
+    
     var body: some View {
-        Text(recurring.name)
+        VStack {
+            
+            Text(recurring.name)
+            
+            Spacer()
+            
+            Button(action: {
+                self.model.delete(id: self.recurring.id.oid)
+            }, label: {
+                Text("Delete")
+            })
+            
+        }
+        
     }
 }
 

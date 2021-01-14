@@ -53,6 +53,7 @@
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
 		8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */; };
 		8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */; };
+		8070314125B0D64000122CE7 /* RecurringDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */; };
 		8071DCF225A759630056107B /* RecurringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF125A759630056107B /* RecurringService.swift */; };
 		8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF525A769DA0056107B /* RecurringSubsectionView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -158,6 +159,7 @@
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalItemSummary.swift; sourceTree = "<group>"; };
 		8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailView.swift; sourceTree = "<group>"; };
+		8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailViewModel.swift; sourceTree = "<group>"; };
 		8071DCF125A759630056107B /* RecurringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringService.swift; sourceTree = "<group>"; };
 		8071DCF525A769DA0056107B /* RecurringSubsectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSubsectionView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -491,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */,
+				8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */,
 			);
 			path = RecurringDetail;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				80097008258FCB7E000B2A90 /* EventItemSummaryViewModel.swift in Sources */,
 				80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */,
 				8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */,
+				8070314125B0D64000122CE7 /* RecurringDetailViewModel.swift in Sources */,
 				8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */,
 				80168D2A258EC50700B12CA2 /* AllocationSummaryViewModel.swift in Sources */,
 				80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */,
