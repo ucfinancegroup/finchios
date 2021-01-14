@@ -12,6 +12,7 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
     
     @Published var incomes: [Recurring] = []
     @Published var expenses: [Recurring] = []
+    @Published var debts: [Recurring] = []
     
     // Fetch subset of recurrings
     func onAppear() {
@@ -33,6 +34,16 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
             
             DispatchQueue.main.async {
                 self.expenses = Array(result.prefix(3))
+            }
+        }
+        
+        RecurringService.debt { (success, error, result) in
+            guard let result = result else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.debts = Array(result.prefix(3))
             }
         }
     }

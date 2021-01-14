@@ -29,7 +29,7 @@ struct RecurringView: View {
                         AmountItemSummary(type: $type, recurring: $model.recurrings[index])
                             .padding()
                     }else { // is debt
-                        
+                        PrincipalItemSummary(type: $type, recurring: $model.recurrings[index])
                     }
                     
                 }

@@ -40,7 +40,13 @@ class RecurringViewState: ObservableObject, Identifiable {
             }
             break
         case .debt:
-            //TODO():
+            RecurringService.debt { (success, error, result) in
+                DispatchQueue.main.async {
+                    if let result = result {
+                        self.recurrings = result
+                    }
+                }
+            }
             break
         }
         

@@ -20,6 +20,11 @@ struct RecurringSummaryView: View {
                 .frame(height: 30)
             
             RecurringSubsectionView(type: .expense, recurrings: self.$model.expenses)
+
+            Spacer()
+                .frame(height: 30)
+            
+            RecurringSubsectionView(type: .debt, recurrings: self.$model.debts)
             
         }
         .onAppear() {
