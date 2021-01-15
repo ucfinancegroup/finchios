@@ -30,3 +30,10 @@ struct RecurringIdentifiable: Identifiable {
         self.recurring = recurring
     }
 }
+
+struct FormatTyp {
+    static let map: [String: String] = ["monthly" : "month",
+        "annually" : "year",
+        "daily" : "day",
+        "weekly" : "week" ]
+}

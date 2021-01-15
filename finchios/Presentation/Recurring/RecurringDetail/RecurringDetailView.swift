@@ -21,7 +21,32 @@ struct RecurringDetailView: View {
     var body: some View {
         VStack {
             
-            Text(recurring.name)
+            //Information
+            Group {
+                Text(recurring.name)
+                
+                Spacer()
+                    .frame(height: 30)
+                
+                if type == .debt {
+                    Text("Principal amount of $\(Double.formatOffset(amt: recurring.principal))")
+                    
+                    Spacer()
+                        .frame(height: 30)
+                    
+                    Text("Interest of \(Double.format(amt: recurring.interest))")
+                    
+                    Spacer()
+                        .frame(height: 30)
+                }else { // income / expense
+                    Text("Value of $\(Double.formatOffset(amt: recurring.amount))")
+                    
+                    Spacer()
+                        .frame(height: 30)
+                }
+                
+                Text("Occurs every \(recurring.frequency.content) \(FormatTyp.map[recurring.frequency.typ.rawValue]!)(s)")
+            }
             
             Spacer()
             
@@ -29,7 +54,10 @@ struct RecurringDetailView: View {
                 self.model.delete(id: self.recurring.id.oid)
             }, label: {
                 Text("Delete")
+                    .foregroundColor(.red)
             })
+            
+            Spacer()
             
         }
         .alert(isPresented: $model.showAlert) { () -> Alert in
