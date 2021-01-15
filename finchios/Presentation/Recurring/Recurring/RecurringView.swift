@@ -28,15 +28,13 @@ struct RecurringView: View {
             VStack {
                 ForEach(model.recurrings.indices, id: \.self) { index in
                     if self.type == .income || self.type == .expense {
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index]),
-                                       isActive: $isActive) {
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index])) {
                             AmountItemSummary(type: $type, recurring: $model.recurrings[index])
                                 .padding()
                         }
                         .isDetailLink(false)
                     }else { // is debt
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index]),
-                                       isActive: $isActive) {
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index])) {
                             PrincipalItemSummary(type: $type, recurring: $model.recurrings[index])
                         }
                         .isDetailLink(false)
