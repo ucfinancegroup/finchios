@@ -24,12 +24,17 @@ class NewRecurringModel: ObservableObject, Identifiable {
     @Published var typ: RecurringIntervalType = .monthly
     @Published var freqContentField: String = "1"
     
+    @Published var showAlert: Bool = false
+    
     @Published var showError: Bool = false
     var errorString: String = ""
     
     @Published var showSuccess: Bool = false
     
     func create() {
+        showError = false
+        showSuccess = false
+        showAlert = false
         
         // Create a payload and pass it to the service.
         // Just need to ensure all ints / doubles are valid and non-empty.
@@ -40,6 +45,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
         }
         
         if freqContentEmpty() {
+            showAlert = true
             showError = true
             errorString = "The interval field was unable to be parsed. Please ensure it is a real number."
         }
@@ -49,6 +55,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
         if let parse = Int(freqContentField) {
             content = parse
         }else {
+            showAlert = true
             showError = true
             errorString = "Failed to parse the interval field. Please ensure it is a valid number."
             return
@@ -65,6 +72,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             if let parse = Double(principalField) {
                 principal = Int64(parse * 100)
             }else {
+                showAlert = true
                 showError = true
                 errorString = "Failed to parse the principal. Please ensure it is a valid number."
                 return
@@ -73,6 +81,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             if let parse = Double(interestField) {
                 interest = parse / 100.0
             }else {
+                showAlert = true
                 showError = true
                 errorString = "Failed to parse the interest. Please ensure it is a valid number."
                 return
@@ -86,6 +95,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             if let parse = Double(amountField) {
                 amount = Int64(parse * 100)
             }else {
+                showAlert = true
                 showError = true
                 errorString = "Failed to parse the amount. Please ensure it is a valid number."
                 return
@@ -120,11 +130,13 @@ class NewRecurringModel: ObservableObject, Identifiable {
                 if success {
                     // show a success alert and then from there set the presentation bool to false.
                     self.showSuccess = true
+                    self.showAlert = true
                 }else {
                     if let error = error {
                         self.errorString = "\(error)"
                     }
                     self.showError = true
+                    self.showAlert = true
                 }
             }
 
@@ -133,6 +145,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
     }
     
     private func financialInformationNotFilledError() {
+        showAlert = true
         showError = true
         errorString = "You did not fill out the financial information (amount or principal)."
     }

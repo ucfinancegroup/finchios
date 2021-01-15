@@ -15,18 +15,16 @@ struct PrincipalItemSummary: View {
     @Binding var recurring: Recurring
     
     var body: some View {
-        NavigationLink(destination: RecurringDetailView(type: $type, recurring: $recurring)) {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(recurring.name)
-                        .font(.title2)
-                    
-                    Spacer()
-                }
+        VStack(alignment: .leading) {
+            HStack {
+                Text(recurring.name)
+                    .font(.title2)
                 
-                //TODO(): Add how many times annually
-                Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
+                Spacer()
             }
+            
+            //TODO(): Add how many times annually
+            Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
         }
     }
 }

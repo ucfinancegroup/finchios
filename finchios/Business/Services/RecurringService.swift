@@ -218,7 +218,7 @@ extension RecurringService {
 // DELETE recurring/{id}
 extension RecurringService {
     
-    public static func deleteRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
+    public static func deleteRecurring(id: String, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
         guard let url = getDeleteRecurringURL(id: id) else {
             completion(false, nil, nil)
             return

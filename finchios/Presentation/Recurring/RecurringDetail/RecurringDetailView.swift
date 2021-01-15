@@ -10,6 +10,8 @@ import OpenAPIClient
 
 struct RecurringDetailView: View {
     
+    @Binding var shouldPop: Bool
+    
     @Binding var type: RecurringItemType
     
     @Binding var recurring: Recurring
@@ -29,6 +31,27 @@ struct RecurringDetailView: View {
                 Text("Delete")
             })
             
+        }
+        .alert(isPresented: $model.showAlert) { () -> Alert in
+            if model.showError {
+                return Alert(title: Text("Failed to delete"),
+                             message: Text("Failed to delete the \(self.type.rawValue). Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showAlert = false
+                                self.model.showError = false
+                                
+                             })
+            }
+            else { // success
+                return Alert(title: Text("Success!"),
+                             message: Text("This \(self.type.rawValue) has been successfully deleted."),
+                             dismissButton: .default(Text("Okay")) {
+                                //self.present = false
+                                self.model.showAlert = false
+                                self.model.showError = false
+                                self.shouldPop = false
+                             })
+            }
         }
         
     }

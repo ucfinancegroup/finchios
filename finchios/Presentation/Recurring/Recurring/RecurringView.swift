@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RecurringView: View {
     
+    @State var isActive: Bool = false
+    
     @Binding var type: RecurringItemType
     
     @ObservedObject var model: RecurringViewState
@@ -26,10 +28,18 @@ struct RecurringView: View {
             VStack {
                 ForEach(model.recurrings.indices, id: \.self) { index in
                     if self.type == .income || self.type == .expense {
-                        AmountItemSummary(type: $type, recurring: $model.recurrings[index])
-                            .padding()
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index]),
+                                       isActive: $isActive) {
+                            AmountItemSummary(type: $type, recurring: $model.recurrings[index])
+                                .padding()
+                        }
+                        .isDetailLink(false)
                     }else { // is debt
-                        PrincipalItemSummary(type: $type, recurring: $model.recurrings[index])
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index]),
+                                       isActive: $isActive) {
+                            PrincipalItemSummary(type: $type, recurring: $model.recurrings[index])
+                        }
+                        .isDetailLink(false)
                     }
                     
                 }
