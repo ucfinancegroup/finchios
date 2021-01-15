@@ -20,8 +20,7 @@ class RecurringViewState: ObservableObject, Identifiable {
     
     func onAppear() {
         
-        switch type {
-        case .expense:
+        if type == .expense {
             RecurringService.expenses { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
@@ -29,8 +28,9 @@ class RecurringViewState: ObservableObject, Identifiable {
                     }
                 }
             }
-            break
-        case .income:
+        }
+
+        else if type == .income {
             RecurringService.incomes { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
@@ -38,8 +38,10 @@ class RecurringViewState: ObservableObject, Identifiable {
                     }
                 }
             }
-            break
-        case .debt:
+        }
+        
+        
+        else if type == .debt {
             RecurringService.debt { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
@@ -47,7 +49,6 @@ class RecurringViewState: ObservableObject, Identifiable {
                     }
                 }
             }
-            break
         }
         
     }

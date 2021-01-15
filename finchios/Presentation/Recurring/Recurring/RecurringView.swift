@@ -28,22 +28,21 @@ struct RecurringView: View {
             VStack {
                 ForEach(model.recurrings, id: \.id) { recurring in
                     if self.type == .income || self.type == .expense {
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring)) {
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring), isActive: $isActive) {
                             AmountItemSummary(type: $type, recurring: recurring.recurring)
                                 .padding()
                         }
-                        .isDetailLink(false)
                     }else { // is debt
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring)) {
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring), isActive: $isActive) {
                             PrincipalItemSummary(type: $type, recurring: recurring.recurring)
                         }
-                        .isDetailLink(false)
                     }
                     
                 }
             }
         }
         .onAppear() {
+            self.isActive = false
             model.onAppear()
         }
         .navigationTitle(Text(type.rawValue))
