@@ -26,16 +26,16 @@ struct RecurringView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(model.recurrings.indices, id: \.self) { index in
+                ForEach(model.recurrings, id: \.id) { recurring in
                     if self.type == .income || self.type == .expense {
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index])) {
-                            AmountItemSummary(type: $type, recurring: $model.recurrings[index])
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring)) {
+                            AmountItemSummary(type: $type, recurring: recurring.recurring)
                                 .padding()
                         }
                         .isDetailLink(false)
                     }else { // is debt
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: $model.recurrings[index])) {
-                            PrincipalItemSummary(type: $type, recurring: $model.recurrings[index])
+                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring)) {
+                            PrincipalItemSummary(type: $type, recurring: recurring.recurring)
                         }
                         .isDetailLink(false)
                     }

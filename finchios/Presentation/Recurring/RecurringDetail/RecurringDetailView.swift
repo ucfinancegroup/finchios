@@ -14,7 +14,7 @@ struct RecurringDetailView: View {
     
     @Binding var type: RecurringItemType
     
-    @Binding var recurring: Recurring
+    @State var recurring: Recurring
     
     @ObservedObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
     

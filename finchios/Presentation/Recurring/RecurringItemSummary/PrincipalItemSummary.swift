@@ -12,7 +12,7 @@ struct PrincipalItemSummary: View {
     
     @Binding var type: RecurringItemType
     
-    @Binding var recurring: Recurring
+    @State var recurring: Recurring
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -36,7 +36,7 @@ struct PrincipalItemSummaryPreviews: View {
     @State var recurring: Recurring = .dummyIncome
     
     var body: some View {
-        PrincipalItemSummary(type: $type, recurring: $recurring)
+        PrincipalItemSummary(type: $type, recurring: recurring)
     }
     
 }

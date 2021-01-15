@@ -20,3 +20,13 @@ extension Recurring {
                                                   frequency: TimeInterval(typ: .monthly, content: 5))
 
 }
+
+struct RecurringIdentifiable: Identifiable {
+    var id = UUID()
+    
+    var recurring: Recurring
+    
+    init(recurring: Recurring) {
+        self.recurring = recurring
+    }
+}

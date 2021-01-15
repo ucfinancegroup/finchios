@@ -12,7 +12,7 @@ class RecurringViewState: ObservableObject, Identifiable {
     
     @Binding var type: RecurringItemType
     
-    @Published var recurrings: [Recurring] = []
+    @Published var recurrings: [RecurringIdentifiable] = []
     
     init(type: Binding<RecurringItemType>) {
         _type = type
@@ -25,7 +25,7 @@ class RecurringViewState: ObservableObject, Identifiable {
             RecurringService.expenses { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
-                        self.recurrings = result
+                        self.recurrings = result.map { RecurringIdentifiable(recurring: $0) }
                     }
                 }
             }
@@ -34,7 +34,7 @@ class RecurringViewState: ObservableObject, Identifiable {
             RecurringService.incomes { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
-                        self.recurrings = result
+                        self.recurrings = result.map { RecurringIdentifiable(recurring: $0) }
                     }
                 }
             }
@@ -43,7 +43,7 @@ class RecurringViewState: ObservableObject, Identifiable {
             RecurringService.debt { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
-                        self.recurrings = result
+                        self.recurrings = result.map { RecurringIdentifiable(recurring: $0) }
                     }
                 }
             }
