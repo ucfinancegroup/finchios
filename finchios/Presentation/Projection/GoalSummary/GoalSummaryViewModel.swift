@@ -10,10 +10,20 @@ import OpenAPIClient
 
 class GoalSummaryViewModel: ObservableObject, Identifiable {
     
-    @Published var goals: [Goal] = []
+    @Published var goals: [GoalAndStatus] = []
     
     func fetch() {
-        
+        GoalsService.goals { (success, error, result) in
+            DispatchQueue.main.async {
+                if success {
+                    if let result = result {
+                        self.goals = result
+                    }
+                }else {
+                    //Error
+                }
+            }
+        }
     }
     
 }

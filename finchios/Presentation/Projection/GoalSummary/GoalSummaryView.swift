@@ -12,8 +12,27 @@ struct GoalSummaryView: View {
     @ObservedObject var model: GoalSummaryViewModel = GoalSummaryViewModel()
     
     var body: some View {
-        ForEach(model.goals.indices) { index in
-            GoalItemSummaryView(goal: $model.goals[index])
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Goals")
+                    .font(.title)
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: GoalView(),
+                    label: {
+                        Image("RightArrow")
+                    })
+                
+            }
+            
+            ForEach(model.goals.indices) { index in
+                GoalItemSummaryView(goal: $model.goals[index])
+            }
+        }
+        .onAppear() {
+            model.fetch()
         }
     }
 }

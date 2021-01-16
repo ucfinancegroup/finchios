@@ -10,18 +10,18 @@ import OpenAPIClient
 
 struct GoalItemSummaryView: View {
     
-    @Binding var goal: Goal
+    @Binding var goal: GoalAndStatus
     
     var body: some View {
         VStack {
-            Text("\(goal.name)")
+            Text("\(goal.goal.name)")
         }
     }
 }
 
 struct GoalItemSummaryView_Previews: PreviewProvider {
 
-    @State static var goal = Goal.dummy
+    @State static var goal = GoalAndStatus.dummy
 
     static var previews: some View {
         GoalItemSummaryView(goal: $goal)
