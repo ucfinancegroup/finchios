@@ -8,7 +8,11 @@
 import Foundation
 
 struct BusinessConstants {
+    #if RELEASE
     static let SERVER = "https://finchapp.eastus.cloudapp.azure.com/api"
+    #else
+    static let SERVER = "http://localhost:4040"
+    #endif
     
     static let SET_COOKIE = "Set-Cookie"
 }
