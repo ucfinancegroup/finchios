@@ -41,7 +41,7 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
         freqContentField = ""
     }
     
-    init(recurring: Recurring) {
+    func set(recurring: Recurring) {
         name = recurring.name
         
         start = Date(timeIntervalSince1970: TimeInterval(recurring.start))
@@ -211,7 +211,7 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
     func resetAlertVars() {
         showAlert = false
         success = false
-        showError = false
+        //showError = false
         errorString = ""
     }
 

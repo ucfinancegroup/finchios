@@ -16,7 +16,7 @@ struct RecurringEditView: View {
     
     @Binding var recurring: Recurring
     
-    @State var model: RecurringEditViewModel = RecurringEditViewModel()
+    @ObservedObject var model: RecurringEditViewModel = RecurringEditViewModel()
     
     var body: some View {
         VStack {
@@ -98,7 +98,7 @@ struct RecurringEditView: View {
                              dismissButton: .destructive(Text("Okay")) {
                                 self.model.showAlert = false
                                 self.model.showError = false
-                                
+
                              })
             }
             else { // success
@@ -111,7 +111,7 @@ struct RecurringEditView: View {
         }
         .padding()
         .onAppear() {
-            model = RecurringEditViewModel(recurring: recurring)
+            self.model.set(recurring: self.recurring)
         }
 
     }
