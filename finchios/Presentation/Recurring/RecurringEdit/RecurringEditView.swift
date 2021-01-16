@@ -83,16 +83,12 @@ struct RecurringEditView: View {
             Spacer()
             
             Button {
-                self.present = false
+                self.model.edit(id: recurring.id.oid)
             } label: {
                 Text("Save Edit")
             }
 
             
-        }
-        .padding()
-        .onAppear() {
-            model = RecurringEditViewModel(recurring: recurring)
         }
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
@@ -112,6 +108,11 @@ struct RecurringEditView: View {
                              })
             }
         }
+        .padding()
+        .onAppear() {
+            model = RecurringEditViewModel(recurring: recurring)
+        }
+
     }
 }
 
