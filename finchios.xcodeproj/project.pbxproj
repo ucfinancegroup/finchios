@@ -68,6 +68,8 @@
 		80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80725D07254C72010054787C /* finchios.xcdatamodeld */; };
 		80725D14254C72020054787C /* finchiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D13254C72020054787C /* finchiosTests.swift */; };
 		80725D1F254C72020054787C /* finchiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D1E254C72020054787C /* finchiosUITests.swift */; };
+		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
+		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8928258AD81F00291B23 /* SettingsView.swift */; };
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
@@ -185,6 +187,8 @@
 		80725D1A254C72020054787C /* finchiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finchiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725D1E254C72020054787C /* finchiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finchiosUITests.swift; sourceTree = "<group>"; };
 		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		80AF8928258AD81F00291B23 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80AF892E258AD83700291B23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		80AF8932258ADA0900291B23 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
@@ -521,6 +525,7 @@
 		8070315C25B294DF00122CE7 /* Goal */ = {
 			isa = PBXGroup;
 			children = (
+				809F952725B3985F007DE7F6 /* NewGoal */,
 				8070315D25B294ED00122CE7 /* Goal */,
 				804AEA64259FC20C005D414C /* GoalItemSummary */,
 			);
@@ -531,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				8070315E25B294F900122CE7 /* GoalView.swift */,
+				809F952125B39766007DE7F6 /* GoalViewModel.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -597,6 +603,14 @@
 				80725D20254C72020054787C /* Info.plist */,
 			);
 			path = finchiosUITests;
+			sourceTree = "<group>";
+		};
+		809F952725B3985F007DE7F6 /* NewGoal */ = {
+			isa = PBXGroup;
+			children = (
+				809F952825B3986B007DE7F6 /* NewGoalView.swift */,
+			);
+			path = NewGoal;
 			sourceTree = "<group>";
 		};
 		80AF8926258AD7F000291B23 /* Projection */ = {
@@ -866,9 +880,11 @@
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
+				809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
 				8070315925B293DC00122CE7 /* GoalsService.swift in Sources */,
+				809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */,
 				80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */,
 				80535FA025A91679006521D4 /* RecurringView.swift in Sources */,
 				8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */,

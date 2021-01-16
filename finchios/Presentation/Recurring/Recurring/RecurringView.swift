@@ -27,7 +27,6 @@ struct RecurringView: View {
             VStack {
                 List {
                     ForEach(model.recurrings, id: \.id) { recurring in
-                        //TODO(): Error because its a separate binding passed to each element?
                         if self.type == .income || self.type == .expense {
                             AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
                                 .padding()

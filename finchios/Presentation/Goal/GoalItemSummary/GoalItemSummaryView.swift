@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct GoalItemSummaryView: View {
     
-    @Binding var goal: GoalAndStatus
+    @State var goal: GoalAndStatus
     
     var body: some View {
         VStack {
@@ -27,6 +27,6 @@ struct GoalItemSummaryView_Previews: PreviewProvider {
     @State static var goal = GoalAndStatus.dummy
 
     static var previews: some View {
-        GoalItemSummaryView(goal: $goal)
+        GoalItemSummaryView(goal: goal)
     }
 }
