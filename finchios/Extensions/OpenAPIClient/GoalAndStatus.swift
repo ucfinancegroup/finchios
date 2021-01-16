@@ -14,3 +14,8 @@ extension GoalAndStatus {
     
 }
 
+struct GoalAndStatusIdentifiable: Identifiable {
+    var id = UUID()
+    
+    var goalAndStatus: GoalAndStatus
+}
