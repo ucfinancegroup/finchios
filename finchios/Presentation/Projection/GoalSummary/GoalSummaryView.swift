@@ -31,6 +31,7 @@ struct GoalSummaryView: View {
                 GoalItemSummaryView(goal: $model.goals[index])
             }
         }
+        .padding()
         .onAppear() {
             model.fetch()
         }
