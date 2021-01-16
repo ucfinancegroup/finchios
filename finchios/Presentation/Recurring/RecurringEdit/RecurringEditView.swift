@@ -92,7 +92,6 @@ struct RecurringEditView: View {
         }
         .padding()
         .onAppear() {
-            print("on appear")
             model = RecurringEditViewModel(recurring: recurring)
         }
         .alert(isPresented: $model.showAlert) { () -> Alert in
