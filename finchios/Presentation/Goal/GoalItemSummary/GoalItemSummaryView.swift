@@ -15,6 +15,9 @@ struct GoalItemSummaryView: View {
     var body: some View {
         VStack {
             Text("\(goal.goal.name)")
+                .font(.title2)
+            
+            Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold)")
         }
     }
 }
