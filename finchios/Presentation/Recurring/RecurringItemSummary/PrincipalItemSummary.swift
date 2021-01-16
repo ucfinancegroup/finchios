@@ -14,17 +14,21 @@ struct PrincipalItemSummary: View {
     
     @State var recurring: Recurring
     
+    @State var isActive: Bool = false
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(recurring.name)
-                    .font(.title2)
+        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring), isActive: $isActive) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(recurring.name)
+                        .font(.title2)
+                    
+                    Spacer()
+                }
                 
-                Spacer()
+                //TODO(): Add how many times annually
+                Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
             }
-            
-            //TODO(): Add how many times annually
-            Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
         }
     }
 }

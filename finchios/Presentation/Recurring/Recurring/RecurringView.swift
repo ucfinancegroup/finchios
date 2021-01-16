@@ -24,23 +24,21 @@ struct RecurringView: View {
     }
     
     var body: some View {
-        ScrollView {
             VStack {
-                ForEach(model.recurrings, id: \.id) { recurring in
-                    if self.type == .income || self.type == .expense {
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring), isActive: $isActive) {
+                List {
+                    ForEach(model.recurrings, id: \.id) { recurring in
+                        //TODO(): Error because its a separate binding passed to each element?
+                        if self.type == .income || self.type == .expense {
                             AmountItemSummary(type: $type, recurring: recurring.recurring)
                                 .padding()
-                        }
-                    }else { // is debt
-                        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring.recurring), isActive: $isActive) {
+                        }else { // is debt
                             PrincipalItemSummary(type: $type, recurring: recurring.recurring)
+                                .padding()
                         }
+                        
                     }
-                    
                 }
             }
-        }
         .onAppear() {
             self.isActive = false
             model.onAppear()
