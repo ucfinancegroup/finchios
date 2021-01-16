@@ -25,10 +25,7 @@ struct RecurringIdentifiable: Identifiable {
     var id = UUID()
     
     var recurring: Recurring
-    
-    init(recurring: Recurring) {
-        self.recurring = recurring
-    }
+
 }
 
 struct FormatTyp {
