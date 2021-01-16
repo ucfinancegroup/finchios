@@ -63,10 +63,14 @@ struct RecurringDetailView: View {
             
         }
         .navigationBarItems(trailing:
-                                NavigationLink(destination: RecurringEditView(present: $modalActive, type: $type, recurring: $recurring), isActive: $modalActive) {
+                                Button(action: {
+                                    self.modalActive = true
+                                }, label: {
                                     Text("Edit")
-                                }
-        )
+                                })
+                                .sheet(isPresented: $modalActive, content: {
+                                    RecurringEditView(present: $modalActive, type: $type, recurring: $recurring)
+                                }))
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
                 return Alert(title: Text("Failed to delete"),
