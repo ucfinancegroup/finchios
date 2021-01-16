@@ -16,6 +16,8 @@ struct PrincipalItemSummary: View {
     
     @State var isActive: Bool = false
     
+    @State var navAble: Bool
+    
     var body: some View {
         NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring), isActive: $isActive) {
             VStack(alignment: .leading) {
@@ -30,6 +32,7 @@ struct PrincipalItemSummary: View {
                 Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
             }
         }
+        .disabled(!navAble)
     }
 }
 
@@ -40,7 +43,7 @@ struct PrincipalItemSummaryPreviews: View {
     @State var recurring: Recurring = .dummyIncome
     
     var body: some View {
-        PrincipalItemSummary(type: $type, recurring: recurring)
+        PrincipalItemSummary(type: $type, recurring: recurring, navAble: false)
     }
     
 }

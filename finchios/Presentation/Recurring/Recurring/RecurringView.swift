@@ -29,10 +29,10 @@ struct RecurringView: View {
                     ForEach(model.recurrings, id: \.id) { recurring in
                         //TODO(): Error because its a separate binding passed to each element?
                         if self.type == .income || self.type == .expense {
-                            AmountItemSummary(type: $type, recurring: recurring.recurring)
+                            AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
                                 .padding()
                         }else { // is debt
-                            PrincipalItemSummary(type: $type, recurring: recurring.recurring)
+                            PrincipalItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
                                 .padding()
                         }
                         

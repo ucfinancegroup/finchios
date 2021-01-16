@@ -16,6 +16,8 @@ struct AmountItemSummary: View {
     
     @State var isActive: Bool = false
     
+    @State var navAble: Bool
+    
     var body: some View {
         NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring), isActive: $isActive) {
             VStack(alignment: .leading) {
@@ -29,7 +31,9 @@ struct AmountItemSummary: View {
                 //TODO(): Add how many times annually
                 Text("\(self.type.rawValue) of $\(Double.formatOffset(amt: recurring.amount)) \(recurring.frequency.typ.rawValue)")
             }
-        }.foregroundColor(.primary)
+        }
+        .disabled(!navAble)
+        .foregroundColor(.primary)
     }
 }
 
@@ -40,7 +44,7 @@ struct AmountItemSummaryPreviews: View {
     @State var recurring: Recurring = .dummyIncome
     
     var body: some View {
-        AmountItemSummary(type: $type, recurring: recurring)
+        AmountItemSummary(type: $type, recurring: recurring, isActive: false, navAble: false)
     }
     
 }

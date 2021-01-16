@@ -16,7 +16,7 @@ struct RecurringDetailView: View {
     
     @State var recurring: Recurring
     
-    @State var modalEdit: Bool = false
+    @State var modalActive: Bool = false
     
     @ObservedObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
     
@@ -63,14 +63,10 @@ struct RecurringDetailView: View {
             
         }
         .navigationBarItems(trailing:
-                                Button(action: {
-                                    self.modalEdit = true
-                                }, label: {
+                                NavigationLink(destination: RecurringEditView(present: $modalActive, type: $type, recurring: $recurring), isActive: $modalActive) {
                                     Text("Edit")
-                                })
-                                .sheet(isPresented: self.$modalEdit, content: {
-                                    RecurringEditView(present: $modalEdit, type: $type, recurring: $recurring)
-                                }))
+                                }
+        )
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
                 return Alert(title: Text("Failed to delete"),

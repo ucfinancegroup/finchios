@@ -34,7 +34,7 @@ struct RecurringSubsectionView: View {
             // Make sure there are indices.
             if recurrings.count > 0 {
                 ForEach(recurrings.indices) { index in
-                    AmountItemSummary(type: $type, recurring: recurrings[index])
+                    AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false)
                 }
             }else {
                 //TODO(): Display to the user that there is nothing of this type.
