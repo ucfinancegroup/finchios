@@ -17,21 +17,31 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
     @Published var errorString: String = ""
 
     // Fields
-    @Published var name: String = ""
+    @Published var name: String
     
-    @Published var start: Date = Date()
-    @Published var end: Date = Date()
+    @Published var start: Date
+    @Published var end: Date
     
-    @Published var amountField: String = ""
+    @Published var amountField: String
     
-    @Published var principalField: String = ""
-    @Published var interestField: String = ""
+    @Published var principalField: String
+    @Published var interestField: String
     
-    @Published var typ: RecurringIntervalType = .monthly
-    @Published var freqContentField: String = "1"
+    @Published var typ: RecurringIntervalType
+    @Published var freqContentField: String
     
+    init() {
+        name = ""
+        start = Date()
+        end = Date()
+        amountField = ""
+        principalField = ""
+        interestField = ""
+        typ = .annually
+        freqContentField = ""
+    }
     
-    func setOnAppear(recurring: Recurring) {
+    init(recurring: Recurring) {
         name = recurring.name
         
         start = Date(timeIntervalSince1970: TimeInterval(recurring.start))

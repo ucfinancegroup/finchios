@@ -16,7 +16,7 @@ struct RecurringEditView: View {
     
     @Binding var recurring: Recurring
     
-    @State var model = RecurringEditViewModel()
+    @State var model: RecurringEditViewModel = RecurringEditViewModel()
     
     var body: some View {
         VStack {
@@ -76,7 +76,8 @@ struct RecurringEditView: View {
             
         }
         .onAppear() {
-            model.setOnAppear(recurring: recurring)
+            print("on appear")
+            model = RecurringEditViewModel(recurring: recurring)
         }
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
