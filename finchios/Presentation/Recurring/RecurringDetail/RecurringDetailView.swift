@@ -69,7 +69,7 @@ struct RecurringDetailView: View {
                                     Text("Edit")
                                 })
                                 .sheet(isPresented: self.$modalEdit, content: {
-                                    RecurringEditView(present: $modalEdit, type: $type)
+                                    RecurringEditView(present: $modalEdit, type: $type, recurring: $recurring)
                                 }))
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {

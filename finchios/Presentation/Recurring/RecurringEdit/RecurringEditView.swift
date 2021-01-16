@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct RecurringEditView: View {
     
     @Binding var present: Bool
     
     @Binding var type: RecurringItemType
+    
+    @Binding var recurring: Recurring
     
     var body: some View {
         VStack {
