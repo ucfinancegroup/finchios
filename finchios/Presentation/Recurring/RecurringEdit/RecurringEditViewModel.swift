@@ -47,9 +47,9 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
         start = Date(timeIntervalSince1970: TimeInterval(recurring.start))
         end = Date(timeIntervalSince1970: TimeInterval(recurring.start))
         
-        amountField = "\(recurring.amount)"
+        amountField = "\(Double(hundredOffsetInt: Int(recurring.amount)))"
 
-        principalField = "\(recurring.principal)"
+        principalField = "\(Double(hundredOffsetInt: Int (recurring.principal)))"
         
         interestField = "\(recurring.interest)"
         

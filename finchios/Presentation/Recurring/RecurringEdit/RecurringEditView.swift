@@ -37,14 +37,29 @@ struct RecurringEditView: View {
             
             Group {
                 if self.type == .income || self.type == .expense {
+                    HStack {
+                        
+                        Text("$")
+                        
+                        TextField("Amount", text: self.$model.amountField)
+                            .keyboardType(.numberPad)
+                        
+                        Spacer()
+                    }
                     
-                    TextField("Amount", text: self.$model.amountField)
-                        .keyboardType(.numberPad)
                     
                 }else {
                     
-                    TextField("Principal", text: self.$model.principalField)
-                        .keyboardType(.numberPad)
+                    HStack {
+                        
+                        Text("$")
+                        
+                        TextField("Principal", text: self.$model.principalField)
+                            .keyboardType(.numberPad)
+                        
+                        Spacer()
+                    }
+
                     
                     Spacer()
                     
@@ -75,6 +90,7 @@ struct RecurringEditView: View {
 
             
         }
+        .padding()
         .onAppear() {
             print("on appear")
             model = RecurringEditViewModel(recurring: recurring)
