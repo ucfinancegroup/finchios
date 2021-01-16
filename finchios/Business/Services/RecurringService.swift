@@ -190,9 +190,6 @@ extension RecurringService {
         request.httpBody = unwrappedJsonBody
         
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-            print(data)
-            print(error)
-            print(urlResponse)
             guard let data = data else {
                 completion(false, error, nil)
                 return
