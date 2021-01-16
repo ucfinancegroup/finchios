@@ -55,6 +55,7 @@
 		8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */; };
 		8070314125B0D64000122CE7 /* RecurringDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */; };
 		8070314B25B2172600122CE7 /* RecurringEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314A25B2172600122CE7 /* RecurringEditView.swift */; };
+		8070314F25B26A4200122CE7 /* RecurringEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314E25B26A4200122CE7 /* RecurringEditViewModel.swift */; };
 		8071DCF225A759630056107B /* RecurringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF125A759630056107B /* RecurringService.swift */; };
 		8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DCF525A769DA0056107B /* RecurringSubsectionView.swift */; };
 		80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725CFC254C71FE0054787C /* finchiosApp.swift */; };
@@ -162,6 +163,7 @@
 		8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailView.swift; sourceTree = "<group>"; };
 		8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailViewModel.swift; sourceTree = "<group>"; };
 		8070314A25B2172600122CE7 /* RecurringEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringEditView.swift; sourceTree = "<group>"; };
+		8070314E25B26A4200122CE7 /* RecurringEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringEditViewModel.swift; sourceTree = "<group>"; };
 		8071DCF125A759630056107B /* RecurringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringService.swift; sourceTree = "<group>"; };
 		8071DCF525A769DA0056107B /* RecurringSubsectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSubsectionView.swift; sourceTree = "<group>"; };
 		80725CF9254C71FE0054787C /* finchios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finchios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -504,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				8070314A25B2172600122CE7 /* RecurringEditView.swift */,
+				8070314E25B26A4200122CE7 /* RecurringEditViewModel.swift */,
 			);
 			path = RecurringEdit;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
+				8070314F25B26A4200122CE7 /* RecurringEditViewModel.swift in Sources */,
 				80535FBE25AD0B43006521D4 /* NewRecurringView.swift in Sources */,
 				80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */,
 				80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */,
