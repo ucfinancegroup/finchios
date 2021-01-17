@@ -19,6 +19,9 @@ struct NewRecurringView: View {
         
         VStack {
             
+            Text("Create a new \(type.rawValue.lowercased())")
+                .font(.title2)
+            
             Spacer()
             
             TextField("Name", text: self.$model.name)
@@ -63,13 +66,15 @@ struct NewRecurringView: View {
                 Spacer()
             }
             
-            Button(action: {
-                self.model.create()
-            }, label: {
-                Text("Create")
-            })
-            
-            Spacer()
+            Group {
+                Button(action: {
+                    self.model.create()
+                }, label: {
+                    Text("Create")
+                })
+                
+                Spacer()
+            }
             
         }
         .padding()
@@ -93,8 +98,19 @@ struct NewRecurringView: View {
     }
 }
 
-//struct NewRecurringView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewRecurringView()
-//    }
-//}
+struct NewRecurringViewPreviews: View {
+    
+    @State var present: Bool = true
+    @State var type: RecurringItemType = .income
+    
+    var body: some View {
+        NewRecurringView(present: $present, type: $type)
+    }
+    
+}
+
+struct NewRecurringView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewRecurringViewPreviews()
+    }
+}
