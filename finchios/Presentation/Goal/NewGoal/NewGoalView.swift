@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct NewGoalView: View {
     
@@ -15,7 +16,37 @@ struct NewGoalView: View {
     
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Text("Create a new goal")
+                .font(.title2)
+            
+            Group {
+                
+                Spacer()
+                
+                TextField("Name", text: self.$model.name)
+                
+                Spacer()
+                
+                DatePicker("Start", selection: self.$model.start)
+                
+                Spacer()
+                
+                DatePicker("End", selection: self.$model.end)
+                
+                Spacer()
+                
+                TextField("Target", text: self.$model.threshold)
+                    .keyboardType(.numberPad)
+                
+            }
+                    
+            Spacer()
+            
+            Picker("Metric", selection: self.$model.metric) {
+                ForEach(GoalMetricIdentifiable.allCases, id: \.id) { type in
+                    Text(type.rawValue.capitalized)
+                }
+            }
         }
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.alertType == .fail {
@@ -37,8 +68,21 @@ struct NewGoalView: View {
     }
 }
 
-//struct NewGoalView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewGoalView()
-//    }
-//}
+struct NewGoalViewPreviews: View {
+    
+    @State var present: Bool = true
+    
+    var body: some View {
+        NewGoalView(present: $present)
+    }
+    
+}
+
+struct NewGoalView_Previews: PreviewProvider {
+
+    @State var present: Bool = true
+
+    static var previews: some View {
+        NewGoalViewPreviews()
+    }
+}
