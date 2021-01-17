@@ -60,6 +60,8 @@ struct NewRecurringView: View {
                     }
                 }
                 
+                Spacer()
+                
                 TextField("Interval Frequency", text: self.$model.freqContentField)
                     .keyboardType(.numberPad)
                 
