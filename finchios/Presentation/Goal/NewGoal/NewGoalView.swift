@@ -38,16 +38,28 @@ struct NewGoalView: View {
                 TextField("Target", text: self.$model.threshold)
                     .keyboardType(.numberPad)
                 
+                Spacer()
+                
+                Picker("Metric", selection: self.$model.metric) {
+                    ForEach(GoalMetricIdentifiable.allCases, id: \.id) { type in
+                        Text(type.rawValue.capitalized)
+                    }
+                }
+                
             }
-                    
+            
             Spacer()
             
-            Picker("Metric", selection: self.$model.metric) {
-                ForEach(GoalMetricIdentifiable.allCases, id: \.id) { type in
-                    Text(type.rawValue.capitalized)
-                }
-            }
+            Button(action: {
+                self.model.create()
+            }, label: {
+                Text("Create")
+            })
+            
+            Spacer()
+
         }
+        .padding()
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.alertType == .fail {
                 return Alert(title: Text("Failed to create"),
