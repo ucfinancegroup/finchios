@@ -38,8 +38,7 @@ struct GoalView: View {
                                     Image("Plus")
                                 })
                                 .sheet(isPresented: self.$modalCreate, content: {
-                                    NewGoalView()
-                                    //NewGoalView(present: self.$modalCreate, type: self.$type)
+                                    NewGoalView(present: self.$modalCreate)
                                 }))
         
     }
