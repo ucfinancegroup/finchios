@@ -44,7 +44,10 @@ struct LogInService {
                 return
             }
             
-            let httpResponse = urlResponse as! HTTPURLResponse
+            guard let httpResponse = urlResponse as? HTTPURLResponse else {
+                completion(false, error, nil)
+                return
+            }
             
             // TODO(): Parse out the token portion of the cookie
             guard let cookie = httpResponse.allHeaderFields[BusinessConstants.SET_COOKIE] as? String else {
