@@ -66,6 +66,7 @@ struct RecurringDetailView: View {
             Spacer()
             
         }
+        .padding()
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalActive = true
