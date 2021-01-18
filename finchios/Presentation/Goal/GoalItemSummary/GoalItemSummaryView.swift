@@ -29,6 +29,8 @@ struct GoalItemSummaryView: View {
                 Text("\(goal.goal.metric.rawValue) goal of $\(Double.formatOffset(amt: goal.goal.threshold))")
             }
         }
+        .disabled(!navAble)
+        .foregroundColor(.primary)
     }
 }
 

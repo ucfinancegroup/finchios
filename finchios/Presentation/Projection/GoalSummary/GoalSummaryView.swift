@@ -26,14 +26,11 @@ struct GoalSummaryView: View {
                     })
                 
             }
-            
-            List {
-                ForEach(model.goals, id: \.id) { goal in
-                    GoalItemSummaryView(goal: goal.goalAndStatus, navAble: false)
-                        .padding()
-                    
-                }
+
+            ForEach(model.goals, id: \.id) { goal in
+                GoalItemSummaryView(goal: goal.goalAndStatus, navAble: false)
             }
+
         }
         .padding()
         .onAppear() {
