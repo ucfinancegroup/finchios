@@ -99,7 +99,7 @@ extension GoalsService {
     
 }
 
-// DELETE recurring/{id}
+// DELETE goal/{id}
 extension GoalsService {
     
     public static func deleteGoal(id: String, completion: @escaping ((Bool, Error?, GoalAndStatus?) -> Void)) {
