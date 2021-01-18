@@ -27,7 +27,7 @@ class GoalEditViewModel: ObservableObject, Identifiable {
         start = Date(timeIntervalSince1970: TimeInterval(goal.goal.start))
         end = Date(timeIntervalSince1970: TimeInterval(goal.goal.end))
         
-        threshold = "\(goal.goal.threshold)"
+        threshold = "\(Double(hundredOffsetInt: Int(goal.goal.threshold)))"
         
         switch goal.goal.metric {
         case .income:
@@ -45,8 +45,8 @@ class GoalEditViewModel: ObservableObject, Identifiable {
     
     func edit(id: String) {
         
-        errorDetail = ""
         showAlert = false
+        errorDetail = ""
         
         // Create a payload and pass it to the service.
         // Just need to ensure all ints / doubles are valid and non-empty.

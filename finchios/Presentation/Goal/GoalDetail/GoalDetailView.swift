@@ -58,8 +58,7 @@ struct GoalDetailView: View {
                                     Text("Edit")
                                 })
                                 .sheet(isPresented: $modalActive, content: {
-                                    Text("gucci mane")
-                                    //RecurringEditView(present: $modalActive, type: $type, recurring: $recurring)
+                                    GoalEditView(present: $modalActive, goal: $goal.goalAndStatus)
                                 }))
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
