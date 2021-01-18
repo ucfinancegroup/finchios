@@ -32,12 +32,14 @@ class NewGoalViewModel: ObservableObject, Identifiable {
             alertType = .fail
             errorDetail = "The name must be non-empty."
             showAlert = true
+            return
         }
         
         if threshold.count == 0 {
             alertType = .fail
-            showAlert = true
             errorDetail = "The threshold field must be non-empty."
+            showAlert = true
+            return
         }
         
         var thresholdParse: Double = 0
@@ -46,9 +48,8 @@ class NewGoalViewModel: ObservableObject, Identifiable {
             thresholdParse = parse
         }else {
             alertType = .fail
-            showAlert = true
-            
             errorDetail = "Failed to parse the threshold field. Please ensure it is a valid number."
+            showAlert = true
             return
         }
         
@@ -60,8 +61,6 @@ class NewGoalViewModel: ObservableObject, Identifiable {
         
         GoalsService.newGoal(payload: payload) { (success, error, _) in
             DispatchQueue.main.async {
-                self.errorDetail = ""
-                
                 if success {
                     // show a success alert and then from there set the presentation bool to false.
                     self.alertType = .success

@@ -28,7 +28,7 @@ struct GoalSummaryView: View {
             }
             
             ForEach(model.goals.indices) { index in
-                GoalItemSummaryView(goal: model.goals[index])
+                GoalItemSummaryView(goal: model.goals[index], navAble: false)
             }
         }
         .padding()

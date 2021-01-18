@@ -98,3 +98,44 @@ extension GoalsService {
     }
     
 }
+
+// DELETE recurring/{id}
+extension GoalsService {
+    
+    public static func deleteGoal(id: String, completion: @escaping ((Bool, Error?, GoalAndStatus?) -> Void)) {
+        guard let url = getDeleteGoalURL(id: id) else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(GoalAndStatus.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, response)
+            return
+        }
+
+        task.resume()
+    }
+    
+    private static func getDeleteGoalURL(id: String) -> URL? {
+        let address = "\(BusinessConstants.SERVER)/goal/\(id)"
+        
+        return URL(string: address)
+    }
+    
+}

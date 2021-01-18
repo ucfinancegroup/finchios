@@ -165,7 +165,7 @@ extension RecurringService {
 }
 
 // Update
-// POST recurring/{id}
+// PUT recurring/{id}
 extension RecurringService {
     
     public static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {

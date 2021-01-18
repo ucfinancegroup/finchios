@@ -1,63 +1,47 @@
 //
-//  RecurringDetailView.swift
+//  GoalDetailView.swift
 //  finchios
 //
-//  Created by Brett Fazio on 1/14/21.
+//  Created by Brett Fazio on 1/17/21.
 //
 
 import SwiftUI
-import OpenAPIClient
 
-struct RecurringDetailView: View {
+struct GoalDetailView: View {
     
     @Binding var shouldPop: Bool
     
-    @Binding var type: RecurringItemType
-    
-    @State var recurring: Recurring
+    @State var goal: GoalAndStatusIdentifiable
     
     @State var modalActive: Bool = false
     
-    @ObservedObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
+    @ObservedObject var model = GoalDetailViewModel()
     
     var body: some View {
         VStack {
             
             //Information
             Group {
-                Text(recurring.name)
+                Text(goal.goalAndStatus.goal.name)
                 
                 Spacer()
                     .frame(height: 30)
+
+                Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of \(Double.formatOffset(amt: goal.goalAndStatus.goal.threshold))")
                 
-                if type == .debt {
-                    Text("Principal amount of $\(Double.formatOffset(amt: recurring.principal))")
-                    
-                    Spacer()
-                        .frame(height: 30)
-                    
-                    Text("Interest of \(Double.format(amt: recurring.interest))")
-                    
-                    Spacer()
-                        .frame(height: 30)
-                }else { // income / expense
-                    Text("Value of $\(Double.formatOffset(amt: recurring.amount))")
-                    
-                    Spacer()
-                        .frame(height: 30)
-                }
-                
-                Text("Occurs every \(recurring.frequency.content) \(FormatTyp.map[recurring.frequency.typ.rawValue]!)(s)")
+                Spacer()
+
+                Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.end)))")
                 
                 Spacer()
                 
-                Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(recurring.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(recurring.end)))")
+                // TODO(): Add progress/status bar
             }
             
             Spacer()
             
             Button(action: {
-                self.model.delete(id: self.recurring.id.oid)
+                self.model.delete(id: self.goal.goalAndStatus.goal.id.oid)
             }, label: {
                 Text("Delete")
                     .foregroundColor(.red)
@@ -73,12 +57,13 @@ struct RecurringDetailView: View {
                                     Text("Edit")
                                 })
                                 .sheet(isPresented: $modalActive, content: {
-                                    RecurringEditView(present: $modalActive, type: $type, recurring: $recurring)
+                                    Text("gucci mane")
+                                    //RecurringEditView(present: $modalActive, type: $type, recurring: $recurring)
                                 }))
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
                 return Alert(title: Text("Failed to delete"),
-                             message: Text("Failed to delete the \(self.type.rawValue). Error: \(self.model.errorString)"),
+                             message: Text("Failed to delete the goal. Error: \(self.model.errorString)"),
                              dismissButton: .destructive(Text("Okay")) {
                                 self.model.showAlert = false
                                 self.model.showError = false
@@ -87,7 +72,7 @@ struct RecurringDetailView: View {
             }
             else { // success
                 return Alert(title: Text("Success!"),
-                             message: Text("This \(self.type.rawValue) has been successfully deleted."),
+                             message: Text("This goal has been successfully deleted."),
                              dismissButton: .default(Text("Okay")) {
                                 //self.present = false
                                 self.model.showAlert = false
@@ -96,12 +81,11 @@ struct RecurringDetailView: View {
                              })
             }
         }
-        
     }
 }
 
-//struct RecurringDetailView_Previews: PreviewProvider {
+//struct GoalDetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        RecurringDetailView()
+//        GoalDetailView()
 //    }
 //}

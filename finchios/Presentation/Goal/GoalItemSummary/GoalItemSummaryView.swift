@@ -12,21 +12,27 @@ struct GoalItemSummaryView: View {
     
     @State var goal: GoalAndStatus
     
+    @State var isActive: Bool = false
+    
+    @State var navAble: Bool
+    
     var body: some View {
-        VStack {
-            Text("\(goal.goal.name)")
-                .font(.title2)
-            
-            Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold)")
+        NavigationLink(destination: GoalDetailView(shouldPop: $isActive, goal: GoalAndStatusIdentifiable(goalAndStatus: goal)), isActive: $isActive) {
+            VStack {
+                Text("\(goal.goal.name)")
+                    .font(.title2)
+                
+                Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold)")
+            }
         }
     }
 }
 
-struct GoalItemSummaryView_Previews: PreviewProvider {
-
-    @State static var goal = GoalAndStatus.dummy
-
-    static var previews: some View {
-        GoalItemSummaryView(goal: goal)
-    }
-}
+//struct GoalItemSummaryView_Previews: PreviewProvider {
+//
+//    @State static var goal = GoalAndStatus.dummy
+//
+//    static var previews: some View {
+//        GoalItemSummaryView(goal: goal)
+//    }
+//}

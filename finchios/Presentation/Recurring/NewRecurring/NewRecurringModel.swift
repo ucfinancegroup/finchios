@@ -48,6 +48,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             showAlert = true
             showError = true
             errorString = "The interval field was unable to be parsed. Please ensure it is a real number."
+            return
         }
         
         var content: Int = 0
