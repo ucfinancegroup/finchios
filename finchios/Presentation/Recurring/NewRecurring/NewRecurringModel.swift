@@ -117,7 +117,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
         
         let payload = RecurringNewPayload(name: name,
                                           start: Int64(start.timeIntervalSince1970),
-                                          end: Int64(start.timeIntervalSince1970),
+                                          end: Int64(end.timeIntervalSince1970),
                                           principal: principal,
                                           amount: amount,
                                           interest: interest,

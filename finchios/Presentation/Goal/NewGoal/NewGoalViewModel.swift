@@ -22,9 +22,60 @@ class NewGoalViewModel: ObservableObject, Identifiable {
     @Published var metric: GoalMetricIdentifiable = .savings
     
     func create() {
+        errorDetail = ""
+        showAlert = false
         
+        // Create a payload and pass it to the service.
+        // Just need to ensure all ints / doubles are valid and non-empty.
         
+        if name.count == 0 {
+            alertType = .fail
+            errorDetail = "The name must be non-empty."
+            showAlert = true
+        }
         
+        if threshold.count == 0 {
+            alertType = .fail
+            showAlert = true
+            errorDetail = "The threshold field must be non-empty."
+        }
+        
+        var thresholdParse: Double = 0
+        
+        if let parse = Double(threshold) {
+            thresholdParse = parse
+        }else {
+            alertType = .fail
+            showAlert = true
+            
+            errorDetail = "Failed to parse the threshold field. Please ensure it is a valid number."
+            return
+        }
+        
+        let payload: GoalNewPayload = GoalNewPayload(name: name,
+                                     start: Int64(start.timeIntervalSince1970),
+                                     end: Int64(end.timeIntervalSince1970),
+                                     threshold: thresholdParse,
+                                     metric: metric.openAPI)
+        
+        GoalsService.newGoal(payload: payload) { (success, error, _) in
+            DispatchQueue.main.async {
+                self.errorDetail = ""
+                
+                if success {
+                    // show a success alert and then from there set the presentation bool to false.
+                    self.alertType = .success
+                    self.showAlert = true
+                }else {
+                    if let error = error {
+                        self.errorDetail = "\(error)"
+                    }
+                    self.alertType = .fail
+                    self.showAlert = true
+                }
+            }
+
+        }
     }
     
 }
