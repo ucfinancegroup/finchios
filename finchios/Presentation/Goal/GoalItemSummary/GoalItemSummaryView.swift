@@ -18,11 +18,15 @@ struct GoalItemSummaryView: View {
     
     var body: some View {
         NavigationLink(destination: GoalDetailView(shouldPop: $isActive, goal: GoalAndStatusIdentifiable(goalAndStatus: goal)), isActive: $isActive) {
-            VStack {
-                Text("\(goal.goal.name)")
-                    .font(.title2)
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(goal.goal.name)
+                        .font(.title2)
+                    
+                    Spacer()
+                }
                 
-                Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold)")
+                Text("\(goal.goal.metric.rawValue) goal of $\(Double.formatOffset(amt: goal.goal.threshold))")
             }
         }
     }

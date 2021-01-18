@@ -27,8 +27,12 @@ struct GoalSummaryView: View {
                 
             }
             
-            ForEach(model.goals.indices) { index in
-                GoalItemSummaryView(goal: model.goals[index], navAble: false)
+            List {
+                ForEach(model.goals, id: \.id) { goal in
+                    GoalItemSummaryView(goal: goal.goalAndStatus, navAble: false)
+                        .padding()
+                    
+                }
             }
         }
         .padding()

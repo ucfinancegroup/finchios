@@ -53,9 +53,9 @@ class NewGoalViewModel: ObservableObject, Identifiable {
             return
         }
         
-        if start <= end {
+        if start >= end {
             alertType = .fail
-            errorDetail = "The starting date must be prior to the ending date."
+            errorDetail = "The starting date must be strictly prior to the ending date."
             showAlert = true
             return
         }
