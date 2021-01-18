@@ -53,6 +53,13 @@ class NewGoalViewModel: ObservableObject, Identifiable {
             return
         }
         
+        if start <= end {
+            alertType = .fail
+            errorDetail = "The starting date must be prior to the ending date."
+            showAlert = true
+            return
+        }
+
         let payload: GoalNewPayload = GoalNewPayload(name: name,
                                      start: Int64(start.timeIntervalSince1970),
                                      end: Int64(end.timeIntervalSince1970),

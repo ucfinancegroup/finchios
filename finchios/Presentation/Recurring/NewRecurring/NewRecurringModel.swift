@@ -103,6 +103,13 @@ class NewRecurringModel: ObservableObject, Identifiable {
             }
         }
         
+        if start <= end {
+            showError = true
+            errorString = "The starting date must be prior to the ending date."
+            showAlert = true
+            return
+        }
+        
         //TODO(): Fill in and then test whole method.
         var timeInterval = TimeInterval(typ: .monthly, content: content)
         switch typ {
