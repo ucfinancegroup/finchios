@@ -9,4 +9,8 @@ import Foundation
 
 class AccountsSummaryViewModel: ObservableObject, Identifiable {
     
+    func onAppear() {
+        
+    }
+    
 }

@@ -27,6 +27,10 @@ struct AccountsSummaryView: View {
                 
             }
         }
+        .padding()
+        .onAppear() {
+            model.onAppear()
+        }
     }
 }
 
