@@ -63,7 +63,7 @@ class NewGoalViewModel: ObservableObject, Identifiable {
         let payload: GoalNewPayload = GoalNewPayload(name: name,
                                      start: Int64(start.timeIntervalSince1970),
                                      end: Int64(end.timeIntervalSince1970),
-                                     threshold: thresholdParse,
+                                     threshold: thresholdParse*100,
                                      metric: metric.openAPI)
         
         GoalsService.newGoal(payload: payload) { (success, error, _) in
