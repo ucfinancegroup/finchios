@@ -12,7 +12,21 @@ struct AccountsSummaryView: View {
     @ObservedObject var model = AccountsSummaryViewModel()
     
     var body: some View {
-        Text("accounts")
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Accounts")
+                    .font(.title)
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: Text("will is a boomer"),
+                    label: {
+                        Image("RightArrow")
+                    })
+                
+            }
+        }
     }
 }
 
