@@ -14,5 +14,6 @@ struct BusinessConstants {
     static let SERVER = "http://localhost:8080"
     #endif
     
-    static let SET_COOKIE = "Set-Cookie"
+    static let SET_COOKIE = "Cookie"
+    static let RESPONSE_COOKIE = "Set-Cookie"
 }

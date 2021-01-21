@@ -34,6 +34,8 @@ struct CredentialsObject {
             guard let first = result.first as! NSManagedObject? else {
                 return base
             }
+            
+            print(first)
 
             if let jwt = first.value(forKey: "jwt") as? String,
                 let email = first.value(forKey: "email") as? String,
@@ -53,8 +55,7 @@ struct CredentialsObject {
         // First clear the current credentials from Core Data
         deleteCurrentCredentials { (_) in }
 
-        let cred = CredentialsObject(jwt: jwt, email: email, password: password)
-        CredentialsObject.shared = cred
+        CredentialsObject.shared = CredentialsObject(jwt: jwt, email: email, password: password)
 
         let managedContext = PersistenceController.shared.container.viewContext
 
@@ -67,7 +68,6 @@ struct CredentialsObject {
 
         do {
             try managedContext.save()
-
             return true
         } catch {
 

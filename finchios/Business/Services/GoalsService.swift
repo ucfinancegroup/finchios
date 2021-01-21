@@ -18,8 +18,8 @@ struct GoalsService {
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
-        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
 
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard let data = data else {
