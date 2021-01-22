@@ -13,7 +13,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
     @Published var name: String = ""
     
     @Published var start: Date = Date()
-    @Published var end: Date = Date()
+    @Published var end: Date = Date.tomorrow
     
     @Published var amountField: String = ""
     

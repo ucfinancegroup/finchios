@@ -17,7 +17,7 @@ class NewGoalViewModel: ObservableObject, Identifiable {
     // Fields
     @Published var name: String = ""
     @Published var start: Date = Date()
-    @Published var end: Date = Date()
+    @Published var end: Date = Date.tomorrow
     @Published var threshold: String = ""
     @Published var metric: GoalMetricIdentifiable = .savings
     
