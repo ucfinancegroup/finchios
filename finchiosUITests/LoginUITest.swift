@@ -49,9 +49,13 @@ class LoginUITest: XCTestCase {
         
         app.buttons["Log in!"].tap()
         
+        sleep(2)
+        
+        app.buttons["Okay"].tap()
+        
         // Log In button should not be there anymore
         let login = app.buttons["Log in!"]
-        let exists = NSPredicate(value: login.exists == false)
+        let exists = NSPredicate(value: login.isHittable == false)
         
         expectation(for: exists, evaluatedWith: login, handler: nil)
         waitForExpectations(timeout: 5, handler: nil)

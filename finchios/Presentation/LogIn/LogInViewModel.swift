@@ -15,11 +15,20 @@ class LogInViewModel: ObservableObject, Identifiable {
     @Published var password: String = ""
 
     @Published var logInSuccess: Bool = false
+    
+    @Published var showAlert: Bool = false
     @Published var logInError: Bool = false
     @Published var errorStr: String = "Unidentified"
 
+    var trying: Bool = false
+    
     // Try to perform user log-in.
     func logInTapped() {
+        if trying {
+            return
+        }
+        
+        trying = true
         LogInService.logIn(email: email, password: password) { (success, error, _) in
             DispatchQueue.main.async {
                 if success {
@@ -34,6 +43,8 @@ class LogInViewModel: ObservableObject, Identifiable {
                         self.errorStr = "\(error)"
                     }
                 }
+                self.showAlert = true
+                self.trying = false
             }
         }
     }

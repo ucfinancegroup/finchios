@@ -40,6 +40,9 @@ struct ProjectionView: View {
             
             }
         }
+        .onAppear() {
+            self.navBarHidden = true
+        }
         .navigationBarTitle(navBarHidden ? "" : "Projection")
         .navigationBarHidden(navBarHidden)
         .navigationBarBackButtonHidden(navBarHidden)
