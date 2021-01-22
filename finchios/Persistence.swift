@@ -19,10 +19,6 @@ struct PersistenceController {
     }
     
     init(inMemory: Bool = false) {
-        if PersistenceController.isUITesting {
-            CredentialsObject.deleteCurrentCredentials { (_) in }
-            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        }
         container = NSPersistentContainer(name: "finchios")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
@@ -43,5 +39,26 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        if PersistenceController.isUITesting {
+            let managedContext = container.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CredentialsObject.CREDENTIALS)
+
+            do {
+                let result = try managedContext.fetch(fetchRequest)
+                for obj in result {
+                    managedContext.delete(obj as! NSManagedObject)
+                }
+
+                do {
+                    try managedContext.save()
+                } catch {
+                }
+
+            } catch {
+            }
+            
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        }
     }
 }

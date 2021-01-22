@@ -50,6 +50,7 @@ struct IntroductionView: View {
                 NavigationLink(destination: LogInView(navBarHidden: $navBarHidden)) {
                     Text("Already have an account? Log in.")
                         .foregroundColor(Color.gray)
+                        .accessibilityIdentifier("introductionLogin")
                 }
 
             }
