@@ -25,6 +25,24 @@ class LoginUITest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testBackAndForth() throws {
+        let app = XCUIApplication()
+        //TODO(): make extension for app to do all this
+        app.launchEnvironment = ["key": "val"]
+        app.launchArguments = ["UI-Testing"]
+        app.launch()
+        
+        app.buttons["Already have an account? Log in."].tap()
+        
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        
+        app.buttons["Already have an account? Log in."].tap()
+        
+        assert(app.buttons["Already have an account? Log in."].isHittable == false)
+        
+        assert(app.navigationBars.buttons.count > 0)
+    }
+    
     func testLogIn() throws {
         let app = XCUIApplication()
         //TODO(): make extension for app to do all this
@@ -59,6 +77,8 @@ class LoginUITest: XCTestCase {
         
         expectation(for: exists, evaluatedWith: login, handler: nil)
         waitForExpectations(timeout: 5, handler: nil)
+        
+        assert(app.navigationBars.buttons.count == 0)
 
     }
 
