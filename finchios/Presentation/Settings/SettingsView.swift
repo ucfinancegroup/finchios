@@ -22,20 +22,16 @@ struct SettingsView: View {
 
             // Content
             Form {
-                
-                
-                
-                Button(action: {
-                    // Log out
-                    navBarHidden = true
-                    self.model.logOut()
-                }) {
-                    Text("Log Out")
+                Section(header: Text("")) {
+                    Button(action: {
+                        // Log out
+                        navBarHidden = true
+                        self.model.logOut()
+                    }) {
+                        Text("Log Out")
+                    }
+                    //TODO(): Entry point for editing Plaid accounts (Link entry)
                 }
-                //TODO(): Entry point for editing Plaid accounts (Link entry)
-            }
-            .onAppear {
-                self.navBarHidden = false
             }
             .navigationBarTitle(navBarHidden ? "" : "Settings")
             .navigationBarHidden(navBarHidden)
