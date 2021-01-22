@@ -12,7 +12,17 @@ struct PersistenceController {
 
     let container: NSPersistentContainer
 
+    static var isUITesting: Bool {
+        get {
+            return ProcessInfo.processInfo.arguments.contains("UI-Testing")
+        }
+    }
+    
     init(inMemory: Bool = false) {
+        if PersistenceController.isUITesting {
+            CredentialsObject.deleteCurrentCredentials { (_) in }
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        }
         container = NSPersistentContainer(name: "finchios")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
