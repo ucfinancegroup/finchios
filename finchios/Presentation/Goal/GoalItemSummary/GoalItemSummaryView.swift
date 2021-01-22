@@ -34,11 +34,9 @@ struct GoalItemSummaryView: View {
     }
 }
 
-//struct GoalItemSummaryView_Previews: PreviewProvider {
-//
-//    @State static var goal = GoalAndStatus.dummy
-//
-//    static var previews: some View {
-//        GoalItemSummaryView(goal: goal)
-//    }
-//}
+struct GoalItemSummaryView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        GoalItemSummaryView(goal: GoalAndStatus.dummy, navAble: false)
+    }
+}
