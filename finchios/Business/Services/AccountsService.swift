@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET /plaid/accounts
 public struct AccountsService {
     
-    public static func accounts(completion: @escaping ((Bool, Error?, [String:String]?) -> Void)) {
+    public static func accounts(completion: @escaping ((Bool, Error?, AccountsResponse?) -> Void)) {
         guard let url = getAllAccountsURL() else {
             completion(false, nil, nil)
             return
@@ -28,7 +28,7 @@ public struct AccountsService {
                 return
             }
             
-            guard let response = try? JSONDecoder().decode([String:String].self, from: data) else {
+            guard let response = try? JSONDecoder().decode(AccountsResponse.self, from: data) else {
                 completion(false, error, nil)
                 return
             }
