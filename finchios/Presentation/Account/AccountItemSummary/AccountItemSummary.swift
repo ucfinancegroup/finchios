@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct AccountItemSummary: View {
     
-    @State var account: GoalAndStatus
+    @State var account: Account
     
     @State var isActive: Bool = false
     
@@ -20,13 +20,13 @@ struct AccountItemSummary: View {
         NavigationLink(destination: Text("to be AccountDetailView"), isActive: $isActive) {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(account.goal.name)
+                    Text(account.message)
                         .font(.title2)
                     
                     Spacer()
                 }
                 
-                Text("$\(Double.formatOffset(amt: account.goal.threshold))")
+                Text("$\(Double.formatOffset(amt: account.balance))")
             }
         }
         .disabled(!navAble)
@@ -36,6 +36,6 @@ struct AccountItemSummary: View {
 
 struct AccountItemSummary_Previews: PreviewProvider {
     static var previews: some View {
-        AccountItemSummary(account: GoalAndStatus.dummy, navAble: false)
+        AccountItemSummary(account: Account.dummy, navAble: false)
     }
 }
