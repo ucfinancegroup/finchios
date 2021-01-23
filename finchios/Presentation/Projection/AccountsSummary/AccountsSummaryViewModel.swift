@@ -9,7 +9,23 @@ import Foundation
 
 class AccountsSummaryViewModel: ObservableObject, Identifiable {
     
+    @Published var accounts: [AccountIdentifiable] = []
+    @Published var errors: [AccountErrorIdentifiable] = []
+    
     func onAppear() {
+        
+        AccountsService.accounts { (success, error, response) in
+            DispatchQueue.main.async {
+                if let response = response {
+                    
+                    self.accounts = response.accounts.map { AccountIdentifiable(account: $0) }
+                    self.errors = response.errors.map { AccountErrorIdentifiable(error: $0) }
+                    
+                }else {
+                    // show error
+                }
+            }
+        }
         
     }
     
