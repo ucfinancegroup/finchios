@@ -27,7 +27,7 @@ struct AccountDetailView: View {
                 Spacer()
                     .frame(height: 30)
 
-                Text("Balance of \(Double(hundredOffsetInt: Int(account.account.balance)))")
+                Text("Balance of \(account.account.balance.format())")
                 
                 Spacer()
             }
