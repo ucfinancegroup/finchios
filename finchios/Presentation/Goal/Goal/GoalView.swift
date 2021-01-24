@@ -17,14 +17,16 @@ struct GoalView: View {
     @State var modalCreate: Bool = false
     
     var body: some View {
-            VStack {
-                List {
+             ScrollView {
+                LazyVStack {
                     ForEach(model.goals, id: \.id) { goal in
                         GoalItemSummaryView(goal: goal.goalAndStatus, navAble: true)
                             .padding()
+                            .bubble()
                         
                     }
                 }
+                
             }
         .onAppear() {
             self.isActive = false

@@ -24,15 +24,17 @@ struct RecurringView: View {
     }
     
     var body: some View {
-            VStack {
-                List {
+            ScrollView {
+                LazyVStack {
                     ForEach(model.recurrings, id: \.id) { recurring in
                         if self.type == .income || self.type == .expense {
                             AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
                                 .padding()
+                                .bubble()
                         }else { // is debt
                             PrincipalItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
                                 .padding()
+                                .bubble()
                         }
                         
                     }
