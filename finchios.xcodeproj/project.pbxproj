@@ -85,13 +85,14 @@
 		80C97BB925A775B7008729A7 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BB825A775B7008729A7 /* Double.swift */; };
 		80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D942F9259A3CA6001EA1B6 /* LogInService.swift */; };
 		80E2675425BB177300277E52 /* AccountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2675325BB177300277E52 /* AccountsService.swift */; };
-		80E2675825BB1C7F00277E52 /* LoginUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2675725BB1C7F00277E52 /* LoginUITest.swift */; };
+		80E2675825BB1C7F00277E52 /* LoginIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2675725BB1C7F00277E52 /* LoginIntegrationTest.swift */; };
 		80E2676225BB84C900277E52 /* AccountItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2676125BB84C900277E52 /* AccountItemSummary.swift */; };
 		80E2676625BB869400277E52 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2676525BB869400277E52 /* Date.swift */; };
 		80E2676C25BC6C9400277E52 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2676B25BC6C9400277E52 /* Account.swift */; };
 		80E2677125BD22E000277E52 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2677025BD22E000277E52 /* AccountDetailView.swift */; };
 		80E2677525BD230900277E52 /* AccountDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2677425BD230900277E52 /* AccountDetailViewModel.swift */; };
 		80E2677925BD251200277E52 /* GoalEditViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2677825BD251200277E52 /* GoalEditViewModelTest.swift */; };
+		80E2678125BD2DCC00277E52 /* SignUpIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2678025BD2DCC00277E52 /* SignUpIntegrationTest.swift */; };
 		80EF127C259E67BA00E0543B /* ExpensesItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF127B259E67BA00E0543B /* ExpensesItemSummaryView.swift */; };
 		80F936F8258F06F500BBBE57 /* RecurringSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F936F7258F06F500BBBE57 /* RecurringSummaryView.swift */; };
 		80F936FC258F070600BBBE57 /* RecurringSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F936FB258F070600BBBE57 /* RecurringSummaryViewModel.swift */; };
@@ -217,13 +218,14 @@
 		80C97BB825A775B7008729A7 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		80D942F9259A3CA6001EA1B6 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
 		80E2675325BB177300277E52 /* AccountsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsService.swift; sourceTree = "<group>"; };
-		80E2675725BB1C7F00277E52 /* LoginUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITest.swift; sourceTree = "<group>"; };
+		80E2675725BB1C7F00277E52 /* LoginIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTest.swift; sourceTree = "<group>"; };
 		80E2676125BB84C900277E52 /* AccountItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItemSummary.swift; sourceTree = "<group>"; };
 		80E2676525BB869400277E52 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		80E2676B25BC6C9400277E52 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		80E2677025BD22E000277E52 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		80E2677425BD230900277E52 /* AccountDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewModel.swift; sourceTree = "<group>"; };
 		80E2677825BD251200277E52 /* GoalEditViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditViewModelTest.swift; sourceTree = "<group>"; };
+		80E2678025BD2DCC00277E52 /* SignUpIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTest.swift; sourceTree = "<group>"; };
 		80EF127B259E67BA00E0543B /* ExpensesItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesItemSummaryView.swift; sourceTree = "<group>"; };
 		80F936F7258F06F500BBBE57 /* RecurringSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSummaryView.swift; sourceTree = "<group>"; };
 		80F936FB258F070600BBBE57 /* RecurringSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringSummaryViewModel.swift; sourceTree = "<group>"; };
@@ -630,8 +632,9 @@
 		80725D1D254C72020054787C /* finchiosUITests */ = {
 			isa = PBXGroup;
 			children = (
-				80E2675725BB1C7F00277E52 /* LoginUITest.swift */,
+				80E2675725BB1C7F00277E52 /* LoginIntegrationTest.swift */,
 				80725D20254C72020054787C /* Info.plist */,
+				80E2678025BD2DCC00277E52 /* SignUpIntegrationTest.swift */,
 			);
 			path = finchiosUITests;
 			sourceTree = "<group>";
@@ -1034,7 +1037,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E2675825BB1C7F00277E52 /* LoginUITest.swift in Sources */,
+				80E2678125BD2DCC00277E52 /* SignUpIntegrationTest.swift in Sources */,
+				80E2675825BB1C7F00277E52 /* LoginIntegrationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
