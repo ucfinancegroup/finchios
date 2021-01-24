@@ -19,6 +19,42 @@ class GoalEditViewModelTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    func testWrongDate() throws {
+        let model = GoalEditViewModel()
+        
+        model.start = Date(timeIntervalSince1970: 100000)
+        model.end = Date(timeIntervalSince1970: 100000)
+        
+        XCTAssert(model.getPayload() == nil)
+        
+        model.end = Date(timeIntervalSince1970: 100000-1)
+        
+        XCTAssert(model.getPayload() == nil)
+    }
+    
+    func testEdit() throws {
+        let model = GoalEditViewModel()
+        
+        model.start = Date(timeIntervalSince1970: 5)
+        model.end = Date(timeIntervalSince1970: 7)
+        model.name = "Dave"
+        // What the user entered
+        model.threshold = "500"
+        
+        let payload = model.getPayload()
+        
+        XCTAssert(payload != nil)
+        
+        let unwrap = payload!
+        
+        XCTAssert(unwrap.name == model.name)
+        XCTAssert(unwrap.start == 5)
+        XCTAssert(unwrap.end == 7)
+        // unwrap.threshold should contain 50000
+        XCTAssert(unwrap.threshold/100 == Double(model.threshold))
+        
+    }
+    
     func testSet() throws {
         let model = GoalEditViewModel()
         
