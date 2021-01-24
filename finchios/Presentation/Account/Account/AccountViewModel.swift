@@ -7,12 +7,12 @@
 
 import Foundation
 
-class AcccountViewModel: Identifiable, ObservableObject {
+public class AcccountViewModel: Identifiable, ObservableObject {
     
     @Published var accounts: [AccountIdentifiable] = []
     @Published var errors: [AccountErrorIdentifiable] = []
     
-    func onAppear() {
+    public func onAppear() {
         
         AccountsService.accounts { (success, error, response) in
             DispatchQueue.main.async {
@@ -27,6 +27,14 @@ class AcccountViewModel: Identifiable, ObservableObject {
             }
         }
         
+    }
+    
+    public func formatErrors() -> String {
+        var formatted: String = ""
+        
+        errors.forEach { formatted.append( $0.error.message + ", " ) }
+        
+        return formatted
     }
     
 }

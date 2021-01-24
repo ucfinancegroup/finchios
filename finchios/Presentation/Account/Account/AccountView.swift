@@ -23,6 +23,10 @@ struct AccountView: View {
                             .padding()
                         
                     }
+                    
+                    if model.errors.count > 0 {
+                        Text("Failed to fetch \(model.errors.count) accounts with errors: \(model.formatErrors())")
+                    }
                 }
             }
         .onAppear() {
