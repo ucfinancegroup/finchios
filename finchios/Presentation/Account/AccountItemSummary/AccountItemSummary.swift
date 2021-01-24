@@ -17,7 +17,7 @@ struct AccountItemSummary: View {
     @State var navAble: Bool
     
     var body: some View {
-        NavigationLink(destination: Text("to be AccountDetailView"), isActive: $isActive) {
+        NavigationLink(destination: AccountDetailView(shouldPop: $isActive, account: AccountIdentifiable(account: account)), isActive: $isActive) {
             VStack(alignment: .leading) {
                 HStack {
                     Text(account.name)

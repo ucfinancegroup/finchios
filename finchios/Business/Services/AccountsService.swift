@@ -49,3 +49,45 @@ public struct AccountsService {
     }
     
 }
+
+// DELETE /plaid/account/{item_id}
+
+extension AccountsService {
+    public static func delete(itemID: String, completion: @escaping ((Bool, Error?, ItemIdResponse?) -> Void)) {
+        guard let url = getAccountURL(itemID: itemID) else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(ItemIdResponse.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+
+            completion(true, nil, response)
+            
+            return
+        }
+
+        task.resume()
+
+    }
+    
+    private static func getAccountURL(itemID: String) -> URL? {
+        let address = "\(BusinessConstants.SERVER)/plaid/account/\(itemID)"
+
+        return URL(string: address)
+    }
+    
+}
