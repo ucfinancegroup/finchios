@@ -40,7 +40,7 @@ struct ProjectionView: View {
             
             }
         }
-        .background(Color.lightGray)
+        //.background(Color.lightGray)
         .onAppear() {
             self.navBarHidden = true
         }
