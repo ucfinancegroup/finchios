@@ -31,12 +31,28 @@ struct AppTabView: View {
             
             // Statistics
             StatisticsView(navBarHidden: $navBarHidden)
-                .tabItem { Text("Stats") }
+                .tabItem {
+                    if selection == 1 {
+                        Image(uiImage: UIImage(named: "TrophyFilled")!.withTintColor(.teal))
+                    }else {
+                        Image(uiImage: UIImage(named: "TrophyClear")!.withTintColor(.systemGray))
+                    }
+                    
+                    Text("Stats")
+                }
                 .tag(1)
             
             // Settings
             SettingsView(navBarHidden: $navBarHidden)
-                .tabItem { Text("Settings") }
+                .tabItem {
+                    if selection == 2 {
+                        Image(uiImage: UIImage(named: "GearFilled")!.withTintColor(.teal))
+                    }else {
+                        Image(uiImage: UIImage(named: "GearClear")!.withTintColor(.systemGray))
+                    }
+                    
+                    Text("Settings")
+                }
                 .tag(2)
         }
         .accentColor(.teal)
