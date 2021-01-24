@@ -8,7 +8,7 @@
 import SwiftUI
 import OpenAPIClient
 
-class RecurringEditViewModel: ObservableObject, Identifiable {
+public class RecurringEditViewModel: ObservableObject, Identifiable {
     
     @Published var showAlert: Bool = false
     @Published var success: Bool = false
@@ -17,20 +17,20 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
     @Published var errorString: String = ""
 
     // Fields
-    @Published var name: String
+    @Published public var name: String
     
-    @Published var start: Date
-    @Published var end: Date
+    @Published public var start: Date
+    @Published public var end: Date
     
-    @Published var amountField: String
+    @Published public var amountField: String
     
-    @Published var principalField: String
-    @Published var interestField: String
+    @Published public var principalField: String
+    @Published public var interestField: String
     
-    @Published var typ: RecurringIntervalType
-    @Published var freqContentField: String
+    @Published public var typ: RecurringIntervalType
+    @Published public var freqContentField: String
     
-    init() {
+    public init() {
         name = ""
         start = Date()
         end = Date()
@@ -41,7 +41,7 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
         freqContentField = ""
     }
     
-    func set(recurring: Recurring) {
+    public func set(recurring: Recurring) {
         name = recurring.name
         
         start = Date(timeIntervalSince1970: TimeInterval(recurring.start))
@@ -96,7 +96,7 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
         return self.freqContentField.count == 0
     }
     
-    func edit(id: String) {
+    public func edit(id: String) {
         showError = false
         success = false
         showAlert = false
@@ -208,7 +208,7 @@ class RecurringEditViewModel: ObservableObject, Identifiable {
         
     }
     
-    func resetAlertVars() {
+    public func resetAlertVars() {
         showAlert = false
         success = false
         //showError = false
