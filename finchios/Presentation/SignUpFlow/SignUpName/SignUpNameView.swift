@@ -27,8 +27,13 @@ struct SignUpNameView: View {
 
                 Spacer()
 
-                TextField("Name", text: $model.name, onEditingChanged: { (_) in
-
+                TextField("First Name", text: $model.firstName, onEditingChanged: { (_) in
+                })
+                    .multilineTextAlignment(.center)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                
+                TextField("Last Name", text: $model.lastName, onEditingChanged: { (_) in
                 })
                     .multilineTextAlignment(.center)
                     .disableAutocorrection(true)
@@ -63,7 +68,7 @@ struct SignUpNameView: View {
         }
         .alert(isPresented: $model.nameError) { () -> Alert in
             //TODO(): provide better errors
-            return Alert(title: Text("\(self.model.name) is not a valid name or is empty."), message: nil, dismissButton: .default(Text("Okay")))
+            return Alert(title: Text("\(self.model.firstName) \(self.model.lastName) is not a valid name or a field is empty."), message: nil, dismissButton: .default(Text("Okay")))
         }
     }
 }

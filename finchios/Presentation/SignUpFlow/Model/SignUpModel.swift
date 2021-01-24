@@ -15,7 +15,8 @@ class SignUpModel: ObservableObject, Identifiable {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
-    @Published var name: String = ""
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
 
     // For account creation success/failure
     @Published var accountCreated: Bool = false
@@ -38,22 +39,10 @@ class SignUpModel: ObservableObject, Identifiable {
 
     // For code activation success/failure
     @Published var activateError: Bool = false
-
-    func getName() -> (first: String, last: String) {
-        let split = name.split(separator: " ")
-        
-        if split.count == 1 {
-            return (first: String(split[0]), last: "")
-        }
-        
-        return (first: String(split[0]), last: String(split[1]))
-    }
     
     // Try to perform user sign up.
     func createAccount() {
-        let (first, last) = getName()
-        
-        SignUpService.signUp(email: email, firstName: first, lastName: last, password: password) { (success, error, response) in
+        SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password) { (success, error, response) in
             if success {
                 self.accountCreated = true
             }else {
@@ -67,7 +56,7 @@ class SignUpModel: ObservableObject, Identifiable {
     }
     
     func validateName() {
-        if self.name.isEmpty {
+        if self.firstName.isEmpty || self.lastName.isEmpty {
             self.nameValid = false
             self.nameError = true
             return
