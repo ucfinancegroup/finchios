@@ -11,19 +11,33 @@ struct AppTabView: View {
 
     @Binding var navBarHidden: Bool
 
+    @State private var selection = 0
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             // Projection
             ProjectionView(navBarHidden: $navBarHidden)
-                .tabItem { Text("Projection") }
+                .tabItem {
+                    if selection == 0 {
+                        Image(uiImage: UIImage(named: "ProjectionFilled")!.withTintColor(.teal))
+                    }else {
+                        Image(uiImage: UIImage(named: "ProjectionClear")!.withTintColor(.systemGray))
+                    }
+                    
+                        
+                    Text("Projection")
+                }
+                .tag(0)
             
             // Statistics
             StatisticsView(navBarHidden: $navBarHidden)
                 .tabItem { Text("Stats") }
+                .tag(1)
             
             // Settings
             SettingsView(navBarHidden: $navBarHidden)
                 .tabItem { Text("Settings") }
+                .tag(2)
         }
         .accentColor(.teal)
         .onAppear {
