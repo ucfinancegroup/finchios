@@ -34,7 +34,7 @@ class GoalEditViewModelTest: XCTestCase {
         
         XCTAssert(Int64(model.end.timeIntervalSince1970) == dummy.end)
         
-        XCTAssert(model.threshold == "\(Int(dummy.threshold/100))")
+        XCTAssert(Double(model.threshold)!*100 == dummy.threshold)
     }
 
 }
