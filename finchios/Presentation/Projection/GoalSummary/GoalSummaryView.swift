@@ -26,6 +26,10 @@ struct GoalSummaryView: View {
                     })
                 
             }
+            
+            if model.goals.count > 0 {
+                Divider()
+            }
 
             ForEach(model.goals, id: \.id) { goal in
                 GoalItemSummaryView(goal: goal.goalAndStatus, navAble: false)
@@ -33,6 +37,7 @@ struct GoalSummaryView: View {
 
         }
         .padding()
+        .bubble()
         .onAppear() {
             model.fetch()
         }

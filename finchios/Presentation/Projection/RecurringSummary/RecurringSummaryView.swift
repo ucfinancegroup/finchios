@@ -15,16 +15,13 @@ struct RecurringSummaryView: View {
         VStack {
             
             RecurringSubsectionView(type: .income, recurrings: self.$model.incomes)
-            
-            Spacer()
-                .frame(height: 30)
+                .bubble()
             
             RecurringSubsectionView(type: .expense, recurrings: self.$model.expenses)
-
-            Spacer()
-                .frame(height: 30)
+                .bubble()
             
             RecurringSubsectionView(type: .debt, recurrings: self.$model.debts)
+                .bubble()
             
         }
         .onAppear() {

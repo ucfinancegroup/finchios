@@ -27,11 +27,16 @@ struct AccountsSummaryView: View {
                 
             }
             
+            if model.accounts.count > 0 {
+                Divider()
+            }
+            
             ForEach(model.accounts, id: \.id) { account in
                 AccountItemSummary(account: account.account, navAble: false)
             }
         }
         .padding()
+        .bubble()
         .onAppear() {
             model.onAppear()
         }

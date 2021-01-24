@@ -33,6 +33,9 @@ struct RecurringSubsectionView: View {
             
             // Make sure there are indices.
             if recurrings.count > 0 {
+                
+                Divider()
+                
                 ForEach(recurrings.indices) { index in
                     AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false)
                 }
