@@ -25,6 +25,7 @@ struct AppTabView: View {
             SettingsView(navBarHidden: $navBarHidden)
                 .tabItem { Text("Settings") }
         }
+        .accentColor(.teal)
         .onAppear {
             self.navBarHidden = true
         }
