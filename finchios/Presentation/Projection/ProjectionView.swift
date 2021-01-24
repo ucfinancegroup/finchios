@@ -21,7 +21,7 @@ struct ProjectionView: View {
                 GraphView()
                 
                 // Card Stack
-                CardStack(insights: model.insights)
+                //CardStack(insights: model.insights)
                 
                 // Allocation
                 AllocationSummaryView()
