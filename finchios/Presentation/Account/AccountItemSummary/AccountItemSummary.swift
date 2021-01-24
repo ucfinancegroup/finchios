@@ -20,7 +20,7 @@ struct AccountItemSummary: View {
         NavigationLink(destination: Text("to be AccountDetailView"), isActive: $isActive) {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(account.message)
+                    Text(account.name)
                         .font(.title2)
                     
                     Spacer()
