@@ -8,7 +8,7 @@
 import Foundation
 import OpenAPIClient
 
-enum GoalMetricIdentifiable: String, CaseIterable {
+public enum GoalMetricIdentifiable: String, CaseIterable {
     
     var id: GoalMetricIdentifiable { self }
     

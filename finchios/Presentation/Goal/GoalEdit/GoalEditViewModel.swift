@@ -8,20 +8,23 @@
 import Foundation
 import OpenAPIClient
 
-class GoalEditViewModel: ObservableObject, Identifiable {
+public class GoalEditViewModel: ObservableObject, Identifiable {
     
-    @Published var showAlert: Bool = false
-    @Published var alertType: SuccessFail = .success
-    @Published var errorDetail: String = ""
+    @Published public var showAlert: Bool = false
+    @Published public var alertType: SuccessFail = .success
+    @Published public var errorDetail: String = ""
     
     // Fields
-    @Published var name: String = ""
-    @Published var start: Date = Date()
-    @Published var end: Date = Date()
-    @Published var threshold: String = ""
-    @Published var metric: GoalMetricIdentifiable = .savings
+    @Published public var name: String = ""
+    @Published public var start: Date = Date()
+    @Published public var end: Date = Date()
+    @Published public var threshold: String = ""
+    @Published public var metric: GoalMetricIdentifiable = .savings
     
-    func set(goal: GoalAndStatus) {
+    // Override to make public
+    public init() { }
+    
+    public func set(goal: GoalAndStatus) {
         
         name = goal.goal.name
         start = Date(timeIntervalSince1970: TimeInterval(goal.goal.start))
@@ -43,7 +46,7 @@ class GoalEditViewModel: ObservableObject, Identifiable {
         
     }
     
-    func edit(id: String) {
+    public func edit(id: String) {
         
         showAlert = false
         errorDetail = ""

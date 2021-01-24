@@ -8,14 +8,14 @@
 import Foundation
 import OpenAPIClient
 
-extension GoalAndStatus {
+public extension GoalAndStatus {
     
     static let dummy: GoalAndStatus = GoalAndStatus(goal: Goal.dummy, progress: 0.5)
     
 }
 
-struct GoalAndStatusIdentifiable: Identifiable {
-    var id = UUID()
+public struct GoalAndStatusIdentifiable: Identifiable {
+    public var id = UUID()
     
-    var goalAndStatus: GoalAndStatus
+    public var goalAndStatus: GoalAndStatus
 }
