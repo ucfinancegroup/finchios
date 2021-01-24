@@ -46,8 +46,7 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
         
     }
     
-    public func edit(id: String) {
-        
+    public func getPayload() -> GoalNewPayload? {
         showAlert = false
         errorDetail = ""
         
@@ -58,14 +57,14 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
             alertType = .fail
             errorDetail = "The name must be non-empty."
             showAlert = true
-            return
+            return nil
         }
         
         if threshold.count == 0 {
             alertType = .fail
             errorDetail = "The threshold field must be non-empty."
             showAlert = true
-            return
+            return nil
         }
         
         var thresholdParse: Double = 0
@@ -76,14 +75,14 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
             alertType = .fail
             errorDetail = "Failed to parse the threshold field. Please ensure it is a valid number."
             showAlert = true
-            return
+            return nil
         }
         
         if start >= end {
             alertType = .fail
             errorDetail = "The starting date must be strictly prior to the ending date."
             showAlert = true
-            return
+            return nil
         }
         
         let payload: GoalNewPayload = GoalNewPayload(name: name,
@@ -92,23 +91,33 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
                                                      threshold: thresholdParse*100,
                                                      metric: metric.openAPI)
         
-        GoalsService.updateGoal(id: id, payload: payload) { (success, error, _) in
-            DispatchQueue.main.async {
-                if success {
-                    // show a success alert and then from there set the presentation bool to false.
-                    self.alertType = .success
-                    self.showAlert = true
-                }else {
-                    if let error = error {
-                        self.errorDetail = "\(error)"
+        return payload
+    }
+    
+    public func edit(id: String) {
+
+        let payload = getPayload()
+        
+        if let payload = payload {
+            GoalsService.updateGoal(id: id, payload: payload) { (success, error, _) in
+                DispatchQueue.main.async {
+                    if success {
+                        // show a success alert and then from there set the presentation bool to false.
+                        self.alertType = .success
+                        self.showAlert = true
+                    }else {
+                        if let error = error {
+                            self.errorDetail = "\(error)"
+                        }
+                        self.alertType = .fail
+                        self.showAlert = true
                     }
-                    self.alertType = .fail
-                    self.showAlert = true
                 }
+                
+                
             }
-            
-            
         }
+
         
     }
     
