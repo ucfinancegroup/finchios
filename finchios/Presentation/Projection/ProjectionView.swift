@@ -48,3 +48,19 @@ struct ProjectionView: View {
         .navigationBarBackButtonHidden(navBarHidden)
     }
 }
+
+struct ProjectionViewPreview: View {
+    
+    @State var hidden: Bool = true
+    
+    var body: some View {
+        ProjectionView(navBarHidden: $hidden)
+    }
+    
+}
+
+struct ProjectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProjectionViewPreview()
+    }
+}
