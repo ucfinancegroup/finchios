@@ -20,11 +20,15 @@ struct AccountsSummaryView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: Text("will is a boomer"),
+                    destination: AccountView(),
                     label: {
                         Image("RightArrow")
                     })
                 
+            }
+            
+            ForEach(model.accounts, id: \.id) { account in
+                AccountItemSummary(account: account.account, navAble: false)
             }
         }
         .padding()

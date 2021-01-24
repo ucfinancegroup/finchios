@@ -1,13 +1,13 @@
 //
-//  AccountsSummaryViewModel.swift
+//  AccountViewModel.swift
 //  finchios
 //
-//  Created by Brett Fazio on 12/28/20.
+//  Created by Brett Fazio on 1/23/21.
 //
 
 import Foundation
 
-class AccountsSummaryViewModel: ObservableObject, Identifiable {
+class AcccountViewModel: Identifiable, ObservableObject {
     
     @Published var accounts: [AccountIdentifiable] = []
     @Published var errors: [AccountErrorIdentifiable] = []
@@ -20,8 +20,6 @@ class AccountsSummaryViewModel: ObservableObject, Identifiable {
                     
                     self.accounts = response.accounts.map { AccountIdentifiable(account: $0) }
                     self.errors = response.errors.map { AccountErrorIdentifiable(error: $0) }
-                    
-                    self.accounts = Array(self.accounts.prefix(3))
                     
                 }else {
                     // show error
