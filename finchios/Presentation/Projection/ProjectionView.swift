@@ -8,36 +8,39 @@
 import SwiftUI
 
 struct ProjectionView: View {
-
+    
     @Binding var navBarHidden: Bool
-
+    
     @ObservedObject var model: ProjectionViewModel = ProjectionViewModel()
     
     var body: some View {
         ScrollView {
             VStack {
-
-            // Graph
-            GraphView()
-            
-            // Allocation
-            AllocationSummaryView()
-            
-            // Accounts
-            AccountsSummaryView()
-            
-            // Expenses
-            ExpensesSummaryView()
-            
-            // Recurring
-            RecurringSummaryView()
-            
-            // Goals
-            GoalSummaryView()
-            
-            // Events
-            EventSummaryView()
-            
+                
+                // Graph
+                GraphView()
+                
+                // Card Stack
+                CardStack(insights: model.insights)
+                
+                // Allocation
+                AllocationSummaryView()
+                
+                // Accounts
+                AccountsSummaryView()
+                
+                // Expenses
+                ExpensesSummaryView()
+                
+                // Recurring
+                RecurringSummaryView()
+                
+                // Goals
+                GoalSummaryView()
+                
+                // Events
+                EventSummaryView()
+                
             }
         }
         //.background(Color.lightGray)

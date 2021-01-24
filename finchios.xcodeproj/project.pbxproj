@@ -51,6 +51,10 @@
 		80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */; };
 		80576F92258D87C500210895 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F91258D87C500210895 /* PieView.swift */; };
 		80576F9A258DA7FA00210895 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576F99258DA7FA00210895 /* LineView.swift */; };
+		8062C4F225BE087E00E0927F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C4F125BE087E00E0927F /* Card.swift */; };
+		8062C4F825BE097200E0927F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C4F725BE097200E0927F /* CardStack.swift */; };
+		8062C4FE25BE0B9600E0927F /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C4FD25BE0B9600E0927F /* Identifiable.swift */; };
+		8062C50625BE0D1E00E0927F /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C50525BE0D1E00E0927F /* Insight.swift */; };
 		8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */; };
 		8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */; };
 		8070314125B0D64000122CE7 /* RecurringDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */; };
@@ -181,6 +185,10 @@
 		80535FC125AD0BF9006521D4 /* NewRecurringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringModel.swift; sourceTree = "<group>"; };
 		80576F91258D87C500210895 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		80576F99258DA7FA00210895 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		8062C4F125BE087E00E0927F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8062C4F725BE097200E0927F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		8062C4FD25BE0B9600E0927F /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		8062C50525BE0D1E00E0927F /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalItemSummary.swift; sourceTree = "<group>"; };
 		8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailView.swift; sourceTree = "<group>"; };
 		8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailViewModel.swift; sourceTree = "<group>"; };
@@ -305,6 +313,7 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8062C4F025BE084000E0927F /* Card */,
 				80E2679125BDDB2600277E52 /* Styling */,
 				80E2675F25BB84AD00277E52 /* Account */,
 				8070315C25B294DF00122CE7 /* Goal */,
@@ -511,6 +520,7 @@
 				80C97BB425A7701F008729A7 /* Recurring.swift */,
 				8070316625B295B000122CE7 /* GoalAndStatus.swift */,
 				80E2676B25BC6C9400277E52 /* Account.swift */,
+				8062C50525BE0D1E00E0927F /* Insight.swift */,
 			);
 			path = OpenAPIClient;
 			sourceTree = "<group>";
@@ -540,6 +550,15 @@
 				80576F99258DA7FA00210895 /* LineView.swift */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		8062C4F025BE084000E0927F /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				8062C4F125BE087E00E0927F /* Card.swift */,
+				8062C4F725BE097200E0927F /* CardStack.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		8070313B25B0CDBE00122CE7 /* RecurringDetail */ = {
@@ -726,6 +745,7 @@
 				80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */,
 				809F953225B3E52B007DE7F6 /* SuccessFail.swift */,
 				809F953625B4959B007DE7F6 /* GoalMetricIdentifiable.swift */,
+				8062C4FD25BE0B9600E0927F /* Identifiable.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -995,8 +1015,10 @@
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
 				809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */,
+				8062C4F825BE097200E0927F /* CardStack.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
+				8062C4FE25BE0B9600E0927F /* Identifiable.swift in Sources */,
 				809F953325B3E52B007DE7F6 /* SuccessFail.swift in Sources */,
 				8070315925B293DC00122CE7 /* GoalsService.swift in Sources */,
 				809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */,
@@ -1005,6 +1027,7 @@
 				80535FA025A91679006521D4 /* RecurringView.swift in Sources */,
 				8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */,
 				80E2676625BB869400277E52 /* Date.swift in Sources */,
+				8062C4F225BE087E00E0927F /* Card.swift in Sources */,
 				80E2676C25BC6C9400277E52 /* Account.swift in Sources */,
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
@@ -1021,6 +1044,7 @@
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				804AEA66259FC222005D414C /* GoalItemSummaryView.swift in Sources */,
 				80168D30258EC50E00B12CA2 /* AllocationSummaryView.swift in Sources */,
+				8062C50625BE0D1E00E0927F /* Insight.swift in Sources */,
 				809F954D25B626C1007DE7F6 /* GoalEditView.swift in Sources */,
 				80479C6F259AC36400CDA3DA /* UIColor.swift in Sources */,
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
