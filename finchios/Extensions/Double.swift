@@ -27,4 +27,8 @@ extension Double {
         return "\(String(format:"%.02f", amt))"
     }
     
+    public func format() -> String {
+        return Double.format(amt: self)
+    }
+    
 }

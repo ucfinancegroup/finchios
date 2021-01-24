@@ -26,7 +26,7 @@ struct AccountItemSummary: View {
                     Spacer()
                 }
                 
-                Text("$\(Double.formatOffset(amt: account.balance))")
+                Text("$\(account.balance.format())")
             }
         }
         .disabled(!navAble)
