@@ -15,8 +15,6 @@ struct LineView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> LineChartView {
         let view = LineChartView()
-    
-        
         view.data = addData()
         return view
     }

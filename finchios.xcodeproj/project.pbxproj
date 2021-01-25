@@ -313,6 +313,7 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				80576F90258D879600210895 /* Charts */,
 				8062C4F025BE084000E0927F /* Card */,
 				80E2679125BDDB2600277E52 /* Styling */,
 				80E2675F25BB84AD00277E52 /* Account */,
@@ -442,7 +443,6 @@
 		8029D662258C3714007A44E1 /* ViewRepresentable */ = {
 			isa = PBXGroup;
 			children = (
-				80576F90258D879600210895 /* Charts */,
 				8029D663258C3730007A44E1 /* PlaidView.swift */,
 			);
 			path = ViewRepresentable;

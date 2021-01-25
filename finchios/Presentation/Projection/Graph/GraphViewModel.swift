@@ -16,6 +16,14 @@ class GraphViewModel: ObservableObject, Identifiable {
     
     // Fetch timeseries from backend
     func onAppear() {
+        timeseries = [
+            ChartDataEntry(x: 0, y: 10),
+            ChartDataEntry(x: 1, y: 5),
+            ChartDataEntry(x: 2, y: 0),
+            ChartDataEntry(x: 3, y: 0),
+            ChartDataEntry(x: 4, y: 100),
+            ChartDataEntry(x: 5, y: 200),
+        ]
 //        TimeseriesAPI.getTimeseries { (result, error) in
 //            DispatchQueue.main.async {
 //                if let error = error {
