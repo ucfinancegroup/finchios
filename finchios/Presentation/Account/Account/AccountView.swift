@@ -35,17 +35,7 @@ struct AccountView: View {
             self.isActive = false
             model.onAppear()
         }
-        .navigationTitle(Text("Accounts"))
-        .navigationBarItems(trailing:
-                                Button(action: {
-                                    self.modalCreate = true
-                                }, label: {
-                                    Image("Plus")
-                                })
-                                .sheet(isPresented: self.$modalCreate, content: {
-                                    NewGoalView(present: self.$modalCreate)
-                                }))
-        
+        .navigationTitle(Text("Accounts"))        
     }
 }
 
