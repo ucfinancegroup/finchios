@@ -13,47 +13,51 @@ struct CardStack: View {
     @State var insights: [Iden<Insight>]
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                
-                if insights.count > 0 {
-                    VStack {
-                        
-                        ZStack {
-                            ForEach(self.insights, id: \.id) { insight in
-                                Card(input: insight, onRemove: { removed in
-                                    // Remove that user from our array
-                                    self.insights.removeAll { $0.id == removed.id }
-                                })
-                                .animation(.spring()) // Animate our changes to our frame
-                            }
+        ZStack {
+            
+            if insights.count > 0 {
+                VStack {
+                    
+                    ZStack {
+                        ForEach(self.insights, id: \.id) { insight in
+                            Card(input: insight, onRemove: { removed in
+                                // Remove that user from our array
+                                self.insights.removeAll { $0.id == removed.id }
+                            })
+                            .animation(.spring()) // Animate our changes to our frame
                         }
-                        
                     }
-                    
-                    
-                    VStack(alignment: .trailing) {
-                        Text("\(insights.count)")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.teal)
-                            .cornerRadius(200)
-                    }
-                }
-                else {
-                    
-                    Text("No new insights 🥳")
-                        .frame(width: 200, height: 150, alignment: .center)
-                        .padding()
-                        .background(Color(.systemGray))
-                        .cornerRadius(5)
                     
                 }
                 
+                
+                VStack(alignment: .trailing) {
+                    Text("\(insights.count)")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.teal)
+                        .cornerRadius(200)
+                }
+            }
+            else {
+                VStack {
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Text("No new insights 🥳")
+                            
+
+                        
+                        Spacer()
+                    }
+                    
+                }
+                .frame(height: 150, alignment: .center)
+                .bubble()
             }
             
         }
-        .frame(width: 200, height: 150, alignment: .center)
         .padding()
     }
 }
