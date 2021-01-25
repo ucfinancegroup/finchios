@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import Charts
 
 struct GraphView: View {
     
     @ObservedObject var model: GraphViewModel = GraphViewModel()
     
     var body: some View {
-        
         VStack {
             LineView(entries: model.timeseries)
         }
         .frame(height: 300)
+        .bubble()
         .onAppear() {
             model.onAppear()
         }

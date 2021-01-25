@@ -31,7 +31,7 @@ struct PieView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: PieChartView, context: Context) {
-        
+        uiView.data = addData()
     }
 }
 

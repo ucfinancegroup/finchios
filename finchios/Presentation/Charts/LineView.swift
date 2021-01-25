@@ -29,7 +29,7 @@ struct LineView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: LineChartView, context: Context) {
-        
+        uiView.data = addData()
     }
 }
 
