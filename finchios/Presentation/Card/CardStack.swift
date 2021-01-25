@@ -58,7 +58,6 @@ struct CardStack: View {
             }
             
         }
-        .padding()
     }
 }
 
