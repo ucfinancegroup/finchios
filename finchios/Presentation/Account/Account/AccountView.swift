@@ -35,7 +35,7 @@ struct AccountView: View {
             self.isActive = false
             model.onAppear()
         }
-        .navigationTitle(Text("Goals"))
+        .navigationTitle(Text("Accounts"))
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalCreate = true
