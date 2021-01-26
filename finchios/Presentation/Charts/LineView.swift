@@ -15,7 +15,7 @@ struct LineView: UIViewRepresentable {
     
     @Binding var entry: ChartDataEntry
     
-    class Coordinator: ChartViewDelegate {
+    class Coordinator: NSObject, ChartViewDelegate {
         
         var parent: LineView
         
@@ -27,8 +27,20 @@ struct LineView: UIViewRepresentable {
             parent.entry = entry
         }
         
+        func chartView(_ chartView: ChartViewBase, animatorDidStop animator: Animator) {
+            if let last = parent.entries.last {
+                parent.entry = last
+            }
+        }
+        
         //TODO(): Implement to reset to orignal value
-        func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        @objc func chartValueNothingSelected(_ chartView: ChartViewBase) {
+            if let last = parent.entries.last {
+                parent.entry = last
+            }
+        }
+        
+        func chartViewDidEndPanning(_ chartView: ChartViewBase) {
             if let last = parent.entries.last {
                 parent.entry = last
             }
@@ -58,6 +70,8 @@ struct LineView: UIViewRepresentable {
         view.leftAxis.drawGridLinesEnabled = false
     
         view.delegate = context.coordinator
+        
+        view.doubleTapToZoomEnabled = false
         
         view.data = addData()
         return view
