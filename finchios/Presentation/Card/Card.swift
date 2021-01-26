@@ -12,14 +12,14 @@ public struct Card: View {
     
     @State private var translation: CGSize = .zero
     
-    @State var insight: Iden<Insight> = Iden<Insight>(obj: .empty)
-    private var onRemove: (_ text: Iden<Insight>) -> Void = { _ in }
+    @Binding private var insight: Iden<Insight>// = Iden<Insight>(obj: .empty)
+    private var onRemove: (_ text: Iden<Insight>) -> Void// = { _ in }
     
     private var thresholdPercentage: CGFloat = 0.5
     
-    public init(input: Iden<Insight>, onRemove: @escaping (_ text: Iden<Insight>) -> Void) {
-        self.insight = input
+    public init(input: Binding<Iden<Insight>>, onRemove: @escaping (_ text: Iden<Insight>) -> Void) {
         self.onRemove = onRemove
+        _insight = input
     }
     
     private func getGesturePercentage(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> CGFloat {
@@ -30,12 +30,14 @@ public struct Card: View {
         GeometryReader { geometry in
             VStack {
                 
-                Text(insight.obj.title)
-                    .frame(width: 200, height: 150, alignment: .center)
-                    .padding()
-                    .bubble()
-                
+                HStack {
+                    Spacer()
+                    Text(insight.obj.title)
+                    Spacer()
+                }
+
             }
+            .frame(height: 150, alignment: .center)
             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y: self.translation.height)
             .gesture(
@@ -55,8 +57,18 @@ public struct Card: View {
     }
 }
 
+struct CardPreview: View {
+    
+    @State var insight = Iden<Insight>(obj: .dummy)
+    
+    var body: some View {
+        Card(input: $insight, onRemove: { _ in })
+    }
+    
+}
+
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(input: Iden<Insight>(obj: .empty), onRemove: { _ in })
+        CardPreview()
     }
 }

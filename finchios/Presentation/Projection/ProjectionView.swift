@@ -21,7 +21,7 @@ struct ProjectionView: View {
                 GraphView()
                 
                 // Card Stack
-                CardStack(insights: model.insights)
+                CardStack(insights: $model.insights)
                 
                 // Allocation
                 AllocationSummaryView()
@@ -46,6 +46,7 @@ struct ProjectionView: View {
         //.background(Color.lightGray)
         .onAppear() {
             self.navBarHidden = true
+            self.model.onAppear()
         }
         .navigationBarTitle(navBarHidden ? "" : "Projection")
         .navigationBarHidden(navBarHidden)

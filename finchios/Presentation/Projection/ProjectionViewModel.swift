@@ -25,6 +25,7 @@ public class ProjectionViewModel: ObservableObject, Identifiable {
         insightsGen = true
         
         // Fetch Insights
+        //insights = [Iden<Insight>(obj: .dummy), Iden<Insight>(obj: .dummy)]
     }
     
 }
