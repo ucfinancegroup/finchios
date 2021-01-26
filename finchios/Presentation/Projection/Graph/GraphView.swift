@@ -16,9 +16,16 @@ struct GraphView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("$\(selected.y.format())")
-                .font(.largeTitle)
-                .padding()
+            Group {
+                Text("$\(selected.y.format())")
+                    .font(.largeTitle)
+                    .padding([.leading, .trailing, .top])
+                Text(model.formatDate(timeSince1970: selected.x))
+                    .font(.title3)
+                    .padding([.leading, .trailing, .bottom])
+            }
+                
+
             
             LineView(entries: model.timeseries, entry: $selected)
         }
