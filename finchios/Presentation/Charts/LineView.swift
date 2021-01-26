@@ -96,6 +96,10 @@ struct LineView: UIViewRepresentable {
         dataset.circleRadius = 0
         dataset.drawValuesEnabled = false
         
+        dataset.drawHorizontalHighlightIndicatorEnabled = false
+        
+        dataset.highlightColor = UIColor.teal
+        
         data.addDataSet(dataset)
         
         return data
