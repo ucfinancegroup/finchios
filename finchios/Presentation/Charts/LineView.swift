@@ -12,9 +12,53 @@ struct LineView: UIViewRepresentable {
     typealias UIViewType = LineChartView
     
     var entries: [ChartDataEntry]
+    
+    @Binding var entry: ChartDataEntry
+    
+    class Coordinator: ChartViewDelegate {
+        
+        var parent: LineView
+        
+        init(_ parent: LineView) {
+            self.parent = parent
+        }
+        
+        func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+            parent.entry = entry
+        }
+        
+        //TODO(): Implement to reset to orignal value
+        func chartValueNothingSelected(_ chartView: ChartViewBase) {
+            if let last = parent.entries.last {
+                parent.entry = last
+            }
+        }
+        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
 
     func makeUIView(context: Context) -> LineChartView {
         let view = LineChartView()
+        
+        view.drawGridBackgroundEnabled = false
+        
+        view.legend.enabled = false
+        
+        
+        view.xAxis.enabled = false
+        view.rightAxis.enabled = false
+        view.leftAxis.enabled = false
+        
+        view.dragEnabled = true
+        
+        view.xAxis.drawGridLinesEnabled = false
+        view.leftAxis.drawGridLinesEnabled = false
+    
+        view.delegate = context.coordinator
+        
         view.data = addData()
         return view
     }
@@ -22,6 +66,21 @@ struct LineView: UIViewRepresentable {
     func addData() -> LineChartData {
         let data = LineChartData()
         let dataset = LineChartDataSet(entries: entries)
+        
+        let gradColors = [Color.teal.cgColor! , Color.white.cgColor!] as CFArray
+        let loc: [CGFloat] = [1.0, 0]
+        
+        
+        guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradColors, locations: loc) else {
+            return data
+        }
+    
+        
+        dataset.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
+        dataset.drawFilledEnabled = true
+        
+        dataset.circleRadius = 0
+        dataset.drawValuesEnabled = false
         
         data.addDataSet(dataset)
         
@@ -33,15 +92,25 @@ struct LineView: UIViewRepresentable {
     }
 }
 
-struct LineViewPreview: PreviewProvider {
-    static var previews: some View {
-        LineView(entries: [
+struct LineViewWrapper: View {
+    
+    @State var entry = ChartDataEntry(x: 0, y: 0)
+    
+    var body: some View {
+        LineView(entries:[
             ChartDataEntry(x: 0, y: 10),
             ChartDataEntry(x: 1, y: 5),
             ChartDataEntry(x: 2, y: 0),
             ChartDataEntry(x: 3, y: 0),
             ChartDataEntry(x: 4, y: 100),
             ChartDataEntry(x: 5, y: 200),
-        ])
+        ], entry: $entry)
+    }
+    
+}
+
+struct LineViewPreview: PreviewProvider {
+    static var previews: some View {
+        LineViewWrapper()
     }
 }

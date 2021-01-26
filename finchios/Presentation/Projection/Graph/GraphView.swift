@@ -10,16 +10,21 @@ import Charts
 
 struct GraphView: View {
     
-    @ObservedObject var model: GraphViewModel = GraphViewModel()
+    @State private var selected: ChartDataEntry = ChartDataEntry(x: 0, y: 0)
+    
+    @ObservedObject private var model: GraphViewModel = GraphViewModel()
     
     var body: some View {
-        VStack {
-            LineView(entries: model.timeseries)
+        VStack(alignment: .leading) {
+            Text("$\(selected.y.format())")
+                .font(.largeTitle)
+                .padding()
+            
+            LineView(entries: model.timeseries, entry: $selected)
         }
         .frame(height: 300)
-        .bubble()
         .onAppear() {
-            model.onAppear()
+            selected = model.onAppear()
         }
         
     }

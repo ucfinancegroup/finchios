@@ -15,7 +15,7 @@ class GraphViewModel: ObservableObject, Identifiable {
     
     
     // Fetch timeseries from backend
-    func onAppear() {
+    func onAppear() -> ChartDataEntry {
         timeseries = [
             ChartDataEntry(x: 0, y: 10),
             ChartDataEntry(x: 1, y: 5),
@@ -42,6 +42,11 @@ class GraphViewModel: ObservableObject, Identifiable {
 //                }
 //            }
 //        }
+        
+        if let last = timeseries.last {
+            return last
+        }
+        return ChartDataEntry(x: 0, y: 0)
     }
     
 }
