@@ -15,9 +15,15 @@ struct LineView: UIViewRepresentable {
     
     @Binding var entry: ChartDataEntry
     
-    class Coordinator: NSObject, ChartViewDelegate {
+    private let view: LineChartView = LineChartView()
+    
+    class Coordinator: NSObject, ChartViewDelegate, UIGestureRecognizerDelegate {
         
         var parent: LineView
+        
+        public var last: ChartDataEntry = ChartDataEntry(x: 0, y: -1)
+        
+        public var reset: Bool = false
         
         init(_ parent: LineView) {
             self.parent = parent
@@ -33,15 +39,13 @@ struct LineView: UIViewRepresentable {
             }
         }
         
-        //TODO(): Implement to reset to orignal value
-        @objc func chartValueNothingSelected(_ chartView: ChartViewBase) {
-            if let last = parent.entries.last {
-                parent.entry = last
-            }
+        @objc func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            return true
         }
         
-        func chartViewDidEndPanning(_ chartView: ChartViewBase) {
-            if let last = parent.entries.last {
+        @objc func panGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
+            if recognizer.state == .ended {
+                parent.view.highlightValue(nil, callDelegate: false)
                 parent.entry = last
             }
         }
@@ -53,8 +57,6 @@ struct LineView: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> LineChartView {
-        let view = LineChartView()
-        
         view.drawGridBackgroundEnabled = false
         
         view.legend.enabled = false
@@ -72,6 +74,13 @@ struct LineView: UIViewRepresentable {
         view.delegate = context.coordinator
         
         view.doubleTapToZoomEnabled = false
+        
+        let unselectGestureRecognizer = UIPanGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.panGestureRecognized(_:)))
+        unselectGestureRecognizer.delegate = context.coordinator
+
+        view.addGestureRecognizer(unselectGestureRecognizer)
+        
+        view.isUserInteractionEnabled = true
         
         view.data = addData()
         return view
@@ -106,6 +115,9 @@ struct LineView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: LineChartView, context: Context) {
+        if let last = entries.last {
+            context.coordinator.last = last
+        }
         uiView.data = addData()
     }
 }
