@@ -15,7 +15,7 @@ struct AccountDetailView: View {
     
     @State var modalActive: Bool = false
     
-    @ObservedObject var model = GoalDetailViewModel()
+    @ObservedObject var model = AccountDetailViewModel()
     
     var body: some View {
         VStack {

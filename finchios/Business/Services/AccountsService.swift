@@ -85,7 +85,7 @@ extension AccountsService {
     }
     
     private static func getAccountURL(itemID: String) -> URL? {
-        let address = "\(BusinessConstants.SERVER)/plaid/account/\(itemID)"
+        let address = "\(BusinessConstants.SERVER)/plaid/accounts/\(itemID)"
 
         return URL(string: address)
     }
