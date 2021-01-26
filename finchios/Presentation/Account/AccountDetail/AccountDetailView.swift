@@ -37,7 +37,7 @@ struct AccountDetailView: View {
             Button(action: {
                 self.model.delete(id: self.account.account.itemId)
             }, label: {
-                Text("Delete")
+                Text("Delete ALL accounts from this institution.")
                     .foregroundColor(.red)
             })
             
