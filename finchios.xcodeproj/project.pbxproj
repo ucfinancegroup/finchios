@@ -108,6 +108,7 @@
 		80F9EE2C25993A58007CD06C /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80F9EE2B25993A58007CD06C /* OpenAPIClient */; };
 		80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3025994349007CD06C /* BusinessConstants.swift */; };
 		80F9EE3825994394007CD06C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3725994394007CD06C /* SignUpService.swift */; };
+		80FD7ADF25C20D7300F11776 /* LogOutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD7ADE25C20D7300F11776 /* LogOutService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +248,7 @@
 		80F93706258F0B9100BBBE57 /* EventSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSummaryViewModel.swift; sourceTree = "<group>"; };
 		80F9EE3025994349007CD06C /* BusinessConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessConstants.swift; sourceTree = "<group>"; };
 		80F9EE3725994394007CD06C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		80FD7ADE25C20D7300F11776 /* LogOutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -839,6 +841,7 @@
 				8071DCF125A759630056107B /* RecurringService.swift */,
 				8070315825B293DC00122CE7 /* GoalsService.swift */,
 				80E2675325BB177300277E52 /* AccountsService.swift */,
+				80FD7ADE25C20D7300F11776 /* LogOutService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1008,6 +1011,7 @@
 				80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */,
 				80725D06254C72010054787C /* Persistence.swift in Sources */,
 				80535FC225AD0BF9006521D4 /* NewRecurringModel.swift in Sources */,
+				80FD7ADF25C20D7300F11776 /* LogOutService.swift in Sources */,
 				8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */,
 				8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */,
 				809F953C25B520FF007DE7F6 /* GoalDetailView.swift in Sources */,
