@@ -27,7 +27,7 @@ struct AccountDetailView: View {
                 Spacer()
                     .frame(height: 30)
 
-                Text("Balance of $\((account.account.balance / 100).format())")
+                Text("Balance of $\((Double(account.account.balance) / 100.0).format())")
                 
                 Spacer()
             }

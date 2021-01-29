@@ -26,7 +26,7 @@ struct AccountItemSummary: View {
                     Spacer()
                 }
                 
-                Text("$\((account.balance / 100).format())")
+                Text("$\((Double(account.balance) / 100.0).format())")
             }
         }
         .disabled(!navAble)

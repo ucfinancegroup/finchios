@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OpenAPIClient
 
 struct SignUpService {
 
@@ -20,16 +21,14 @@ struct SignUpService {
         
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
 
+        let signupPayload = SignupPayload(email: email,
+                                          password: password,
+                                          firstName: firstName,
+                                          lastName: lastName,
+                                          income: 0,
+                                          location: Location(hasLocation: false, lat: 0, lon: 0))
         
-        let body: [String: Any] = [
-            "email": email,
-            "first_name": firstName,
-            "last_name": lastName,
-            "password": password,
-            "income": 5
-        ]
-
-        let jsonBody = try? JSONSerialization.data(withJSONObject: body)
+        let jsonBody = try? JSONEncoder().encode(signupPayload)
 
         guard let unwrappedJsonBody = jsonBody else {
             completion(false, nil, nil)

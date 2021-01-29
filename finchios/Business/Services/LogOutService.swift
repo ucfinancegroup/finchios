@@ -31,25 +31,17 @@ struct LogOutService {
                 return
             }
             
-            guard let httpResponse = urlResponse as? HTTPURLResponse else {
+            guard urlResponse is HTTPURLResponse else {
                 completion(false, error, nil)
                 return
             }
             
-            guard let cookie = httpResponse.allHeaderFields[BusinessConstants.RESPONSE_COOKIE] as? String else {
-                completion(false, error, nil)
-                return
-            }
-            
-            let split = cookie.split(separator: ";")
-            let sid = String(split[0])
-     
             DispatchQueue.main.async {
                 _ = CredentialsObject.resetCredentials(jwt: "_",
                                                        email: "_",
                                                        password: "_")
                 
-                completion(true, nil, cookie)
+                completion(true, nil, nil)
                 return
             }
 
