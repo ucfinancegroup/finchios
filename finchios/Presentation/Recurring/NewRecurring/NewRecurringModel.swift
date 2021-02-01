@@ -62,8 +62,8 @@ class NewRecurringModel: ObservableObject, Identifiable {
             return
         }
         
-        var amount: Int64 = 0
-        var principal: Int64 = 0
+        var amount: Double = 0.0
+        var principal: Double = 0.0
         var interest: Double = 0.0
         
         // Assume this is a debt object
@@ -71,7 +71,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             // Attempt to parse the principal and interest.
             
             if let parse = Double(principalField) {
-                principal = Int64(parse)
+                principal = parse
             }else {
                 showAlert = true
                 showError = true
@@ -94,7 +94,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             // Attempt to parse the amount
             
             if let parse = Double(amountField) {
-                amount = Int64(parse)
+                amount = parse
             }else {
                 showAlert = true
                 showError = true

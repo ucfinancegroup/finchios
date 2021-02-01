@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET recurrings
 struct RecurringService {
     
-    private static func income_helper(operand: @escaping (Int64, Int64) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+    private static func income_helper(operand: @escaping (Double, Double) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in
             if let error = error {
                 completion(false, error, nil)
@@ -33,7 +33,7 @@ struct RecurringService {
         }
     }
     
-    private static func debt_helper(operand: @escaping (Int64, Int64) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+    private static func debt_helper(operand: @escaping (Double, Double) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in
             if let error = error {
                 completion(false, error, nil)
