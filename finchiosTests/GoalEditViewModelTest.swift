@@ -50,8 +50,8 @@ class GoalEditViewModelTest: XCTestCase {
         XCTAssert(unwrap.name == model.name)
         XCTAssert(unwrap.start == 5)
         XCTAssert(unwrap.end == 7)
-        // unwrap.threshold should contain 50000
-        XCTAssert(unwrap.threshold/100 == Double(model.threshold))
+        // unwrap.threshold should contain 500
+        XCTAssert(unwrap.threshold == Double(model.threshold))
         
     }
     
@@ -70,7 +70,7 @@ class GoalEditViewModelTest: XCTestCase {
         
         XCTAssert(Int64(model.end.timeIntervalSince1970) == dummy.end)
         
-        XCTAssert(Double(model.threshold)!*100 == dummy.threshold)
+        XCTAssert(Double(model.threshold)! == dummy.threshold)
     }
 
 }

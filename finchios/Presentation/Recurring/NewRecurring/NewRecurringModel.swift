@@ -71,7 +71,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             // Attempt to parse the principal and interest.
             
             if let parse = Double(principalField) {
-                principal = Int64(parse * 100)
+                principal = Int64(parse)
             }else {
                 showAlert = true
                 showError = true
@@ -80,7 +80,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             }
             
             if let parse = Double(interestField) {
-                interest = parse / 100.0
+                interest = parse
             }else {
                 showAlert = true
                 showError = true
@@ -94,7 +94,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             // Attempt to parse the amount
             
             if let parse = Double(amountField) {
-                amount = Int64(parse * 100)
+                amount = Int64(parse)
             }else {
                 showAlert = true
                 showError = true

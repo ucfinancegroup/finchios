@@ -29,7 +29,7 @@ struct AmountItemSummary: View {
                 }
                 
                 //TODO(): Add how many times annually
-                Text("\(self.type.rawValue) of $\(Double.formatOffset(amt: recurring.amount)) \(recurring.frequency.typ.rawValue)")
+                Text("\(self.type.rawValue) of $\( recurring.amount) \(recurring.frequency.typ.rawValue)")
             }
         }
         .disabled(!navAble)

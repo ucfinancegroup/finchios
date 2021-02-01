@@ -30,7 +30,7 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
         start = Date(timeIntervalSince1970: TimeInterval(goal.goal.start))
         end = Date(timeIntervalSince1970: TimeInterval(goal.goal.end))
         
-        threshold = "\(Double(hundredOffsetInt: Int(goal.goal.threshold)))"
+        threshold = "\(goal.goal.threshold)"
         
         switch goal.goal.metric {
         case .income:
@@ -88,7 +88,7 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
         let payload: GoalNewPayload = GoalNewPayload(name: name,
                                                      start: Int64(start.timeIntervalSince1970),
                                                      end: Int64(end.timeIntervalSince1970),
-                                                     threshold: thresholdParse*100,
+                                                     threshold: thresholdParse,
                                                      metric: metric.openAPI)
         
         return payload

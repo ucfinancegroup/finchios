@@ -48,12 +48,12 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         end = Date(timeIntervalSince1970: TimeInterval(recurring.start))
         
         if recurring.principal == 0 {
-            amountField = "\(Double(hundredOffsetInt: Int(recurring.amount)))"
+            amountField = "\((recurring.amount))"
             
             principalField = ""
             interestField = ""
         }else {
-            principalField = "\(Double(hundredOffsetInt: Int (recurring.principal)))"
+            principalField = "\(Int(recurring.principal))"
             
             interestField = "\(recurring.interest)"
             
@@ -135,7 +135,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
             // Attempt to parse the principal and interest.
             
             if let parse = Double(principalField) {
-                principal = Int64(parse * 100)
+                principal = Int64(parse)
             }else {
                 showAlert = true
                 showError = true
@@ -144,7 +144,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
             }
             
             if let parse = Double(interestField) {
-                interest = parse / 100.0
+                interest = parse
             }else {
                 showAlert = true
                 showError = true
@@ -158,7 +158,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
             // Attempt to parse the amount
             
             if let parse = Double(amountField) {
-                amount = Int64(parse * 100)
+                amount = Int64(parse)
             }else {
                 showAlert = true
                 showError = true

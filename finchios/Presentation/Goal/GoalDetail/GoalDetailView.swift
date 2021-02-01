@@ -27,7 +27,7 @@ struct GoalDetailView: View {
                 Spacer()
                     .frame(height: 30)
 
-                Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of \(Double.formatOffset(amt: goal.goalAndStatus.goal.threshold))")
+                Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of \(goal.goalAndStatus.goal.threshold)")
                 
                 Spacer()
 

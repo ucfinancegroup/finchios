@@ -29,7 +29,7 @@ struct PrincipalItemSummary: View {
                 }
                 
                 //TODO(): Add how many times annually
-                Text("Debt of $\(Double.formatOffset(amt: recurring.principal)) compounding at \(Double.format(amt: recurring.interest))")
+                Text("Debt of $\(recurring.principal) compounding at \(Double.format(amt: recurring.interest))")
             }
         }
         .disabled(!navAble)
