@@ -45,7 +45,7 @@
 		80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */; };
 		804AEA66259FC222005D414C /* GoalItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AEA65259FC222005D414C /* GoalItemSummaryView.swift */; };
 		804AEA6D259FC2E8005D414C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AEA6C259FC2E8005D414C /* Goal.swift */; };
-		804C16A225C865B0000035FD /* TimeseriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C16A125C865B0000035FD /* TimeseriesService.swift */; };
+		804C16A225C865B0000035FD /* TimeSeriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C16A125C865B0000035FD /* TimeSeriesService.swift */; };
 		80535FA025A91679006521D4 /* RecurringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535F9F25A91679006521D4 /* RecurringView.swift */; };
 		80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FA525A916F2006521D4 /* RecurringViewState.swift */; };
 		80535FBE25AD0B43006521D4 /* NewRecurringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80535FBD25AD0B43006521D4 /* NewRecurringView.swift */; };
@@ -181,7 +181,7 @@
 		80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItemView.swift; sourceTree = "<group>"; };
 		804AEA65259FC222005D414C /* GoalItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemSummaryView.swift; sourceTree = "<group>"; };
 		804AEA6C259FC2E8005D414C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
-		804C16A125C865B0000035FD /* TimeseriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeseriesService.swift; sourceTree = "<group>"; };
+		804C16A125C865B0000035FD /* TimeSeriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesService.swift; sourceTree = "<group>"; };
 		80535F9F25A91679006521D4 /* RecurringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringView.swift; sourceTree = "<group>"; };
 		80535FA525A916F2006521D4 /* RecurringViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringViewState.swift; sourceTree = "<group>"; };
 		80535FBD25AD0B43006521D4 /* NewRecurringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringView.swift; sourceTree = "<group>"; };
@@ -844,7 +844,7 @@
 				8070315825B293DC00122CE7 /* GoalsService.swift */,
 				80E2675325BB177300277E52 /* AccountsService.swift */,
 				80FD7ADE25C20D7300F11776 /* LogOutService.swift */,
-				804C16A125C865B0000035FD /* TimeseriesService.swift */,
+				804C16A125C865B0000035FD /* TimeSeriesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1042,7 +1042,7 @@
 				80F9EE3825994394007CD06C /* SignUpService.swift in Sources */,
 				80EF127C259E67BA00E0543B /* ExpensesItemSummaryView.swift in Sources */,
 				80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */,
-				804C16A225C865B0000035FD /* TimeseriesService.swift in Sources */,
+				804C16A225C865B0000035FD /* TimeSeriesService.swift in Sources */,
 				809F953725B4959B007DE7F6 /* GoalMetricIdentifiable.swift in Sources */,
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
