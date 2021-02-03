@@ -30,6 +30,7 @@
 		8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D658258C2DD7007A44E1 /* StatisticsView.swift */; };
 		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
+		803C8A8B25CAF5DE00167F22 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */; };
 		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
 		80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */; };
 		80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C53259AC22000CDA3DA /* GoalSummaryView.swift */; };
@@ -166,6 +167,7 @@
 		8026B6E6258A7BA4006CB2FB /* LinkKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LinkKit.xcframework; sourceTree = "<group>"; };
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
+		803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
 		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
 		80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryViewModel.swift; sourceTree = "<group>"; };
 		80479C53259AC22000CDA3DA /* GoalSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryView.swift; sourceTree = "<group>"; };
@@ -452,6 +454,14 @@
 			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
+		803C8A8925CAF5D300167F22 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		80479C4C259AC20C00CDA3DA /* GoalSummary */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +492,7 @@
 		80479C6D259AC35600CDA3DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				803C8A8925CAF5D300167F22 /* Charts */,
 				804AEA6B259FC2D7005D414C /* OpenAPIClient */,
 				80479C6E259AC36400CDA3DA /* UIColor.swift */,
 				80479C74259AC60C00CDA3DA /* Color.swift */,
@@ -1064,6 +1075,7 @@
 				80576F9A258DA7FA00210895 /* LineView.swift in Sources */,
 				80725CFD254C71FE0054787C /* finchiosApp.swift in Sources */,
 				80C97BA625A76ECF008729A7 /* AmountItemSummary.swift in Sources */,
+				803C8A8B25CAF5DE00167F22 /* ChartDataEntry.swift in Sources */,
 				8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */,
 				8070314B25B2172600122CE7 /* RecurringEditView.swift in Sources */,
 				80479C7A259AC9FF00CDA3DA /* LeaderboardView.swift in Sources */,

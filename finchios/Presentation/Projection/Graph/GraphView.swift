@@ -10,28 +10,26 @@ import Charts
 
 struct GraphView: View {
     
-    @State private var selected: ChartDataEntry = ChartDataEntry(x: 0, y: 0)
-    
     @ObservedObject private var model: GraphViewModel = GraphViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
             Group {
-                Text("$\(selected.y.format())")
+                Text("$\(model.selected.y.format())")
                     .font(.largeTitle)
                     .padding([.leading, .trailing, .top])
-                Text(model.formatDate(timeSince1970: selected.x))
+                Text(model.formatDate(timeSince1970: model.selected.x))
                     .font(.title3)
                     .padding([.leading, .trailing, .bottom])
             }
                 
 
             
-            LineView(entries: model.timeseries, entry: $selected)
+            LineView(entries: model.timeseries, entry: $model.selected)
         }
         .frame(height: 300)
         .onAppear() {
-            selected = model.onAppear()
+            model.onAppear()
         }
         
     }
