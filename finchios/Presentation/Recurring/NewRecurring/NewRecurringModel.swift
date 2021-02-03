@@ -31,6 +31,13 @@ class NewRecurringModel: ObservableObject, Identifiable {
     
     @Published var showSuccess: Bool = false
     
+    // Type
+    var type: RecurringItemType
+    
+    public init(type: RecurringItemType) {
+        self.type = type
+    }
+    
     func create() {
         showError = false
         showSuccess = false
@@ -110,7 +117,6 @@ class NewRecurringModel: ObservableObject, Identifiable {
             return
         }
         
-        //TODO(): Fill in and then test whole method.
         var timeInterval = TimeInterval(typ: .monthly, content: content)
         switch typ {
         case .annually:
@@ -122,6 +128,12 @@ class NewRecurringModel: ObservableObject, Identifiable {
         case .daily:
             timeInterval.typ = .daily
         }
+        
+        // If expense or debt, make negative
+        if type == .expense || type == .debt {
+            principal *= -1
+        }
+        
         
         let payload = RecurringNewPayload(name: name,
                                           start: Int64(start.timeIntervalSince1970),

@@ -13,7 +13,13 @@ struct NewRecurringView: View {
     
     @Binding var type: RecurringItemType
     
-    @ObservedObject var model = NewRecurringModel()
+    @ObservedObject var model: NewRecurringModel// = NewRecurringModel()
+    
+    public init(present: Binding<Bool>, type: Binding<RecurringItemType>) {
+        self._present = present
+        self._type = type
+        self.model = NewRecurringModel(type: type.wrappedValue)
+    }
     
     var body: some View {
         
@@ -37,15 +43,30 @@ struct NewRecurringView: View {
             Spacer()
             
             Group {
-                if self.type == .income || self.type == .expense {
+                if self.type == .income {
                     
                     TextField("Amount", text: self.$model.amountField)
-                        .keyboardType(.numberPad)
+                        .keyboardType(.decimalPad)
+                    
+                }else if self.type == .expense {
+                    
+                    HStack {
+                        Text("-")
+                        
+                        TextField("Amount", text: self.$model.amountField)
+                            .keyboardType(.decimalPad)
+                    }
+                    
                     
                 }else {
                     
-                    TextField("Principal", text: self.$model.principalField)
-                        .keyboardType(.numberPad)
+                    HStack {
+                        Text("-")
+                        
+                        TextField("Principal", text: self.$model.principalField)
+                            .keyboardType(.numberPad)
+                    }
+
                     
                     Spacer()
                     
