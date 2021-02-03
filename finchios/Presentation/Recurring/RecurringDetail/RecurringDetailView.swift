@@ -31,7 +31,7 @@ struct RecurringDetailView: View {
                     .frame(height: 30)
                 
                 if type == .debt {
-                    Text("Principal amount of $\(recurring.principal)")
+                    Text("Principal amount of $\(recurring.principal.format())")
                     
                     Spacer()
                         .frame(height: 30)
@@ -41,7 +41,7 @@ struct RecurringDetailView: View {
                     Spacer()
                         .frame(height: 30)
                 }else { // income / expense
-                    Text("Value of $\(recurring.amount)")
+                    Text("Value of $\(recurring.amount.format())")
                     
                     Spacer()
                         .frame(height: 30)
