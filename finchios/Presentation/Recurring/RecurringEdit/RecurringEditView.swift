@@ -69,7 +69,7 @@ struct RecurringEditView: View {
                 }
                 
                 Picker("Interval", selection: self.$model.typ) {
-                    ForEach(RecurringIntervalType.allCases) { type in
+                    ForEach(RecurringIntervalType.allCases, id: \.id) { type in
                         Text(type.rawValue.capitalized)
                     }
                 }
