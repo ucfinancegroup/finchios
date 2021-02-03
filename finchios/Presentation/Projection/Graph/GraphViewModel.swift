@@ -38,11 +38,13 @@ class GraphViewModel: ObservableObject, Identifiable {
     // Fetch timeseries from backend
     func onAppear() {
         TimeSeriesService.example { (succcess, error, response) in
-            if let response = response {
-                self.timeseries = response.map { ChartDataEntry(timeseriesEntry: $0) }
-                
-                if let last = self.timeseries.last {
-                    self.selected = last
+            DispatchQueue.main.async {
+                if let response = response {
+                    self.timeseries = response.map { ChartDataEntry(timeseriesEntry: $0) }
+                    
+                    if let last = self.timeseries.last {
+                        self.selected = last
+                    }
                 }
             }
         }
