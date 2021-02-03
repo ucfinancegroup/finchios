@@ -22,21 +22,27 @@ struct GoalDetailView: View {
             
             //Information
             Group {
-                Text(goal.goalAndStatus.goal.name)
-                
-                Spacer()
-                    .frame(height: 30)
-
-                Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of \(goal.goalAndStatus.goal.threshold)")
-                
-                Spacer()
-
-                Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.end)))")
-                
-                Spacer()
-                
-                // TODO(): Add progress/status bar
+                VStack {
+                    Text(goal.goalAndStatus.goal.name)
+                        .padding()
+                    
+                    Spacer()
+                        .frame(height: 30)
+                    
+                    Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of \(goal.goalAndStatus.goal.threshold)")
+                        .padding()
+                    
+                    Spacer()
+                    
+                    Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.end)))")
+                        .padding()
+                    
+                    Spacer()
+                    
+                    // TODO(): Add progress/status bar
+                }
             }
+            .bubble()
             
             Spacer()
             
@@ -44,7 +50,8 @@ struct GoalDetailView: View {
                 self.model.delete(id: self.goal.goalAndStatus.goal.id.oid)
             }, label: {
                 Text("Delete")
-                    .foregroundColor(.red)
+                    .padding()
+                    .bubble()
             })
             
             Spacer()
