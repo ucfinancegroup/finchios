@@ -56,9 +56,9 @@ struct GoalDetailView: View {
                     Text("Delete")
                     Spacer()
                 }
-                    .padding()
-                    .bubble(.red)
-                    .foregroundColor(.white)
+                .padding()
+                .bubble(.red)
+                .foregroundColor(.white)
             })
             
             Spacer()
