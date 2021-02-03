@@ -73,6 +73,8 @@
 		80725D06254C72010054787C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D05254C72010054787C /* Persistence.swift */; };
 		80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80725D07254C72010054787C /* finchios.xcdatamodeld */; };
 		807E3E2525CB251F0039671E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2425CB251F0039671E /* UIApplication.swift */; };
+		807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */; };
+		807E3E3125CB3AA70039671E /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E3025CB3AA70039671E /* NumberField.swift */; };
 		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
 		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */; };
@@ -217,6 +219,8 @@
 		80725D1A254C72020054787C /* finchiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finchiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		807E3E2425CB251F0039671E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardType.swift; sourceTree = "<group>"; };
+		807E3E3025CB3AA70039671E /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				807E3E2F25CB3A9A0039671E /* NumberField */,
 				80576F90258D879600210895 /* Charts */,
 				8062C4F025BE084000E0927F /* Card */,
 				80E2679125BDDB2600277E52 /* Styling */,
@@ -494,6 +499,7 @@
 		80479C6D259AC35600CDA3DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				807E3E2825CB3A030039671E /* UIKit */,
 				803C8A8925CAF5D300167F22 /* Charts */,
 				804AEA6B259FC2D7005D414C /* OpenAPIClient */,
 				80479C6E259AC36400CDA3DA /* UIColor.swift */,
@@ -681,6 +687,22 @@
 				80E2678025BD2DCC00277E52 /* SignUpIntegrationTest.swift */,
 			);
 			path = finchiosUITests;
+			sourceTree = "<group>";
+		};
+		807E3E2825CB3A030039671E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		807E3E2F25CB3A9A0039671E /* NumberField */ = {
+			isa = PBXGroup;
+			children = (
+				807E3E3025CB3AA70039671E /* NumberField.swift */,
+			);
+			path = NumberField;
 			sourceTree = "<group>";
 		};
 		809F952725B3985F007DE7F6 /* NewGoal */ = {
@@ -1031,6 +1053,7 @@
 				80FD7ADF25C20D7300F11776 /* LogOutService.swift in Sources */,
 				8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */,
 				8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */,
+				807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */,
 				809F953C25B520FF007DE7F6 /* GoalDetailView.swift in Sources */,
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
@@ -1062,6 +1085,7 @@
 				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
 				80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
+				807E3E3125CB3AA70039671E /* NumberField.swift in Sources */,
 				80E2676225BB84C900277E52 /* AccountItemSummary.swift in Sources */,
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				804AEA66259FC222005D414C /* GoalItemSummaryView.swift in Sources */,

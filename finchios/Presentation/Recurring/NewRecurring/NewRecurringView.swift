@@ -46,16 +46,18 @@ struct NewRecurringView: View {
                 Group {
                     if self.type == .income {
                         
-                        TextField("Amount", text: self.$model.amountField)
-                            .keyboardType(.decimalPad)
+                        NumberField(text: self.$model.amountField, keyType: .decimalPad, placeholder: "Amount") { (change) in
+                            self.model.amountField = change
+                        }
                         
                     }else if self.type == .expense {
                         
                         HStack {
                             Text("-")
                             
-                            TextField("Amount", text: self.$model.amountField)
-                                .keyboardType(.decimalPad)
+                            NumberField(text: self.$model.amountField, keyType: .decimalPad, placeholder: "Amount") { (change) in
+                                self.model.amountField = change
+                            }
                         }
                         
                         
@@ -64,8 +66,9 @@ struct NewRecurringView: View {
                         HStack {
                             Text("-")
                             
-                            TextField("Principal", text: self.$model.principalField)
-                                .keyboardType(.numberPad)
+                            NumberField(text: self.$model.principalField, keyType: .decimalPad, placeholder: "Principal") { (change) in
+                                self.model.principalField = change
+                            }
                         }
                         
                         
@@ -76,6 +79,8 @@ struct NewRecurringView: View {
                         
                     }
                     
+                    Spacer()
+                    
                     Picker("Interval", selection: self.$model.typ) {
                         ForEach(RecurringIntervalType.allCases, id: \.id) { type in
                             Text(type.rawValue.capitalized)
@@ -84,8 +89,9 @@ struct NewRecurringView: View {
                     
                     Spacer()
                     
-                    TextField("Interval Frequency", text: self.$model.freqContentField)
-                        .keyboardType(.numberPad)
+                    NumberField(text: self.$model.freqContentField, keyType: .numberPad, placeholder: "Interval Frequency") { (change) in
+                        self.model.freqContentField = change
+                    }
                     
                     Spacer()
                 }
