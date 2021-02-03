@@ -25,14 +25,7 @@ struct GoalDetailView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Text(goal.goalAndStatus.goal.name)
-                            .padding()
-                            .font(.title3)
-                        Spacer()
                     }
-                    
-                    Divider()
-                    
                     
                     Spacer()
                         .frame(height: 30)
@@ -72,6 +65,7 @@ struct GoalDetailView: View {
             
         }
         .padding()
+        .navigationBarTitle("\(self.goal.goalAndStatus.goal.name)")
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalActive = true
