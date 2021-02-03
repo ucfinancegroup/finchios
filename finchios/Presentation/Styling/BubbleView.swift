@@ -10,11 +10,15 @@ import SwiftUI
 
 extension View {
     
-    func bubble() -> some View {
-        self.background(Color.white)
+    func bubble(_ color: Color) -> some View {
+        self.background(color)
         .cornerRadius(20)
         .shadow(radius: 4)
         .padding()
+    }
+    
+    func bubble() -> some View {
+        self.bubble(.white)
     }
     
 }

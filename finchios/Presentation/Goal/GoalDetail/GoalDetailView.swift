@@ -23,14 +23,26 @@ struct GoalDetailView: View {
             //Information
             Group {
                 VStack {
-                    Text(goal.goalAndStatus.goal.name)
-                        .padding()
+                    HStack {
+                        Spacer()
+                        Text(goal.goalAndStatus.goal.name)
+                            .padding()
+                            .font(.title3)
+                        Spacer()
+                    }
+                    
+                    Divider()
+                    
                     
                     Spacer()
                         .frame(height: 30)
                     
-                    Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of \(goal.goalAndStatus.goal.threshold)")
+                    Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of $\(goal.goalAndStatus.goal.threshold.format())")
                         .padding()
+                    
+                    Spacer()
+                    
+                    Text("x% progress")
                     
                     Spacer()
                     
@@ -38,20 +50,22 @@ struct GoalDetailView: View {
                         .padding()
                     
                     Spacer()
-                    
-                    // TODO(): Add progress/status bar
                 }
             }
-            .bubble()
             
             Spacer()
             
             Button(action: {
                 self.model.delete(id: self.goal.goalAndStatus.goal.id.oid)
             }, label: {
-                Text("Delete")
+                HStack {
+                    Spacer()
+                    Text("Delete")
+                    Spacer()
+                }
                     .padding()
-                    .bubble()
+                    .bubble(.red)
+                    .foregroundColor(.white)
             })
             
             Spacer()
@@ -91,8 +105,20 @@ struct GoalDetailView: View {
     }
 }
 
-//struct GoalDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GoalDetailView()
-//    }
-//}
+struct GoalDetailViewPreview: View {
+    
+    @State var goal = GoalAndStatusIdentifiable.init(goalAndStatus: .dummy)
+    @State var pop = false
+    
+    
+    var body: some View {
+        GoalDetailView(shouldPop: $pop, goal: goal)
+    }
+    
+}
+
+struct GoalDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        GoalDetailViewPreview()
+    }
+}

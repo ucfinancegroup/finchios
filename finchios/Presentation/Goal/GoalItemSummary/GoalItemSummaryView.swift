@@ -27,6 +27,8 @@ struct GoalItemSummaryView: View {
                 }
                 
                 Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold.format())")
+                
+                Text("x% progress")
             }
         }
         .disabled(!navAble)
