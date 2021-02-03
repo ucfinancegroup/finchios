@@ -35,8 +35,9 @@ struct NewGoalView: View {
                 
                 Spacer()
                 
-                TextField("Target", text: self.$model.threshold)
-                    .keyboardType(.numberPad)
+                NumberField(text: self.$model.threshold, keyType: .decimalPad, placeholder: "Target") { (change) in
+                    self.model.threshold = change
+                }
                 
                 Spacer()
                 
