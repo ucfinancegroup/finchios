@@ -26,7 +26,7 @@ struct GoalItemSummaryView: View {
                     Spacer()
                 }
                 
-                Text("\(goal.goal.metric.rawValue) goal of $\( goal.goal.threshold)")
+                Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold.format())")
             }
         }
         .disabled(!navAble)
