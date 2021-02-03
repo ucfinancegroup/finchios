@@ -103,7 +103,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
             }
         }
         
-        if start <= end {
+        if start >= end {
             showError = true
             errorString = "The starting date must be prior to the ending date."
             showAlert = true
