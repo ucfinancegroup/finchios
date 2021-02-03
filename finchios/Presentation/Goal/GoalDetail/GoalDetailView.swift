@@ -61,8 +61,6 @@ struct GoalDetailView: View {
                 .foregroundColor(.white)
             })
             
-            Spacer()
-            
         }
         .padding()
         .navigationBarTitle("\(self.goal.goalAndStatus.goal.name)")

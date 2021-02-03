@@ -24,12 +24,7 @@ struct RecurringDetailView: View {
         VStack {
             
             //Information
-            Group {
-                Text(recurring.name)
-                
-                Spacer()
-                    .frame(height: 30)
-                
+            Group {                
                 if type == .debt {
                     Text("Principal amount of $\(recurring.principal.format())")
                     
@@ -59,14 +54,19 @@ struct RecurringDetailView: View {
             Button(action: {
                 self.model.delete(id: self.recurring.id.oid)
             }, label: {
-                Text("Delete")
-                    .foregroundColor(.red)
+                HStack {
+                    Spacer()
+                    Text("Delete")
+                    Spacer()
+                }
+                .padding()
+                .bubble(.red)
+                .foregroundColor(.white)
             })
-            
-            Spacer()
             
         }
         .padding()
+        .navigationBarTitle("\(self.recurring.name)")
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalActive = true
@@ -101,8 +101,20 @@ struct RecurringDetailView: View {
     }
 }
 
-//struct RecurringDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecurringDetailView()
-//    }
-//}
+struct RecurringDetailViewPreview: View {
+    
+    @State var pop = false
+    @State var type: RecurringItemType = .income
+    
+    var body: some View {
+        
+        RecurringDetailView(shouldPop: $pop, type: $type, recurring: .dummyIncome)
+    }
+    
+}
+
+struct RecurringDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecurringDetailViewPreview()
+    }
+}
