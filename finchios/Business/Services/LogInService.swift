@@ -35,6 +35,8 @@ struct LogInService {
         request.httpBody = unwrappedJsonBody
 
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            print(urlResponse)
+            print(error)
             guard data != nil else {
                 completion(false, error, nil)
                 return
@@ -50,6 +52,11 @@ struct LogInService {
             }
             
             guard let cookie = httpResponse.allHeaderFields[BusinessConstants.RESPONSE_COOKIE] as? String else {
+                completion(false, error, nil)
+                return
+            }
+            
+            if httpResponse.statusCode != 200 {
                 completion(false, error, nil)
                 return
             }

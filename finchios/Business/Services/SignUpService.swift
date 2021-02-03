@@ -54,6 +54,11 @@ struct SignUpService {
                 completion(false, error, nil)
                 return
             }
+            
+            if httpResponse.statusCode != 200 {
+                completion(false, error, nil)
+                return
+            }
      
             let split = cookie.split(separator: ";")
             let sid = String(split[0])
