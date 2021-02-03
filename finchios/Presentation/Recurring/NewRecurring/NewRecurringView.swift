@@ -13,7 +13,7 @@ struct NewRecurringView: View {
     
     @Binding var type: RecurringItemType
     
-    @ObservedObject var model: NewRecurringModel// = NewRecurringModel()
+    @ObservedObject var model: NewRecurringModel
     
     public init(present: Binding<Bool>, type: Binding<RecurringItemType>) {
         self._present = present
