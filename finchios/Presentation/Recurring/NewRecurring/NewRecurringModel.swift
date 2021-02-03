@@ -130,8 +130,11 @@ class NewRecurringModel: ObservableObject, Identifiable {
         }
         
         // If expense or debt, make negative
-        if type == .expense || type == .debt {
+        if type == .debt {
             principal *= -1
+        }
+        if type == .expense {
+            amount *= -1
         }
         
         
