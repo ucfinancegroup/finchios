@@ -39,10 +39,16 @@ struct RecurringEditView: View {
                 if self.type == .income || self.type == .expense {
                     HStack {
                         
-                        Text("$")
+                        if self.type == .income {
+                            Text("$")
+                        }else {
+                            Text("-$")
+                        }
                         
-                        TextField("Amount", text: self.$model.amountField)
-                            .keyboardType(.numberPad)
+                        
+                        NumberField(text: self.$model.amountField, keyType: .decimalPad, placeholder: "Amount") { (change) in
+                            self.model.amountField = change
+                        }
                         
                         Spacer()
                     }
@@ -52,10 +58,11 @@ struct RecurringEditView: View {
                     
                     HStack {
                         
-                        Text("$")
+                        Text("-$")
                         
-                        TextField("Principal", text: self.$model.principalField)
-                            .keyboardType(.numberPad)
+                        NumberField(text: self.$model.principalField, keyType: .decimalPad, placeholder: "Principal") { (change) in
+                            self.model.principalField = change
+                        }
                         
                         Spacer()
                     }
@@ -63,15 +70,14 @@ struct RecurringEditView: View {
                     
                     Spacer()
                     
-                    TextField("Interest (Percent)", text: self.$model.interestField)
-                        .keyboardType(.numberPad)
+                    NumberField(text: self.$model.interestField, keyType: .decimalPad, placeholder: "Interest (Percent)") { (change) in
+                        self.model.interestField = change
+                    }
                     
                 }
                 
-                Picker("Interval", selection: self.$model.typ) {
-                    ForEach(RecurringIntervalType.allCases, id: \.id) { type in
-                        Text(type.rawValue.capitalized)
-                    }
+                NumberField(text: self.$model.freqContentField, keyType: .numberPad, placeholder: "Interval Frequency") { (change) in
+                    self.model.freqContentField = change
                 }
                 
                 TextField("Interval Frequency", text: self.$model.freqContentField)

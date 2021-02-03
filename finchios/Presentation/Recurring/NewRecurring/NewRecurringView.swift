@@ -44,27 +44,27 @@ struct NewRecurringView: View {
                 Spacer()
                 
                 Group {
-                    if self.type == .income {
-                        
-                        NumberField(text: self.$model.amountField, keyType: .decimalPad, placeholder: "Amount") { (change) in
-                            self.model.amountField = change
-                        }
-                        
-                    }else if self.type == .expense {
-                        
+                    if self.type == .income || self.type == .expense {
                         HStack {
-                            Text("-")
+                            
+                            if self.type == .income {
+                                Text("$")
+                            }else {
+                                Text("-$")
+                            }
+                            
                             
                             NumberField(text: self.$model.amountField, keyType: .decimalPad, placeholder: "Amount") { (change) in
                                 self.model.amountField = change
                             }
+                            
+                            Spacer()
                         }
-                        
                         
                     }else {
                         
                         HStack {
-                            Text("-")
+                            Text("-$")
                             
                             NumberField(text: self.$model.principalField, keyType: .decimalPad, placeholder: "Principal") { (change) in
                                 self.model.principalField = change
@@ -74,8 +74,9 @@ struct NewRecurringView: View {
                         
                         Spacer()
                         
-                        TextField("Interest (Percent)", text: self.$model.interestField)
-                            .keyboardType(.numberPad)
+                        NumberField(text: self.$model.interestField, keyType: .decimalPad, placeholder: "Interest (Percent)") { (change) in
+                            self.model.interestField = change
+                        }
                         
                     }
                     
