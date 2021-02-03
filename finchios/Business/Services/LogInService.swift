@@ -35,8 +35,6 @@ struct LogInService {
         request.httpBody = unwrappedJsonBody
 
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-            print(urlResponse)
-            print(error)
             guard data != nil else {
                 completion(false, error, nil)
                 return
