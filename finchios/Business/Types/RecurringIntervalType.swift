@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum RecurringIntervalType: String, Codable, CaseIterable, Identifiable {
-    public var id: String { self.rawValue }
+public enum RecurringIntervalType: String, CaseIterable {
+    public var id: RecurringIntervalType { self }
     
     case monthly = "monthly"
     case annually = "annually"
