@@ -92,6 +92,7 @@ struct NewRecurringView: View {
             Group {
                 Button(action: {
                     self.model.create()
+                    UIApplication.shared.endEditing()
                 }, label: {
                     Text("Create")
                 })

@@ -51,6 +51,7 @@ struct GoalEditView: View {
             Spacer()
             
             Button {
+                UIApplication.shared.endEditing()
                 self.model.edit(id: goal.goal.id.oid)
             } label: {
                 Text("Save Edit")

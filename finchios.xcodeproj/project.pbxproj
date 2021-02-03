@@ -72,6 +72,7 @@
 		80725D04254C72010054787C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D03254C72010054787C /* Preview Assets.xcassets */; };
 		80725D06254C72010054787C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D05254C72010054787C /* Persistence.swift */; };
 		80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80725D07254C72010054787C /* finchios.xcdatamodeld */; };
+		807E3E2525CB251F0039671E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2425CB251F0039671E /* UIApplication.swift */; };
 		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
 		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */; };
@@ -215,6 +216,7 @@
 		80725D15254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80725D1A254C72020054787C /* finchiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finchiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		807E3E2425CB251F0039671E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				80479C74259AC60C00CDA3DA /* Color.swift */,
 				80C97BB825A775B7008729A7 /* Double.swift */,
 				80E2676525BB869400277E52 /* Date.swift */,
+				807E3E2425CB251F0039671E /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1092,6 +1095,7 @@
 				80479C5F259AC2A500CDA3DA /* ExpensesSummaryViewModel.swift in Sources */,
 				80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */,
 				80C97BB925A775B7008729A7 /* Double.swift in Sources */,
+				807E3E2525CB251F0039671E /* UIApplication.swift in Sources */,
 				80E2677125BD22E000277E52 /* AccountDetailView.swift in Sources */,
 				80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */,
 			);

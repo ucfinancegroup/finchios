@@ -51,6 +51,7 @@ struct NewGoalView: View {
             Spacer()
             
             Button(action: {
+                UIApplication.shared.endEditing()
                 self.model.create()
             }, label: {
                 Text("Create")
