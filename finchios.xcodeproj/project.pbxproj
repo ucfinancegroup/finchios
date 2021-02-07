@@ -77,6 +77,7 @@
 		807E3E3125CB3AA70039671E /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E3025CB3AA70039671E /* NumberField.swift */; };
 		80802BF425CF18B600DABCCC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BF325CF18B600DABCCC /* ProgressView.swift */; };
 		80802BFB25D0696400DABCCC /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFA25D0696400DABCCC /* BarView.swift */; };
+		80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFE25D0700000DABCCC /* ValidateService.swift */; };
 		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
 		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */; };
@@ -225,6 +226,7 @@
 		807E3E3025CB3AA70039671E /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		80802BF325CF18B600DABCCC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		80802BFA25D0696400DABCCC /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		80802BFE25D0700000DABCCC /* ValidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateService.swift; sourceTree = "<group>"; };
 		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 				80E2675325BB177300277E52 /* AccountsService.swift */,
 				80FD7ADE25C20D7300F11776 /* LogOutService.swift */,
 				804C16A125C865B0000035FD /* TimeSeriesService.swift */,
+				80802BFE25D0700000DABCCC /* ValidateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1134,6 +1137,7 @@
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
 				80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */,
 				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
+				80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 				8070314F25B26A4200122CE7 /* RecurringEditViewModel.swift in Sources */,

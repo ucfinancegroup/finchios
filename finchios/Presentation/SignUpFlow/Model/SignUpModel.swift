@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import OpenAPIClient
 
 class SignUpModel: ObservableObject, Identifiable {
 
@@ -69,17 +70,12 @@ class SignUpModel: ObservableObject, Identifiable {
     func validateEmail() {
         self.emailError = false
         self.emailValid = true
-        // TODO(): Make sure the email is a real email (format)
-
-        // Make sure it is available
-//        AuthAvailableService.emailAvailable(email: email) { (result) in
+//        ValidateService.validate(payload: ValidateUserPayload(typ: .email, content: email)) { (success, _, _) in
 //            DispatchQueue.main.async {
-//                if result {
-//                    // is available
+//                if success {
 //                    self.emailError = false
 //                    self.emailValid = true
-//                } else {
-//                    // not available
+//                }else {
 //                    self.emailError = true
 //                    self.emailValid = false
 //                }
