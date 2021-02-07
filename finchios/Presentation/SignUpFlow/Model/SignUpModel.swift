@@ -71,18 +71,17 @@ class SignUpModel: ObservableObject, Identifiable {
     func validateEmail() {
         self.emailError = false
         self.emailValid = true
-        //TODO(): Uncomment
-//        ValidateService.validate(payload: ValidateUserPayload(typ: .email, content: email)) { (success, _, _) in
-//            DispatchQueue.main.async {
-//                if success {
-//                    self.emailError = false
-//                    self.emailValid = true
-//                }else {
-//                    self.emailError = true
-//                    self.emailValid = false
-//                }
-//            }
-//        }
+        ValidateService.validate(payload: ValidateUserPayload(typ: .email, content: email)) { (success, _, _) in
+            DispatchQueue.main.async {
+                if success {
+                    self.emailError = false
+                    self.emailValid = true
+                }else {
+                    self.emailError = true
+                    self.emailValid = false
+                }
+            }
+        }
     }
 
     func validatePassword() {
