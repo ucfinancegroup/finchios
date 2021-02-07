@@ -17,7 +17,7 @@ struct RecurringSubsectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(type.rawValue)
+                Text("\(type.rawValue)s")
                     .font(.title)
                 
                 Spacer()
