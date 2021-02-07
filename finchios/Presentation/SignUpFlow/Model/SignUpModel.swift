@@ -71,6 +71,7 @@ class SignUpModel: ObservableObject, Identifiable {
     func validateEmail() {
         self.emailError = false
         self.emailValid = true
+        //TODO(): Uncomment
 //        ValidateService.validate(payload: ValidateUserPayload(typ: .email, content: email)) { (success, _, _) in
 //            DispatchQueue.main.async {
 //                if success {
