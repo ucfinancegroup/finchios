@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct GoalDetailView: View {
     
@@ -32,11 +33,14 @@ struct GoalDetailView: View {
                     
                     Text("\(goal.goalAndStatus.goal.metric.rawValue) goal of $\(goal.goalAndStatus.goal.threshold.format())")
                         .padding()
+                        .font(.title3)
                     
                     Spacer()
                     
-                    Text("x% progress")
+                    Text("\((goal.goalAndStatus.progress*100).format())% progress!")
                     
+                    BarView(percent: $goal.goalAndStatus.progress)
+
                     Spacer()
                     
                     Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.end)))")

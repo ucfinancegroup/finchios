@@ -16,6 +16,12 @@ struct GoalView: View {
     
     @State var modalCreate: Bool = false
     
+    public init() { }
+    
+    fileprivate init(goals: [GoalAndStatusIdentifiable]) {
+        model.goals = goals
+    }
+    
     var body: some View {
              ScrollView {
                 LazyVStack {
@@ -29,6 +35,8 @@ struct GoalView: View {
                 
             }
         .onAppear() {
+            //TODO(): Probably don't want to fetch every time you
+            // return to this view
             self.isActive = false
             model.onAppear()
         }
@@ -49,7 +57,9 @@ struct GoalView: View {
 struct GoalViewProvider: View {
 
     var body: some View {
-        GoalView()
+        NavigationView {
+            GoalView(goals: [.init(goalAndStatus: .dummy)])
+        }
     }
     
 }

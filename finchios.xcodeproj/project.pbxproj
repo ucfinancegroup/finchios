@@ -76,6 +76,7 @@
 		807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */; };
 		807E3E3125CB3AA70039671E /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E3025CB3AA70039671E /* NumberField.swift */; };
 		80802BF425CF18B600DABCCC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BF325CF18B600DABCCC /* ProgressView.swift */; };
+		80802BFB25D0696400DABCCC /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFA25D0696400DABCCC /* BarView.swift */; };
 		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
 		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */; };
@@ -223,6 +224,7 @@
 		807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardType.swift; sourceTree = "<group>"; };
 		807E3E3025CB3AA70039671E /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		80802BF325CF18B600DABCCC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		80802BFA25D0696400DABCCC /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		8026B695258A5FB8006CB2FB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				80802BF925D0695C00DABCCC /* Bar */,
 				807E3E2F25CB3A9A0039671E /* NumberField */,
 				80576F90258D879600210895 /* Charts */,
 				8062C4F025BE084000E0927F /* Card */,
@@ -716,6 +719,14 @@
 			path = GoalProgress;
 			sourceTree = "<group>";
 		};
+		80802BF925D0695C00DABCCC /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				80802BFA25D0696400DABCCC /* BarView.swift */,
+			);
+			path = Bar;
+			sourceTree = "<group>";
+		};
 		809F952725B3985F007DE7F6 /* NewGoal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1050,6 +1061,7 @@
 				804AEA6D259FC2E8005D414C /* Goal.swift in Sources */,
 				80479C75259AC60C00CDA3DA /* Color.swift in Sources */,
 				80E2677525BD230900277E52 /* AccountDetailViewModel.swift in Sources */,
+				80802BFB25D0696400DABCCC /* BarView.swift in Sources */,
 				80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
 				80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */,

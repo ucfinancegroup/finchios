@@ -28,7 +28,7 @@ struct GoalItemSummaryView: View {
                 
                 Text("\(goal.goal.metric.rawValue) goal of $\(goal.goal.threshold.format())")
                 
-                Text("x% progress")
+                BarView(percent: $goal.progress)
             }
         }
         .disabled(!navAble)
@@ -40,5 +40,7 @@ struct GoalItemSummaryView_Previews: PreviewProvider {
 
     static var previews: some View {
         GoalItemSummaryView(goal: GoalAndStatus.dummy, navAble: false)
+            .padding()
+            .bubble()
     }
 }
