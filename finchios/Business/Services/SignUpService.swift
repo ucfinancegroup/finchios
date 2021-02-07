@@ -21,12 +21,14 @@ struct SignUpService {
         
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
 
+        //TODO implement date
         let signupPayload = SignupPayload(email: email,
                                           password: password,
                                           firstName: firstName,
                                           lastName: lastName,
                                           income: 0,
-                                          location: Location(hasLocation: false, lat: 0, lon: 0))
+                                          location: Location(hasLocation: false, lat: 0, lon: 0),
+                                          birthday: Date(timeIntervalSince1970: 0))
         
         let jsonBody = try? JSONEncoder().encode(signupPayload)
 
