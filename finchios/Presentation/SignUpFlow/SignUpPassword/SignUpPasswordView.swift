@@ -44,7 +44,7 @@ struct SignUpPasswordView: View {
                 Spacer()
 
                 Button(action: {
-                    self.model.createAccount()
+                    self.model.validatePassword()
                 }) {
                     Text("Create Account")
                         .frame(width: 200)

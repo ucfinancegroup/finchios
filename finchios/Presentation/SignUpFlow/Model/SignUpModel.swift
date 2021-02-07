@@ -49,6 +49,7 @@ class SignUpModel: ObservableObject, Identifiable {
             }else {
                 self.accountCreated = false
                 self.creationFailed = true
+                self.creationErrorType = .signUp
                 if let error = error {
                     self.creationErrorStr = "\(error)"
                 }
@@ -83,12 +84,33 @@ class SignUpModel: ObservableObject, Identifiable {
 //        }
     }
 
-    func validatePassword() -> Bool {
+    func validatePassword() {
         let matching = password == confirmPassword
+        
+        if !matching {
+            self.accountCreated = false
+            self.creationFailed = true
+            self.creationErrorType = .str
+            //TODO(): Give more detail.
+            self.creationErrorStr = "Password is not complex enough."
+            return
+        }
 
-        // TODO(): Also make sure it is complex enough
+        ValidateService.validate(payload: ValidateUserPayload(typ: .password, content: password)) { (success, _, _) in
+            DispatchQueue.main.async {
+                if success {
+                    // Create account
+                    self.createAccount()
+                }else {
+                    self.accountCreated = false
+                    self.creationFailed = true
+                    self.creationErrorType = .str
+                    //TODO(): Give more detail.
+                    self.creationErrorStr = "Password is not complex enough."
+                }
+            }
+        }
 
-        return matching
     }
 
 
