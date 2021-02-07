@@ -48,7 +48,7 @@ class SignUpModel: ObservableObject, Identifiable {
     
     // Try to perform user sign up.
     func createAccount() {
-        SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password) { (success, error, response) in
+        SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password, dob: dob) { (success, error, response) in
             if success {
                 self.accountCreated = true
             }else {
