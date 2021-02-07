@@ -57,6 +57,7 @@
 		8062C4F825BE097200E0927F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C4F725BE097200E0927F /* CardStack.swift */; };
 		8062C4FE25BE0B9600E0927F /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C4FD25BE0B9600E0927F /* Identifiable.swift */; };
 		8062C50625BE0D1E00E0927F /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C50525BE0D1E00E0927F /* Insight.swift */; };
+		80664C5A25D07D9A001421BE /* SignUpBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80664C5925D07D9A001421BE /* SignUpBirthdayView.swift */; };
 		8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */; };
 		8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */; };
 		8070314125B0D64000122CE7 /* RecurringDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */; };
@@ -200,6 +201,7 @@
 		8062C4F725BE097200E0927F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		8062C4FD25BE0B9600E0927F /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		8062C50525BE0D1E00E0927F /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
+		80664C5925D07D9A001421BE /* SignUpBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBirthdayView.swift; sourceTree = "<group>"; };
 		8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalItemSummary.swift; sourceTree = "<group>"; };
 		8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailView.swift; sourceTree = "<group>"; };
 		8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailViewModel.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				8026B6DD258A6C50006CB2FB /* SignUpName */,
+				80664C5825D07D82001421BE /* SignUpBirthday */,
 				8026B6A3258A5FF1006CB2FB /* SignUpEmail */,
 				8026B6A5258A5FF1006CB2FB /* SignUpPassword */,
 				8026B6A9258A5FF1006CB2FB /* Model */,
@@ -591,6 +594,14 @@
 				8062C4F725BE097200E0927F /* CardStack.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		80664C5825D07D82001421BE /* SignUpBirthday */ = {
+			isa = PBXGroup;
+			children = (
+				80664C5925D07D9A001421BE /* SignUpBirthdayView.swift */,
+			);
+			path = SignUpBirthday;
 			sourceTree = "<group>";
 		};
 		8070313B25B0CDBE00122CE7 /* RecurringDetail */ = {
@@ -1064,6 +1075,7 @@
 				804AEA6D259FC2E8005D414C /* Goal.swift in Sources */,
 				80479C75259AC60C00CDA3DA /* Color.swift in Sources */,
 				80E2677525BD230900277E52 /* AccountDetailViewModel.swift in Sources */,
+				80664C5A25D07D9A001421BE /* SignUpBirthdayView.swift in Sources */,
 				80802BFB25D0696400DABCCC /* BarView.swift in Sources */,
 				80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,

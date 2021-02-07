@@ -18,6 +18,7 @@ class SignUpModel: ObservableObject, Identifiable {
     @Published var confirmPassword: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
+    @Published var dob: Date = Date()
 
     // For account creation success/failure
     @Published var accountCreated: Bool = false
@@ -36,6 +37,10 @@ class SignUpModel: ObservableObject, Identifiable {
     // For username input success/failure (SignUpUsernameView)
     @Published var usernameValid: Bool = false
     @Published var usernameError: Bool = false
+    
+    // For DoB input success/failure (SignUpBirthdayView)
+    @Published var dobValid: Bool = false
+    @Published var dobError: Bool = false
 
 
     // For code activation success/failure
@@ -111,6 +116,10 @@ class SignUpModel: ObservableObject, Identifiable {
             }
         }
 
+    }
+    
+    func validateDOB() {
+        
     }
 
 
