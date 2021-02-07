@@ -37,12 +37,16 @@ struct AccountDetailView: View {
             Button(action: {
                 self.model.delete(id: self.account.account.itemId)
             }, label: {
-                Text("Delete ALL accounts from this institution.")
-                    .foregroundColor(.red)
+                HStack {
+                    Spacer()
+                    Text("Delete ALL accounts from this institution.")
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                }
+                    .padding()
+                    .bubble(.red)
+                    .foregroundColor(.white)
             })
-            
-            Spacer()
-            
         }
         .padding()
         .alert(isPresented: $model.showAlert) { () -> Alert in
@@ -66,5 +70,20 @@ struct AccountDetailView: View {
                              })
             }
         }
+    }
+}
+
+struct AccountDetailViewPreview: View {
+    
+    @State var pop = false
+    var body: some View {
+        AccountDetailView(shouldPop: $pop, account: .init(account: .dummy))
+    }
+    
+}
+
+struct AccountDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        AccountDetailViewPreview()
     }
 }
