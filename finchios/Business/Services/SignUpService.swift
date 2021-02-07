@@ -7,10 +7,11 @@
 
 import Foundation
 import OpenAPIClient
+import CoreLocation
 
 struct SignUpService {
 
-    static func signUp(email: String, firstName: String, lastName: String, password: String, dob: Date, completion: @escaping ((Bool, Error?, String?) -> Void)) {
+    static func signUp(email: String, firstName: String, lastName: String, password: String, dob: Date, loc: Location, completion: @escaping ((Bool, Error?, String?) -> Void)) {
         guard let url = getURL() else {
             completion(false, nil, nil)
             return
@@ -21,13 +22,12 @@ struct SignUpService {
         
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
 
-        //TODO implement date
         let signupPayload = SignupPayload(email: email,
                                           password: password,
                                           firstName: firstName,
                                           lastName: lastName,
                                           income: 0,
-                                          location: Location(hasLocation: false, lat: 0, lon: 0),
+                                          location: loc,
                                           birthday: dob)
         
         let jsonBody = try? JSONEncoder().encode(signupPayload)

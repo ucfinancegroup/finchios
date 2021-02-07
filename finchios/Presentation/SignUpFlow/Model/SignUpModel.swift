@@ -9,9 +9,13 @@
 import Foundation
 import Combine
 import OpenAPIClient
+import CoreLocation
 
-class SignUpModel: ObservableObject, Identifiable {
+class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDelegate {
 
+    private var clmanager: CLLocationManager = CLLocationManager()
+    private var location: CLLocation?
+    
     // Input data
     @Published var email: String = ""
     @Published var password: String = ""
@@ -48,7 +52,13 @@ class SignUpModel: ObservableObject, Identifiable {
     
     // Try to perform user sign up.
     func createAccount() {
-        SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password, dob: dob) { (success, error, response) in
+        
+        var loc = Location(hasLocation: false, lat: 0, lon: 0)
+        if let location = location {
+            loc = Location(hasLocation: true, lat: location.coordinate.latitude, lon: location.coordinate.longitude)
+        }
+        
+        SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password, dob: dob, loc: loc) { (success, error, response) in
             if success {
                 self.accountCreated = true
             }else {
@@ -104,8 +114,8 @@ class SignUpModel: ObservableObject, Identifiable {
         ValidateService.validate(payload: ValidateUserPayload(typ: .password, content: password)) { (success, _, _) in
             DispatchQueue.main.async {
                 if success {
-                    // Create account
-                    self.createAccount()
+                    // Try to get user's location (which in turn calls create account)
+                    self.requestLocation()
                 }else {
                     self.accountCreated = false
                     self.creationFailed = true
@@ -118,6 +128,11 @@ class SignUpModel: ObservableObject, Identifiable {
 
     }
     
+    func requestLocation() {
+        clmanager.requestLocation()
+    }
+    
+    // TODO(): Implement once route exists
     func validateDOB() {
         
     }
@@ -129,6 +144,21 @@ class SignUpModel: ObservableObject, Identifiable {
     func onDisappaer() {
     }
 
+}
+
+extension SignUpModel { // CLLocationManagerDelegate
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            self.location = location
+        }
+        self.createAccount()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.createAccount()
+    }
+    
 }
 
 enum CreationErrorType {
