@@ -53,9 +53,11 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
     // Try to perform user sign up.
     func createAccount() {
         
-        var loc = Location(hasLocation: false, lat: 0, lon: 0)
+        let loc: Location
         if let location = location {
             loc = Location(hasLocation: true, lat: location.coordinate.latitude, lon: location.coordinate.longitude)
+        }else {
+            loc = Location(hasLocation: false, lat: 0, lon: 0)
         }
         
         SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password, dob: dob, loc: loc) { (success, error, response) in
