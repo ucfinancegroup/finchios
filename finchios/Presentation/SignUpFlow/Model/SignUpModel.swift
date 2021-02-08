@@ -109,7 +109,7 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
             self.creationFailed = true
             self.creationErrorType = .str
             //TODO(): Give more detail.
-            self.creationErrorStr = "Password is not complex enough."
+            self.creationErrorStr = "Passwords do not match."
             return
         }
 
