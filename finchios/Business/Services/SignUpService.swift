@@ -11,6 +11,12 @@ import CoreLocation
 
 struct SignUpService {
 
+    private static let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "YYYY-MM-dd"
+        return f
+    }()
+    
     static func signUp(email: String, firstName: String, lastName: String, password: String, dob: Date, loc: Location, completion: @escaping ((Bool, Error?, String?) -> Void)) {
         guard let url = getURL() else {
             completion(false, nil, nil)
@@ -30,7 +36,12 @@ struct SignUpService {
                                           location: loc,
                                           birthday: dob)
         
-        let jsonBody = try? JSONEncoder().encode(signupPayload)
+        let encoder = JSONEncoder()
+        
+        // Expects a string of yyyy/MM/dd for json.
+        encoder.dateEncodingStrategy = .formatted(SignUpService.formatter)
+        
+        let jsonBody = try? encoder.encode(signupPayload)
 
         guard let unwrappedJsonBody = jsonBody else {
             completion(false, nil, nil)

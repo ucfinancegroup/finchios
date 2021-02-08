@@ -69,7 +69,7 @@ struct SignUpPasswordView: View {
             //TODO(): Better errors if signUp failed.
             switch model.creationErrorType {
             case .signUp:
-                return Alert(title: Text("Failed to create account"), message: Text("Account creation failed. Please go back and make sure all the information you entered is valid or ensure you have a proper internet connection."), dismissButton: .destructive(Text("Okay")) {
+                return Alert(title: Text("Failed to create account"), message: Text("Account creation failed. Please go back and make sure all the information you entered is valid or ensure you have a proper internet connection. \(self.model.creationErrorStr)"), dismissButton: .destructive(Text("Okay")) {
                     self.model.creationFailed = false
                     })
             case .str:

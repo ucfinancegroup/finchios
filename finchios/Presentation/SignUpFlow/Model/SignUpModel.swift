@@ -61,14 +61,16 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
         }
         
         SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password, dob: dob, loc: loc) { (success, error, response) in
-            if success {
-                self.accountCreated = true
-            }else {
-                self.accountCreated = false
-                self.creationFailed = true
-                self.creationErrorType = .signUp
-                if let error = error {
-                    self.creationErrorStr = "\(error)"
+            DispatchQueue.main.async {
+                if success {
+                    self.accountCreated = true
+                }else {
+                    self.accountCreated = false
+                    self.creationFailed = true
+                    self.creationErrorType = .signUp
+                    if let error = error {
+                        self.creationErrorStr = "\(error)"
+                    }
                 }
             }
         }
