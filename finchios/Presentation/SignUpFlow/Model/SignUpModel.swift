@@ -123,7 +123,7 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
                     self.creationFailed = true
                     self.creationErrorType = .str
                     //TODO(): Give more detail.
-                    self.creationErrorStr = "Password is not complex enough."
+                    self.creationErrorStr = "Password is not complex enough. It needs to be longer than 7 characters."
                 }
             }
         }
