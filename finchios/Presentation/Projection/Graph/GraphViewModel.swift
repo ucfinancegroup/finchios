@@ -15,7 +15,7 @@ class GraphViewModel: ObservableObject, Identifiable {
     
     @Published var selected: ChartDataEntry = .dummy
     
-    static let formatter: DateFormatter = {
+    private static let formatter: DateFormatter = {
         let f = DateFormatter()
         f.dateFormat = "MM/dd/yyyy"
         return f

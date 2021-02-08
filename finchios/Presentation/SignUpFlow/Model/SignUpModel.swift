@@ -108,7 +108,6 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
             self.accountCreated = false
             self.creationFailed = true
             self.creationErrorType = .str
-            //TODO(): Give more detail.
             self.creationErrorStr = "Passwords do not match."
             return
         }
@@ -122,7 +121,6 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
                     self.accountCreated = false
                     self.creationFailed = true
                     self.creationErrorType = .str
-                    //TODO(): Give more detail.
                     self.creationErrorStr = "Password is not complex enough. It needs to be longer than 7 characters."
                 }
             }
@@ -134,9 +132,28 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
         clmanager.requestLocation()
     }
     
-    // TODO(): Implement once route exists
+    private static let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "YYYY-mm-dd"
+        return f
+    }()
+    
+    func formatedDOB() -> String {
+        return SignUpModel.formatter.string(from: self.dob)
+    }
+    
     func validateDOB() {
-        
+        ValidateService.validate(payload: ValidateUserPayload(field: .birthday, content: formatedDOB())) { (success, _, _) in
+            DispatchQueue.main.async {
+                if success {
+                    self.dobValid = true
+                    self.dobError = false
+                }else {
+                    self.dobValid = false
+                    self.dobError = true
+                }
+            }
+        }
     }
 
 

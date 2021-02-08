@@ -28,7 +28,8 @@ struct SignUpBirthdayView: View {
                 Spacer()
 
                 DatePicker("Date of Birth", selection: $model.dob)
-
+                    .padding()
+                
                 Spacer()
 
                 Button(action: {
@@ -45,7 +46,7 @@ struct SignUpBirthdayView: View {
                 
                 Spacer()
 
-                NavigationLink(destination: SignUpPasswordView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.emailValid) {
+                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.dobValid) {
                     EmptyView()
                 }
             }
@@ -56,9 +57,8 @@ struct SignUpBirthdayView: View {
         .onDisappear {
             self.model.onDisappaer()
         }
-        .alert(isPresented: $model.emailError) { () -> Alert in
-            //TODO(): provide better errors
-            return Alert(title: Text("\(self.model.email) is either not a valid email or is already associated with an account. Please enter a different email."), message: nil, dismissButton: .default(Text("Okay")))
+        .alert(isPresented: $model.dobError) { () -> Alert in
+            return Alert(title: Text("You need to be 18 to use Finch. The given date of birth, \(model.formatedDOB()), does not indicate you are eligible for an account."), message: nil, dismissButton: .default(Text("Okay")))
         }
     }
 }

@@ -55,7 +55,7 @@ struct SignUpNameView: View {
                 
                 Spacer()
 
-                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.nameValid) {
+                NavigationLink(destination: SignUpBirthdayView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.nameValid) {
                     EmptyView()
                 }
             }
