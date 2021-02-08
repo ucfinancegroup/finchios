@@ -88,7 +88,7 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
     func validateEmail() {
         self.emailError = false
         self.emailValid = true
-        ValidateService.validate(payload: ValidateUserPayload(typ: .email, content: email)) { (success, _, _) in
+        ValidateService.validate(payload: ValidateUserPayload(field: .email, content: email)) { (success, _, _) in
             DispatchQueue.main.async {
                 if success {
                     self.emailError = false
@@ -113,7 +113,7 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
             return
         }
 
-        ValidateService.validate(payload: ValidateUserPayload(typ: .password, content: password)) { (success, _, _) in
+        ValidateService.validate(payload: ValidateUserPayload(field: .password, content: password)) { (success, _, _) in
             DispatchQueue.main.async {
                 if success {
                     // Try to get user's location (which in turn calls create account)
