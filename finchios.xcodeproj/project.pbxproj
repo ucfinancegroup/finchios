@@ -58,6 +58,7 @@
 		8062C4FE25BE0B9600E0927F /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C4FD25BE0B9600E0927F /* Identifiable.swift */; };
 		8062C50625BE0D1E00E0927F /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062C50525BE0D1E00E0927F /* Insight.swift */; };
 		80664C5A25D07D9A001421BE /* SignUpBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80664C5925D07D9A001421BE /* SignUpBirthdayView.swift */; };
+		80664C6125D1CB7E001421BE /* InsightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80664C6025D1CB7E001421BE /* InsightsService.swift */; };
 		8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */; };
 		8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */; };
 		8070314125B0D64000122CE7 /* RecurringDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */; };
@@ -202,6 +203,7 @@
 		8062C4FD25BE0B9600E0927F /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		8062C50525BE0D1E00E0927F /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		80664C5925D07D9A001421BE /* SignUpBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBirthdayView.swift; sourceTree = "<group>"; };
+		80664C6025D1CB7E001421BE /* InsightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsService.swift; sourceTree = "<group>"; };
 		8070313725B0C5BB00122CE7 /* PrincipalItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalItemSummary.swift; sourceTree = "<group>"; };
 		8070313C25B0CDCD00122CE7 /* RecurringDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailView.swift; sourceTree = "<group>"; };
 		8070314025B0D64000122CE7 /* RecurringDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDetailViewModel.swift; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 				80FD7ADE25C20D7300F11776 /* LogOutService.swift */,
 				804C16A125C865B0000035FD /* TimeSeriesService.swift */,
 				80802BFE25D0700000DABCCC /* ValidateService.swift */,
+				80664C6025D1CB7E001421BE /* InsightsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				80E2677525BD230900277E52 /* AccountDetailViewModel.swift in Sources */,
 				80664C5A25D07D9A001421BE /* SignUpBirthdayView.swift in Sources */,
 				80802BFB25D0696400DABCCC /* BarView.swift in Sources */,
+				80664C6125D1CB7E001421BE /* InsightsService.swift in Sources */,
 				80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
 				80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */,
