@@ -34,8 +34,6 @@ struct CredentialsObject {
             guard let first = result.first as! NSManagedObject? else {
                 return base
             }
-            
-            print(first)
 
             if let jwt = first.value(forKey: "jwt") as? String,
                 let email = first.value(forKey: "email") as? String,
