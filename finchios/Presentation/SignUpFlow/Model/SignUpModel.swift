@@ -13,7 +13,7 @@ import CoreLocation
 
 class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDelegate {
 
-    private var clmanager: CLLocationManager = CLLocationManager()
+    private let clmanager: CLLocationManager = CLLocationManager()
     private var location: CLLocation?
     
     // Input data
@@ -134,7 +134,7 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
     
     private static let formatter: DateFormatter = {
         let f = DateFormatter()
-        f.dateFormat = "YYYY-mm-dd"
+        f.dateFormat = "YYYY-MM-dd"
         return f
     }()
     
@@ -158,6 +158,7 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
 
 
     func onAppear() {
+        clmanager.delegate = self
     }
 
     func onDisappaer() {

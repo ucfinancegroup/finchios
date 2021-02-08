@@ -33,8 +33,6 @@ struct ValidateService {
         
         
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-            print(urlResponse)
-            print(error)
             guard let httpResponse = urlResponse as? HTTPURLResponse else {
                 completion(false, error, nil)
                 return
