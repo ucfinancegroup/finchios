@@ -93,6 +93,7 @@
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
 		80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */; };
+		80C4A3E925DDADF100B56E3A /* MongoObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */; };
 		80C97BA625A76ECF008729A7 /* AmountItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */; };
 		80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BAE25A76F27008729A7 /* RecurringItemType.swift */; };
 		80C97BB525A7701F008729A7 /* Recurring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BB425A7701F008729A7 /* Recurring.swift */; };
@@ -244,6 +245,7 @@
 		80AF892E258AD83700291B23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		80AF8932258ADA0900291B23 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
 		80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringIntervalType.swift; sourceTree = "<group>"; };
+		80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoObjectID.swift; sourceTree = "<group>"; };
 		80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountItemSummary.swift; sourceTree = "<group>"; };
 		80C97BAE25A76F27008729A7 /* RecurringItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringItemType.swift; sourceTree = "<group>"; };
 		80C97BB425A7701F008729A7 /* Recurring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurring.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				8070316625B295B000122CE7 /* GoalAndStatus.swift */,
 				80E2676B25BC6C9400277E52 /* Account.swift */,
 				8062C50525BE0D1E00E0927F /* Insight.swift */,
+				80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */,
 			);
 			path = OpenAPIClient;
 			sourceTree = "<group>";
@@ -1103,6 +1106,7 @@
 				809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */,
 				8062C4F825BE097200E0927F /* CardStack.swift in Sources */,
 				80802BF425CF18B600DABCCC /* ProgressView.swift in Sources */,
+				80C4A3E925DDADF100B56E3A /* MongoObjectID.swift in Sources */,
 				8026B6CB258A652D006CB2FB /* CredentialsObject.swift in Sources */,
 				80576F92258D87C500210895 /* PieView.swift in Sources */,
 				8062C4FE25BE0B9600E0927F /* Identifiable.swift in Sources */,
