@@ -14,6 +14,7 @@ class GraphViewModel: ObservableObject, Identifiable {
     @Published var timeseries: [ChartDataEntry] = []
     
     @Published var selected: ChartDataEntry = .dummy
+    @Published var today: ChartDataEntry = .init(x: 0, y: 0)
     
     private static let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -40,10 +41,12 @@ class GraphViewModel: ObservableObject, Identifiable {
         TimeSeriesService.example { (succcess, error, response) in
             DispatchQueue.main.async {
                 if let response = response {
-                    self.timeseries = response.map { ChartDataEntry(timeseriesEntry: $0) }
+                    self.timeseries = response.series.map { ChartDataEntry(timeseriesEntry: $0) }
                     
-                    if let last = self.timeseries.last {
-                        self.selected = last
+                    if let select = response.series.first(where: { $0.date == response.start }) {
+                        print("yo")
+                        self.selected = ChartDataEntry(timeseriesEntry: select)
+                        self.today = ChartDataEntry(timeseriesEntry: select)
                     }
                 }
             }

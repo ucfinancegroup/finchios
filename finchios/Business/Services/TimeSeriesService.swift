@@ -11,7 +11,7 @@ import OpenAPIClient
 // GET /timeseries/example
 struct TimeSeriesService {
     
-    public static func example(completion: @escaping ((Bool, Error?, [TimeSeriesEntry]?) -> Void)) {
+    public static func example(completion: @escaping ((Bool, Error?, TimeSeriesResponse?) -> Void)) {
         guard let url = getExampleURL() else {
             completion(false, nil, nil)
             return
@@ -29,7 +29,7 @@ struct TimeSeriesService {
                 return
             }
             
-            guard let response = try? JSONDecoder().decode([TimeSeriesEntry].self, from: data) else {
+            guard let response = try? JSONDecoder().decode(TimeSeriesResponse.self, from: data) else {
                 completion(false, error, nil)
                 return
             }

@@ -15,13 +15,13 @@ struct LineView: UIViewRepresentable {
     
     @Binding var entry: ChartDataEntry
     
+    @Binding var today: ChartDataEntry
+    
     private let view: LineChartView = LineChartView()
     
     class Coordinator: NSObject, ChartViewDelegate, UIGestureRecognizerDelegate {
         
         var parent: LineView
-        
-        public var last: ChartDataEntry = ChartDataEntry(x: 0, y: -1)
         
         public var reset: Bool = false
         
@@ -34,9 +34,7 @@ struct LineView: UIViewRepresentable {
         }
         
         func chartView(_ chartView: ChartViewBase, animatorDidStop animator: Animator) {
-            if let last = parent.entries.last {
-                parent.entry = last
-            }
+            parent.entry = parent.today
         }
         
         @objc func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -46,7 +44,7 @@ struct LineView: UIViewRepresentable {
         @objc func panGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
             if recognizer.state == .ended {
                 parent.view.highlightValue(nil, callDelegate: false)
-                parent.entry = last
+                parent.entry = parent.today
             }
         }
         
@@ -115,9 +113,6 @@ struct LineView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: LineChartView, context: Context) {
-        if let last = entries.last {
-            context.coordinator.last = last
-        }
         uiView.data = addData()
     }
 }
@@ -125,6 +120,7 @@ struct LineView: UIViewRepresentable {
 struct LineViewWrapper: View {
     
     @State var entry = ChartDataEntry(x: 0, y: 0)
+    @State var today = ChartDataEntry(x: 0, y: 0)
     
     var body: some View {
         LineView(entries:[
@@ -134,7 +130,7 @@ struct LineViewWrapper: View {
             ChartDataEntry(x: 3, y: 0),
             ChartDataEntry(x: 4, y: 100),
             ChartDataEntry(x: 5, y: 200),
-        ], entry: $entry)
+        ], entry: $entry, today: $today)
     }
     
 }

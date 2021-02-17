@@ -25,7 +25,7 @@ struct GraphView: View {
                 
 
             
-            LineView(entries: model.timeseries, entry: $model.selected)
+            LineView(entries: model.timeseries, entry: $model.selected, today: $model.today)
         }
         .frame(height: 300)
         .onAppear() {
