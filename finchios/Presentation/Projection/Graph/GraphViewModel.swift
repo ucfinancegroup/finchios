@@ -44,7 +44,6 @@ class GraphViewModel: ObservableObject, Identifiable {
                     self.timeseries = response.series.map { ChartDataEntry(timeseriesEntry: $0) }
                     
                     if let select = response.series.first(where: { $0.date == response.start }) {
-                        print("yo")
                         self.selected = ChartDataEntry(timeseriesEntry: select)
                         self.today = ChartDataEntry(timeseriesEntry: select)
                     }
