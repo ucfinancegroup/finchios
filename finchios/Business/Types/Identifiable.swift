@@ -12,5 +12,6 @@ public struct Iden<T>: Identifiable {
     public var id = UUID()
     
     public var obj: T
+    public var index: Int = 0
     
 }

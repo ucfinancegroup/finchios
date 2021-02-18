@@ -25,7 +25,13 @@ public class ProjectionViewModel: ObservableObject, Identifiable {
         insightsGen = true
         
         // Fetch Insights
-        //insights = [Iden<Insight>(obj: .dummy), Iden<Insight>(obj: .dummy)]
+        InsightsService.example { (success, _, result) in
+            DispatchQueue.main.async {
+                if let result = result {
+                    self.insights = result.enumerated().map { Iden<Insight>(obj: $1, index: $0) }
+                }
+            }
+        }
     }
     
 }

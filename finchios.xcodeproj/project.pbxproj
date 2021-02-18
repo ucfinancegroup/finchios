@@ -94,6 +94,7 @@
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
 		80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */; };
 		80C4A3E925DDADF100B56E3A /* MongoObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */; };
+		80C4A3F525DDC70400B56E3A /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = 80C4A3F425DDC70400B56E3A /* CardStack */; };
 		80C97BA625A76ECF008729A7 /* AmountItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */; };
 		80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BAE25A76F27008729A7 /* RecurringItemType.swift */; };
 		80C97BB525A7701F008729A7 /* Recurring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BB425A7701F008729A7 /* Recurring.swift */; };
@@ -280,6 +281,7 @@
 			files = (
 				80F9EE2C25993A58007CD06C /* OpenAPIClient in Frameworks */,
 				80399A9D256B4D750014E2D9 /* Charts in Frameworks */,
+				80C4A3F525DDC70400B56E3A /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,6 +949,7 @@
 			packageProductDependencies = (
 				80399A9C256B4D750014E2D9 /* Charts */,
 				80F9EE2B25993A58007CD06C /* OpenAPIClient */,
+				80C4A3F425DDC70400B56E3A /* CardStack */,
 			);
 			productName = finchios;
 			productReference = 80725CF9254C71FE0054787C /* finchios.app */;
@@ -1022,6 +1025,7 @@
 			packageReferences = (
 				80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */,
 				80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */,
+				80C4A3F325DDC70400B56E3A /* XCRemoteSwiftPackageReference "CardStack" */,
 			);
 			productRefGroup = 80725CFA254C71FE0054787C /* Products */;
 			projectDirPath = "";
@@ -1501,6 +1505,14 @@
 				version = 3.6.0;
 			};
 		};
+		80C4A3F325DDC70400B56E3A /* XCRemoteSwiftPackageReference "CardStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nhoogendoorn/CardStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ucfinancegroup/FinchSwiftClient";
@@ -1516,6 +1528,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		80C4A3F425DDC70400B56E3A /* CardStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80C4A3F325DDC70400B56E3A /* XCRemoteSwiftPackageReference "CardStack" */;
+			productName = CardStack;
 		};
 		80F9EE2B25993A58007CD06C /* OpenAPIClient */ = {
 			isa = XCSwiftPackageProductDependency;

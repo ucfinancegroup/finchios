@@ -12,32 +12,29 @@ struct CardStack: View {
     
     @Binding var insights: [Iden<Insight>]
     
+    private func getCardOffset(id: Int) -> CGFloat {
+        return  CGFloat(insights.count - 1 - id) * 10
+    }
+    
     var body: some View {
         if insights.count > 0 {
             VStack {
                 
                 ZStack(alignment: .topTrailing) {
-                    //ForEach(self.insights, id: \.id) { insight in
-                    ForEach(self.insights.indices, id:\.self) { index in
-                        Card(input: $insights[index], onRemove: { removed in
+                    ForEach(self.insights, id: \.id) { insight in
+                        Card(input: insight, onRemove: { removed in
                             // Remove that user from our array
                             self.insights.removeAll { $0.id == removed.id }
                         })
-                        .animation(.spring()) // Animate our changes to our frame
+                            .animation(.spring()) // Animate our changes to our frame
+                            .offset(x: 0, y: self.getCardOffset(id: insight.index))
+                        
                     }
-                    
-                    
-//                    Text("\(insights.count)")
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .background(Color.teal)
-//                        .cornerRadius(200)
-
                 }
                 
             }
             .frame(height: 150, alignment: .center)
-            .bubble()
+            .padding()
         }
         else {
             VStack {
