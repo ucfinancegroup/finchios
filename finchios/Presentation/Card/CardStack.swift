@@ -17,6 +17,7 @@ struct CardStack: View {
     }
     
     var body: some View {
+        //TODO() Maybe make the empty view a part of a z stack and under the other stuff
         if insights.count > 0 {
             VStack {
                 
@@ -34,7 +35,7 @@ struct CardStack: View {
                 
             }
             .frame(height: 150, alignment: .center)
-            .padding()
+            .padding(.bottom)
         }
         else {
             VStack {

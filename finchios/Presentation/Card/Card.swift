@@ -56,18 +56,18 @@ public struct Card: View {
     }
 }
 
-//struct CardPreview: View {
-//
-//    @State var insight = Iden<Insight>(obj: .dummy)
-//
-//    var body: some View {
-//        Card(input: $insight, onRemove: { _ in })
-//    }
-//
-//}
-//
-//struct Card_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardPreview()
-//    }
-//}
+struct CardPreview: View {
+
+    @State var insight = Iden<Insight>(obj: .dummy)
+
+    var body: some View {
+        Card(input: insight, onRemove: { _ in })
+    }
+
+}
+
+struct Card_Previews: PreviewProvider {
+    static var previews: some View {
+        CardPreview()
+    }
+}
