@@ -54,7 +54,7 @@ struct NewRecurringView: View {
                             }
                             
                             
-                            NumberField(text: self.$model.amountField, keyType: .decimalPad, placeholder: "Amount") { (change) in
+                            NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Amount") { (change) in
                                 self.model.amountField = change
                             }
                             
@@ -66,7 +66,7 @@ struct NewRecurringView: View {
                         HStack {
                             Text("-$")
                             
-                            NumberField(text: self.$model.principalField, keyType: .decimalPad, placeholder: "Principal") { (change) in
+                            NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Principal") { (change) in
                                 self.model.principalField = change
                             }
                         }
@@ -74,7 +74,7 @@ struct NewRecurringView: View {
                         
                         Spacer()
                         
-                        NumberField(text: self.$model.interestField, keyType: .decimalPad, placeholder: "Interest (Percent)") { (change) in
+                        NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)") { (change) in
                             self.model.interestField = change
                         }
                         
@@ -90,7 +90,7 @@ struct NewRecurringView: View {
                     
                     Spacer()
                     
-                    NumberField(text: self.$model.freqContentField, keyType: .numberPad, placeholder: "Interval Frequency") { (change) in
+                    NumberField(alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency") { (change) in
                         self.model.freqContentField = change
                     }
                     

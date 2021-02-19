@@ -42,4 +42,45 @@ class SignUpIntegrationTest: XCTestCase {
         
         assert(app.navigationBars.buttons.count > 0)
     }
+    
+    func testFlowSuccessWithoutAccountCreation() throws {
+        let app = XCUIApplication()
+        //TODO(): make extension for app to do all this
+        app.launchEnvironment = ["key": "val"]
+        app.launchArguments = ["UI-Testing"]
+        app.launch()
+        
+        app.children(matching: .window).element(boundBy: 1).children(matching: .other).element.tap()
+        app.textFields["First Name"].tap()
+        
+        let deleteKey = app/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        deleteKey.tap()
+        
+        let bKey = app/*@START_MENU_TOKEN@*/.keys["b"]/*[[".keyboards.keys[\"b\"]",".keys[\"b\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        bKey.tap()
+        bKey.tap()
+        app/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let eKey = app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        eKey.tap()
+        eKey.tap()
+        
+        let tKey = app/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        tKey.tap()
+        tKey.tap()
+        tKey.tap()
+        app.textFields["Last Name"].tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        
+        let fKey = app/*@START_MENU_TOKEN@*/.keys["f"]/*[[".keyboards.keys[\"f\"]",".keys[\"f\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        fKey.tap()
+        fKey.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Return"]/*[[".keyboards",".buttons[\"return\"]",".buttons[\"Return\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Continue"].tap()
+
+        //TODO() Finish
+                
+    }
 }

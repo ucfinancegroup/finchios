@@ -29,6 +29,7 @@ struct SignUpBirthdayView: View {
 
                 DatePicker("Date of Birth", selection: $model.dob)
                     .padding()
+                    .accessibility(identifier: "dob_picker")
                 
                 Spacer()
 
@@ -46,7 +47,7 @@ struct SignUpBirthdayView: View {
                 
                 Spacer()
 
-                NavigationLink(destination: SignUpEmailView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.dobValid) {
+                NavigationLink(destination: SignUpFinancialsView(navBarHidden: $navBarHidden).environmentObject(model), isActive: $model.dobValid) {
                     EmptyView()
                 }
             }

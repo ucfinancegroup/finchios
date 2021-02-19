@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NumberField: UIViewRepresentable {
     
-    @Binding var text: String
+    var alignment: NSTextAlignment
     var keyType: UIKeyboardType
     var placeholder: String
     var changeHandler:((String)->Void)
@@ -22,6 +22,9 @@ struct NumberField: UIViewRepresentable {
         textfield.delegate = textfield
         
         textfield.textFieldChangedHandler = changeHandler
+        
+        textfield.textAlignment = alignment
+        
         
         textfield.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
