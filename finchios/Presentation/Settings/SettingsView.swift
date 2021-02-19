@@ -22,6 +22,19 @@ struct SettingsView: View {
 
             // Content
             Form {
+                Section(header: Text("Account")) {
+                    Text("Email: \(CredentialsObject.shared.email)")
+                    
+                    //TODO() Change to real views
+                    NavigationLink("Change Password", destination: AboutView())
+                    NavigationLink("Change Personal Info", destination: AboutView())
+                    NavigationLink("Edit Income", destination: AboutView())
+                }
+                Section(header: Text("")) {
+                    NavigationLink("About", destination: AboutView())
+
+                    //TODO(): Entry point for editing Plaid accounts (Link entry)
+                }
                 Section(header: Text("")) {
                     Button(action: {
                         // Log out
@@ -30,7 +43,6 @@ struct SettingsView: View {
                     }) {
                         Text("Log Out")
                     }
-                    //TODO(): Entry point for editing Plaid accounts (Link entry)
                 }
             }
             .navigationBarTitle(navBarHidden ? "" : "Settings")
