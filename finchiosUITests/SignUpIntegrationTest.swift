@@ -50,7 +50,8 @@ class SignUpIntegrationTest: XCTestCase {
         app.launchArguments = ["UI-Testing"]
         app.launch()
         
-        app.children(matching: .window).element(boundBy: 1).children(matching: .other).element.tap()
+        app.buttons["Sign Up"].tap()
+        
         app.textFields["First Name"].tap()
         
         let deleteKey = app/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
@@ -80,7 +81,11 @@ class SignUpIntegrationTest: XCTestCase {
         app/*@START_MENU_TOKEN@*/.buttons["Return"]/*[[".keyboards",".buttons[\"return\"]",".buttons[\"Return\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.buttons["Continue"].tap()
 
-        //TODO() Finish
-                
+        let picker = app.datePickers["dob_picker"]
+        picker.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "June")
+        picker.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "1")
+        picker.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: "1990")
+        
+        app.children(matching: .window).element(boundBy: 1).children(matching: .other).element.tap()
     }
 }
