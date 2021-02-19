@@ -91,6 +91,7 @@
 		809F955325B626E9007DE7F6 /* GoalEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F955225B626E9007DE7F6 /* GoalEditViewModel.swift */; };
 		80A44BAE25E03F62004ECED3 /* PublishedObject in Frameworks */ = {isa = PBXBuildFile; productRef = 80A44BAD25E03F62004ECED3 /* PublishedObject */; };
 		80A44BB525E04627004ECED3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BB425E04627004ECED3 /* AboutView.swift */; };
+		80A44BBE25E04E87004ECED3 /* SignUpFinancialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BBD25E04E87004ECED3 /* SignUpFinancialsView.swift */; };
 		80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8928258AD81F00291B23 /* SettingsView.swift */; };
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
@@ -244,6 +245,7 @@
 		809F954C25B626C1007DE7F6 /* GoalEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditView.swift; sourceTree = "<group>"; };
 		809F955225B626E9007DE7F6 /* GoalEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditViewModel.swift; sourceTree = "<group>"; };
 		80A44BB425E04627004ECED3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		80A44BBD25E04E87004ECED3 /* SignUpFinancialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinancialsView.swift; sourceTree = "<group>"; };
 		80AF8928258AD81F00291B23 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80AF892E258AD83700291B23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		80AF8932258ADA0900291B23 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			children = (
 				8026B6DD258A6C50006CB2FB /* SignUpName */,
 				80664C5825D07D82001421BE /* SignUpBirthday */,
+				80A44BBA25E04890004ECED3 /* SignUpFinancials */,
 				8026B6A3258A5FF1006CB2FB /* SignUpEmail */,
 				8026B6A5258A5FF1006CB2FB /* SignUpPassword */,
 				8026B6A9258A5FF1006CB2FB /* Model */,
@@ -785,6 +788,14 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		80A44BBA25E04890004ECED3 /* SignUpFinancials */ = {
+			isa = PBXGroup;
+			children = (
+				80A44BBD25E04E87004ECED3 /* SignUpFinancialsView.swift */,
+			);
+			path = SignUpFinancials;
+			sourceTree = "<group>";
+		};
 		80AF8926258AD7F000291B23 /* Projection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,6 +1113,7 @@
 				80664C6125D1CB7E001421BE /* InsightsService.swift in Sources */,
 				80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
+				80A44BBE25E04E87004ECED3 /* SignUpFinancialsView.swift in Sources */,
 				80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */,
 				809F954225B5210D007DE7F6 /* GoalDetailViewModel.swift in Sources */,
 				80479C80259ACA0900CDA3DA /* LeaderboardViewModel.swift in Sources */,

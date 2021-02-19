@@ -17,7 +17,7 @@ struct SignUpService {
         return f
     }()
     
-    static func signUp(email: String, firstName: String, lastName: String, password: String, dob: Date, loc: Location, completion: @escaping ((Bool, Error?, String?) -> Void)) {
+    static func signUp(signupPayload: SignupPayload, completion: @escaping ((Bool, Error?, String?) -> Void)) {
         guard let url = getURL() else {
             completion(false, nil, nil)
             return
@@ -27,14 +27,6 @@ struct SignUpService {
         request.httpMethod = "POST"
         
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
-
-        let signupPayload = SignupPayload(email: email,
-                                          password: password,
-                                          firstName: firstName,
-                                          lastName: lastName,
-                                          income: 0,
-                                          location: loc,
-                                          birthday: dob)
         
         let encoder = JSONEncoder()
         
@@ -78,8 +70,8 @@ struct SignUpService {
             
             DispatchQueue.main.async {
                 _ = CredentialsObject.resetCredentials(jwt: sid,
-                                                       email: email,
-                                                       password: password)
+                                                       email: signupPayload.email,
+                                                       password: signupPayload.password)
             }
 
             completion(true, nil, cookie)

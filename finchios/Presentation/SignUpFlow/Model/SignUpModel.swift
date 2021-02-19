@@ -23,6 +23,8 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var dob: Date = Date()
+    @Published var netWorth: String = ""
+    @Published var income: String = ""
 
     // For account creation success/failure
     @Published var accountCreated: Bool = false
@@ -45,6 +47,10 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
     // For DoB input success/failure (SignUpBirthdayView)
     @Published var dobValid: Bool = false
     @Published var dobError: Bool = false
+    
+    // For Financials input success/failure (SignUpBirthdayView)
+    @Published var finValid: Bool = false
+    @Published var finError: Bool = false
 
 
     // For code activation success/failure
@@ -60,7 +66,30 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
             loc = Location(hasLocation: false, lat: 0, lon: 0)
         }
         
-        SignUpService.signUp(email: email, firstName: firstName, lastName: lastName, password: password, dob: dob, loc: loc) { (success, error, response) in
+        // Should be guaranteed to unwrap, but will be safe.
+        let parseIncome: Double
+        if let parse = Double(income) {
+            parseIncome = parse
+        }else {
+            parseIncome = 0
+        }
+        let parseNW: Double
+        if let parse = Double(netWorth) {
+            parseNW = parse
+        }else {
+            parseNW = 0
+        }
+        
+        let signupPayload = SignupPayload(email: email,
+                                          password: password,
+                                          firstName: firstName,
+                                          lastName: lastName,
+                                          income: parseIncome,
+                                          netWorth: parseNW,
+                                          location: loc,
+                                          birthday: dob)
+        
+        SignUpService.signUp(signupPayload: signupPayload) { (success, error, response) in
             DispatchQueue.main.async {
                 if success {
                     self.accountCreated = true
@@ -128,6 +157,17 @@ class SignUpModel: NSObject, ObservableObject, Identifiable, CLLocationManagerDe
             }
         }
 
+    }
+    
+    func validateFinancials() {
+        guard let _ = Double(self.netWorth), let _ = Double(self.income) else {
+            self.finValid = false
+            self.finError = true
+            return
+        }
+        
+        self.finError = false
+        self.finValid = true
     }
     
     func requestLocation() {
