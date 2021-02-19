@@ -16,7 +16,7 @@ struct RecurringEditView: View {
     
     @Binding var recurring: Recurring
     
-    @ObservedObject var model: RecurringEditViewModel = RecurringEditViewModel()
+    @StateObject var model: RecurringEditViewModel = RecurringEditViewModel()
     
     var body: some View {
         VStack {

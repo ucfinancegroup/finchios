@@ -12,7 +12,7 @@ struct GoalView: View {
     
     @State var isActive: Bool = false
     
-    @ObservedObject var model: GoalViewModel = GoalViewModel()
+    @StateObject var model: GoalViewModel = GoalViewModel()
     
     @State var modalCreate: Bool = false
     

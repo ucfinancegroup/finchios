@@ -11,7 +11,7 @@ struct SettingsView: View {
 
     @Binding var navBarHidden: Bool
 
-    @ObservedObject var model: SettingsViewModel = SettingsViewModel()
+    @StateObject var model: SettingsViewModel = SettingsViewModel()
 
     var body: some View {
         ZStack {

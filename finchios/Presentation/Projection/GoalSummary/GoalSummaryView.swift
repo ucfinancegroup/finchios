@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GoalSummaryView: View {
     
-    @ObservedObject var model: GoalSummaryViewModel = GoalSummaryViewModel()
+    @StateObject var model: GoalSummaryViewModel = GoalSummaryViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

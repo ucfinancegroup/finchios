@@ -12,7 +12,7 @@ struct NewGoalView: View {
     
     @Binding var present: Bool
     
-    @ObservedObject var model = NewGoalViewModel()
+    @StateObject var model = NewGoalViewModel()
     
     var body: some View {
         VStack {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountsSummaryView: View {
     
-    @ObservedObject var model = AccountsSummaryViewModel()
+    @StateObject var model = AccountsSummaryViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

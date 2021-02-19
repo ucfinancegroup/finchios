@@ -14,7 +14,7 @@ struct GoalEditView: View {
     
     @Binding var goal: GoalAndStatus
     
-    @ObservedObject var model: GoalEditViewModel = GoalEditViewModel()
+    @StateObject var model: GoalEditViewModel = GoalEditViewModel()
     
     var body: some View {
         VStack {

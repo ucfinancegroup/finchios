@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecurringSummaryView: View {
     
-    @ObservedObject var model: RecurringSummaryViewModel = RecurringSummaryViewModel()
+    @StateObject var model: RecurringSummaryViewModel = RecurringSummaryViewModel()
     
     var body: some View {
         VStack {

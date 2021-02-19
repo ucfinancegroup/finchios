@@ -65,7 +65,7 @@ struct LineView: UIViewRepresentable {
         
         view.dragEnabled = true
         
-        view.xAxis.drawGridLinesEnabled = false
+        //view.xAxis.drawGridLinesEnabled = false
         view.leftAxis.drawGridLinesEnabled = false
     
         view.delegate = context.coordinator

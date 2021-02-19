@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllocationSummaryView: View {
     
-    @ObservedObject var model: AllocationSummaryViewModel = AllocationSummaryViewModel()
+    @StateObject var model: AllocationSummaryViewModel = AllocationSummaryViewModel()
     
     var body: some View {
         VStack {

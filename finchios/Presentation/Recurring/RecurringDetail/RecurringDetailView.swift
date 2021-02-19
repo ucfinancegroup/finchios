@@ -18,7 +18,7 @@ struct RecurringDetailView: View {
     
     @State var modalActive: Bool = false
     
-    @ObservedObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
+    @StateObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
     
     var body: some View {
         VStack {

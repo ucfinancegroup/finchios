@@ -10,7 +10,7 @@ import Charts
 
 struct GraphView: View {
     
-    @ObservedObject private var model: GraphViewModel = GraphViewModel()
+    @StateObject private var model: GraphViewModel = GraphViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {

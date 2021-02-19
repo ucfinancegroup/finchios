@@ -18,10 +18,8 @@ class AccountsSummaryViewModel: ObservableObject, Identifiable {
             DispatchQueue.main.async {
                 if let response = response {
                     
-                    self.accounts = response.accounts.map { AccountIdentifiable(account: $0) }
+                    self.accounts = Array(response.accounts.map { AccountIdentifiable(account: $0) }.prefix(3))
                     self.errors = response.errors.map { AccountErrorIdentifiable(error: $0) }
-                    
-                    self.accounts = Array(self.accounts.prefix(3))
                     
                 }else {
                     // show error

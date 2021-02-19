@@ -11,7 +11,7 @@ struct SignUpNameView: View {
 
     @Binding var navBarHidden: Bool
 
-    @ObservedObject private var model: SignUpModel = SignUpModel()
+    @StateObject private var model: SignUpModel = SignUpModel()
 
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
 

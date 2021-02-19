@@ -11,7 +11,7 @@ struct AccountView: View {
     
     @State var isActive: Bool = false
     
-    @ObservedObject var model: AcccountViewModel = AcccountViewModel()
+    @StateObject var model: AcccountViewModel = AcccountViewModel()
     
     @State var modalCreate: Bool = false
     

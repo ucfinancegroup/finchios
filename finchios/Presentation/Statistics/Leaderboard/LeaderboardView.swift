@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LeaderboardView: View {
     
-    @ObservedObject var model = LeaderboardViewModel()
+    @StateObject var model = LeaderboardViewModel()
     
     var body: some View {
         VStack {

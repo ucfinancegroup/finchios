@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExpensesSummaryView: View {
     
-    @ObservedObject var model = ExpensesSummaryViewModel()
+    @StateObject var model = ExpensesSummaryViewModel()
     
     var body: some View {
         VStack {

@@ -12,7 +12,7 @@ struct StartUpView: View {
 
     @State var navBarHidden: Bool = false
 
-    @ObservedObject private var model = StartUpViewModel()
+    @StateObject private var model = StartUpViewModel()
 
     //TODO(): Pass is nav bar hidden down the stack
     var body: some View {

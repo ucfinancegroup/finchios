@@ -85,7 +85,7 @@ struct SignUpPasswordView: View {
 struct SignUpPasswordViewPreviewer: View {
     @State private var value = false
 
-    @ObservedObject var model = SignUpModel()
+    @StateObject var model = SignUpModel()
 
     var body: some View {
         SignUpPasswordView(navBarHidden: $value)

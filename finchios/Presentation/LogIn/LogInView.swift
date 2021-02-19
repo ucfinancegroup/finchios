@@ -15,7 +15,7 @@ struct LogInView: View {
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
-    @ObservedObject private var model = LogInViewModel()
+    @StateObject private var model = LogInViewModel()
     
     @State var transition: Bool = false
     

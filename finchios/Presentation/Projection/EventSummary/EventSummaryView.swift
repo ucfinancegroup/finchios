@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventSummaryView: View {
     
-    @ObservedObject var model: EventSummaryViewModel = EventSummaryViewModel()
+    @StateObject var model: EventSummaryViewModel = EventSummaryViewModel()
     
     var body: some View {
         VStack {
