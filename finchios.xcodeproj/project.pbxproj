@@ -89,12 +89,12 @@
 		809F954225B5210D007DE7F6 /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F954125B5210D007DE7F6 /* GoalDetailViewModel.swift */; };
 		809F954D25B626C1007DE7F6 /* GoalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F954C25B626C1007DE7F6 /* GoalEditView.swift */; };
 		809F955325B626E9007DE7F6 /* GoalEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F955225B626E9007DE7F6 /* GoalEditViewModel.swift */; };
+		80A44BAE25E03F62004ECED3 /* PublishedObject in Frameworks */ = {isa = PBXBuildFile; productRef = 80A44BAD25E03F62004ECED3 /* PublishedObject */; };
 		80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8928258AD81F00291B23 /* SettingsView.swift */; };
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
 		80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7B8D825AD3098007F605F /* RecurringIntervalType.swift */; };
 		80C4A3E925DDADF100B56E3A /* MongoObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */; };
-		80C4A3F525DDC70400B56E3A /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = 80C4A3F425DDC70400B56E3A /* CardStack */; };
 		80C97BA625A76ECF008729A7 /* AmountItemSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BA525A76ECF008729A7 /* AmountItemSummary.swift */; };
 		80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BAE25A76F27008729A7 /* RecurringItemType.swift */; };
 		80C97BB525A7701F008729A7 /* Recurring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BB425A7701F008729A7 /* Recurring.swift */; };
@@ -281,7 +281,7 @@
 			files = (
 				80F9EE2C25993A58007CD06C /* OpenAPIClient in Frameworks */,
 				80399A9D256B4D750014E2D9 /* Charts in Frameworks */,
-				80C4A3F525DDC70400B56E3A /* CardStack in Frameworks */,
+				80A44BAE25E03F62004ECED3 /* PublishedObject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,7 +949,7 @@
 			packageProductDependencies = (
 				80399A9C256B4D750014E2D9 /* Charts */,
 				80F9EE2B25993A58007CD06C /* OpenAPIClient */,
-				80C4A3F425DDC70400B56E3A /* CardStack */,
+				80A44BAD25E03F62004ECED3 /* PublishedObject */,
 			);
 			productName = finchios;
 			productReference = 80725CF9254C71FE0054787C /* finchios.app */;
@@ -1025,7 +1025,7 @@
 			packageReferences = (
 				80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */,
 				80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */,
-				80C4A3F325DDC70400B56E3A /* XCRemoteSwiftPackageReference "CardStack" */,
+				80A44BAC25E03F62004ECED3 /* XCRemoteSwiftPackageReference "PublishedObject" */,
 			);
 			productRefGroup = 80725CFA254C71FE0054787C /* Products */;
 			projectDirPath = "";
@@ -1505,12 +1505,12 @@
 				version = 3.6.0;
 			};
 		};
-		80C4A3F325DDC70400B56E3A /* XCRemoteSwiftPackageReference "CardStack" */ = {
+		80A44BAC25E03F62004ECED3 /* XCRemoteSwiftPackageReference "PublishedObject" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nhoogendoorn/CardStack";
+			repositoryURL = "https://github.com/Amzd/PublishedObject";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
+				branch = master;
+				kind = branch;
 			};
 		};
 		80F9EE2A25993A58007CD06C /* XCRemoteSwiftPackageReference "FinchSwiftClient" */ = {
@@ -1529,10 +1529,10 @@
 			package = 80399A9B256B4D750014E2D9 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
-		80C4A3F425DDC70400B56E3A /* CardStack */ = {
+		80A44BAD25E03F62004ECED3 /* PublishedObject */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 80C4A3F325DDC70400B56E3A /* XCRemoteSwiftPackageReference "CardStack" */;
-			productName = CardStack;
+			package = 80A44BAC25E03F62004ECED3 /* XCRemoteSwiftPackageReference "PublishedObject" */;
+			productName = PublishedObject;
 		};
 		80F9EE2B25993A58007CD06C /* OpenAPIClient */ = {
 			isa = XCSwiftPackageProductDependency;

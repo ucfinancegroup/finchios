@@ -39,3 +39,20 @@ struct SettingsView: View {
         }
     }
 }
+
+struct SettingsViewPreview: View {
+    
+    @State var bind = true
+    
+    var body: some View {
+        SettingsView(navBarHidden: $bind)
+    }
+    
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsViewPreview()
+    }
+}
+
