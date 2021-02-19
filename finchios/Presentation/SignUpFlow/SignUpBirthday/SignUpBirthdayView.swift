@@ -27,7 +27,7 @@ struct SignUpBirthdayView: View {
 
                 Spacer()
 
-                DatePicker("Date of Birth", selection: $model.dob)
+                DatePicker("Date of Birth", selection: $model.dob, displayedComponents: [.date])
                     .padding()
                     .accessibility(identifier: "dob_picker")
                 
