@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CardStack
 
 struct ProjectionView: View {
     
