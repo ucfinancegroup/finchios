@@ -15,26 +15,27 @@ struct OverviewView: View {
     @StateObject var model = OverviewModel()
     
     var body: some View {
-        VStack {
-            // Present graph
-            GraphView(type: .overview)
-            
-            // Card Stack
-            CardStack(insights: $model.insights)
-            
-            // Accounts
-            AccountsSummaryView()
-            
-            // Expenses
-            ExpensesSummaryView()
-            
-            // Recurring
-            RecurringSummaryView()
-            
-            // Goals
-            GoalSummaryView()
+        ScrollView {
+            VStack {
+                // Present graph
+                GraphView(type: .overview)
+                
+                // Card Stack
+                CardStack(insights: $model.insights)
+                
+                // Accounts
+                AccountsSummaryView()
+                
+                // Expenses
+                ExpensesSummaryView()
+                
+                // Recurring
+                RecurringSummaryView()
+                
+                // Goals
+                GoalSummaryView()
+            }
         }
-        //.background(Color.lightGray)
         .onAppear() {
             self.navBarHidden = true
             self.model.onAppear()
