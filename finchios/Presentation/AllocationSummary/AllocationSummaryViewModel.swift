@@ -15,8 +15,11 @@ class AllocationSummaryViewModel: ObservableObject, Identifiable {
     // Fetch allocation config
     func onAppear() {
         PlansService.allocations { (success, _, result) in
-            if let result = result {
-                self.allocationConfiguration = result[0].schema.map { PieChartDataEntry(alloc: $0) }
+            DispatchQueue.main.async {
+                if let result = result {
+                    
+                    self.allocationConfiguration = result[0].schema.map { PieChartDataEntry(alloc: $0) }
+                }
             }
         }
     }

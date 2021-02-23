@@ -363,11 +363,11 @@
 				80E2679125BDDB2600277E52 /* Styling */,
 				80E2675F25BB84AD00277E52 /* Account */,
 				8070315C25B294DF00122CE7 /* Goal */,
+				803E343E25E58577003A0A57 /* Events */,
 				803E343625E583AC003A0A57 /* Allocation */,
 				80B7B8D525AD2160007F605F /* Recurring */,
 				80EF127A259E67A500E0543B /* ExpensesItemSummary */,
 				8026B6D0258A6739006CB2FB /* AppTab */,
-				80097002258FCB35000B2A90 /* EventItemSummary */,
 				8026B6B0258A5FF1006CB2FB /* Introduction */,
 				8026B6B3258A5FF1006CB2FB /* LogIn */,
 				80479C62259AC2DA00CDA3DA /* AccountsSummary */,
@@ -527,6 +527,14 @@
 				803E343825E583BF003A0A57 /* AllocationView.swift */,
 			);
 			path = Allocation;
+			sourceTree = "<group>";
+		};
+		803E343E25E58577003A0A57 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				80097002258FCB35000B2A90 /* EventItemSummary */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		8044719025E4B75400F11781 /* Overview */ = {
