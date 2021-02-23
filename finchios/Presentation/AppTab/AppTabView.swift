@@ -15,8 +15,8 @@ struct AppTabView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            // Projection
-            ProjectionView(navBarHidden: $navBarHidden)
+            // Overview
+            OverviewView(navBarHidden: $navBarHidden)
                 .tabItem {
                     if selection == 0 {
                         Image(uiImage: UIImage(named: "ProjectionFilled")!.withTintColor(.teal))
@@ -25,14 +25,27 @@ struct AppTabView: View {
                     }
                     
                         
-                    Text("Projection")
+                    Text("Overview")
                 }
                 .tag(0)
+            // Projection
+            ProjectionView(navBarHidden: $navBarHidden)
+                .tabItem {
+                    if selection == 1 {
+                        Image(uiImage: UIImage(named: "ProjectionFilled")!.withTintColor(.teal))
+                    }else {
+                        Image(uiImage: UIImage(named: "ProjectionClear")!.withTintColor(.systemGray))
+                    }
+                    
+                        
+                    Text("Projection")
+                }
+                .tag(1)
             
             // Statistics
             StatisticsView(navBarHidden: $navBarHidden)
                 .tabItem {
-                    if selection == 1 {
+                    if selection == 2 {
                         Image(uiImage: UIImage(named: "TrophyFilled")!.withTintColor(.teal))
                     }else {
                         Image(uiImage: UIImage(named: "TrophyClear")!.withTintColor(.systemGray))
@@ -40,12 +53,12 @@ struct AppTabView: View {
                     
                     Text("Stats")
                 }
-                .tag(1)
+                .tag(2)
             
             // Settings
             SettingsView(navBarHidden: $navBarHidden)
                 .tabItem {
-                    if selection == 2 {
+                    if selection == 3 {
                         Image(uiImage: UIImage(named: "GearFilled")!.withTintColor(.teal))
                     }else {
                         Image(uiImage: UIImage(named: "GearClear")!.withTintColor(.systemGray))
@@ -53,7 +66,7 @@ struct AppTabView: View {
                     
                     Text("Settings")
                 }
-                .tag(2)
+                .tag(3)
         }
         .accentColor(.teal)
         .onAppear {
