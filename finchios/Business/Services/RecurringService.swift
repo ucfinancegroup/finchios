@@ -9,7 +9,7 @@ import Foundation
 import OpenAPIClient
 
 // GET recurrings
-struct RecurringService {
+public struct RecurringService: RecurringProtocol {
     
     private static func income_helper(operand: @escaping (Double, Double) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
         recurrings { (success, error, result) in

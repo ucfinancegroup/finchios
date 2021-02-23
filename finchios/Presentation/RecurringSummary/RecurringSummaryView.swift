@@ -11,27 +11,29 @@ struct RecurringSummaryView: View {
     
     @StateObject var model: RecurringSummaryViewModel = RecurringSummaryViewModel()
     
+    @State var type: OverviewProjection
+    
     var body: some View {
         VStack {
             
-            RecurringSubsectionView(type: .income, recurrings: self.$model.incomes)
+            RecurringSubsectionView(type: .income, time: type, recurrings: self.$model.incomes)
                 .bubble()
             
-            RecurringSubsectionView(type: .expense, recurrings: self.$model.expenses)
+            RecurringSubsectionView(type: .expense, time: type, recurrings: self.$model.expenses)
                 .bubble()
             
-            RecurringSubsectionView(type: .debt, recurrings: self.$model.debts)
+            RecurringSubsectionView(type: .debt, time: type, recurrings: self.$model.debts)
                 .bubble()
             
         }
         .onAppear() {
-            model.onAppear()
+            model.onAppear(type: type)
         }
     }
 }
 
 struct RecurringSummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        RecurringSummaryView()
+        RecurringSummaryView(type: .overview)
     }
 }

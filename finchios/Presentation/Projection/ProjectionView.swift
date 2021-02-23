@@ -23,6 +23,9 @@ struct ProjectionView: View {
                 // Allocation
                 AllocationSummaryView()
                 
+                // Recurring
+                RecurringSummaryView(type: .projection)
+                
                 // Events
                 EventSummaryView()
                 

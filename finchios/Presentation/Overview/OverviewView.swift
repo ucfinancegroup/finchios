@@ -30,7 +30,7 @@ struct OverviewView: View {
                 ExpensesSummaryView()
                 
                 // Recurring
-                RecurringSummaryView()
+                RecurringSummaryView(type: .overview)
                 
                 // Goals
                 GoalSummaryView()

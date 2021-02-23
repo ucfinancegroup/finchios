@@ -12,12 +12,14 @@ struct RecurringSubsectionView: View {
     
     @State var type: RecurringItemType
     
+    @State var time: OverviewProjection
+    
     @Binding var recurrings: [Recurring]
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("\(type.rawValue)s")
+                Text("\(time == .projection ? "Future " : "")\(type.rawValue)s")
                     .font(.title)
                 
                 Spacer()
@@ -55,7 +57,7 @@ struct RecurringSubsectionViewPreview: View {
     @State var recurrings: [Recurring] = [.dummyIncome, .dummyIncome]
     
     var body: some View {
-        RecurringSubsectionView(type: type, recurrings: $recurrings)
+        RecurringSubsectionView(type: type, time: .overview, recurrings: $recurrings)
     }
     
 }

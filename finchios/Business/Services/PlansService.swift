@@ -8,7 +8,7 @@
 import Foundation
 import OpenAPIClient
 
-struct PlansService {
+struct PlansService: RecurringProtocol {
 
     private static func plans(completion: @escaping ((Bool, Error?, Plan?) -> Void)) {
         guard let url = getURL() else {

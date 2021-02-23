@@ -15,9 +15,17 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
     @Published var debts: [Recurring] = []
     
     // Fetch subset of recurrings
-    func onAppear() {
+    func onAppear(type: OverviewProjection) {
         
-        RecurringService.incomes { (success, error, result) in
+        let service: RecurringProtocol.Type
+        switch type {
+        case .overview:
+            service = RecurringService.self
+        case .projection:
+            service = PlansService.self
+        }
+        
+        service.incomes { (success, error, result) in
             guard let result = result else {
                 return
             }
@@ -27,7 +35,7 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
             }
         }
         
-        RecurringService.expenses { (success, error, result) in
+        service.expenses { (success, error, result) in
             guard let result = result else {
                 return
             }
@@ -37,7 +45,7 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
             }
         }
         
-        RecurringService.debt { (success, error, result) in
+        service.debt { (success, error, result) in
             guard let result = result else {
                 return
             }
