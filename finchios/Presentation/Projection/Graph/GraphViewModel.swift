@@ -42,15 +42,20 @@ class GraphViewModel: ObservableObject, Identifiable {
             DispatchQueue.main.async {
                 if let response = response {
                     
-                    //TODO() Implement
+                    let len = response.series.count
+                    
+                    let tillToday = response.series.prefix { (entry) -> Bool in
+                        return entry.date <= response.start
+                    }
                     if type == .overview {
-                        
+                        self.timeseries = tillToday.map { ChartDataEntry(timeseriesEntry: $0) }
                     }else if type == .projection {
-                        
+                        self.timeseries = response.series
+                            .suffix(len - tillToday.count + 1)
+                            .map { ChartDataEntry(timeseriesEntry: $0) }
                     }
                     
-                    self.timeseries = response.series.map { ChartDataEntry(timeseriesEntry: $0) }
-                    
+                    // Set today's date
                     if let select = response.series.first(where: { $0.date == response.start }) {
                         self.selected = ChartDataEntry(timeseriesEntry: select)
                         self.today = ChartDataEntry(timeseriesEntry: select)
