@@ -19,9 +19,9 @@ struct AppTabView: View {
             OverviewView(navBarHidden: $navBarHidden)
                 .tabItem {
                     if selection == 0 {
-                        Image(uiImage: UIImage(named: "ProjectionFilled")!.withTintColor(.teal))
+                        Image(uiImage: UIImage(named: "HomeFilled")!.withTintColor(.teal))
                     }else {
-                        Image(uiImage: UIImage(named: "ProjectionClear")!.withTintColor(.systemGray))
+                        Image(uiImage: UIImage(named: "HomeClear")!.withTintColor(.systemGray))
                     }
                     
                         

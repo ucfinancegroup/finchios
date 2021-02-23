@@ -31,7 +31,7 @@ struct GraphView: View {
                 
 
             
-            LineView(entries: model.timeseries, entry: $model.selected, today: $model.today)
+            LineView(entries: model.timeseries, entry: $model.selected, today: $model.today, dashed: type == .projection)
         }
         .frame(height: 300)
         .onAppear() {

@@ -17,6 +17,8 @@ struct LineView: UIViewRepresentable {
     
     @Binding var today: ChartDataEntry
     
+    @State var dashed: Bool
+    
     private let view: LineChartView = LineChartView()
     
     class Coordinator: NSObject, ChartViewDelegate, UIGestureRecognizerDelegate {
@@ -104,7 +106,11 @@ struct LineView: UIViewRepresentable {
         
         dataset.drawHorizontalHighlightIndicatorEnabled = false
         
-        dataset.highlightColor = UIColor.teal
+        if dashed {
+            dataset.lineDashLengths = [3]
+        }else {
+            dataset.lineDashLengths = nil
+        }
         
         data.addDataSet(dataset)
         
@@ -129,7 +135,7 @@ struct LineViewWrapper: View {
             ChartDataEntry(x: 3, y: 0),
             ChartDataEntry(x: 4, y: 100),
             ChartDataEntry(x: 5, y: 200),
-        ], entry: $entry, today: $today)
+        ], entry: $entry, today: $today, dashed: false)
     }
     
 }

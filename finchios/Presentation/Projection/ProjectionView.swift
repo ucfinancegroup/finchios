@@ -20,23 +20,8 @@ struct ProjectionView: View {
                 // Graph
                 GraphView(type: .projection)
                 
-                // Card Stack
-                CardStack(insights: $model.insights)
-                
                 // Allocation
                 AllocationSummaryView()
-                
-                // Accounts
-                AccountsSummaryView()
-                
-                // Expenses
-                ExpensesSummaryView()
-                
-                // Recurring
-                RecurringSummaryView()
-                
-                // Goals
-                GoalSummaryView()
                 
                 // Events
                 EventSummaryView()
