@@ -18,8 +18,10 @@ struct AmountItemSummary: View {
     
     @State var navAble: Bool
     
+    @State var time: OverviewProjection
+    
     var body: some View {
-        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring), isActive: $isActive) {
+        NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring, time: time), isActive: $isActive) {
             VStack(alignment: .leading) {
                 HStack {
                     Text(recurring.name)
@@ -44,7 +46,7 @@ struct AmountItemSummaryPreviews: View {
     @State var recurring: Recurring = .dummyIncome
     
     var body: some View {
-        AmountItemSummary(type: $type, recurring: recurring, isActive: false, navAble: false)
+        AmountItemSummary(type: $type, recurring: recurring, isActive: false, navAble: false, time: .overview)
     }
     
 }

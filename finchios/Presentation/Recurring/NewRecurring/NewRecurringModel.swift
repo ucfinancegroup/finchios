@@ -38,7 +38,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
         self.type = type
     }
     
-    func create() {
+    func create(time: OverviewProjection) {
         showError = false
         showSuccess = false
         showAlert = false
@@ -145,6 +145,8 @@ class NewRecurringModel: ObservableObject, Identifiable {
                                           amount: amount,
                                           interest: interest,
                                           frequency: timeInterval)
+        
+        //TODO() Create proper recurring
         
         RecurringService.newRecurring(payload: payload) { (success, error, _) in
             DispatchQueue.main.async {

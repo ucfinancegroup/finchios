@@ -20,9 +20,11 @@ struct RecurringDetailView: View {
     
     @StateObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
     
+    @State var time: OverviewProjection
+    
     var body: some View {
         VStack {
-            
+            //TODO() Reload when a few modal was created to show the new item
             //Information
             Group {                
                 if type == .debt {
@@ -52,7 +54,7 @@ struct RecurringDetailView: View {
             Spacer()
             
             Button(action: {
-                self.model.delete(id: self.recurring.id.oid)
+                self.model.delete(id: self.recurring.id.oid, time: time)
             }, label: {
                 HStack {
                     Spacer()
@@ -74,7 +76,7 @@ struct RecurringDetailView: View {
                                     Text("Edit")
                                 })
                                 .sheet(isPresented: $modalActive, content: {
-                                    RecurringEditView(present: $modalActive, type: $type, recurring: $recurring)
+                                    RecurringEditView(present: $modalActive, type: $type, recurring: $recurring, time: time)
                                 }))
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
@@ -108,7 +110,7 @@ struct RecurringDetailViewPreview: View {
     
     var body: some View {
         
-        RecurringDetailView(shouldPop: $pop, type: $type, recurring: .dummyIncome)
+        RecurringDetailView(shouldPop: $pop, type: $type, recurring: .dummyIncome, time: .overview)
     }
     
 }

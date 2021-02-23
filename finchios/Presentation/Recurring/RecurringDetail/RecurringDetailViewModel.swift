@@ -16,7 +16,10 @@ class RecurringDetailViewModel: ObservableObject, Identifiable {
     @Published var showError: Bool = false
     @Published var errorString: String = ""
     
-    func delete(id: String) {
+    func delete(id: String, time: OverviewProjection) {
+        
+        //TODO(): Delete in the right place
+        
         RecurringService.deleteRecurring(id: id) { (success, error, result) in
             DispatchQueue.main.async {
                 self.success = false

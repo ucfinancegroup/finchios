@@ -17,10 +17,14 @@ struct RecurringView: View {
     
     @State var modalCreate: Bool = false
     
-    init(type: Binding<RecurringItemType>) {
+    var time: OverviewProjection
+    
+    init(type: Binding<RecurringItemType>, time: OverviewProjection) {
         _type = type
         
         model = RecurringViewState(type: type)
+        
+        self.time = time
     }
     
     var body: some View {
@@ -28,11 +32,11 @@ struct RecurringView: View {
                 LazyVStack {
                     ForEach(model.recurrings, id: \.id) { recurring in
                         if self.type == .income || self.type == .expense {
-                            AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
+                            AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true, time: time)
                                 .padding()
                                 .bubble()
                         }else { // is debt
-                            PrincipalItemSummary(type: $type, recurring: recurring.recurring, navAble: true)
+                            PrincipalItemSummary(type: $type, recurring: recurring.recurring, navAble: true, time: time)
                                 .padding()
                                 .bubble()
                         }
@@ -52,7 +56,7 @@ struct RecurringView: View {
                                     Image("Plus")
                                 })
                                 .sheet(isPresented: self.$modalCreate, content: {
-                                    NewRecurringView(present: self.$modalCreate, type: self.$type)
+                                    NewRecurringView(present: self.$modalCreate, type: self.$type, time: time)
                                 }))
         
     }
@@ -63,7 +67,7 @@ struct RecurringViewProvider: View {
     @State var type: RecurringItemType = .income
     
     var body: some View {
-        RecurringView(type: $type)
+        RecurringView(type: $type, time: .overview)
     }
     
 }

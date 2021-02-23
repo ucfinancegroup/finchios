@@ -18,6 +18,8 @@ struct RecurringEditView: View {
     
     @StateObject var model: RecurringEditViewModel = RecurringEditViewModel()
     
+    @State var time: OverviewProjection
+    
     var body: some View {
         VStack {
             
@@ -89,7 +91,7 @@ struct RecurringEditView: View {
             Spacer()
             
             Button {
-                self.model.edit(id: recurring.id.oid)
+                self.model.edit(id: recurring.id.oid, time: time)
                 UIApplication.shared.endEditing()
             } label: {
                 Text("Save Edit")

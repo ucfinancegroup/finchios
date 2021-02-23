@@ -15,10 +15,13 @@ struct NewRecurringView: View {
     
     @ObservedObject var model: NewRecurringModel
     
-    public init(present: Binding<Bool>, type: Binding<RecurringItemType>) {
+    var time: OverviewProjection
+    
+    public init(present: Binding<Bool>, type: Binding<RecurringItemType>, time: OverviewProjection) {
         self._present = present
         self._type = type
         self.model = NewRecurringModel(type: type.wrappedValue)
+        self.time = time
     }
     
     var body: some View {
@@ -99,7 +102,7 @@ struct NewRecurringView: View {
                 
                 Group {
                     Button(action: {
-                        self.model.create()
+                        self.model.create(time: time)
                         UIApplication.shared.endEditing()
                     }, label: {
                         Text("Create")
@@ -137,7 +140,7 @@ struct NewRecurringViewPreviews: View {
     @State var type: RecurringItemType = .income
     
     var body: some View {
-        NewRecurringView(present: $present, type: $type)
+        NewRecurringView(present: $present, type: $type, time: .overview)
     }
     
 }

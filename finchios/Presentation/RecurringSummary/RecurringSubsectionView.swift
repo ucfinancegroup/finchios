@@ -25,7 +25,7 @@ struct RecurringSubsectionView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: RecurringView(type: $type),
+                    destination: RecurringView(type: $type, time: time),
                     label: {
                         Image("RightArrow")
                     })
@@ -39,7 +39,7 @@ struct RecurringSubsectionView: View {
                 Divider()
                 
                 ForEach(recurrings.indices) { index in
-                    AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false)
+                    AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false, time: time)
                 }
             }else {
                 //TODO(): Display to the user that there is nothing of this type.

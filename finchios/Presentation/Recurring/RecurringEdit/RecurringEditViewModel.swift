@@ -96,7 +96,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         return self.freqContentField.count == 0
     }
     
-    public func edit(id: String) {
+    public func edit(id: String, time: OverviewProjection) {
         showError = false
         success = false
         showAlert = false
