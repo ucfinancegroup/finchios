@@ -64,8 +64,7 @@ struct PlansService {
     }
     
     //TODO() BUG() This should be an allocation not a transform
-    //static func allocations(completion: @escaping ((Bool, Error?, [Allocation]?) -> Void)) {
-    static func allocations(completion: @escaping ((Bool, Error?, [Any]?) -> Void)) {
+    static func allocations(completion: @escaping ((Bool, Error?, [Allocation]?) -> Void)) {
         plans { (success, error, plan) in
             guard let plan = plan else {
                 completion(success, error, nil)
@@ -105,4 +104,73 @@ struct PlansService {
         return URL(string: address)
     }
 
+}
+
+// For getting incomes, debts, and expenses from plans recurring
+extension PlansService {
+    
+    private static func income_helper(operand: @escaping (Double, Double) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        recurrings { (success, error, result) in
+            if let error = error {
+                completion(false, error, nil)
+                return
+            }
+            if !success {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let result = result else {
+                completion(false, error, nil)
+                return
+            }
+            
+            let incomes = result.filter( { operand($0.amount, 0) })
+            
+            completion(true, nil, incomes)
+        }
+    }
+    
+    private static func debt_helper(operand: @escaping (Double, Double) -> Bool, completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        recurrings { (success, error, result) in
+            if let error = error {
+                completion(false, error, nil)
+                return
+            }
+            if !success {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let result = result else {
+                completion(false, error, nil)
+                return
+            }
+            
+            let incomes = result.filter( { operand($0.principal, 0) })
+            
+            completion(true, nil, incomes)
+        }
+    }
+    
+    public static func incomes(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        // Greater than 0
+        income_helper(operand: >) { (success, error, result) in
+            completion(success, error, result)
+        }
+    }
+    
+    public static func expenses(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        // Less than 0
+        income_helper(operand: <) { (success, error, result) in
+            completion(success, error, result)
+        }
+    }
+    
+    public static func debt(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void)) {
+        debt_helper(operand: <) { (success, error, result) in
+            completion(success, error, result)
+        }
+    }
+    
 }
