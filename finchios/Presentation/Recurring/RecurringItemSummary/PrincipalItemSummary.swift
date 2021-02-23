@@ -21,6 +21,7 @@ struct PrincipalItemSummary: View {
     @State var time: OverviewProjection
     
     var body: some View {
+        //TODO() Should isActive be navAble?
         NavigationLink(destination: RecurringDetailView(shouldPop: $isActive, type: $type, recurring: recurring, time: time), isActive: $isActive) {
             VStack(alignment: .leading) {
                 HStack {

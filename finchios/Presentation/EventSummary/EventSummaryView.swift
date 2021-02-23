@@ -28,7 +28,7 @@ struct EventSummaryView: View {
             }
             
             ForEach(model.events.indices) { index in
-                EventItemSummaryView(model: EventItemSummaryViewModel(event: model.events[index]))
+                EventItemSummaryView(event: model.events[index], navAble: false)
             }
         }
         .padding()

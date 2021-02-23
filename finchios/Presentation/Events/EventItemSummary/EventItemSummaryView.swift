@@ -10,21 +10,28 @@ import OpenAPIClient
 
 struct EventItemSummaryView: View {
     
-    @ObservedObject var model : EventItemSummaryViewModel
+    @State var event : Event
+    
+    @State var isActive: Bool = false
+    
+    @State var navAble: Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(model.event.name)
-                .font(.title3)
-            
-            Text("Starts \(model.event.start) day(s) from now")
+        NavigationLink(destination: EventDetailView(shouldPop: $isActive, event: event), isActive: $isActive) {
+            VStack(alignment: .leading) {
+                Text(event.name)
+                    .font(.title3)
+                
+                Text("Starts \(event.start) day(s) from now")
+            }
         }
     }
 }
 
-struct EventItemSummaryView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        EventItemSummaryView(model: EventItemSummaryViewModel(event: Event(name: "Test Event", start: 5, transforms: [])))
-    }
-}
+//TODO(): Later
+//struct EventItemSummaryView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        EventItemSummaryView(event: , navAble: <#T##Bool#>)
+//    }
+//}
