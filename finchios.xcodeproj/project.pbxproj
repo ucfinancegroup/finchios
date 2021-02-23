@@ -361,6 +361,13 @@
 				80097002258FCB35000B2A90 /* EventItemSummary */,
 				8026B6B0258A5FF1006CB2FB /* Introduction */,
 				8026B6B3258A5FF1006CB2FB /* LogIn */,
+				80479C62259AC2DA00CDA3DA /* AccountsSummary */,
+				80479C57259AC28300CDA3DA /* ExpensesSummary */,
+				80479C4C259AC20C00CDA3DA /* GoalSummary */,
+				80F936FF258F0B5F00BBBE57 /* EventSummary */,
+				80F936F6258F06E500BBBE57 /* RecurringSummary */,
+				80168D28258EC4FC00B12CA2 /* AllocationSummary */,
+				80168D1D258EC31C00B12CA2 /* Graph */,
 				8044719025E4B75400F11781 /* Overview */,
 				80AF8926258AD7F000291B23 /* Projection */,
 				80AF8927258AD7F700291B23 /* Settings */,
@@ -813,13 +820,6 @@
 		80AF8926258AD7F000291B23 /* Projection */ = {
 			isa = PBXGroup;
 			children = (
-				80479C62259AC2DA00CDA3DA /* AccountsSummary */,
-				80479C57259AC28300CDA3DA /* ExpensesSummary */,
-				80479C4C259AC20C00CDA3DA /* GoalSummary */,
-				80F936FF258F0B5F00BBBE57 /* EventSummary */,
-				80F936F6258F06E500BBBE57 /* RecurringSummary */,
-				80168D28258EC4FC00B12CA2 /* AllocationSummary */,
-				80168D1D258EC31C00B12CA2 /* Graph */,
 				80AF8932258ADA0900291B23 /* ProjectionView.swift */,
 				801F8961258C4461003B1A2D /* ProjectionViewModel.swift */,
 			);
