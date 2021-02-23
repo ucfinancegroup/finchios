@@ -19,6 +19,7 @@ struct OverviewView: View {
             VStack {
                 // Present graph
                 GraphView(type: .overview)
+                    .padding(.bottom)
                 
                 // Card Stack
                 CardStack(insights: $model.insights)

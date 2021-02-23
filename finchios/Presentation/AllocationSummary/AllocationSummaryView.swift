@@ -13,9 +13,25 @@ struct AllocationSummaryView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                
+                Text("Portfolio Allocation")
+                    .font(.title)
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: Text("Allocation View here"),
+                    label: {
+                        Image("RightArrow")
+                    })
+                
+            }
             PieView(entries: model.allocationConfiguration)
                 .frame(height: 300)
-        }.onAppear() {
+        }
+        .padding()
+        .onAppear() {
             model.onAppear()
         }
         

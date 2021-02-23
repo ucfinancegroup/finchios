@@ -19,6 +19,7 @@ struct ProjectionView: View {
                 
                 // Graph
                 GraphView(type: .projection)
+                    .padding(.bottom)
                 
                 // Allocation
                 AllocationSummaryView()

@@ -106,11 +106,14 @@ struct LineView: UIViewRepresentable {
         
         dataset.drawHorizontalHighlightIndicatorEnabled = false
         
+        //TODO() Confirm if working
         if dashed {
             dataset.lineDashLengths = [3]
         }else {
             dataset.lineDashLengths = nil
         }
+        
+        dataset.highlightColor = .black
         
         data.addDataSet(dataset)
         
