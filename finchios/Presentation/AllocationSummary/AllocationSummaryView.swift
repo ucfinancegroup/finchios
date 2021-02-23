@@ -21,7 +21,7 @@ struct AllocationSummaryView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: Text("Allocation View here"),
+                    destination: AllocationView(),
                     label: {
                         Image("RightArrow")
                     })

@@ -32,6 +32,7 @@
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		803C8A8B25CAF5DE00167F22 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */; };
 		803E343325E578A0003A0A57 /* PieChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E343225E578A0003A0A57 /* PieChartDataEntry.swift */; };
+		803E343925E583BF003A0A57 /* AllocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E343825E583BF003A0A57 /* AllocationView.swift */; };
 		8044719225E4B76600F11781 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719125E4B76600F11781 /* OverviewView.swift */; };
 		8044719825E4B77600F11781 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719725E4B77600F11781 /* OverviewModel.swift */; };
 		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
@@ -186,6 +187,7 @@
 		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
 		803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
 		803E343225E578A0003A0A57 /* PieChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartDataEntry.swift; sourceTree = "<group>"; };
+		803E343825E583BF003A0A57 /* AllocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationView.swift; sourceTree = "<group>"; };
 		8044719125E4B76600F11781 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		8044719725E4B77600F11781 /* OverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewModel.swift; sourceTree = "<group>"; };
 		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				80E2679125BDDB2600277E52 /* Styling */,
 				80E2675F25BB84AD00277E52 /* Account */,
 				8070315C25B294DF00122CE7 /* Goal */,
+				803E343625E583AC003A0A57 /* Allocation */,
 				80B7B8D525AD2160007F605F /* Recurring */,
 				80EF127A259E67A500E0543B /* ExpensesItemSummary */,
 				8026B6D0258A6739006CB2FB /* AppTab */,
@@ -508,6 +511,22 @@
 				803E343225E578A0003A0A57 /* PieChartDataEntry.swift */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		803E343625E583AC003A0A57 /* Allocation */ = {
+			isa = PBXGroup;
+			children = (
+				803E343725E583B6003A0A57 /* Allocation */,
+			);
+			path = Allocation;
+			sourceTree = "<group>";
+		};
+		803E343725E583B6003A0A57 /* Allocation */ = {
+			isa = PBXGroup;
+			children = (
+				803E343825E583BF003A0A57 /* AllocationView.swift */,
+			);
+			path = Allocation;
 			sourceTree = "<group>";
 		};
 		8044719025E4B75400F11781 /* Overview */ = {
@@ -1143,6 +1162,7 @@
 				80802BFB25D0696400DABCCC /* BarView.swift in Sources */,
 				80664C6125D1CB7E001421BE /* InsightsService.swift in Sources */,
 				80479C86259ACA8700CDA3DA /* LeaderboardService.swift in Sources */,
+				803E343925E583BF003A0A57 /* AllocationView.swift in Sources */,
 				80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */,
 				80A44BBE25E04E87004ECED3 /* SignUpFinancialsView.swift in Sources */,
 				80C97BAF25A76F27008729A7 /* RecurringItemType.swift in Sources */,
