@@ -12,4 +12,5 @@ public protocol RecurringProtocol {
     static func incomes(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void))
     static func expenses(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void))
     static func debt(completion: @escaping ((Bool, Error?, [Recurring]?) -> Void))
+    //TODO(): Will need to include delete, and edit
 }
