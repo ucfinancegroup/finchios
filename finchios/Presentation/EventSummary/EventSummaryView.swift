@@ -12,11 +12,27 @@ struct EventSummaryView: View {
     @StateObject var model: EventSummaryViewModel = EventSummaryViewModel()
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Simulated Events")
+                    .font(.title)
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: Text("EventView here"),
+                    label: {
+                        Image("RightArrow")
+                    })
+
+            }
+            
             ForEach(model.events.indices) { index in
                 EventItemSummaryView(model: EventItemSummaryViewModel(event: model.events[index]))
             }
         }
+        .padding()
+        .bubble()
     }
 }
 
