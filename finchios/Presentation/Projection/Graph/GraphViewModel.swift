@@ -50,6 +50,8 @@ class GraphViewModel: ObservableObject, Identifiable {
                     if type == .overview {
                         self.timeseries = tillToday.map { ChartDataEntry(timeseriesEntry: $0) }
                     }else if type == .projection {
+                        
+                        // Suffix to get all days in the future AND today
                         self.timeseries = response.series
                             .suffix(len - tillToday.count + 1)
                             .map { ChartDataEntry(timeseriesEntry: $0) }
