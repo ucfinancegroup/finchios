@@ -46,7 +46,7 @@ struct RecurringView: View {
             }
         .onAppear() {
             self.isActive = false
-            model.onAppear()
+            model.onAppear(time: time)
         }
         .navigationTitle(Text(type.rawValue))
         .navigationBarItems(trailing:

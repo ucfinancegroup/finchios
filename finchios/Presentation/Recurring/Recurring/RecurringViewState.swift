@@ -18,10 +18,18 @@ class RecurringViewState: ObservableObject, Identifiable {
         _type = type
     }
     
-    func onAppear() {
+    func onAppear(time: OverviewProjection) {
+        
+        let service: RecurringProtocol.Type
+        switch time {
+        case .overview:
+            service = RecurringService.self
+        case .projection:
+            service = PlansService.self
+        }
         
         if type == .expense {
-            RecurringService.expenses { (success, error, result) in
+            service.expenses { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
                         self.recurrings = result.map { RecurringIdentifiable(recurring: $0) }
@@ -31,7 +39,7 @@ class RecurringViewState: ObservableObject, Identifiable {
         }
 
         else if type == .income {
-            RecurringService.incomes { (success, error, result) in
+            service.incomes { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
                         self.recurrings = result.map { RecurringIdentifiable(recurring: $0) }
@@ -42,7 +50,7 @@ class RecurringViewState: ObservableObject, Identifiable {
         
         
         else if type == .debt {
-            RecurringService.debt { (success, error, result) in
+            service.debt { (success, error, result) in
                 DispatchQueue.main.async {
                     if let result = result {
                         self.recurrings = result.map { RecurringIdentifiable(recurring: $0) }
