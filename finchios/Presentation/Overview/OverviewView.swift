@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct OverviewView: View {
     
@@ -15,9 +16,23 @@ struct OverviewView: View {
     
     var body: some View {
         VStack {
-            
+            // Present graph
             GraphView(type: .overview)
             
+            // Card Stack
+            CardStack(insights: $model.insights)
+            
+            // Accounts
+            AccountsSummaryView()
+            
+            // Expenses
+            ExpensesSummaryView()
+            
+            // Recurring
+            RecurringSummaryView()
+            
+            // Goals
+            GoalSummaryView()
         }
         //.background(Color.lightGray)
         .onAppear() {
