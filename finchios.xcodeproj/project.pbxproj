@@ -31,6 +31,8 @@
 		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		803C8A8B25CAF5DE00167F22 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */; };
+		8044719225E4B76600F11781 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719125E4B76600F11781 /* OverviewView.swift */; };
+		8044719825E4B77600F11781 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719725E4B77600F11781 /* OverviewModel.swift */; };
 		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
 		80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */; };
 		80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C53259AC22000CDA3DA /* GoalSummaryView.swift */; };
@@ -180,6 +182,8 @@
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
 		803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
+		8044719125E4B76600F11781 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		8044719725E4B77600F11781 /* OverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewModel.swift; sourceTree = "<group>"; };
 		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
 		80479C4D259AC21800CDA3DA /* GoalSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryViewModel.swift; sourceTree = "<group>"; };
 		80479C53259AC22000CDA3DA /* GoalSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryView.swift; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 				80097002258FCB35000B2A90 /* EventItemSummary */,
 				8026B6B0258A5FF1006CB2FB /* Introduction */,
 				8026B6B3258A5FF1006CB2FB /* LogIn */,
+				8044719025E4B75400F11781 /* Overview */,
 				80AF8926258AD7F000291B23 /* Projection */,
 				80AF8927258AD7F700291B23 /* Settings */,
 				8026B6A2258A5FF1006CB2FB /* SignUpFlow */,
@@ -489,6 +494,15 @@
 				803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		8044719025E4B75400F11781 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				8044719125E4B76600F11781 /* OverviewView.swift */,
+				8044719725E4B77600F11781 /* OverviewModel.swift */,
+			);
+			path = Overview;
 			sourceTree = "<group>";
 		};
 		80479C4C259AC20C00CDA3DA /* GoalSummary */ = {
@@ -1158,6 +1172,7 @@
 				809F953725B4959B007DE7F6 /* GoalMetricIdentifiable.swift in Sources */,
 				80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */,
 				801F8962258C4461003B1A2D /* ProjectionViewModel.swift in Sources */,
+				8044719225E4B76600F11781 /* OverviewView.swift in Sources */,
 				80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				807E3E3125CB3AA70039671E /* NumberField.swift in Sources */,
@@ -1186,6 +1201,7 @@
 				80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */,
 				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
 				80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */,
+				8044719825E4B77600F11781 /* OverviewModel.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 				8070314F25B26A4200122CE7 /* RecurringEditViewModel.swift in Sources */,

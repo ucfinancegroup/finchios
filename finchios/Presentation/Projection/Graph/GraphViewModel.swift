@@ -15,7 +15,7 @@ class GraphViewModel: ObservableObject, Identifiable {
     
     @Published var selected: ChartDataEntry = .dummy
     @Published var today: ChartDataEntry = .init(x: 0, y: 0)
-    
+        
     private static let formatter: DateFormatter = {
         let f = DateFormatter()
         f.dateFormat = "MM/dd/yyyy"
@@ -37,10 +37,18 @@ class GraphViewModel: ObservableObject, Identifiable {
     }
     
     // Fetch timeseries from backend
-    func onAppear() {
+    func onAppear(type: GraphType) {
         TimeSeriesService.example { (succcess, error, response) in
             DispatchQueue.main.async {
                 if let response = response {
+                    
+                    //TODO() Implement
+                    if type == .overview {
+                        
+                    }else if type == .projection {
+                        
+                    }
+                    
                     self.timeseries = response.series.map { ChartDataEntry(timeseriesEntry: $0) }
                     
                     if let select = response.series.first(where: { $0.date == response.start }) {

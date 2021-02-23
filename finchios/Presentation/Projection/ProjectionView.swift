@@ -18,7 +18,7 @@ struct ProjectionView: View {
             VStack {
                 
                 // Graph
-                GraphView()
+                GraphView(type: .projection)
                 
                 // Card Stack
                 CardStack(insights: $model.insights)

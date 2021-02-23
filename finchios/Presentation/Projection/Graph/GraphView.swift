@@ -8,10 +8,16 @@
 import SwiftUI
 import Charts
 
+public enum GraphType {
+    case overview, projection
+}
+
 struct GraphView: View {
     
-    @StateObject private var model: GraphViewModel = GraphViewModel()
+    @State var type: GraphType
     
+    @StateObject private var model: GraphViewModel = GraphViewModel()
+
     var body: some View {
         VStack(alignment: .leading) {
             Group {
@@ -29,7 +35,7 @@ struct GraphView: View {
         }
         .frame(height: 300)
         .onAppear() {
-            model.onAppear()
+            model.onAppear(type: self.type)
         }
         
     }
@@ -42,6 +48,6 @@ struct GraphView: View {
 // creating a model itself.
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView()
+        GraphView(type: .overview)
     }
 }
