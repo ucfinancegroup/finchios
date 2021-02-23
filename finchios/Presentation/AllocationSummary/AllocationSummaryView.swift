@@ -14,6 +14,7 @@ struct AllocationSummaryView: View {
     var body: some View {
         VStack {
             PieView(entries: model.allocationConfiguration)
+                .frame(height: 300)
         }.onAppear() {
             model.onAppear()
         }

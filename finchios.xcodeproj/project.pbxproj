@@ -31,6 +31,7 @@
 		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		803C8A8B25CAF5DE00167F22 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */; };
+		803E343325E578A0003A0A57 /* PieChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E343225E578A0003A0A57 /* PieChartDataEntry.swift */; };
 		8044719225E4B76600F11781 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719125E4B76600F11781 /* OverviewView.swift */; };
 		8044719825E4B77600F11781 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719725E4B77600F11781 /* OverviewModel.swift */; };
 		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
@@ -184,6 +185,7 @@
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
 		803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
+		803E343225E578A0003A0A57 /* PieChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartDataEntry.swift; sourceTree = "<group>"; };
 		8044719125E4B76600F11781 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		8044719725E4B77600F11781 /* OverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewModel.swift; sourceTree = "<group>"; };
 		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */,
+				803E343225E578A0003A0A57 /* PieChartDataEntry.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
 				80F9EE3825994394007CD06C /* SignUpService.swift in Sources */,
+				803E343325E578A0003A0A57 /* PieChartDataEntry.swift in Sources */,
 				80EF127C259E67BA00E0543B /* ExpensesItemSummaryView.swift in Sources */,
 				80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */,
 				804C16A225C865B0000035FD /* TimeSeriesService.swift in Sources */,

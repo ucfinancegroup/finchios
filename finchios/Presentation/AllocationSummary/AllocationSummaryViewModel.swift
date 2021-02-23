@@ -10,11 +10,15 @@ import Charts
 
 class AllocationSummaryViewModel: ObservableObject, Identifiable {
     
-    @Published var allocationConfiguration: [PieChartDataEntry] = []
+    @Published var allocationConfiguration: [PieChartDataEntry] = [PieChartDataEntry(value: 1)]
     
     // Fetch allocation config
     func onAppear() {
-        
+        PlansService.allocations { (success, _, result) in
+            if let result = result {
+                self.allocationConfiguration = result[0].schema.map { PieChartDataEntry(alloc: $0) }
+            }
+        }
     }
     
 }

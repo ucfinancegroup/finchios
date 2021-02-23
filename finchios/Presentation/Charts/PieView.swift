@@ -23,7 +23,7 @@ struct PieView: UIViewRepresentable {
         let data = PieChartData()
         let dataset = PieChartDataSet(entries: entries)
         
-        dataset.colors = [.red, .blue, .green, .purple, .orange]
+        dataset.colors = [.gray, .red, .blue, .green, .purple, .orange]
         
         data.addDataSet(dataset)
         
