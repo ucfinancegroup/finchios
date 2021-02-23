@@ -174,3 +174,24 @@ extension PlansService {
     }
     
 }
+
+// For creating recurrings
+extension PlansService {
+    
+}
+
+// For editing recurrings
+extension PlansService {
+    
+}
+
+
+// For deleting recrrings
+extension PlansService {
+    
+}
+
+// Creation/Editing/Deletion of Events
+extension PlansService {
+    
+}
