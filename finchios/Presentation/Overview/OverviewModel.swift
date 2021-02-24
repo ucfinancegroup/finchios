@@ -28,7 +28,7 @@ public class OverviewModel: ObservableObject, Identifiable {
         InsightsService.example { (success, _, result) in
             DispatchQueue.main.async {
                 if let result = result {
-                    let nonDismissed = result.allSatisfy { !$0.dismissed }
+                    let nonDismissed = result.filter { !$0.dismissed }
                     self.insights = nonDismissed.enumerated().map { Iden<Insight>(obj: $1, index: $0) }
                 }
             }
