@@ -25,9 +25,10 @@ public class OverviewModel: ObservableObject, Identifiable {
         insightsGen = true
         
         // Fetch Insights
-        InsightsService.example { (success, _, result) in
+        InsightsService.insights { (success, _, result) in
             DispatchQueue.main.async {
                 if let result = result {
+                    print(result)
                     let nonDismissed = result.filter { !$0.dismissed }
                     self.insights = nonDismissed.enumerated().map { Iden<Insight>(obj: $1, index: $0) }
                 }

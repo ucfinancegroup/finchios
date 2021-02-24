@@ -45,6 +45,9 @@ public struct Card: View {
                         self.translation = value.translation
                     }.onEnded { value in
                         if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
+                            // Perform dismiss here
+                            InsightsService.dismiss(id: self.insight.obj.id.oid) { (success, _, _) in
+                            }
                             self.onRemove(self.insight)
                         } else {
                             self.translation = .zero

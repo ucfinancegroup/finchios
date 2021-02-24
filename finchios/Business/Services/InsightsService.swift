@@ -124,7 +124,7 @@ extension InsightsService {
     }
     
     private static func getDismissURL(id: String) -> URL? {
-        let address = "\(BusinessConstants.SERVER)/insights/\(id)/dismiss"
+        let address = "\(BusinessConstants.SERVER)/insight/\(id)/dismiss"
         
         return URL(string: address)
     }
