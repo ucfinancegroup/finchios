@@ -28,22 +28,22 @@ struct RecurringView: View {
     }
     
     var body: some View {
-            ScrollView {
-                LazyVStack {
-                    ForEach(model.recurrings, id: \.id) { recurring in
-                        if self.type == .income || self.type == .expense {
-                            AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true, time: time)
-                                .padding()
-                                .bubble()
-                        }else { // is debt
-                            PrincipalItemSummary(type: $type, recurring: recurring.recurring, navAble: true, time: time)
-                                .padding()
-                                .bubble()
-                        }
-                        
+        ScrollView {
+            LazyVStack {
+                ForEach(model.recurrings, id: \.id) { recurring in
+                    if self.type == .income || self.type == .expense {
+                        AmountItemSummary(type: $type, recurring: recurring.recurring, navAble: true, time: time)
+                            .padding()
+                            .bubble()
+                    }else { // is debt
+                        PrincipalItemSummary(type: $type, recurring: recurring.recurring, navAble: true, time: time)
+                            .padding()
+                            .bubble()
                     }
+                    
                 }
             }
+        }
         .onAppear() {
             self.isActive = false
             model.onAppear(time: time)
