@@ -14,6 +14,14 @@ class EventModel: ObservableObject, Identifiable {
     
     func onAppear() {
         
+        PlansService.events { (_, _, result) in
+            DispatchQueue.main.async {
+                if let result = result {
+                    self.events = result.map { Iden<Event>(obj: $0) }
+                }
+            }
+        }
+        
     }
     
 }
