@@ -131,6 +131,8 @@
 		80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3025994349007CD06C /* BusinessConstants.swift */; };
 		80F9EE3825994394007CD06C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3725994394007CD06C /* SignUpService.swift */; };
 		80FD029325E751E300AE0001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029225E751E300AE0001 /* UserService.swift */; };
+		80FD029825E7531900AE0001 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029725E7531900AE0001 /* ChangePasswordView.swift */; };
+		80FD029E25E7532600AE0001 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */; };
 		80FD7ADF25C20D7300F11776 /* LogOutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD7ADE25C20D7300F11776 /* LogOutService.swift */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +295,8 @@
 		80F9EE3025994349007CD06C /* BusinessConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessConstants.swift; sourceTree = "<group>"; };
 		80F9EE3725994394007CD06C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		80FD029225E751E300AE0001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		80FD029725E7531900AE0001 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
 		80FD7ADE25C20D7300F11776 /* LogOutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -888,6 +892,7 @@
 		80AF8927258AD7F700291B23 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				80FD029625E7530800AE0001 /* ChangePassword */,
 				80AF8928258AD81F00291B23 /* SettingsView.swift */,
 				80AF892E258AD83700291B23 /* SettingsViewModel.swift */,
 			);
@@ -1042,6 +1047,15 @@
 			path = NewEvent;
 			sourceTree = "<group>";
 		};
+		80FD029625E7530800AE0001 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				80FD029725E7531900AE0001 /* ChangePasswordView.swift */,
+				80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1184,6 +1198,7 @@
 			files = (
 				803E344C25E59511003A0A57 /* EventDetailView.swift in Sources */,
 				80479C6A259AC2F300CDA3DA /* AccountsSummaryViewModel.swift in Sources */,
+				80FD029E25E7532600AE0001 /* ChangePasswordModel.swift in Sources */,
 				80E2675425BB177300277E52 /* AccountsService.swift in Sources */,
 				8026B6C0258A5FF2006CB2FB /* LogInView.swift in Sources */,
 				80A44BB525E04627004ECED3 /* AboutView.swift in Sources */,
@@ -1240,6 +1255,7 @@
 				80479C4E259AC21800CDA3DA /* GoalSummaryViewModel.swift in Sources */,
 				80535FA025A91679006521D4 /* RecurringView.swift in Sources */,
 				8070313D25B0CDCD00122CE7 /* RecurringDetailView.swift in Sources */,
+				80FD029825E7531900AE0001 /* ChangePasswordView.swift in Sources */,
 				80E2676625BB869400277E52 /* Date.swift in Sources */,
 				8062C4F225BE087E00E0927F /* Card.swift in Sources */,
 				80E2676C25BC6C9400277E52 /* Account.swift in Sources */,

@@ -26,7 +26,7 @@ struct SettingsView: View {
                     Text("Email: \(CredentialsObject.shared.email)")
                     
                     //TODO() Change to real views
-                    NavigationLink("Change Password", destination: AboutView())
+                    NavigationLink("Change Password", destination: ChangePasswordView())
                     NavigationLink("Change Personal Info", destination: AboutView())
                     NavigationLink("Edit Income", destination: AboutView())
                 }
