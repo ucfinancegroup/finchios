@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import OpenAPIClient
+
+class EventModel: ObservableObject, Identifiable {
+    
+    @Published var events: [Iden<Event>] = []
+    
+    func onAppear() {
+        
+    }
+    
+}

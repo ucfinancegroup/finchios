@@ -535,6 +535,7 @@
 		803E343E25E58577003A0A57 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				80FD028D25E74FD500AE0001 /* NewEvent */,
 				803E344A25E59501003A0A57 /* EventDetail */,
 				803E344125E594B5003A0A57 /* Event */,
 				80097002258FCB35000B2A90 /* EventItemSummary */,
@@ -1029,6 +1030,13 @@
 				80664C6025D1CB7E001421BE /* InsightsService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		80FD028D25E74FD500AE0001 /* NewEvent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
