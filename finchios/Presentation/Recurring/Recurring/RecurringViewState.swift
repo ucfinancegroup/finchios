@@ -10,15 +10,9 @@ import OpenAPIClient
 
 class RecurringViewState: ObservableObject, Identifiable {
     
-    @Binding var type: RecurringItemType
-    
     @Published var recurrings: [RecurringIdentifiable] = []
     
-    init(type: Binding<RecurringItemType>) {
-        _type = type
-    }
-    
-    func onAppear(time: OverviewProjection) {
+    func onAppear(type: RecurringItemType, time: OverviewProjection) {
         
         let service: RecurringProtocol.Type
         switch time {

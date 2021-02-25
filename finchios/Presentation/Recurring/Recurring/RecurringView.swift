@@ -13,7 +13,7 @@ struct RecurringView: View {
     
     @Binding var type: RecurringItemType
     
-    @ObservedObject var model: RecurringViewState
+    @StateObject var model: RecurringViewState = RecurringViewState()
     
     @State var modalCreate: Bool = false
     
@@ -21,9 +21,6 @@ struct RecurringView: View {
     
     init(type: Binding<RecurringItemType>, time: OverviewProjection) {
         _type = type
-        
-        model = RecurringViewState(type: type)
-        
         self.time = time
     }
     
@@ -46,7 +43,7 @@ struct RecurringView: View {
         }
         .onAppear() {
             self.isActive = false
-            model.onAppear(time: time)
+            model.onAppear(type: type, time: time)
         }
         .navigationTitle(Text(type.rawValue))
         .navigationBarItems(trailing:
