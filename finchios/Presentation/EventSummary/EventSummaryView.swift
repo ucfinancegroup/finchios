@@ -20,7 +20,7 @@ struct EventSummaryView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: Text("EventView here"),
+                    destination: EventView(),
                     label: {
                         Image("RightArrow")
                     })
