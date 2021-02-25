@@ -36,6 +36,7 @@ struct PrincipalItemSummary: View {
             }
         }
         .disabled(!navAble)
+        .foregroundColor(.primary)
     }
 }
 
