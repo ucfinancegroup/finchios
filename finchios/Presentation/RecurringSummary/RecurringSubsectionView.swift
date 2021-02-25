@@ -39,7 +39,11 @@ struct RecurringSubsectionView: View {
                 Divider()
                 
                 ForEach(recurrings.indices) { index in
-                    AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false, time: time)
+                    if type == .debt {
+                        PrincipalItemSummary(type: $type, recurring: recurrings[index], navAble: true, time: time)
+                    }else {
+                        AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false, time: time)
+                    }
                 }
             }else {
                 //TODO(): Display to the user that there is nothing of this type.

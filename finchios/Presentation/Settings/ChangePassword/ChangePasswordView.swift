@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChangePasswordView: View {
     
-    @StateObject model = ChangePasswordModel()
+    @StateObject var model = ChangePasswordModel()
     
     var body: some View {
         Text("Hello, World!")
