@@ -21,7 +21,7 @@ class ChangePasswordModel: ObservableObject, Identifiable {
     @Published var type: ChangePasswordAlertType = .notEqual
     
     func changedTapped() {
-        if newPassword != confirmPassword {
+        if newPassword != confirmPassword && newPassword.count >= 8 {
             type = .notEqual
             showAlert = true
             return

@@ -35,6 +35,8 @@
 		803E344325E594BE003A0A57 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E344225E594BE003A0A57 /* EventView.swift */; };
 		803E344725E594C7003A0A57 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E344625E594C7003A0A57 /* EventModel.swift */; };
 		803E344C25E59511003A0A57 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E344B25E59511003A0A57 /* EventDetailView.swift */; };
+		8040729D25EC3F5B005C19A5 /* ChangeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040729C25EC3F5B005C19A5 /* ChangeName.swift */; };
+		804072A325EC3F69005C19A5 /* ChangeNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804072A225EC3F69005C19A5 /* ChangeNameModel.swift */; };
 		8044719225E4B76600F11781 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719125E4B76600F11781 /* OverviewView.swift */; };
 		8044719825E4B77600F11781 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044719725E4B77600F11781 /* OverviewModel.swift */; };
 		80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80479C48259A51AE00CDA3DA /* PlansService.swift */; };
@@ -195,6 +197,8 @@
 		803E344225E594BE003A0A57 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		803E344625E594C7003A0A57 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		803E344B25E59511003A0A57 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		8040729C25EC3F5B005C19A5 /* ChangeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeName.swift; sourceTree = "<group>"; };
+		804072A225EC3F69005C19A5 /* ChangeNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameModel.swift; sourceTree = "<group>"; };
 		8044719125E4B76600F11781 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		8044719725E4B77600F11781 /* OverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewModel.swift; sourceTree = "<group>"; };
 		80479C48259A51AE00CDA3DA /* PlansService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansService.swift; sourceTree = "<group>"; };
@@ -566,6 +570,15 @@
 			path = EventDetail;
 			sourceTree = "<group>";
 		};
+		8040729B25EC3F50005C19A5 /* ChangeName */ = {
+			isa = PBXGroup;
+			children = (
+				8040729C25EC3F5B005C19A5 /* ChangeName.swift */,
+				804072A225EC3F69005C19A5 /* ChangeNameModel.swift */,
+			);
+			path = ChangeName;
+			sourceTree = "<group>";
+		};
 		8044719025E4B75400F11781 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +905,7 @@
 		80AF8927258AD7F700291B23 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				8040729B25EC3F50005C19A5 /* ChangeName */,
 				80FD029625E7530800AE0001 /* ChangePassword */,
 				80AF8928258AD81F00291B23 /* SettingsView.swift */,
 				80AF892E258AD83700291B23 /* SettingsViewModel.swift */,
@@ -1209,6 +1223,7 @@
 				80168D2A258EC50700B12CA2 /* AllocationSummaryViewModel.swift in Sources */,
 				80479C54259AC22000CDA3DA /* GoalSummaryView.swift in Sources */,
 				809F955325B626E9007DE7F6 /* GoalEditViewModel.swift in Sources */,
+				8040729D25EC3F5B005C19A5 /* ChangeName.swift in Sources */,
 				8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */,
 				8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */,
 				804AEA6D259FC2E8005D414C /* Goal.swift in Sources */,
@@ -1235,6 +1250,7 @@
 				80FD7ADF25C20D7300F11776 /* LogOutService.swift in Sources */,
 				8070313825B0C5BB00122CE7 /* PrincipalItemSummary.swift in Sources */,
 				8071DCF625A769DA0056107B /* RecurringSubsectionView.swift in Sources */,
+				804072A325EC3F69005C19A5 /* ChangeNameModel.swift in Sources */,
 				807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */,
 				803E344725E594C7003A0A57 /* EventModel.swift in Sources */,
 				809F953C25B520FF007DE7F6 /* GoalDetailView.swift in Sources */,
