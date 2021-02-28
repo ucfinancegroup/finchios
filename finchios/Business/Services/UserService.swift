@@ -57,3 +57,54 @@ struct UserService {
     }
     
 }
+
+// get
+extension UserService {
+    
+    public static func get(completion: @escaping ((Bool, Error?, User?) -> Void)) {
+        guard let url = getURL() else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        
+        
+        let jsonBody = try? JSONEncoder().encode(payload)
+        
+        guard let unwrappedJsonBody = jsonBody else {
+            completion(false, nil, nil)
+            return
+        }
+        
+        request.httpBody = unwrappedJsonBody
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(User.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, response)
+            return
+        }
+
+        task.resume()
+    }
+    
+    private static func getURL() -> URL? {
+        let address = "\(BusinessConstants.SERVER)/user"
+        
+        return URL(string: address)
+    }
+    
+}
