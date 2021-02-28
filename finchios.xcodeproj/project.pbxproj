@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8008911E25EC4C5D0040D4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008911D25EC4C5D0040D4BB /* User.swift */; };
 		80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80097003258FCB48000B2A90 /* EventItemSummaryView.swift */; };
 		80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D1E258EC32900B12CA2 /* GraphView.swift */; };
 		80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D24258EC33000B12CA2 /* GraphViewModel.swift */; };
@@ -170,6 +171,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8008911D25EC4C5D0040D4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		80097003258FCB48000B2A90 /* EventItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemSummaryView.swift; sourceTree = "<group>"; };
 		80168D1E258EC32900B12CA2 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		80168D24258EC33000B12CA2 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				80E2676B25BC6C9400277E52 /* Account.swift */,
 				8062C50525BE0D1E00E0927F /* Insight.swift */,
 				80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */,
+				8008911D25EC4C5D0040D4BB /* User.swift */,
 			);
 			path = OpenAPIClient;
 			sourceTree = "<group>";
@@ -1242,6 +1245,7 @@
 				80F5AB7125E57147001597F3 /* RecurringProtocol.swift in Sources */,
 				80479C80259ACA0900CDA3DA /* LeaderboardViewModel.swift in Sources */,
 				80479C59259AC29900CDA3DA /* ExpensesSummaryView.swift in Sources */,
+				8008911E25EC4C5D0040D4BB /* User.swift in Sources */,
 				8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */,
 				80F936F8258F06F500BBBE57 /* RecurringSummaryView.swift in Sources */,
 				80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */,

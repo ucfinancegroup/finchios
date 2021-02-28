@@ -22,8 +22,19 @@ class ChangeNameModel: ObservableObject, Identifiable {
     
     init() {
         //TODO(): Fill in w their original personal info
-        first = ""
-        last = ""
+        
+        self.first = ""
+        self.last = ""
+        
+        UserService.get { (_, _, user) in
+            DispatchQueue.main.async {
+                if let user = user {
+                    self.first = user.firstName
+                    self.last = user.lastName
+                }
+                
+            }
+        }
     }
     
     func changedTapped() {

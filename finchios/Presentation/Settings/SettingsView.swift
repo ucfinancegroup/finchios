@@ -27,7 +27,7 @@ struct SettingsView: View {
                     
                     //TODO() Change to real views
                     NavigationLink("Change Password", destination: ChangePasswordView())
-                    NavigationLink("Change Personal Info", destination: AboutView())
+                    NavigationLink("Change Personal Info", destination: ChangeName())
                     NavigationLink("Edit Income", destination: AboutView())
                 }
                 Section(header: Text("")) {

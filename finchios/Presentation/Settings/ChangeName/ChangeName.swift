@@ -28,14 +28,14 @@ struct ChangeName: View {
             Button(action: {
                 self.model.changedTapped()
             }) {
-                Text("Change Password")
+                Text("Change Name")
                     .padding()
                     .bubble(.teal)
                     .foregroundColor(.white)
             }
             
         }
-        .navigationTitle("Change Password")
+        .navigationTitle("Change Name")
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.type == .empty {
                 return Alert(title: Text("Names cannot be empty"),

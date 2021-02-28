@@ -73,16 +73,6 @@ extension UserService {
         request.allHTTPHeaderFields = ["Content-Type": "application/json",
                                        BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
         
-        
-        let jsonBody = try? JSONEncoder().encode(payload)
-        
-        guard let unwrappedJsonBody = jsonBody else {
-            completion(false, nil, nil)
-            return
-        }
-        
-        request.httpBody = unwrappedJsonBody
-        
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard let data = data else {
                 completion(false, error, nil)

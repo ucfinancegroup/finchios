@@ -6,11 +6,23 @@
 //
 
 import Foundation
+import OpenAPIClient
 
 class SettingsViewModel: ObservableObject, Identifiable {
 
     @Published var resetApp: Bool = false
 
+    var user: User = User()
+    
+    func onAppear() {
+        // TODO() Point of doing this here is to pass it to the change name and change income views
+        UserService.get { (_, _, user) in
+            if let user = user {
+                self.user = user
+            }
+        }
+    }
+    
     func logOut() {
         // Wipe local credentials
         CredentialsObject.deleteCurrentCredentials { (success) in
