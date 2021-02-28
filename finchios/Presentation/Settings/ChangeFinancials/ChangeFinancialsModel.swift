@@ -1,5 +1,5 @@
 //
-//  ChangeNameModel.swift
+//  ChangeFinancialsModel.swift
 //  finchios
 //
 //  Created by Brett Fazio on 2/28/21.
@@ -8,29 +8,26 @@
 import Foundation
 import OpenAPIClient
 
-class ChangeNameModel: ObservableObject, Identifiable {
+class ChangeFinancialsModel: ObservableObject, Identifiable {
     
-    enum ChangeNameAlertType {
-        case empty, success, server
+    enum ChangeFinAlertType {
+        case invalid, empty, success, server
     }
     
-    @Published var first: String
-    @Published var last: String
+    @Published var income: String
     
     @Published var showAlert: Bool = false
-    @Published var type: ChangeNameAlertType = .empty
+    @Published var type: ChangeFinAlertType = .invalid
     
     init() {
         //TODO(): Fill in w their original personal info
-        
-        self.first = ""
-        self.last = ""
+
+        self.income = "0"
         
         UserService.get { (_, _, user) in
             DispatchQueue.main.async {
                 if let user = user {
-                    self.first = user.firstName
-                    self.last = user.lastName
+                    self.income = "\(user.income)"
                 }
                 
             }
@@ -38,15 +35,24 @@ class ChangeNameModel: ObservableObject, Identifiable {
     }
     
     func changedTapped() {
-        if first.count == 0 || last.count == 0 {
+        if income.count == 0 {
             type = .empty
             showAlert = true
             return
         }
         
-        let updateNamePayload = UpdateUserRequest(password: nil, firstName: first, lastName: last, income: nil)
+        let parsedIncome: Double
+        if let parse = Double(self.income) {
+            parsedIncome = parse
+        }else {
+            type = .invalid
+            showAlert = true
+            return
+        }
         
-        UserService.update(payload: updateNamePayload) { (success, _, user) in
+        let updateFinPayload = UpdateUserRequest(password: nil, firstName: nil, lastName: nil, income: parsedIncome)
+        
+        UserService.update(payload: updateFinPayload) { (success, _, user) in
             DispatchQueue.main.async {
                 if let _ = user {
                     self.type = .success

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8008911E25EC4C5D0040D4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008911D25EC4C5D0040D4BB /* User.swift */; };
+		8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912225EC4EF50040D4BB /* ChangeFinancials.swift */; };
+		8008912725EC4F210040D4BB /* ChangeFinancialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */; };
 		80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80097003258FCB48000B2A90 /* EventItemSummaryView.swift */; };
 		80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D1E258EC32900B12CA2 /* GraphView.swift */; };
 		80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80168D24258EC33000B12CA2 /* GraphViewModel.swift */; };
@@ -172,6 +174,8 @@
 
 /* Begin PBXFileReference section */
 		8008911D25EC4C5D0040D4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8008912225EC4EF50040D4BB /* ChangeFinancials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancials.swift; sourceTree = "<group>"; };
+		8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancialsModel.swift; sourceTree = "<group>"; };
 		80097003258FCB48000B2A90 /* EventItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemSummaryView.swift; sourceTree = "<group>"; };
 		80168D1E258EC32900B12CA2 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		80168D24258EC33000B12CA2 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
@@ -339,6 +343,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8008912125EC4ED30040D4BB /* ChangeFinancials */ = {
+			isa = PBXGroup;
+			children = (
+				8008912225EC4EF50040D4BB /* ChangeFinancials.swift */,
+				8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */,
+			);
+			path = ChangeFinancials;
 			sourceTree = "<group>";
 		};
 		80097002258FCB35000B2A90 /* EventItemSummary */ = {
@@ -908,6 +921,7 @@
 		80AF8927258AD7F700291B23 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				8008912125EC4ED30040D4BB /* ChangeFinancials */,
 				8040729B25EC3F50005C19A5 /* ChangeName */,
 				80FD029625E7530800AE0001 /* ChangePassword */,
 				80AF8928258AD81F00291B23 /* SettingsView.swift */,
@@ -1294,6 +1308,7 @@
 				80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				807E3E3125CB3AA70039671E /* NumberField.swift in Sources */,
+				8008912725EC4F210040D4BB /* ChangeFinancialsModel.swift in Sources */,
 				80E2676225BB84C900277E52 /* AccountItemSummary.swift in Sources */,
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,
 				804AEA66259FC222005D414C /* GoalItemSummaryView.swift in Sources */,
@@ -1324,6 +1339,7 @@
 				8044719825E4B77600F11781 /* OverviewModel.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
+				8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */,
 				8070314F25B26A4200122CE7 /* RecurringEditViewModel.swift in Sources */,
 				80535FBE25AD0B43006521D4 /* NewRecurringView.swift in Sources */,
 				8070316725B295B000122CE7 /* GoalAndStatus.swift in Sources */,
