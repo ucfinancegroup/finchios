@@ -31,14 +31,17 @@ struct PlansService: RecurringProtocol {
                 return
             }
             
-            guard let response = try? JSONDecoder().decode(Plan.self, from: data) else {
+            guard let response = try? JSONDecoder().decode([Plan].self, from: data) else {
                 completion(false, error, nil)
                 return
             }
             
-            completion(true, nil, response)
+            guard let firstPlan = response.first else {
+                completion(false, error, nil)
+                return
+            }
             
-            completion(true, nil, nil)
+            completion(true, nil, firstPlan)
             return
         }
 
