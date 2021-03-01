@@ -27,8 +27,6 @@ struct NumberField: UIViewRepresentable {
         }
         
         @objc func textFieldDidChange(_ textField: UITextField) {
-            print("here")
-            
             if let unwrap = textField.text {
                 self.text.wrappedValue = unwrap
             }else {
