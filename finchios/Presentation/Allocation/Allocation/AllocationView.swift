@@ -14,6 +14,8 @@ struct AllocationView: View {
     
     @StateObject var model = AllocationModel()
     
+    @State var modalCreate: Bool = false
+    
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -28,7 +30,17 @@ struct AllocationView: View {
             self.isActive = false
             model.onAppear()
         }
-        .navigationTitle(Text("Simulated Events"))
+        .navigationTitle(Text("Allocations"))
+        .navigationBarItems(trailing:
+                                Button(action: {
+                                    self.modalCreate = true
+                                }, label: {
+                                    Image("Plus")
+                                })
+                                .sheet(isPresented: self.$modalCreate, content: {
+                                    //NewEventView(present: self.$modalCreate)
+                                    Text("New alloc view")
+                                }))
     }
 }
 
