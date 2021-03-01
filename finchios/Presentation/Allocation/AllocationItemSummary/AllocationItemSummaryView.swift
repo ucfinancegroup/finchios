@@ -21,9 +21,18 @@ struct AllocationItemSummaryView: View {
     }
 }
 
-//TODO Uncomment
-//struct AllocationItemSummaryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AllocationItemSummaryView()
-//    }
-//}
+struct AllocationItemSummaryPreviews: View {
+    
+    @State var alloc = Allocation.dummy
+
+    var body: some View {
+        AllocationItemSummaryView(allocation: alloc, navAble: false)
+    }
+    
+}
+
+struct AllocationItemSummaryView_Previews: PreviewProvider {
+    static var previews: some View {
+        AllocationItemSummaryPreviews()
+    }
+}

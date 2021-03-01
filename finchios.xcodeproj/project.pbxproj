@@ -139,6 +139,7 @@
 		80FC6C6425EC95C6008C373F /* NewEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6325EC95C6008C373F /* NewEventModel.swift */; };
 		80FC6C6925EC97BF008C373F /* AllocationItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */; };
 		80FC6C6D25EC97F8008C373F /* AllocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6C25EC97F8008C373F /* AllocationModel.swift */; };
+		80FC6C7125EC9A94008C373F /* Allocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C7025EC9A94008C373F /* Allocation.swift */; };
 		80FD029325E751E300AE0001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029225E751E300AE0001 /* UserService.swift */; };
 		80FD029825E7531900AE0001 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029725E7531900AE0001 /* ChangePasswordView.swift */; };
 		80FD029E25E7532600AE0001 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */; };
@@ -312,6 +313,7 @@
 		80FC6C6325EC95C6008C373F /* NewEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModel.swift; sourceTree = "<group>"; };
 		80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationItemSummaryView.swift; sourceTree = "<group>"; };
 		80FC6C6C25EC97F8008C373F /* AllocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationModel.swift; sourceTree = "<group>"; };
+		80FC6C7025EC9A94008C373F /* Allocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allocation.swift; sourceTree = "<group>"; };
 		80FD029225E751E300AE0001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		80FD029725E7531900AE0001 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 				8062C50525BE0D1E00E0927F /* Insight.swift */,
 				80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */,
 				8008911D25EC4C5D0040D4BB /* User.swift */,
+				80FC6C7025EC9A94008C373F /* Allocation.swift */,
 			);
 			path = OpenAPIClient;
 			sourceTree = "<group>";
@@ -1368,6 +1371,7 @@
 				803E344325E594BE003A0A57 /* EventView.swift in Sources */,
 				80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */,
 				8044719825E4B77600F11781 /* OverviewModel.swift in Sources */,
+				80FC6C7125EC9A94008C373F /* Allocation.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 				8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */,
