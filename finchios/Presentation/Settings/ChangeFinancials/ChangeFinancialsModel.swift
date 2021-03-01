@@ -20,8 +20,6 @@ class ChangeFinancialsModel: ObservableObject, Identifiable {
     @Published var type: ChangeFinAlertType = .invalid
     
     init() {
-        //TODO(): Fill in w their original personal info
-
         self.income = "0"
         
         UserService.get { (_, _, user) in
