@@ -38,8 +38,7 @@ struct AllocationView: View {
                                     Image("Plus")
                                 })
                                 .sheet(isPresented: self.$modalCreate, content: {
-                                    //NewEventView(present: self.$modalCreate)
-                                    Text("New alloc view")
+                                    NewAllocationView(present: self.$modalCreate)
                                 }))
     }
 }
