@@ -141,6 +141,7 @@
 		80FC6C6D25EC97F8008C373F /* AllocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6C25EC97F8008C373F /* AllocationModel.swift */; };
 		80FC6C7125EC9A94008C373F /* Allocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C7025EC9A94008C373F /* Allocation.swift */; };
 		80FC6C7525EC9D69008C373F /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C7425EC9D69008C373F /* AssetService.swift */; };
+		80FC6C7925ECA4B0008C373F /* EventDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C7825ECA4B0008C373F /* EventDetailModel.swift */; };
 		80FD029325E751E300AE0001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029225E751E300AE0001 /* UserService.swift */; };
 		80FD029825E7531900AE0001 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029725E7531900AE0001 /* ChangePasswordView.swift */; };
 		80FD029E25E7532600AE0001 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */; };
@@ -316,6 +317,7 @@
 		80FC6C6C25EC97F8008C373F /* AllocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationModel.swift; sourceTree = "<group>"; };
 		80FC6C7025EC9A94008C373F /* Allocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allocation.swift; sourceTree = "<group>"; };
 		80FC6C7425EC9D69008C373F /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
+		80FC6C7825ECA4B0008C373F /* EventDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailModel.swift; sourceTree = "<group>"; };
 		80FD029225E751E300AE0001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		80FD029725E7531900AE0001 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				803E344B25E59511003A0A57 /* EventDetailView.swift */,
+				80FC6C7825ECA4B0008C373F /* EventDetailModel.swift */,
 			);
 			path = EventDetail;
 			sourceTree = "<group>";
@@ -1388,6 +1391,7 @@
 				80C97BB925A775B7008729A7 /* Double.swift in Sources */,
 				807E3E2525CB251F0039671E /* UIApplication.swift in Sources */,
 				80E2677125BD22E000277E52 /* AccountDetailView.swift in Sources */,
+				80FC6C7925ECA4B0008C373F /* EventDetailModel.swift in Sources */,
 				80FC6C6925EC97BF008C373F /* AllocationItemSummaryView.swift in Sources */,
 				80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */,
 			);

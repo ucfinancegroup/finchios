@@ -16,10 +16,12 @@ struct EventDetailView: View {
     
     @State var modalActive: Bool = false
     
-    //@StateObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
+    @StateObject var model = EventDetailModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("bleh")
+        }
     }
 }
 
