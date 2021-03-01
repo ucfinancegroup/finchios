@@ -37,9 +37,7 @@ struct EventView: View {
                                     Image("Plus")
                                 })
                                 .sheet(isPresented: self.$modalCreate, content: {
-                                    //TODO(): Put NewEvent here
-                                    Text("New Event should go here")
-                                    //NewRecurringView(present: self.$modalCreate, type: self.$type, time: time)
+                                    NewEventView(present: self.$modalCreate)
                                 }))
     }
 }
