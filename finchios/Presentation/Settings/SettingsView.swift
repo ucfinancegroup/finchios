@@ -24,18 +24,16 @@ struct SettingsView: View {
             Form {
                 Section(header: Text("Account")) {
                     Text("Email: \(CredentialsObject.shared.email)")
-                    
-                    //TODO() Change to real views
                     NavigationLink("Change Password", destination: ChangePasswordView())
                     NavigationLink("Change Personal Info", destination: ChangeName())
                     NavigationLink("Edit Income", destination: ChangeFinancials())
                 }
-                Section(header: Text("")) {
+                Section(header: Text("Information")) {
                     NavigationLink("About", destination: AboutView())
 
                     //TODO(): Entry point for editing Plaid accounts (Link entry)
                 }
-                Section(header: Text("")) {
+                Section(header: Text("Application")) {
                     Button(action: {
                         // Log out
                         navBarHidden = true
