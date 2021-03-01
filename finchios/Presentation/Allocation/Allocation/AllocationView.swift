@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct AllocationView: View {
+    
+    // I think this is useless atm, at one point was used to prevent fetching again?
+    @State var isActive: Bool = false
+    
+    @StateObject var model = AllocationModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            LazyVStack {
+                ForEach(model.allocations, id: \.id) { alloc in
+                    AllocationItemSummaryView(allocation: alloc.obj, navAble: true)
+                        .padding()
+                        .bubble()
+                }
+            }
+        }
+        .onAppear() {
+            self.isActive = false
+            model.onAppear()
+        }
+        .navigationTitle(Text("Simulated Events"))
     }
 }
 

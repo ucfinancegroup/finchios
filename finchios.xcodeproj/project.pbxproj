@@ -137,6 +137,8 @@
 		80F9EE3825994394007CD06C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3725994394007CD06C /* SignUpService.swift */; };
 		80FC6C6025EC95BB008C373F /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C5F25EC95BB008C373F /* NewEventView.swift */; };
 		80FC6C6425EC95C6008C373F /* NewEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6325EC95C6008C373F /* NewEventModel.swift */; };
+		80FC6C6925EC97BF008C373F /* AllocationItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */; };
+		80FC6C6D25EC97F8008C373F /* AllocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6C25EC97F8008C373F /* AllocationModel.swift */; };
 		80FD029325E751E300AE0001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029225E751E300AE0001 /* UserService.swift */; };
 		80FD029825E7531900AE0001 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029725E7531900AE0001 /* ChangePasswordView.swift */; };
 		80FD029E25E7532600AE0001 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */; };
@@ -308,6 +310,8 @@
 		80F9EE3725994394007CD06C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		80FC6C5F25EC95BB008C373F /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		80FC6C6325EC95C6008C373F /* NewEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModel.swift; sourceTree = "<group>"; };
+		80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationItemSummaryView.swift; sourceTree = "<group>"; };
+		80FC6C6C25EC97F8008C373F /* AllocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationModel.swift; sourceTree = "<group>"; };
 		80FD029225E751E300AE0001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		80FD029725E7531900AE0001 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		80FD029D25E7532600AE0001 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
@@ -548,6 +552,7 @@
 		803E343625E583AC003A0A57 /* Allocation */ = {
 			isa = PBXGroup;
 			children = (
+				80FC6C6725EC97AC008C373F /* AllocationItemSummary */,
 				803E343725E583B6003A0A57 /* Allocation */,
 			);
 			path = Allocation;
@@ -557,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				803E343825E583BF003A0A57 /* AllocationView.swift */,
+				80FC6C6C25EC97F8008C373F /* AllocationModel.swift */,
 			);
 			path = Allocation;
 			sourceTree = "<group>";
@@ -1083,6 +1089,14 @@
 			path = Keyboard;
 			sourceTree = "<group>";
 		};
+		80FC6C6725EC97AC008C373F /* AllocationItemSummary */ = {
+			isa = PBXGroup;
+			children = (
+				80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */,
+			);
+			path = AllocationItemSummary;
+			sourceTree = "<group>";
+		};
 		80FD028D25E74FD500AE0001 /* NewEvent */ = {
 			isa = PBXGroup;
 			children = (
@@ -1349,6 +1363,7 @@
 				80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */,
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
 				80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */,
+				80FC6C6D25EC97F8008C373F /* AllocationModel.swift in Sources */,
 				80479C8B259ACB2B00CDA3DA /* LeaderboardItemView.swift in Sources */,
 				803E344325E594BE003A0A57 /* EventView.swift in Sources */,
 				80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */,
@@ -1365,6 +1380,7 @@
 				80C97BB925A775B7008729A7 /* Double.swift in Sources */,
 				807E3E2525CB251F0039671E /* UIApplication.swift in Sources */,
 				80E2677125BD22E000277E52 /* AccountDetailView.swift in Sources */,
+				80FC6C6925EC97BF008C373F /* AllocationItemSummaryView.swift in Sources */,
 				80168D1F258EC32900B12CA2 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
