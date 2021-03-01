@@ -15,7 +15,7 @@ struct NewEventView: View {
     
     var body: some View {
         VStack {
-            Text("Create a new event")
+            Text("Add a new event")
                 .font(.title2)
                 .padding()
             
