@@ -62,6 +62,7 @@ struct LineView: UIViewRepresentable {
         view.legend.enabled = false
         
         view.xAxis.enabled = false
+        view.xAxis.labelPosition = .bottom
         view.rightAxis.enabled = false
         view.leftAxis.enabled = false
         
