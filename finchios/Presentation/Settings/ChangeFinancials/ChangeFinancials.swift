@@ -14,10 +14,14 @@ struct ChangeFinancials: View {
     var body: some View {
         VStack {
             
-            NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Income") { (change) in
-                self.model.income = change
+            HStack {
+                Text("$")
+                NumberField(text: $model.income, alignment: .natural, keyType: .decimalPad, placeholder: "Income")
+                    //.overlay(RoundedRectangle(cornerRadius: 8))
+                Spacer()
             }
-                .padding()
+            .padding()
+            
             
             Spacer()
             

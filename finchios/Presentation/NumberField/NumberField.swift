@@ -9,22 +9,45 @@ import SwiftUI
 
 struct NumberField: UIViewRepresentable {
     
+    @Binding var text: String
+    
     var alignment: NSTextAlignment
     var keyType: UIKeyboardType
     var placeholder: String
-    var changeHandler:((String)->Void)
     
-    func makeUIView(context: Context) -> WrappableTextField {
-        let textfield = WrappableTextField()
+    func makeCoordinator() -> Coordinator {
+        Coordinator($text)
+    }
+     
+    class Coordinator: NSObject, UITextFieldDelegate {
+        var text: Binding<String>
+     
+        init(_ text: Binding<String>) {
+            self.text = text
+        }
+        
+        @objc func textFieldDidChange(_ textField: UITextField) {
+            print("here")
+            
+            if let unwrap = textField.text {
+                self.text.wrappedValue = unwrap
+            }else {
+                self.text.wrappedValue = ""
+            }
+        }
+    }
+    
+    func makeUIView(context: Context) -> UITextField {
+        let textfield = UITextField()
         textfield.keyboardType = keyType
         textfield.placeholder = placeholder
         
-        textfield.delegate = textfield
-        
-        textfield.textFieldChangedHandler = changeHandler
+        textfield.delegate = context.coordinator
         
         textfield.textAlignment = alignment
         
+        textfield.addTarget(context.coordinator, action: #selector(Coordinator.textFieldDidChange(_:)), for: .editingChanged)
+
         
         textfield.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
@@ -36,33 +59,16 @@ struct NumberField: UIViewRepresentable {
         return textfield
     }
     
-    func updateUIView(_ uiView: WrappableTextField, context: Context) {
+    func updateUIView(_ uiView: UITextField, context: Context) {
         uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         uiView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        
+        uiView.text = text
     }
 }
 
 extension  UITextField{
     @objc func doneButtonTapped(button:UIBarButtonItem) -> Void {
        self.resignFirstResponder()
-    }
-
-}
-
-
-class WrappableTextField: UITextField, UITextFieldDelegate {
-    var textFieldChangedHandler: ((String)->Void)?
-    var onCommitHandler: (()->Void)?
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let currentValue = textField.text as NSString? {
-            let proposedValue = currentValue.replacingCharacters(in: range, with: string)
-            textFieldChangedHandler?(proposedValue as String)
-        }
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        onCommitHandler?()
     }
 }

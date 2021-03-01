@@ -57,9 +57,7 @@ struct NewRecurringView: View {
                             }
                             
                             
-                            NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Amount") { (change) in
-                                self.model.amountField = change
-                            }
+                            NumberField(text: $model.amountField, alignment: .natural, keyType: .decimalPad, placeholder: "Amount")
                             
                             Spacer()
                         }
@@ -69,17 +67,13 @@ struct NewRecurringView: View {
                         HStack {
                             Text("-$")
                             
-                            NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Principal") { (change) in
-                                self.model.principalField = change
-                            }
+                            NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
                         }
                         
                         
                         Spacer()
                         
-                        NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)") { (change) in
-                            self.model.interestField = change
-                        }
+                        NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
                         
                     }
                     
@@ -93,9 +87,7 @@ struct NewRecurringView: View {
                     
                     Spacer()
                     
-                    NumberField(alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency") { (change) in
-                        self.model.freqContentField = change
-                    }
+                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency")
                     
                     Spacer()
                 }

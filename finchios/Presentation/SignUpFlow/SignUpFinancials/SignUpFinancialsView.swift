@@ -27,15 +27,11 @@ struct SignUpFinancialsView: View {
 
                 Spacer()
 
-                NumberField(alignment: .center, keyType: .decimalPad, placeholder: "Net Worth") { (change) in
-                    self.model.netWorth = change
-                }
-                .padding()
+                NumberField(text: $model.netWorth, alignment: .center, keyType: .decimalPad, placeholder: "Net Worth")
+                    .padding()
                 
-                NumberField(alignment: .center, keyType: .decimalPad, placeholder: "Income") { (change) in
-                    self.model.income = change
-                }
-                .padding()
+                NumberField(text: $model.income, alignment: .center, keyType: .decimalPad, placeholder: "Income")
+                    .padding()
                 
                 Spacer()
 

@@ -35,6 +35,7 @@ class ChangeFinancialsModel: ObservableObject, Identifiable {
     }
     
     func changedTapped() {
+        print(income)
         if income.count == 0 {
             type = .empty
             showAlert = true

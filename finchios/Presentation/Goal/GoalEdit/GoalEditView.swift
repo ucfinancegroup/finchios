@@ -35,9 +35,7 @@ struct GoalEditView: View {
                 
                 Spacer()
                 
-                NumberField(alignment: .natural, keyType: .decimalPad, placeholder: "Target") { (change) in
-                    self.model.threshold = change
-                }
+                NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
                 
                 Spacer()
                 

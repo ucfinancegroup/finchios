@@ -1003,6 +1003,7 @@
 		80E2679125BDDB2600277E52 /* Styling */ = {
 			isa = PBXGroup;
 			children = (
+				80FC6C4E25EC6AEB008C373F /* Keyboard */,
 				80E2679625BDDBE300277E52 /* BubbleView.swift */,
 			);
 			path = Styling;
@@ -1069,6 +1070,13 @@
 				80FD029225E751E300AE0001 /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		80FC6C4E25EC6AEB008C373F /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		80FD028D25E74FD500AE0001 /* NewEvent */ = {
