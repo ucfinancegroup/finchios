@@ -17,6 +17,7 @@ struct NewEventView: View {
         VStack {
             Text("Create a new event")
                 .font(.title2)
+                .padding()
             
             Group {
                 
@@ -28,6 +29,7 @@ struct NewEventView: View {
                 self.model.create()
             }, label: {
                 Text("Create")
+                    .padding()
             })
             
             Spacer()
