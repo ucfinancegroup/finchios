@@ -17,7 +17,21 @@ struct AllocationItemSummaryView: View {
     @State var navAble: Bool
     
     var body: some View {
-        Text("Hello, World!")
+        NavigationLink(destination: AllocationDetailView(shouldPop: $isActive, allocation: allocation), isActive: $isActive) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(allocation.description)
+                        .font(.title2)
+                    
+                    Spacer()
+                }
+                
+                //TODO(): Add how many times annually
+                //Text("\(self.type.rawValue) of $\(recurring.amount.format()) \(recurring.frequency.typ.rawValue)")
+            }
+        }
+        .disabled(!navAble)
+        .foregroundColor(.primary)
     }
 }
 
