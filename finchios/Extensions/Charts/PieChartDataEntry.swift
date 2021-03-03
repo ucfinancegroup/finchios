@@ -11,8 +11,9 @@ import OpenAPIClient
 
 public extension PieChartDataEntry {
     
-    convenience init(alloc: AllocationChange) {
-        self.init(value: alloc.change, label: alloc.asset.name)
+    convenience init(alloc: AllocationProportion) {
+        //TODO() Don't force unwrap
+        self.init(value: alloc.proportion!, label: alloc.asset.name)
     }
     
 }

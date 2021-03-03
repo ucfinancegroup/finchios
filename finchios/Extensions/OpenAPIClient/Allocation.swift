@@ -13,8 +13,8 @@ extension Allocation {
     static let dummy = Allocation(description: "My planned 25 year old allocation",
                                   date: 1614570311,
                                   schema: [
-                                    AllocationChange(asset: .init(name: "Stock", _class: .init(typ: .equity, content: "Stock")), change: 50),
-                                    AllocationChange(asset: .init(name: "Bond", _class: .init(typ: .fixed, content: "Bond")), change: 20),
-                                    AllocationChange(asset: .init(name: "Cash", _class: .init(typ: .cash, content: "Cash")), change: 30)])
+                                    AllocationProportion(asset: .init(name: "Stock", _class: .init(typ: .equity, content: "Stock")), proportion: 50),
+                                    AllocationProportion(asset: .init(name: "Bond", _class: .init(typ: .fixed, content: "Bond")), proportion: 20),
+                                    AllocationProportion(asset: .init(name: "Cash", _class: .init(typ: .cash, content: "Cash")), proportion: 30)])
     
 }
