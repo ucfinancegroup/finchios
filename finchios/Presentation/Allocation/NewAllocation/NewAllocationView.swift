@@ -22,8 +22,18 @@ struct NewAllocationView: View {
     }
 }
 
+struct NewAllocationViewPreview: View {
+    
+    @State var present = true
+    
+    var body: some View {
+        NewAllocationView(present: $present)
+    }
+    
+}
+
 struct NewAllocationView_Previews: PreviewProvider {
     static var previews: some View {
-        NewAllocationView()
+        NewAllocationViewPreview()
     }
 }
