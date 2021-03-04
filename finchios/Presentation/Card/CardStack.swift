@@ -28,7 +28,7 @@ struct CardStack: View {
                             self.insights.removeAll { $0.id == removed.id }
                         })
                             .animation(.spring()) // Animate our changes to our frame
-                            .offset(x: 0, y: self.getCardOffset(id: insight.index))
+//                            .offset(x: 0, y: self.getCardOffset(id: insight.index))
                         
                     }
                 }
