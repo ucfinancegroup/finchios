@@ -178,23 +178,64 @@ extension PlansService {
     
 }
 
-// For creating recurrings
+// Plan update
 extension PlansService {
+    
+    static func planUpdate(payload: PlanUpdatePayload, completion: @escaping ((Bool, Error?, PlanResponse?) -> Void)) {
+        guard let url = getURL() else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        
+        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        
+        let jsonBody = try? JSONEncoder().encode(payload)
+        
+        guard let unwrappedJsonBody = jsonBody else {
+            completion(false, nil, nil)
+            return
+        }
+        
+        request.httpBody = unwrappedJsonBody
+
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard data != nil else {
+                completion(false, error, nil)
+                return
+            }
+            guard let _ = urlResponse, let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(PlanResponse.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+            
+            completion(true, nil, response)
+            return
+        }
+
+        task.resume()
+    }
+    
+}
+
+// For creating,editing,deleting recurrings
+extension PlansService {
+    
     static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         
     }
-}
-
-// For editing recurrings
-extension PlansService {
+    
     static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         
     }
-}
-
-
-// For deleting recrrings
-extension PlansService {
+    
     static func deleteRecurring(id: String, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         
     }
