@@ -12,10 +12,15 @@ struct PieView: UIViewRepresentable {
     typealias UIViewType = PieChartView
     
     var entries: [PieChartDataEntry]
+    
+    var legendEnabled: Bool
 
     func makeUIView(context: Context) -> PieChartView {
         let view = PieChartView()
         view.data = addData()
+        
+        view.legend.enabled = legendEnabled
+        
         return view
     }
     
@@ -35,11 +40,20 @@ struct PieView: UIViewRepresentable {
     }
 }
 
-struct PieViewPreview: PreviewProvider {
-    static var previews: some View {
+struct PieViewPreviewer: View {
+    
+    @State var leg = true
+    
+    var body: some View {
         PieView(entries: [
             PieChartDataEntry(value: 5, label: "five"),
             PieChartDataEntry(value: 10, label: "ten")
-        ])
+        ], legendEnabled: leg)
+    }
+}
+
+struct PieViewPreview: PreviewProvider {
+    static var previews: some View {
+        PieViewPreviewer()
     }
 }
