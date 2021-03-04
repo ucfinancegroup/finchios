@@ -43,22 +43,22 @@ struct AppTabView: View {
                 .tag(1)
             
             // Statistics
-            StatisticsView(navBarHidden: $navBarHidden)
-                .tabItem {
-                    if selection == 2 {
-                        Image(uiImage: UIImage(named: "TrophyFilled")!.withTintColor(.teal))
-                    }else {
-                        Image(uiImage: UIImage(named: "TrophyClear")!.withTintColor(.systemGray))
-                    }
-                    
-                    Text("Stats")
-                }
-                .tag(2)
+//            StatisticsView(navBarHidden: $navBarHidden)
+//                .tabItem {
+//                    if selection == 2 {
+//                        Image(uiImage: UIImage(named: "TrophyFilled")!.withTintColor(.teal))
+//                    }else {
+//                        Image(uiImage: UIImage(named: "TrophyClear")!.withTintColor(.systemGray))
+//                    }
+//
+//                    Text("Stats")
+//                }
+//                .tag(2)
             
             // Settings
             SettingsView(navBarHidden: $navBarHidden)
                 .tabItem {
-                    if selection == 3 {
+                    if selection == 2 {
                         Image(uiImage: UIImage(named: "GearFilled")!.withTintColor(.teal))
                     }else {
                         Image(uiImage: UIImage(named: "GearClear")!.withTintColor(.systemGray))
@@ -66,7 +66,7 @@ struct AppTabView: View {
                     
                     Text("Settings")
                 }
-                .tag(3)
+                .tag(2)
         }
         .accentColor(.teal)
         .onAppear {

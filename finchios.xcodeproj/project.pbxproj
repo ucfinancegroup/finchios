@@ -88,6 +88,7 @@
 		807AF17125F148A7009726DC /* AllocationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17025F148A7009726DC /* AllocationEditView.swift */; };
 		807AF17525F148DE009726DC /* AllocationEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17425F148DE009726DC /* AllocationEditModel.swift */; };
 		807AF17D25F14B8F009726DC /* NewAllocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17C25F14B8F009726DC /* NewAllocationModel.swift */; };
+		807C837525F14EAF001BFAE8 /* AllocationSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C837425F14EAF001BFAE8 /* AllocationSliderView.swift */; };
 		807E3E2525CB251F0039671E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2425CB251F0039671E /* UIApplication.swift */; };
 		807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */; };
 		807E3E3125CB3AA70039671E /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E3025CB3AA70039671E /* NumberField.swift */; };
@@ -272,6 +273,7 @@
 		807AF17025F148A7009726DC /* AllocationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationEditView.swift; sourceTree = "<group>"; };
 		807AF17425F148DE009726DC /* AllocationEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationEditModel.swift; sourceTree = "<group>"; };
 		807AF17C25F14B8F009726DC /* NewAllocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAllocationModel.swift; sourceTree = "<group>"; };
+		807C837425F14EAF001BFAE8 /* AllocationSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationSliderView.swift; sourceTree = "<group>"; };
 		807E3E2425CB251F0039671E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardType.swift; sourceTree = "<group>"; };
 		807E3E3025CB3AA70039671E /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 		803E343625E583AC003A0A57 /* Allocation */ = {
 			isa = PBXGroup;
 			children = (
+				807AF18025F14E3D009726DC /* AllocationSlider */,
 				807AF16F25F1489B009726DC /* AllocationEdit */,
 				80FC6C8B25ED90ED008C373F /* NewAllocation */,
 				80FC6C7E25ED3B37008C373F /* AllocationDetail */,
@@ -875,6 +878,14 @@
 				807AF17425F148DE009726DC /* AllocationEditModel.swift */,
 			);
 			path = AllocationEdit;
+			sourceTree = "<group>";
+		};
+		807AF18025F14E3D009726DC /* AllocationSlider */ = {
+			isa = PBXGroup;
+			children = (
+				807C837425F14EAF001BFAE8 /* AllocationSliderView.swift */,
+			);
+			path = AllocationSlider;
 			sourceTree = "<group>";
 		};
 		807E3E2825CB3A030039671E /* UIKit */ = {
@@ -1407,6 +1418,7 @@
 				8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */,
 				8070315F25B294F900122CE7 /* GoalView.swift in Sources */,
 				80479C49259A51AE00CDA3DA /* PlansService.swift in Sources */,
+				807C837525F14EAF001BFAE8 /* AllocationSliderView.swift in Sources */,
 				80F936FC258F070600BBBE57 /* RecurringSummaryViewModel.swift in Sources */,
 				8026B6BC258A5FF2006CB2FB /* StartUpViewModel.swift in Sources */,
 				8071DCF225A759630056107B /* RecurringService.swift in Sources */,
