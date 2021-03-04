@@ -102,7 +102,7 @@ struct PlansService: RecurringProtocol {
     }
 
     private static func getURL() -> URL? {
-        let address = "\(BusinessConstants.SERVER)/plans"
+        let address = "\(BusinessConstants.SERVER)/plan"
 
         return URL(string: address)
     }
