@@ -48,12 +48,12 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         end = Date(timeIntervalSince1970: TimeInterval(recurring.start))
         
         if recurring.principal == 0 {
-            amountField = "\((recurring.amount))"
+            amountField = "\(abs((recurring.amount)))"
             
             principalField = ""
             interestField = ""
         }else {
-            principalField = "\(Int(recurring.principal))"
+            principalField = "\(abs(Int(recurring.principal)))"
             
             interestField = "\(recurring.interest)"
             
@@ -96,7 +96,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         return self.freqContentField.count == 0
     }
     
-    public func edit(id: String, time: OverviewProjection) {
+    func edit(id: String, time: OverviewProjection, type: RecurringItemType) {
         showError = false
         success = false
         showAlert = false
@@ -178,6 +178,14 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
             timeInterval.typ = .weekly
         case .daily:
             timeInterval.typ = .daily
+        }
+        
+        // If expense or debt, make negative
+        if type == .debt {
+            principal *= -1
+        }
+        if type == .expense {
+            amount *= -1
         }
         
         let payload = RecurringNewPayload(name: name,
