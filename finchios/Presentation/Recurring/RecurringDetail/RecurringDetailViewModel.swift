@@ -20,7 +20,7 @@ class RecurringDetailViewModel: ObservableObject, Identifiable {
         
         //TODO(): Delete in the right place
         
-        RecurringService.deleteRecurring(id: id) { (success, error, result) in
+        RecurringService.deleteRecurring(id: id) { (success, error, result, plan) in
             DispatchQueue.main.async {
                 self.success = false
                 self.showError = false

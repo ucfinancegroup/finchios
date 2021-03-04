@@ -117,9 +117,9 @@ public struct RecurringService: RecurringProtocol {
 // POST recurring/new
 extension RecurringService {
     
-    public static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
+    public static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         guard let url = getNewRecurringURL() else {
-            completion(false, nil, nil)
+            completion(false, nil, nil, nil)
             return
         }
 
@@ -132,7 +132,7 @@ extension RecurringService {
         let jsonBody = try? JSONEncoder().encode(payload)
 
         guard let unwrappedJsonBody = jsonBody else {
-            completion(false, nil, nil)
+            completion(false, nil, nil, nil)
             return
         }
 
@@ -140,16 +140,16 @@ extension RecurringService {
         
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard let data = data else {
-                completion(false, error, nil)
+                completion(false, error, nil, nil)
                 return
             }
             
             guard let response = try? JSONDecoder().decode(Recurring.self, from: data) else {
-                completion(false, error, nil)
+                completion(false, error, nil, nil)
                 return
             }
             
-            completion(true, nil, response)
+            completion(true, nil, response, nil)
             return
         }
 
@@ -168,9 +168,9 @@ extension RecurringService {
 // PUT recurring/{id}
 extension RecurringService {
     
-    public static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
+    public static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         guard let url = getUpdateRecurringURL(id: id) else {
-            completion(false, nil, nil)
+            completion(false, nil, nil, nil)
             return
         }
 
@@ -183,7 +183,7 @@ extension RecurringService {
         let jsonBody = try? JSONEncoder().encode(payload)
 
         guard let unwrappedJsonBody = jsonBody else {
-            completion(false, nil, nil)
+            completion(false, nil, nil, nil)
             return
         }
 
@@ -191,16 +191,16 @@ extension RecurringService {
         
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard let data = data else {
-                completion(false, error, nil)
+                completion(false, error, nil, nil)
                 return
             }
             
             guard let response = try? JSONDecoder().decode(Recurring.self, from: data) else {
-                completion(false, error, nil)
+                completion(false, error, nil, nil)
                 return
             }
             
-            completion(true, nil, response)
+            completion(true, nil, response, nil)
             return
         }
 
@@ -218,9 +218,9 @@ extension RecurringService {
 // DELETE recurring/{id}
 extension RecurringService {
     
-    public static func deleteRecurring(id: String, completion: @escaping ((Bool, Error?, Recurring?) -> Void)) {
+    public static func deleteRecurring(id: String, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         guard let url = getDeleteRecurringURL(id: id) else {
-            completion(false, nil, nil)
+            completion(false, nil, nil, nil)
             return
         }
 
@@ -232,16 +232,16 @@ extension RecurringService {
         
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard let data = data else {
-                completion(false, error, nil)
+                completion(false, error, nil, nil)
                 return
             }
             
             guard let response = try? JSONDecoder().decode(Recurring.self, from: data) else {
-                completion(false, error, nil)
+                completion(false, error, nil, nil)
                 return
             }
             
-            completion(true, nil, response)
+            completion(true, nil, response, nil)
             return
         }
 

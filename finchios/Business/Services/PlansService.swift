@@ -180,18 +180,24 @@ extension PlansService {
 
 // For creating recurrings
 extension PlansService {
-    
+    static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+    }
 }
 
 // For editing recurrings
 extension PlansService {
-    
+    static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+    }
 }
 
 
 // For deleting recrrings
 extension PlansService {
-    
+    static func deleteRecurring(id: String, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+    }
 }
 
 // Creation/Editing/Deletion of Events

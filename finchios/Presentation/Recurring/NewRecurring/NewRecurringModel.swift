@@ -148,7 +148,7 @@ class NewRecurringModel: ObservableObject, Identifiable {
         
         //TODO() Create proper recurring
         
-        RecurringService.newRecurring(payload: payload) { (success, error, _) in
+        RecurringService.newRecurring(payload: payload) { (success, error, recurring, plan) in
             DispatchQueue.main.async {
                 self.errorString = ""
                 

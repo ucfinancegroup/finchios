@@ -196,7 +196,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
                                           interest: interest,
                                           frequency: timeInterval)
         
-        RecurringService.updateRecurring(id: id, payload: payload) { (success, error, result) in
+        RecurringService.updateRecurring(id: id, payload: payload) { (success, error, result, plan) in
             DispatchQueue.main.async {
                 self.resetAlertVars()
                 
