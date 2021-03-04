@@ -245,3 +245,8 @@ extension PlansService {
 extension PlansService {
     
 }
+
+// Creation/editing/deletion of allocations
+extension PlansService {
+    
+}
