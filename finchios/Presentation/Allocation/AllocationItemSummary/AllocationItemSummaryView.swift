@@ -25,9 +25,6 @@ struct AllocationItemSummaryView: View {
                     
                     Spacer()
                 }
-                
-                //TODO(): Add how many times annually
-                //Text("\(self.type.rawValue) of $\(recurring.amount.format()) \(recurring.frequency.typ.rawValue)")
             }
         }
         .disabled(!navAble)

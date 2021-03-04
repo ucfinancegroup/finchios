@@ -87,6 +87,7 @@
 		80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80725D07254C72010054787C /* finchios.xcdatamodeld */; };
 		807AF17125F148A7009726DC /* AllocationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17025F148A7009726DC /* AllocationEditView.swift */; };
 		807AF17525F148DE009726DC /* AllocationEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17425F148DE009726DC /* AllocationEditModel.swift */; };
+		807AF17D25F14B8F009726DC /* NewAllocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17C25F14B8F009726DC /* NewAllocationModel.swift */; };
 		807E3E2525CB251F0039671E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2425CB251F0039671E /* UIApplication.swift */; };
 		807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */; };
 		807E3E3125CB3AA70039671E /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E3025CB3AA70039671E /* NumberField.swift */; };
@@ -270,6 +271,7 @@
 		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		807AF17025F148A7009726DC /* AllocationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationEditView.swift; sourceTree = "<group>"; };
 		807AF17425F148DE009726DC /* AllocationEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationEditModel.swift; sourceTree = "<group>"; };
+		807AF17C25F14B8F009726DC /* NewAllocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAllocationModel.swift; sourceTree = "<group>"; };
 		807E3E2425CB251F0039671E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardType.swift; sourceTree = "<group>"; };
 		807E3E3025CB3AA70039671E /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
@@ -1141,6 +1143,7 @@
 			isa = PBXGroup;
 			children = (
 				80FC6C8C25ED90FD008C373F /* NewAllocationView.swift */,
+				807AF17C25F14B8F009726DC /* NewAllocationModel.swift */,
 			);
 			path = NewAllocation;
 			sourceTree = "<group>";
@@ -1355,6 +1358,7 @@
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
 				809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */,
+				807AF17D25F14B8F009726DC /* NewAllocationModel.swift in Sources */,
 				8062C4F825BE097200E0927F /* CardStack.swift in Sources */,
 				80802BF425CF18B600DABCCC /* ProgressView.swift in Sources */,
 				80C4A3E925DDADF100B56E3A /* MongoObjectID.swift in Sources */,

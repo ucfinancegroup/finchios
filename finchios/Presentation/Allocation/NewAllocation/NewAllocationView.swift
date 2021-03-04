@@ -11,6 +11,8 @@ struct NewAllocationView: View {
     
     @Binding var present: Bool
     
+    @StateObject var model = NewAllocationModel()
+    
     var body: some View {
         VStack {
             Text("Add a new allocation")
@@ -18,6 +20,24 @@ struct NewAllocationView: View {
                 .padding()
             
             
+        }
+        .padding()
+        .alert(isPresented: $model.showAlert) { () -> Alert in
+            if model.showError {
+                return Alert(title: Text("Failed to create"),
+                             message: Text("Some fields aren't filled in or you don't have internet access. Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showError = false
+                             })
+            }
+            else { // success
+                return Alert(title: Text("Success!"),
+                             message: Text("This allocation has been successfully created!"),
+                             dismissButton: .default(Text("Okay")) {
+                                self.present = false
+                                self.model.showError = false
+                             })
+            }
         }
     }
 }
