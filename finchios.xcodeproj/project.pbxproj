@@ -85,6 +85,8 @@
 		80725D04254C72010054787C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80725D03254C72010054787C /* Preview Assets.xcassets */; };
 		80725D06254C72010054787C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80725D05254C72010054787C /* Persistence.swift */; };
 		80725D09254C72010054787C /* finchios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80725D07254C72010054787C /* finchios.xcdatamodeld */; };
+		807AF17125F148A7009726DC /* AllocationEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17025F148A7009726DC /* AllocationEditView.swift */; };
+		807AF17525F148DE009726DC /* AllocationEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AF17425F148DE009726DC /* AllocationEditModel.swift */; };
 		807E3E2525CB251F0039671E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2425CB251F0039671E /* UIApplication.swift */; };
 		807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */; };
 		807E3E3125CB3AA70039671E /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3E3025CB3AA70039671E /* NumberField.swift */; };
@@ -266,6 +268,8 @@
 		80725D15254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80725D1A254C72020054787C /* finchiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finchiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80725D20254C72020054787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		807AF17025F148A7009726DC /* AllocationEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationEditView.swift; sourceTree = "<group>"; };
+		807AF17425F148DE009726DC /* AllocationEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationEditModel.swift; sourceTree = "<group>"; };
 		807E3E2425CB251F0039671E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		807E3E2925CB3A0F0039671E /* UIKeyboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardType.swift; sourceTree = "<group>"; };
 		807E3E3025CB3AA70039671E /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
@@ -564,6 +568,7 @@
 		803E343625E583AC003A0A57 /* Allocation */ = {
 			isa = PBXGroup;
 			children = (
+				807AF16F25F1489B009726DC /* AllocationEdit */,
 				80FC6C8B25ED90ED008C373F /* NewAllocation */,
 				80FC6C7E25ED3B37008C373F /* AllocationDetail */,
 				80FC6C6725EC97AC008C373F /* AllocationItemSummary */,
@@ -859,6 +864,15 @@
 				80E2678025BD2DCC00277E52 /* SignUpIntegrationTest.swift */,
 			);
 			path = finchiosUITests;
+			sourceTree = "<group>";
+		};
+		807AF16F25F1489B009726DC /* AllocationEdit */ = {
+			isa = PBXGroup;
+			children = (
+				807AF17025F148A7009726DC /* AllocationEditView.swift */,
+				807AF17425F148DE009726DC /* AllocationEditModel.swift */,
+			);
+			path = AllocationEdit;
 			sourceTree = "<group>";
 		};
 		807E3E2825CB3A030039671E /* UIKit */ = {
@@ -1366,6 +1380,7 @@
 				803E343325E578A0003A0A57 /* PieChartDataEntry.swift in Sources */,
 				80FC6C6425EC95C6008C373F /* NewEventModel.swift in Sources */,
 				80EF127C259E67BA00E0543B /* ExpensesItemSummaryView.swift in Sources */,
+				807AF17525F148DE009726DC /* AllocationEditModel.swift in Sources */,
 				80097004258FCB48000B2A90 /* EventItemSummaryView.swift in Sources */,
 				804C16A225C865B0000035FD /* TimeSeriesService.swift in Sources */,
 				809F953725B4959B007DE7F6 /* GoalMetricIdentifiable.swift in Sources */,
@@ -1375,6 +1390,7 @@
 				80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */,
 				8026B6B6258A5FF2006CB2FB /* SignUpEmailView.swift in Sources */,
 				807E3E3125CB3AA70039671E /* NumberField.swift in Sources */,
+				807AF17125F148A7009726DC /* AllocationEditView.swift in Sources */,
 				8008912725EC4F210040D4BB /* ChangeFinancialsModel.swift in Sources */,
 				80E2676225BB84C900277E52 /* AccountItemSummary.swift in Sources */,
 				80168D25258EC33000B12CA2 /* GraphViewModel.swift in Sources */,

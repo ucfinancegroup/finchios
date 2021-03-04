@@ -22,6 +22,16 @@ struct AllocationDetailView: View {
         VStack {
             Text("Hello")
         }
+        .navigationBarTitle("\(self.allocation.description)")
+        .navigationBarItems(trailing:
+                                Button(action: {
+                                    self.modalActive = true
+                                }, label: {
+                                    Text("Edit")
+                                })
+                                .sheet(isPresented: $modalActive, content: {
+                                    AllocationEditView(present: $modalActive, allocation: $allocation)
+                                }))
     }
 }
 

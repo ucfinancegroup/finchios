@@ -13,7 +13,7 @@ struct NewAllocationView: View {
     
     var body: some View {
         VStack {
-            Text("Add a new event")
+            Text("Add a new allocation")
                 .font(.title2)
                 .padding()
             
