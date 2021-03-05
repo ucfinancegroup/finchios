@@ -51,12 +51,7 @@ struct PlansService: RecurringProtocol {
                 return
             }
             
-            guard let events = plan.events else {
-                completion(false, error, nil)
-                return
-            }
-            
-            completion(true, nil, events)
+            completion(true, nil, plan.events)
             return
         }
     }
@@ -69,12 +64,7 @@ struct PlansService: RecurringProtocol {
                 return
             }
             
-            guard let allocations = plan.allocations else {
-                completion(false, error, nil)
-                return
-            }
-
-            completion(true, nil, allocations)
+            completion(true, nil, plan.allocations)
             return
         }
     }
@@ -86,12 +76,7 @@ struct PlansService: RecurringProtocol {
                 return
             }
             
-            guard let recurrings = plan.recurrings else {
-                completion(false, error, nil)
-                return
-            }
-            
-            completion(true, nil, recurrings)
+            completion(true, nil, plan.recurrings)
             return
         }
     }
