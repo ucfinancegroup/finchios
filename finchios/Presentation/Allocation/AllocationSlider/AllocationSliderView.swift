@@ -10,11 +10,13 @@ import OpenAPIClient
 
 struct AllocationSliderView: View {
     
-    @Binding var value: Double
+    @Binding var value: Iden<Double>
     
-    @Binding var selection: AssetClass
+    @Binding var selection: Iden<AssetClassAndApy>
     
-    @Binding var classTypes: [Iden<AssetClass>]
+    @Binding var classTypes: [Iden<AssetClassAndApy>]
+    
+    var model: AllocationSliderProtocol
     
     var body: some View {
         VStack {
@@ -23,27 +25,25 @@ struct AllocationSliderView: View {
                 Menu {
                     ForEach(classTypes, id: \.id) { c in
                         Button(action: {
-                            self.selection = c.obj
+                            self.selection.obj = c.obj
                         }, label: {
-                            Text(c.obj.content)
+                            Text(c.obj._class.content)
                         })
                     }
                 } label: {
-                    Text(selection.content)
+                    Text(selection.obj._class.content)
                 }
-                Slider(value: $value, in: 0...100, step: 1)
                 
-                Text("\(Int(value))")
+                Slider(value: $value.obj, in: 0...100, step: 1)
+                
+                Text("\(Int(value.obj))")
                 
                 Button(action: {
-                    
+                    model.delete(c: selection.id, amount: value.id)
                 }, label: {
                     Image(uiImage: UIImage(named: "TrashClear")!.withTintColor(.red))
                 })
                 .foregroundColor(.red)
-                
-
-                
                 
             }
             .padding()
@@ -53,14 +53,16 @@ struct AllocationSliderView: View {
 
 struct AllocationSliderViewPreview: View {
     
-    @State var value: Double = 0.0
-    @State var aClass = AssetClass.init(typ: .equity, content: "Equity")
+    @StateObject var model = NewAllocationModel()
+    
+    @State var value: Iden<Double> = Iden<Double>(obj: 0)
+    @State var aClass = Iden<AssetClassAndApy>(obj: AssetClassAndApy(_class: AssetClass.init(typ: .equity, content: "Equity"), apy: 5))
     @State var classes = [
-        Iden<AssetClass>(obj: AssetClass.init(typ: .equity, content: "Equity")),
-        Iden<AssetClass>(obj: AssetClass.init(typ: .cash, content: "Cash"))]
+        Iden<AssetClassAndApy>(obj: AssetClassAndApy(_class: AssetClass.init(typ: .equity, content: "Equity"), apy: 5)),
+        Iden<AssetClassAndApy>(obj: AssetClassAndApy(_class: AssetClass.init(typ: .cash, content: "Cash"), apy: 5))]
     
     var body: some View {
-        AllocationSliderView(value: $value, selection: $aClass, classTypes: $classes)
+        AllocationSliderView(value: $value, selection: $aClass, classTypes: $classes, model: model)
     }
     
 }

@@ -10,7 +10,7 @@ import OpenAPIClient
 
 public struct AssetService {
     
-    public func get(completion: @escaping ((Bool, Error?, [AssetClassAndApy]?) -> Void)) {
+    public static func get(completion: @escaping ((Bool, Error?, [AssetClassAndApy]?) -> Void)) {
         guard let url = getURL() else {
             completion(false, nil, nil)
             return
@@ -40,7 +40,7 @@ public struct AssetService {
         task.resume()
     }
     
-    private func getURL() -> URL? {
+    private static func getURL() -> URL? {
         let address = "\(BusinessConstants.SERVER)/asset_classes"
         
         return URL(string: address)

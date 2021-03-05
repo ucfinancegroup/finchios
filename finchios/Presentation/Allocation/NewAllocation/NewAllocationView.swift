@@ -20,6 +20,22 @@ struct NewAllocationView: View {
                 .padding()
             
             
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    self.model.newClass()
+                }, label: {
+                    Text("New")
+                })
+            }
+            
+            ForEach(model.classes.indices) { index in
+                AllocationSliderView(value: $model.classes[index].1,
+                                     selection: $model.classes[index].0,
+                                     classTypes: $model.classTypes,
+                                     model: model)
+            }
         }
         .padding()
         .alert(isPresented: $model.showAlert) { () -> Alert in
