@@ -35,6 +35,7 @@ struct SignUpEmailView: View {
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .keyboardType(.emailAddress)
+                    .foregroundColor(.white)
 
                 Spacer()
 

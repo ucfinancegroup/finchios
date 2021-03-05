@@ -29,9 +29,11 @@ struct SignUpFinancialsView: View {
 
                 NumberField(text: $model.netWorth, alignment: .center, keyType: .decimalPad, placeholder: "Net Worth")
                     .padding()
+                    .foregroundColor(.white)
                 
                 NumberField(text: $model.income, alignment: .center, keyType: .decimalPad, placeholder: "Income")
                     .padding()
+                    .foregroundColor(.white)
                 
                 Spacer()
 

@@ -31,6 +31,7 @@ struct SignUpPasswordView: View {
                 SecureField("Password", text: $model.password) {
 
                 }
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
 
                 Spacer()
@@ -39,6 +40,7 @@ struct SignUpPasswordView: View {
                 SecureField("Confirm Password", text: $model.confirmPassword) {
 
                 }
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
 
                 Spacer()

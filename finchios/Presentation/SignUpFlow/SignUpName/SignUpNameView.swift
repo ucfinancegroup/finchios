@@ -29,12 +29,14 @@ struct SignUpNameView: View {
 
                 TextField("First Name", text: $model.firstName, onEditingChanged: { (_) in
                 })
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                 
                 TextField("Last Name", text: $model.lastName, onEditingChanged: { (_) in
                 })
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)

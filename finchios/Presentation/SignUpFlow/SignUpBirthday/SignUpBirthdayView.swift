@@ -29,6 +29,7 @@ struct SignUpBirthdayView: View {
 
                 DatePicker("Date of Birth", selection: $model.dob, displayedComponents: [.date])
                     .padding()
+                    .foregroundColor(.white)
                     .accessibility(identifier: "dob_picker")
                 
                 Spacer()
