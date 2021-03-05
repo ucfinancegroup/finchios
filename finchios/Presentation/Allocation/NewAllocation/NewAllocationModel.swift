@@ -23,7 +23,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
         AssetService.get { (success, error, result) in
             DispatchQueue.main.async {
                 if let result = result {
-                    self.classTypes = result.map { Iden<AssetClassAndApy>(obj: $0) } 
+                    self.classTypes = result.map { Iden<AssetClassAndApy>(obj: $0) }
                 }
             }
         }
@@ -51,7 +51,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
     }
     
     func newClass() {
-        if classes.count == 0 {
+        if classTypes.count == 0 {
             return
         }
         

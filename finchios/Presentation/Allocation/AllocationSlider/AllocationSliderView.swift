@@ -27,11 +27,11 @@ struct AllocationSliderView: View {
                         Button(action: {
                             self.selection.obj = c.obj
                         }, label: {
-                            Text(c.obj._class.content)
+                            Text(c.obj._class.typ.rawValue)
                         })
                     }
                 } label: {
-                    Text(selection.obj._class.content)
+                    Text(selection.obj._class.typ.rawValue)
                 }
                 
                 Slider(value: $value.obj, in: 0...100, step: 1)

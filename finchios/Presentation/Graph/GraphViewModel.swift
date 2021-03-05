@@ -38,7 +38,7 @@ class GraphViewModel: ObservableObject, Identifiable {
     
     // Fetch timeseries from backend
     func onAppear(type: GraphType) {
-        TimeSeriesService.example { (succcess, error, response) in
+        TimeSeriesService.get { (succcess, error, response) in
             DispatchQueue.main.async {
                 if let response = response {
                     
