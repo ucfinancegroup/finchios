@@ -19,7 +19,7 @@ struct PieView: UIViewRepresentable {
         let view = PieChartView()
         view.data = addData()
         
-        view.legend.enabled = legendEnabled
+        view.legend.enabled = false
         
         return view
     }
@@ -29,6 +29,10 @@ struct PieView: UIViewRepresentable {
         let dataset = PieChartDataSet(entries: entries)
         
         dataset.colors = [.gray, .red, .blue, .green, .purple, .orange]
+
+        dataset.drawIconsEnabled = false
+        
+        dataset.drawValuesEnabled = false
         
         data.addDataSet(dataset)
         

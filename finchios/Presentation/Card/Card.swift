@@ -31,9 +31,15 @@ public struct Card: View {
             VStack {
                 HStack {
                     Spacer()
-                    Text(insight.obj.title)
+                    Text("💡\(insight.obj.title)")
+                        .font(.title2)
                     Spacer()
                 }
+                
+                Text(insight.obj.description)
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    
             }
             .frame(height: 150, alignment: .center)
             .bubble()
