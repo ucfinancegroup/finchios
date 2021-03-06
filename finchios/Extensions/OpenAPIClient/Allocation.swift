@@ -10,7 +10,8 @@ import OpenAPIClient
 
 extension Allocation {
     
-    static let dummy = Allocation(description: "My planned 25 year old allocation",
+    static let dummy = Allocation(id: .dummy,
+                                  description: "My planned 25 year old allocation",
                                   date: 1614570311,
                                   schema: [
                                     AllocationProportion(asset: .init(name: "Stock", _class: .init(typ: .equity, content: "Stock"), annualizedPerformance: 5), proportion: 50),
