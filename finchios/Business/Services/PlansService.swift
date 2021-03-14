@@ -56,7 +56,6 @@ struct PlansService: RecurringProtocol {
         }
     }
     
-    //TODO() BUG() This should be an allocation not a transform
     static func allocations(completion: @escaping ((Bool, Error?, [Allocation]?) -> Void)) {
         plans { (success, error, plan) in
             guard let plan = plan else {

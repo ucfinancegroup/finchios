@@ -10,7 +10,7 @@ import OpenAPIClient
 
 extension Account {
     
-    static let dummy = Account(itemId: "fdsfdsf787s87ds8s", name: "Chase Total Checking", balance: 1000)
+    static let dummy = Account(itemId: "fdsfdsf787s87ds8s", accountId: "bababababa", name: "Chase Total Checking", balance: 1000)
     
 }
 
