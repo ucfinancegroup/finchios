@@ -20,7 +20,15 @@ class RecurringDetailViewModel: ObservableObject, Identifiable {
         
         //TODO(): Delete in the right place
         
-        RecurringService.deleteRecurring(id: id) { (success, error, result, plan) in
+        let service: RecurringProtocol.Type
+        switch time {
+        case .overview:
+            service = RecurringService.self
+        case .projection:
+            service = PlansService.self
+        }
+        
+        service.deleteRecurring(id: id) { (success, error, result, plan) in
             DispatchQueue.main.async {
                 self.success = false
                 self.showError = false

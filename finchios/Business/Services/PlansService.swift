@@ -209,14 +209,63 @@ extension PlansService {
     
     static func newRecurring(payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         
+        PlansService.recurrings { (_, _, result) in
+            if var existing = result {
+                
+                let newRec = Recurring(id: MongoObjectID(oid: ""), name: payload.name, start: payload.start, end: payload.end, principal: payload.principal, amount: payload.amount, interest: payload.interest, frequency: payload.frequency)
+                
+                existing.append(newRec)
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: existing, allocations: nil, events: nil)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+        
     }
     
     static func updateRecurring(id: String, payload: RecurringNewPayload, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
         
+        PlansService.recurrings { (_, _, result) in
+            if var existing = result {
+                for index in 0..<existing.count {
+                    if existing[index].id.oid == id {
+                        existing[index].name = payload.name
+                        existing[index].amount = payload.amount
+                        existing[index].principal = payload.principal
+                        existing[index].frequency = payload.frequency
+                        existing[index].interest = payload.interest
+                        existing[index].start = payload.start
+                        existing[index].end = payload.end
+                    }
+                }
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: existing, allocations: nil, events: nil)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+        
     }
     
     static func deleteRecurring(id: String, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
-        
+        PlansService.recurrings { (_, _, result) in
+            if var existing = result {
+                
+                
+                existing.removeAll { $0.id.oid == id }
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: existing, allocations: nil, events: nil)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
     }
 }
 

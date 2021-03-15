@@ -196,7 +196,15 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
                                           interest: interest,
                                           frequency: timeInterval)
         
-        RecurringService.updateRecurring(id: id, payload: payload) { (success, error, result, plan) in
+        let service: RecurringProtocol.Type
+        switch time {
+        case .overview:
+            service = RecurringService.self
+        case .projection:
+            service = PlansService.self
+        }
+        
+        service.updateRecurring(id: id, payload: payload) { (success, error, result, plan) in
             DispatchQueue.main.async {
                 self.resetAlertVars()
                 

@@ -148,7 +148,15 @@ class NewRecurringModel: ObservableObject, Identifiable {
         
         //TODO() Create proper recurring
         
-        RecurringService.newRecurring(payload: payload) { (success, error, recurring, plan) in
+        let service: RecurringProtocol.Type
+        switch time {
+        case .overview:
+            service = RecurringService.self
+        case .projection:
+            service = PlansService.self
+        }
+        
+        service.newRecurring(payload: payload) { (success, error, recurring, plan) in
             DispatchQueue.main.async {
                 self.errorString = ""
                 
