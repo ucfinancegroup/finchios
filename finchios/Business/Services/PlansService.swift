@@ -277,4 +277,59 @@ extension PlansService {
 // Creation/editing/deletion of allocations
 extension PlansService {
     
+    static func newAllocation(payload: Allocation, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+        PlansService.allocations { (_, _, result) in
+            if var existing = result {
+                
+                existing.append(payload)
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: existing, events: nil)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+        
+    }
+    
+    static func updateAllocation(id: String, payload: Allocation, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+        PlansService.allocations { (_, _, result) in
+            if var existing = result {
+                
+                existing.removeAll { $0.id.oid == id }
+                
+                var copy = payload
+                
+                copy.id.oid = id
+                
+                existing.append(copy)
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: existing, events: nil)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+        
+    }
+    
+    static func deleteAllocation(id: String, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        PlansService.allocations { (_, _, result) in
+            if var existing = result {
+                
+                existing.removeAll { $0.id.oid == id }
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: existing, events: nil)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+    }
+    
 }
