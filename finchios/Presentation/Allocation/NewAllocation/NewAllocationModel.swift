@@ -46,7 +46,31 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
         return nil
     }
     
+    func validateSum() -> Bool {
+        return false
+    }
+    
     func create() {
+        
+        if !validateSum() {
+            // does not add up to 100
+            return
+        }
+        
+        let prop = classes.map { AllocationProportion(
+            asset: Asset(name: $0.0.obj._class.typ.rawValue, _class: $0.0.obj._class, annualizedPerformance: $0.0.obj.apy),
+            proportion: $0.1.obj) }
+        
+        let alloc = Allocation(id: MongoObjectID(oid: ""),
+                               description: "",
+                               date: Int(date.timeIntervalSince1970),
+                               schema: prop)
+        
+        PlansService.newAllocation(payload: alloc) { (success, _, _, response) in
+            if let response = response {
+                // success
+            }
+        }
         
     }
     
