@@ -272,6 +272,61 @@ extension PlansService {
 // Creation/Editing/Deletion of Events
 extension PlansService {
     
+    static func newEvent(payload: Event, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+        PlansService.events { (_, _, result) in
+            if var existing = result {
+                
+                existing.append(payload)
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: nil, events: existing)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+        
+    }
+    
+    static func updateEvent(id: String, payload: Event, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        
+        PlansService.events { (_, _, result) in
+            if var existing = result {
+                
+                existing.removeAll { $0.id.oid == id }
+                
+                var copy = payload
+                
+                copy.id.oid = id
+                
+                existing.append(copy)
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: nil, events: existing)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+        
+    }
+    
+    static func deleteEvent(id: String, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        PlansService.events { (_, _, result) in
+            if var existing = result {
+                
+                existing.removeAll { $0.id.oid == id }
+                
+                let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: nil, events: existing)
+                
+                PlansService.planUpdate(payload: update) { (success, error, response) in
+                    completion(success, error, nil, response)
+                }
+            }
+        }
+    }
+    
 }
 
 // Creation/editing/deletion of allocations
