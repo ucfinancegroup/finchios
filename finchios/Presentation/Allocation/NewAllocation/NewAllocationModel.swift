@@ -61,7 +61,16 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
         
         if !validateSum() {
             // does not add up to 100
+            errorString = "Your allocations add up to \(getSum()) not 100. They must add up to 100."
+            showError = true
+            showAlert = true
             return
+        }
+        
+        if Date().timeIntervalSince1970 < date.timeIntervalSince1970 {
+            errorString = "The specified date must be in the future."
+            showError = true
+            showAlert = true
         }
         
         let prop = classes.map { AllocationProportion(
@@ -74,8 +83,11 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
                                schema: prop)
         
         PlansService.newAllocation(payload: alloc) { (success, _, _, response) in
-            if let response = response {
+            if let _ = response {
                 // success
+                self.showSuccess = true
+                self.showError = false
+                self.showAlert = true
             }
         }
         
