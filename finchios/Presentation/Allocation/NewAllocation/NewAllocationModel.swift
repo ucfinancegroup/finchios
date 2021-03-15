@@ -39,7 +39,14 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
     @Published var showSuccess: Bool = false
     
     func getSum() -> Int {
-        return 0
+        
+        var sum = 0
+        
+        for pair in classes {
+            sum += Int(pair.1.obj)
+        }
+        
+        return sum
     }
     
     func getAllocationObject() -> Allocation? {
@@ -47,7 +54,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
     }
     
     func validateSum() -> Bool {
-        return false
+        return getSum() == 100
     }
     
     func create() {
