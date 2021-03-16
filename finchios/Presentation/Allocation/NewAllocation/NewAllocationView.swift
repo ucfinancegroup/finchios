@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct NewAllocationView: View {
     
@@ -30,12 +31,19 @@ struct NewAllocationView: View {
                 })
             }
             
-            ForEach(model.classes.indices) { index in
-                AllocationSliderView(value: $model.classes[index].1,
-                                     selection: $model.classes[index].0,
+            ForEach(model.ids, id: \.self) { id in
+                AllocationSliderView(id: id,
+                                     value: $model.classes[unchecked: id].1,
+                                     selection: $model.classes[unchecked: id].0,
                                      classTypes: $model.classTypes,
                                      model: model)
             }
+            
+            Button(action: {
+                self.model.create()
+            }, label: {
+                Text("Create")
+            })
         }
         .padding()
         .alert(isPresented: $model.showAlert) { () -> Alert in
@@ -71,5 +79,21 @@ struct NewAllocationViewPreview: View {
 struct NewAllocationView_Previews: PreviewProvider {
     static var previews: some View {
         NewAllocationViewPreview()
+    }
+}
+
+extension Dictionary where Key == UUID, Value == (Iden<AssetClassAndApy>, Iden<Double>) {
+    subscript(unchecked key: Key) -> Value {
+        get {
+            guard let result = self[key] else {
+                // Return temp dummy
+                return (Iden<AssetClassAndApy>(obj: .init(_class: .init(typ: .cash), apy: 0)), Iden<Double>(obj: 0))
+                //fatalError("This person does not exist.")
+            }
+            return result
+        }
+        set {
+            self[key] = newValue
+        }
     }
 }

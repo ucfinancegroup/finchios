@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AllocationSliderProtocol {
-    func delete(c: UUID, amount: UUID)
+    func delete(uuid: UUID)
 }

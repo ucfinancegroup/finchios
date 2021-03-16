@@ -10,10 +10,12 @@ import OpenAPIClient
 
 struct AllocationSliderView: View {
     
+    var id: UUID
+    
     @Binding var value: Iden<Double>
-    
+
     @Binding var selection: Iden<AssetClassAndApy>
-    
+        
     @Binding var classTypes: [Iden<AssetClassAndApy>]
     
     var model: AllocationSliderProtocol
@@ -31,6 +33,7 @@ struct AllocationSliderView: View {
                         })
                     }
                 } label: {
+                    //Text(model.classes.first(where: { $0.0.obj.id.uuid == uuid }).)
                     Text(selection.obj._class.typ.rawValue)
                 }
                 
@@ -39,7 +42,8 @@ struct AllocationSliderView: View {
                 Text("\(Int(value.obj))")
                 
                 Button(action: {
-                    model.delete(c: selection.id, amount: value.id)
+                    model.delete(uuid: id)
+                    //model.delete(c: selection.id, amount: value.id)
                 }, label: {
                     Image(uiImage: UIImage(named: "TrashClear")!.withTintColor(.red))
                 })
@@ -62,7 +66,7 @@ struct AllocationSliderViewPreview: View {
         Iden<AssetClassAndApy>(obj: AssetClassAndApy(_class: AssetClass.init(typ: .cash, content: "Cash"), apy: 5))]
     
     var body: some View {
-        AllocationSliderView(value: $value, selection: $aClass, classTypes: $classes, model: model)
+        AllocationSliderView(id: UUID(), value: $value, selection: $aClass, classTypes: $classes, model: model)
     }
     
 }
