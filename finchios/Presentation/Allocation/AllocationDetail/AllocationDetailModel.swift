@@ -13,6 +13,13 @@ class AllocationDetailModel: ObservableObject, Identifiable {
     
     @Published var allocationConfiguration: [PieChartDataEntry] = [PieChartDataEntry(value: 1)]
     
+    @Published var showAlert: Bool = false
+    
+    @Published var success: Bool = false
+    
+    @Published var showError: Bool = false
+    @Published var errorString: String = ""
+    
     func setup(alloc: Allocation) {
         allocationConfiguration = AllocationDetailModel.getConfig(alloc: alloc)
     }
@@ -23,9 +30,22 @@ class AllocationDetailModel: ObservableObject, Identifiable {
     
     func delete(id: String) {
         
-        PlansService.deleteAllocation(id: id) { (success, _, _, response) in
+        PlansService.deleteAllocation(id: id) { (success, error, _, response) in
             DispatchQueue.main.async {
+                self.success = false
+                self.showError = false
+                self.errorString = ""
                 
+                if success {
+                    self.success = true
+                }else {
+                    self.showError = true
+                    if let error = error {
+                        self.errorString = "\(error)"
+                    }
+                }
+                
+                self.showAlert = true
             }
         }
         
