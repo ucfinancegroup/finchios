@@ -88,7 +88,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             }
         }
         
-        let alloc = Allocation(id: MongoObjectID(oid: ""),
+        let alloc = Allocation(id: nil,
                                description: "",
                                date: Int(date.timeIntervalSince1970),
                                schema: schema)
