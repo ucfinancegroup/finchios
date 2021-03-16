@@ -33,7 +33,6 @@ struct AllocationSliderView: View {
                         })
                     }
                 } label: {
-                    //Text(model.classes.first(where: { $0.0.obj.id.uuid == uuid }).)
                     Text(selection.obj._class.typ.rawValue)
                 }
                 

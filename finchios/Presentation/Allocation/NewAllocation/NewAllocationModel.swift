@@ -70,7 +70,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             return
         }
         
-        if Date().timeIntervalSince1970 < date.timeIntervalSince1970 {
+        if Date().timeIntervalSince1970 >= date.timeIntervalSince1970 {
             errorString = "The specified date must be in the future."
             showError = true
             showAlert = true
@@ -94,11 +94,17 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
                                schema: schema)
         
         PlansService.newAllocation(payload: alloc) { (success, _, _, response) in
-            if let _ = response {
-                // success
-                self.showSuccess = true
-                self.showError = false
-                self.showAlert = true
+            DispatchQueue.main.async {
+                if let _ = response {
+                    // success
+                    self.showSuccess = true
+                    self.showError = false
+                    self.showAlert = true
+                }else {
+                    self.showError = true
+                    self.errorString = "Server error. Please try again."
+                    self.showAlert = true
+                }
             }
         }
         
