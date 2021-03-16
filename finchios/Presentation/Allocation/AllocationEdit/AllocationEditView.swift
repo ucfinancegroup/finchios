@@ -17,7 +17,32 @@ struct AllocationEditView: View {
     @StateObject var model: AllocationEditModel = AllocationEditModel()
     
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            
+        }
+        // TODO(): Not showing because it is a modal sheet?
+        .alert(isPresented: $model.showAlert) { () -> Alert in
+            if model.showError {
+                return Alert(title: Text("Failed to edit"),
+                             message: Text("Failed to edit the allocation. Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showAlert = false
+                                self.model.showError = false
+
+                             })
+            }
+            else { // success
+                return Alert(title: Text("Success!"),
+                             message: Text("This allocation has been successfully edited."),
+                             dismissButton: .default(Text("Okay")) {
+                                self.present = false
+                             })
+            }
+        }
+        .padding()
+        .onAppear() {
+            self.model.set(alloc: self.allocation)
+        }
     }
 }
 
