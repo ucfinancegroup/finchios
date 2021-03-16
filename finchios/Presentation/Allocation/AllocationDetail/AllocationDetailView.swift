@@ -35,7 +35,7 @@ struct AllocationDetailView: View {
             Spacer()
             
             Button(action: {
-                self.model.delete(id: self.allocation.id.oid)
+                self.model.delete(id: self.allocation.id!.oid)
             }, label: {
                 HStack {
                     Spacer()

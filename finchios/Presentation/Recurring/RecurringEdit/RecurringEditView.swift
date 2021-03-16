@@ -83,7 +83,7 @@ struct RecurringEditView: View {
             Spacer()
             
             Button {
-                self.model.edit(id: recurring.id.oid, time: time, type: type)
+                self.model.edit(id: recurring.id!.oid, time: time, type: type)
                 UIApplication.shared.endEditing()
             } label: {
                 Text("Save Edit")

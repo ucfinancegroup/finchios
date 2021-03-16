@@ -54,7 +54,7 @@ struct RecurringDetailView: View {
             Spacer()
             
             Button(action: {
-                self.model.delete(id: self.recurring.id.oid, time: time)
+                self.model.delete(id: self.recurring.id!.oid, time: time)
             }, label: {
                 HStack {
                     Spacer()
