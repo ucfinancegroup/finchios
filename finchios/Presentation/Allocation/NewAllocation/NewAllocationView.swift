@@ -39,6 +39,8 @@ struct NewAllocationView: View {
                                      model: model)
             }
             
+            Spacer()
+            
             Button(action: {
                 self.model.create()
             }, label: {
