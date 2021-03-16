@@ -33,15 +33,18 @@ public struct Card: View {
                     Spacer()
                     Text("💡\(insight.obj.title)")
                         .font(.title2)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                        .padding(.bottom)
                     Spacer()
                 }
                 
                 Text(insight.obj.description)
-                    .padding()
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal)
                     
             }
-            .frame(height: 150, alignment: .center)
+            .frame(height: 180, alignment: .center)
             .bubble()
             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y: self.translation.height)

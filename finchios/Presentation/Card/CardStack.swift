@@ -34,7 +34,7 @@ struct CardStack: View {
                 }
                 
             }
-            .frame(height: 150, alignment: .center)
+            .frame(height: 180, alignment: .center)
             .padding(.bottom)
         }
         else {
@@ -46,7 +46,7 @@ struct CardStack: View {
                 }
                 
             }
-            .frame(height: 150, alignment: .center)
+            .frame(height: 180, alignment: .center)
             .bubble()
         }
         
