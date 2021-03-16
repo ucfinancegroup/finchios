@@ -16,7 +16,6 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
     
     @Published var ids: [UUID] = []
     @Published var classes: [UUID: (Iden<AssetClassAndApy>, Iden<Double>)] = [:]
-    //@Published var classes: [(Iden<AssetClassAndApy>, Iden<Double>)] = []
     
     @Published var classTypes: [Iden<AssetClassAndApy>] = []
     

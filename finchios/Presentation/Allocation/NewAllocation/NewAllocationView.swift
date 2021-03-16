@@ -39,6 +39,8 @@ struct NewAllocationView: View {
                                      model: model)
             }
             
+            DatePicker("Start Date", selection: self.$model.date)
+            
             Spacer()
             
             Button(action: {
