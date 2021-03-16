@@ -16,11 +16,39 @@ struct AllocationDetailView: View {
     
     @State var modalActive: Bool = false
     
-    @StateObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
+    @StateObject var model: AllocationDetailModel = AllocationDetailModel()
+    
+    private let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MM/dd/yyyy"
+        return f
+    }()
     
     var body: some View {
         VStack {
-            Text("Hello")
+            Text("Beginning \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(allocation.date))))")
+                .font(.title3)
+            
+            PieView(entries: model.allocationConfiguration, legendEnabled: true)
+                .frame(height: 300)
+            
+            Spacer()
+            
+            Button(action: {
+                self.model.delete(id: self.allocation.id.oid)
+            }, label: {
+                HStack {
+                    Spacer()
+                    Text("Delete")
+                    Spacer()
+                }
+                .padding()
+                .bubble(.red)
+                .foregroundColor(.white)
+            })
+        }
+        .onAppear() {
+            model.setup(alloc: allocation)
         }
         .navigationBarTitle("\(self.allocation.description)")
         .navigationBarItems(trailing:
