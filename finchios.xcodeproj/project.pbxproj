@@ -29,7 +29,6 @@
 		8026B6D2258A6743006CB2FB /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6D1258A6743006CB2FB /* AppTabView.swift */; };
 		8026B6DF258A6C71006CB2FB /* SignUpNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B6DE258A6C71006CB2FB /* SignUpNameView.swift */; };
 		8029D659258C2DD7007A44E1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D658258C2DD7007A44E1 /* StatisticsView.swift */; };
-		8029D664258C3730007A44E1 /* PlaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029D663258C3730007A44E1 /* PlaidView.swift */; };
 		80399A9D256B4D750014E2D9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 80399A9C256B4D750014E2D9 /* Charts */; };
 		803C8A8B25CAF5DE00167F22 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */; };
 		803E343325E578A0003A0A57 /* PieChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E343225E578A0003A0A57 /* PieChartDataEntry.swift */; };
@@ -208,7 +207,6 @@
 		8026B6D1258A6743006CB2FB /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		8026B6DE258A6C71006CB2FB /* SignUpNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameView.swift; sourceTree = "<group>"; };
 		8029D658258C2DD7007A44E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
-		8029D663258C3730007A44E1 /* PlaidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidView.swift; sourceTree = "<group>"; };
 		803C8A8A25CAF5DE00167F22 /* ChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntry.swift; sourceTree = "<group>"; };
 		803E343225E578A0003A0A57 /* PieChartDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartDataEntry.swift; sourceTree = "<group>"; };
 		803E343825E583BF003A0A57 /* AllocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationView.swift; sourceTree = "<group>"; };
@@ -438,7 +436,6 @@
 				8026B6A2258A5FF1006CB2FB /* SignUpFlow */,
 				8026B6AD258A5FF1006CB2FB /* StartUp */,
 				8029D657258C2DCA007A44E1 /* Statistics */,
-				8029D662258C3714007A44E1 /* ViewRepresentable */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -549,14 +546,6 @@
 				8029D658258C2DD7007A44E1 /* StatisticsView.swift */,
 			);
 			path = Statistics;
-			sourceTree = "<group>";
-		};
-		8029D662258C3714007A44E1 /* ViewRepresentable */ = {
-			isa = PBXGroup;
-			children = (
-				8029D663258C3730007A44E1 /* PlaidView.swift */,
-			);
-			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
 		803C8A8925CAF5D300167F22 /* Charts */ = {
@@ -1390,7 +1379,6 @@
 				80FC6C8625ED3B79008C373F /* AllocationDetailModel.swift in Sources */,
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
-				8029D664258C3730007A44E1 /* PlaidView.swift in Sources */,
 				80F9EE3825994394007CD06C /* SignUpService.swift in Sources */,
 				803E343325E578A0003A0A57 /* PieChartDataEntry.swift in Sources */,
 				80FC6C6425EC95C6008C373F /* NewEventModel.swift in Sources */,
