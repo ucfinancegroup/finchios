@@ -41,6 +41,7 @@ struct NewAllocationView: View {
                     Text("New Asset Type")
                 })
             }
+            .padding()
             
             ForEach(model.ids, id: \.self) { id in
                 AllocationSliderView(id: id,
