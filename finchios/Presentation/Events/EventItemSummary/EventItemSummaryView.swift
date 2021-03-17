@@ -19,8 +19,13 @@ struct EventItemSummaryView: View {
     var body: some View {
         NavigationLink(destination: EventDetailView(shouldPop: $isActive, event: event), isActive: $isActive) {
             VStack(alignment: .leading) {
-                Text(event.name)
-                    .font(.title3)
+                HStack {
+                    Text(event.name)
+                        .font(.title3)
+                    
+                    Spacer()
+                }
+                
                 
                 Text("Starts \(getDays()) day(s) from now")
             }
