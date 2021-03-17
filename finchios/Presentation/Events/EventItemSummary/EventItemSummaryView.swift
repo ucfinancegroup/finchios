@@ -27,7 +27,7 @@ struct EventItemSummaryView: View {
                 }
                 
                 
-                Text("Starts \(getDays()) day(s) from now")
+                Text("Simulate \(getDays()) day(s) from now")
             }
         }
         .disabled(!navAble)
