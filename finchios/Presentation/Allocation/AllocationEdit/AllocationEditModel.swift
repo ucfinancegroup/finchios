@@ -8,7 +8,7 @@
 import Foundation
 import OpenAPIClient
 
-class AllocationEditModel: ObservableObject, Identifiable {
+class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProtocol {
     
     @Published var showAlert: Bool = false
     @Published var success: Bool = false
@@ -17,6 +17,10 @@ class AllocationEditModel: ObservableObject, Identifiable {
     @Published var errorString: String = ""
 
     // Fields
+    @Published var name: String = ""
+    
+    @Published var date: Date = Date()
+    
     @Published var ids: [UUID] = []
     @Published var classes: [UUID: (Iden<AssetClassAndApy>, Iden<Double>)] = [:]
     
@@ -58,6 +62,10 @@ class AllocationEditModel: ObservableObject, Identifiable {
     func set(alloc: Allocation) {
         // Set the classes & create IDs here.
         
+        self.date = Date(timeIntervalSince1970: TimeInterval(alloc.date))
+        
+        self.name = alloc.description
+        
         for schema in alloc.schema {
             
             let id = UUID()
@@ -70,6 +78,11 @@ class AllocationEditModel: ObservableObject, Identifiable {
             
             classes.updateValue(val, forKey: id)
         }
+    }
+    
+    func delete(uuid: UUID) {
+        ids.removeAll(where: { $0 == uuid })
+        classes.removeValue(forKey: uuid)
     }
     
 }

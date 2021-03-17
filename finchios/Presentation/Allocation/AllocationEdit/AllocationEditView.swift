@@ -19,6 +19,14 @@ struct AllocationEditView: View {
     var body: some View {
         VStack {
             
+            ForEach(model.ids, id: \.self) { id in
+                AllocationSliderView(id: id,
+                                     value: $model.classes[unchecked: id].1,
+                                     selection: $model.classes[unchecked: id].0,
+                                     classTypes: $model.classTypes,
+                                     model: model)
+            }
+            
         }
         // TODO(): Not showing because it is a modal sheet?
         .alert(isPresented: $model.showAlert) { () -> Alert in
