@@ -18,6 +18,31 @@ struct AllocationEditView: View {
     
     var body: some View {
         VStack {
+            Text("Edit your allocation")
+                .font(.title2)
+                .padding()
+            
+            Divider()
+            
+            TextField("Name", text: $model.name)
+                .padding()
+            
+            DatePicker("Start Date", selection: self.$model.date)
+                .padding()
+            
+            HStack {
+                
+                Text("\(100-model.getSum())% Unallocated")
+                
+                Spacer()
+                
+                Button(action: {
+                    self.model.newClass()
+                }, label: {
+                    Text("New Asset Type")
+                })
+            }
+            .padding()
             
             ForEach(model.ids, id: \.self) { id in
                 AllocationSliderView(id: id,
@@ -26,6 +51,21 @@ struct AllocationEditView: View {
                                      classTypes: $model.classTypes,
                                      model: model)
             }
+            
+            Spacer()
+            
+            Button(action: {
+                self.model.edit(original: allocation)
+            }, label: {
+                HStack {
+                    Spacer()
+                    Text("Update")
+                    Spacer()
+                }
+                .padding()
+                .bubble(.teal)
+                .foregroundColor(.white)
+            })
             
         }
         // TODO(): Not showing because it is a modal sheet?
