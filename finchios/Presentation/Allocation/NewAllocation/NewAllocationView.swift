@@ -26,7 +26,7 @@ struct NewAllocationView: View {
             TextField("Name", text: $model.name)
                 .padding()
             
-            DatePicker("Start Date", selection: self.$model.date)
+            DatePicker("Start Date", selection: self.$model.date, displayedComponents: .date)                
                 .padding()
             
             HStack {

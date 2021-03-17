@@ -27,11 +27,11 @@ struct GoalEditView: View {
                 
                 Spacer()
                 
-                DatePicker("Start", selection: self.$model.start)
+                DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
                 
                 Spacer()
                 
-                DatePicker("End", selection: self.$model.end)
+                DatePicker("End", selection: self.$model.end, displayedComponents: .date)
                 
                 Spacer()
                 
