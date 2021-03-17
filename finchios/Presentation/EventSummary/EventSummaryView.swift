@@ -27,9 +27,12 @@ struct EventSummaryView: View {
 
             }
             
-            ForEach(model.events.indices) { index in
-                EventItemSummaryView(event: model.events[index], navAble: false)
+            ForEach(model.events, id:\.id) { item in
+                EventItemSummaryView(event: item.obj, navAble: false)
             }
+        }
+        .onAppear() {
+            model.onAppear()
         }
         .padding()
         .bubble()

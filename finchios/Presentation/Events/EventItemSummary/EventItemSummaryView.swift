@@ -22,9 +22,19 @@ struct EventItemSummaryView: View {
                 Text(event.name)
                     .font(.title3)
                 
-                Text("Starts \(event.start) day(s) from now")
+                Text("Starts \(getDays()) day(s) from now")
             }
         }
+        .disabled(!navAble)
+        .foregroundColor(.primary)
+    }
+    
+    func getDays() -> Int {
+        guard let ret = Calendar.current.dateComponents([.day], from: Date(), to: Date(timeIntervalSince1970: TimeInterval(event.start))).day else {
+            return 0
+        }
+        
+        return ret
     }
 }
 
