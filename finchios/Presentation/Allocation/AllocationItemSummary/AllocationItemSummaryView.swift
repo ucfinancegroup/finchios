@@ -33,9 +33,9 @@ struct AllocationItemSummaryView: View {
                     Text(allocation.description.count > 0 ? allocation.description : "Unnamed")
                         .font(.title2)
                     
-                    Spacer()
-                    
                     Text(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(allocation.date))))
+                    
+                    Spacer()
                 }
                 .padding()
                 
