@@ -19,6 +19,8 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
     
     @Published var classTypes: [Iden<AssetClassAndApy>] = []
     
+    @Published var name: String = ""
+    
     init() {
         
         AssetService.get { (success, error, result) in
@@ -76,6 +78,12 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             showAlert = true
         }
         
+        if name.count == 0 {
+            errorString = "The name must be non-empty."
+            showError = true
+            showAlert = true
+        }
+        
         var schema: [AllocationProportion] = []
         
         for id in ids {
@@ -89,7 +97,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
         }
         
         let alloc = Allocation(id: nil,
-                               description: "",
+                               description: name,
                                date: Int(date.timeIntervalSince1970),
                                schema: schema)
         

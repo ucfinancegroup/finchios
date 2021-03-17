@@ -38,7 +38,7 @@ struct AllocationSliderView: View {
                 
                 Slider(value: $value.obj, in: 0...100, step: 1)
                 
-                Text("\(Int(value.obj))")
+                Text("\(Int(value.obj))%")
                 
                 Button(action: {
                     model.delete(uuid: id)

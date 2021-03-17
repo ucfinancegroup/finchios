@@ -20,14 +20,25 @@ struct NewAllocationView: View {
                 .font(.title2)
                 .padding()
             
+            Divider()
+            
+            
+            TextField("Name", text: $model.name)
+                .padding()
+            
+            DatePicker("Start Date", selection: self.$model.date)
+                .padding()
             
             HStack {
+                
+                Text("\(100-model.getSum())% Unallocated")
+                
                 Spacer()
                 
                 Button(action: {
                     self.model.newClass()
                 }, label: {
-                    Text("New")
+                    Text("New Asset Type")
                 })
             }
             
@@ -39,7 +50,7 @@ struct NewAllocationView: View {
                                      model: model)
             }
             
-            DatePicker("Start Date", selection: self.$model.date)
+
             
             Spacer()
             
