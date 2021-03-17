@@ -27,7 +27,7 @@ struct AllocationSummaryView: View {
                     })
                 
             }
-            PieView(entries: model.allocationConfiguration, legendEnabled: true)
+            PieView(entries: model.allocationConfiguration, legendEnabled: true, naked: false)
                 .frame(height: 300)
         }
         .padding()

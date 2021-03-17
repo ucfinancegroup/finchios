@@ -29,7 +29,7 @@ struct AllocationDetailView: View {
             Text("Beginning \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(allocation.date))))")
                 .font(.title3)
             
-            PieView(entries: model.allocationConfiguration, legendEnabled: true)
+            PieView(entries: model.allocationConfiguration, legendEnabled: true, naked: false)
                 .frame(height: 300)
             
             Spacer()

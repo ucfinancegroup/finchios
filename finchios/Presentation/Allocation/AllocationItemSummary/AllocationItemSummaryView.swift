@@ -7,6 +7,7 @@
 
 import SwiftUI
 import OpenAPIClient
+import Charts
 
 struct AllocationItemSummaryView: View {
     
@@ -16,20 +17,45 @@ struct AllocationItemSummaryView: View {
     
     @State var navAble: Bool
     
+    @State var allocationConfiguration: [PieChartDataEntry] = [PieChartDataEntry(value: 1)]
+    
+    private let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MM/dd/yyyy"
+        return f
+    }()
+    
+    
     var body: some View {
         NavigationLink(destination: AllocationDetailView(shouldPop: $isActive, allocation: allocation), isActive: $isActive) {
-            VStack(alignment: .leading) {
-                HStack {
+            HStack {
+                VStack(alignment: .leading) {
                     Text(allocation.description)
                         .font(.title2)
                     
                     Spacer()
+                    
+                    Text(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(allocation.date))))
                 }
+                .padding()
+                
+                Spacer()
+
+                PieView(entries: allocationConfiguration, legendEnabled: false, naked: true)
+                    .frame(height: 100)
+                    .padding()
+                
             }
+            
+        }
+        .onAppear() {
+            allocationConfiguration = allocation.schema.map { PieChartDataEntry(alloc: $0) }
         }
         .disabled(!navAble)
         .foregroundColor(.primary)
     }
+    
+    
 }
 
 struct AllocationItemSummaryPreviews: View {
