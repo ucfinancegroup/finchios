@@ -63,12 +63,6 @@ struct PlansService: RecurringProtocol {
                 return
             }
             
-            print(plan)
-            
-            print("bet")
-            
-            print(plan.allocations)
-            
             completion(true, nil, plan.allocations)
             return
         }
