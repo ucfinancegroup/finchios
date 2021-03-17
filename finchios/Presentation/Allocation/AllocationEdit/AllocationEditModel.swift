@@ -57,6 +57,19 @@ class AllocationEditModel: ObservableObject, Identifiable {
     
     func set(alloc: Allocation) {
         // Set the classes & create IDs here.
+        
+        for schema in alloc.schema {
+            
+            let id = UUID()
+            
+            ids.append(id)
+            
+            let val = (Iden<AssetClassAndApy>(obj: AssetClassAndApy(_class: schema.asset._class,
+                                                                    apy: schema.asset.annualizedPerformance)),
+                       Iden<Double>(obj: schema.proportion))
+            
+            classes.updateValue(val, forKey: id)
+        }
     }
     
 }
