@@ -22,33 +22,65 @@ struct RecurringDetailView: View {
     
     @State var time: OverviewProjection
     
+    private let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MM/dd/yyyy"
+        return f
+    }()
+    
     var body: some View {
         VStack {
             //TODO() Reload when a few modal was created to show the new item
             //Information
+            
+            HStack {
+                Text("Starts \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(recurring.start))))")
+                    //.padding(.horizontal)
+                
+                Spacer()
+            }
+            .padding()
+            
+            HStack {
+                Text("Ends \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(recurring.end))))")
+                    //.padding(.horizontal)
+                
+                Spacer()
+            }.padding()
+            
+            Spacer()
+
+            
             Group {                
                 if type == .debt {
-                    Text("Principal amount of $\(recurring.principal.format())")
+                    Text("$\(recurring.principal.format())")
+                        .font(.largeTitle)
+                        .foregroundColor(.red)
                     
                     Spacer()
                         .frame(height: 30)
                     
-                    Text("Interest of \(Double.format(amt: recurring.interest))")
+                    Text("\(Double.format(amt: recurring.interest))% Interest")
+                        .font(.title2)
                     
                     Spacer()
                         .frame(height: 30)
                 }else { // income / expense
-                    Text("Value of $\(recurring.amount.format())")
+
+                    Text("$\(recurring.amount.format())")
+                        .font(.largeTitle)
+                        .foregroundColor(type == .income ? .green : .red)
                     
                     Spacer()
                         .frame(height: 30)
                 }
                 
-                Text("Occurs every \(recurring.frequency.content) \(FormatTyp.map[recurring.frequency.typ.rawValue]!)(s)")
+                Text("Every \(recurring.frequency.content) \(FormatTyp.map[recurring.frequency.typ.rawValue]!)(s)")
+                    .font(.headline)
                 
                 Spacer()
                 
-                Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(recurring.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(recurring.end)))")
+
             }
             
             Spacer()
@@ -106,11 +138,12 @@ struct RecurringDetailView: View {
 struct RecurringDetailViewPreview: View {
     
     @State var pop = false
-    @State var type: RecurringItemType = .income
+    @State var type: RecurringItemType = .debt
     
     var body: some View {
-        
-        RecurringDetailView(shouldPop: $pop, type: $type, recurring: .dummyIncome, time: .overview)
+        NavigationView {
+            RecurringDetailView(shouldPop: $pop, type: $type, recurring: .dummyDebt, time: .overview)
+        }
     }
     
 }

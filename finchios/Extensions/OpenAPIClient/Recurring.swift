@@ -18,6 +18,15 @@ extension Recurring {
                                                   amount: 50,
                                                   interest: 0,
                                                   frequency: TimeInterval(typ: .monthly, content: 5))
+    
+    static let dummyDebt: Recurring = Recurring(id: MongoObjectID(oid: "ffff"),
+                                                  name: "job",
+                                                  start: 0,
+                                                  end: 50000,
+                                                  principal: -100,
+                                                  amount: 0,
+                                                  interest: 0.5,
+                                                  frequency: TimeInterval(typ: .monthly, content: 5))
 
 }
 
