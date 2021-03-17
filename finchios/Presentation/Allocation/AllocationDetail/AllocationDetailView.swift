@@ -50,7 +50,7 @@ struct AllocationDetailView: View {
         .onAppear() {
             model.setup(alloc: allocation)
         }
-        .navigationBarTitle("\(self.allocation.description)")
+        .navigationBarTitle(allocation.description.count > 0 ? allocation.description : "Unnamed")
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalActive = true

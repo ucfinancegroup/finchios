@@ -30,7 +30,7 @@ struct AllocationItemSummaryView: View {
         NavigationLink(destination: AllocationDetailView(shouldPop: $isActive, allocation: allocation), isActive: $isActive) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(allocation.description)
+                    Text(allocation.description.count > 0 ? allocation.description : "Unnamed")
                         .font(.title2)
                     
                     Spacer()
