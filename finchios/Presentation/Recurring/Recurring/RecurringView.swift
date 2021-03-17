@@ -45,7 +45,7 @@ struct RecurringView: View {
             self.isActive = false
             model.onAppear(type: type, time: time)
         }
-        .navigationTitle(Text(type.rawValue))
+        .navigationTitle(Text("\(time == .projection ? "Future " : "")\(type.rawValue)s"))
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalCreate = true
