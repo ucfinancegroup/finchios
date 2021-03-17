@@ -83,6 +83,10 @@ struct AllocationEditView: View {
                 return Alert(title: Text("Success!"),
                              message: Text("This allocation has been successfully edited."),
                              dismissButton: .default(Text("Okay")) {
+                                
+                                // Prop changes
+                                self.allocation = self.model.getAllocationObject(original: self.allocation)
+
                                 self.present = false
                              })
             }

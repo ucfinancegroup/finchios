@@ -57,7 +57,9 @@ struct AllocationDetailView: View {
                                 }, label: {
                                     Text("Edit")
                                 })
-                                .sheet(isPresented: $modalActive, content: {
+                                .sheet(isPresented: $modalActive, onDismiss: {
+                                    
+                                }, content: {
                                     AllocationEditView(present: $modalActive, allocation: $allocation)
                                 }))
         .alert(isPresented: $model.showAlert) { () -> Alert in

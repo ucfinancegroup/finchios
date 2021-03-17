@@ -7,7 +7,7 @@
 
 import Foundation
 import OpenAPIClient
-
+import SwiftUI
 
 // Can abstract this whole thing and join with NewAllocModel, wouldve been really cool
 class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProtocol {
@@ -53,8 +53,25 @@ class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProto
         return sum
     }
     
-    func getAllocationObject() -> Allocation? {
-        return nil
+    func getAllocationObject(original: Allocation) -> Allocation {
+        var schema: [AllocationProportion] = []
+        
+        for id in ids {
+            if let obj = classes[id] {
+                
+                schema.append(AllocationProportion(
+                                asset: Asset(name: obj.0.obj._class.typ.rawValue, _class: obj.0.obj._class, annualizedPerformance: obj.0.obj.apy),
+                                proportion: obj.1.obj))
+                
+            }
+        }
+        
+        let alloc = Allocation(id: original.id,
+                               description: name,
+                               date: Int(date.timeIntervalSince1970),
+                               schema: schema)
+        
+        return alloc
     }
     
     func validateSum() -> Bool {
@@ -82,22 +99,7 @@ class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProto
             showAlert = true
         }
         
-        var schema: [AllocationProportion] = []
-        
-        for id in ids {
-            if let obj = classes[id] {
-                
-                schema.append(AllocationProportion(
-                                asset: Asset(name: obj.0.obj._class.typ.rawValue, _class: obj.0.obj._class, annualizedPerformance: obj.0.obj.apy),
-                                proportion: obj.1.obj))
-                
-            }
-        }
-        
-        let alloc = Allocation(id: original.id,
-                               description: name,
-                               date: Int(date.timeIntervalSince1970),
-                               schema: schema)
+        let alloc = getAllocationObject(original: original)
         
         
         PlansService.updateAllocation(id: alloc.id!.oid, payload: alloc) { (success, _, _, response) in
