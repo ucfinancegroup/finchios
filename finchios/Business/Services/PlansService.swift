@@ -172,12 +172,11 @@ extension PlansService {
             return
         }
 
-        print(payload)
-        
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         
-        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt,
+                                       "Content-Type": "application/json"]
         
         let jsonBody = try? JSONEncoder().encode(payload)
         
@@ -187,7 +186,7 @@ extension PlansService {
         }
         
         request.httpBody = unwrappedJsonBody
-
+        
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard data != nil else {
                 completion(false, error, nil)
@@ -197,8 +196,6 @@ extension PlansService {
                 completion(false, error, nil)
                 return
             }
-            
-            print(urlResponse)
             
             guard let response = try? JSONDecoder().decode(PlanResponse.self, from: data) else {
                 completion(false, error, nil)
