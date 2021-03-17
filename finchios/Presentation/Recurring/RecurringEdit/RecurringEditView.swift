@@ -106,6 +106,10 @@ struct RecurringEditView: View {
                 return Alert(title: Text("Success!"),
                              message: Text("This \(self.type.rawValue) has been successfully edited."),
                              dismissButton: .default(Text("Okay")) {
+                                
+                                // Propogate changes
+                                self.recurring = model.createPropObj(original: self.recurring, type: self.type)
+                                
                                 self.present = false
                              })
             }
