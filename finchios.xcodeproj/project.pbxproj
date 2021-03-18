@@ -94,6 +94,7 @@
 		80802BF425CF18B600DABCCC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BF325CF18B600DABCCC /* ProgressView.swift */; };
 		80802BFB25D0696400DABCCC /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFA25D0696400DABCCC /* BarView.swift */; };
 		80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFE25D0700000DABCCC /* ValidateService.swift */; };
+		8088E3FE2602E08500CF74CA /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E3FD2602E08500CF74CA /* EventService.swift */; };
 		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
 		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */; };
@@ -277,6 +278,7 @@
 		80802BF325CF18B600DABCCC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		80802BFA25D0696400DABCCC /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		80802BFE25D0700000DABCCC /* ValidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateService.swift; sourceTree = "<group>"; };
+		8088E3FD2602E08500CF74CA /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -1110,6 +1112,7 @@
 				80664C6025D1CB7E001421BE /* InsightsService.swift */,
 				80FD029225E751E300AE0001 /* UserService.swift */,
 				80FC6C7425EC9D69008C373F /* AssetService.swift */,
+				8088E3FD2602E08500CF74CA /* EventService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1377,6 +1380,7 @@
 				8062C4F225BE087E00E0927F /* Card.swift in Sources */,
 				80E2676C25BC6C9400277E52 /* Account.swift in Sources */,
 				80FC6C8625ED3B79008C373F /* AllocationDetailModel.swift in Sources */,
+				8088E3FE2602E08500CF74CA /* EventService.swift in Sources */,
 				80F93701258F0B8700BBBE57 /* EventSummaryView.swift in Sources */,
 				8026B6B9258A5FF2006CB2FB /* SignUpModel.swift in Sources */,
 				80F9EE3825994394007CD06C /* SignUpService.swift in Sources */,
