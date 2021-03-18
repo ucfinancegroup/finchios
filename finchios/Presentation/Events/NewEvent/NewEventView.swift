@@ -19,6 +19,23 @@ struct NewEventView: View {
                 .font(.title2)
                 .padding()
             
+            Divider()
+            
+            DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
+            
+            Menu {
+                ForEach(model.examples, id: \.id) { c in
+                    Button(action: {
+                        self.model.setSelected(event: c.obj)
+                    }, label: {
+                        Text(c.obj.name)
+                    })
+                }
+            } label: {
+                Text(model.event.name)
+            }
+            
+            // Event information
             Group {
                 
             }
@@ -31,8 +48,23 @@ struct NewEventView: View {
                 Text("Create")
                     .padding()
             })
-            
-            Spacer()
+        }
+        .alert(isPresented: $model.showAlert) { () -> Alert in
+            if model.showError {
+                return Alert(title: Text("Failed to create"),
+                             message: Text("Some fields aren't filled in or you don't have internet access. Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showError = false
+                             })
+            }
+            else { // success
+                return Alert(title: Text("Success!"),
+                             message: Text("This allocation has been successfully created!"),
+                             dismissButton: .default(Text("Okay")) {
+                                self.present = false
+                                self.model.showError = false
+                             })
+            }
         }
     }
 }

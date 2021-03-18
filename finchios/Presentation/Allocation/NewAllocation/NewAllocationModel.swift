@@ -72,16 +72,19 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             return
         }
         
+        // Is the date invalid
         if Date().timeIntervalSince1970 >= date.timeIntervalSince1970 {
             errorString = "The specified date must be in the future."
             showError = true
             showAlert = true
+            return
         }
         
         if name.count == 0 {
             errorString = "The name must be non-empty."
             showError = true
             showAlert = true
+            return
         }
         
         var schema: [AllocationProportion] = []
