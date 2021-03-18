@@ -14,7 +14,8 @@ public class AcccountViewModel: Identifiable, ObservableObject {
     
     public func onAppear() {
         
-        AccountsService.accounts { (success, error, response) in
+        // Set all to false to just get unhidden accounts
+        AccountsService.accounts(all: false) { (success, error, response) in
             DispatchQueue.main.async {
                 if let response = response {
                     

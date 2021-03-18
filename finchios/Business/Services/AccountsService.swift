@@ -11,8 +11,8 @@ import OpenAPIClient
 // GET /plaid/accounts
 public struct AccountsService {
     
-    public static func accounts(completion: @escaping ((Bool, Error?, AccountsResponse?) -> Void)) {
-        guard let url = getAllAccountsURL() else {
+    public static func accounts(all: Bool, completion: @escaping ((Bool, Error?, AccountsResponse?) -> Void)) {
+        guard let url = all ? getAllAccountsURL() : getUnhiddenAccountsURL() else {
             completion(false, nil, nil)
             return
         }
@@ -43,7 +43,13 @@ public struct AccountsService {
     }
     
     private static func getAllAccountsURL() -> URL? {
-        let address = "\(BusinessConstants.SERVER)/plaid/accounts"
+        let address = "\(BusinessConstants.SERVER)/plaid/accounts/all"
+
+        return URL(string: address)
+    }
+    
+    private static func getUnhiddenAccountsURL() -> URL? {
+        let address = "\(BusinessConstants.SERVER)/plaid/accounts/unhidden"
 
         return URL(string: address)
     }
