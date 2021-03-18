@@ -35,7 +35,7 @@ struct AccountDetailView: View {
             Spacer()
             
             Button(action: {
-                self.model.delete(id: self.account.account.itemId)
+                self.model.delete(item: self.account.account)
             }, label: {
                 HStack {
                     Spacer()
