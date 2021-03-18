@@ -52,7 +52,9 @@ struct RecurringView: View {
                                 }, label: {
                                     Image("Plus")
                                 })
-                                .sheet(isPresented: self.$modalCreate, content: {
+                                .sheet(isPresented: self.$modalCreate, onDismiss: {
+                                    model.onAppear(type: type, time: time)
+                                }, content: {
                                     NewRecurringView(present: self.$modalCreate, type: self.$type, time: time)
                                 }))
         

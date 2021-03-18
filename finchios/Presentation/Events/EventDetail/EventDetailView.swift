@@ -20,7 +20,12 @@ struct EventDetailView: View {
     
     var body: some View {
         VStack {
-            Text("bleh")
+            // Event information
+            Group {
+                ForEach(self.model.tranforms, id: \.id) { t in
+                    EventAssetChange(c: t.obj._class, change: t.obj.change)
+                }
+            }
             
             Spacer()
             

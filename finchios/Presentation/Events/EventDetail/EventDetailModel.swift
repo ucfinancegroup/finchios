@@ -17,8 +17,17 @@ class EventDetailModel: ObservableObject, Identifiable {
     @Published var showError: Bool = false
     @Published var errorString: String = ""
     
+    @Published var tranforms: [Iden<AssetClassChange>] = []
+    
+    @Published var name: String = ""
+    
     func setup(event: Event) {
-        
+        tranforms = updateTransforms(event: event)
+    }
+    
+    
+    func updateTransforms(event: Event) -> [Iden<AssetClassChange>] {
+        return event.transforms.map { Iden<AssetClassChange>(obj: $0) }
     }
     
     func delete(id: String) {
