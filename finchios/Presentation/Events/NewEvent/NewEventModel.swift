@@ -22,7 +22,7 @@ class NewEventModel: ObservableObject, Identifiable {
     
     @Published var examples: [Iden<Event>] = []
     
-    var event: Event = .init(name: "", start: 0, transforms: [])
+    @Published var event: Event = .init(name: "", start: 0, transforms: [])
     
     init() {
         EventService.example { (success, _, result) in
@@ -48,6 +48,7 @@ class NewEventModel: ObservableObject, Identifiable {
     }
     
     func create() {
+        event.start = Int64(start.timeIntervalSince1970)
         
         if !dateValid() {
             errorString = "The specified date must be in the future."
@@ -56,6 +57,20 @@ class NewEventModel: ObservableObject, Identifiable {
             return
         }
         
+        PlansService.newEvent(payload: event) { (success, _, _, response) in
+            DispatchQueue.main.async {
+                if let _ = response {
+                    // success
+                    self.showSuccess = true
+                    self.showError = false
+                    self.showAlert = true
+                }else {
+                    self.showError = true
+                    self.errorString = "Server error. Please try again."
+                    self.showAlert = true
+                }
+            }
+        }
         
     }
     

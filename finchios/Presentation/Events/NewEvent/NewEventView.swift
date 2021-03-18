@@ -22,6 +22,7 @@ struct NewEventView: View {
             Divider()
             
             DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
+                .padding()
             
             Menu {
                 ForEach(model.examples, id: \.id) { c in
@@ -37,6 +38,7 @@ struct NewEventView: View {
             
             // Event information
             Group {
+                
                 
             }
             
