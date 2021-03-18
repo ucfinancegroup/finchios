@@ -13,9 +13,15 @@ struct LeaderboardView: View {
     
     var body: some View {
         VStack {
+            Text("Leaderboards")
             ForEach(model.boards.indices) { index in
                 LeaderboardItemView(board: $model.boards[index])
             }
+        }
+        .padding()
+        .bubble()
+        .onAppear() {
+            model.onAppear()
         }
     }
 }

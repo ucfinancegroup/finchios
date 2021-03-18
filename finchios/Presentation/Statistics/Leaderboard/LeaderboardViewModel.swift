@@ -7,9 +7,24 @@
 
 import Foundation
 import OpenAPIClient
+import os
 
 class LeaderboardViewModel: ObservableObject, Identifiable {
     
     @Published var boards: [LeaderboardResponse] = []
+    @Published var board_type: String = "Savings"
     
+    func onAppear() {
+        LeaderboardService.leaderboard(type: board_type) { (success, error, result) in
+            DispatchQueue.main.async {
+                if success {
+                    if let result = result {
+                        self.boards = [result]
+                    }
+                } else {
+                    //ERROR
+                }
+            }
+        }
+    }
 }
