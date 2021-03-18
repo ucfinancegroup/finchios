@@ -97,3 +97,54 @@ extension AccountsService {
     }
     
 }
+
+// Hide/unhide PUT
+
+extension AccountsService {
+    public static func hide(payload: SetAccountAsHiddenPayload, completion: @escaping ((Bool, Error?, ItemIdResponse?) -> Void)) {
+        guard let url = getHideURL() else {
+            completion(false, nil, nil)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.allHTTPHeaderFields = ["Content-Type": "application/json",
+                                       BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+
+        let jsonBody = try? JSONEncoder().encode(payload)
+        
+        guard let unwrappedJsonBody = jsonBody else {
+            completion(false, nil, nil)
+            return
+        }
+        
+        request.httpBody = unwrappedJsonBody
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            guard let data = data else {
+                completion(false, error, nil)
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(ItemIdResponse.self, from: data) else {
+                completion(false, error, nil)
+                return
+            }
+
+            completion(true, nil, response)
+            
+            return
+        }
+
+        task.resume()
+
+    }
+    
+    private static func getHideURL() -> URL? {
+        let address = "\(BusinessConstants.SERVER)/plaid/accounts/hide"
+
+        return URL(string: address)
+    }
+    
+}
