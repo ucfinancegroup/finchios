@@ -34,12 +34,14 @@ struct NewEventView: View {
                 }
             } label: {
                 Text(model.event.name)
+                    .font(.title2)
             }
             
             // Event information
             Group {
-                
-                
+                ForEach(self.model.tranforms, id: \.id) { t in
+                    EventAssetChange(c: t.obj._class, change: t.obj.change)
+                }
             }
             
             Spacer()

@@ -22,7 +22,13 @@ class NewEventModel: ObservableObject, Identifiable {
     
     @Published var examples: [Iden<Event>] = []
     
-    @Published var event: Event = .init(name: "", start: 0, transforms: [])
+    @Published var event: Event = .init(name: "", start: 0, transforms: []) {
+        didSet {
+            updateTransforms()
+        }
+    }
+    
+    @Published var tranforms: [Iden<AssetClassChange>] = []
     
     init() {
         EventService.example { (success, _, result) in
@@ -40,6 +46,10 @@ class NewEventModel: ObservableObject, Identifiable {
     
     func setSelected(event: Event) {
         self.event = event
+    }
+    
+    func updateTransforms() {
+        self.tranforms = self.event.transforms.map { Iden<AssetClassChange>(obj: $0) }
     }
     
     private func dateValid() -> Bool {

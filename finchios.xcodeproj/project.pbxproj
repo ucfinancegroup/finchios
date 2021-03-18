@@ -95,6 +95,7 @@
 		80802BFB25D0696400DABCCC /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFA25D0696400DABCCC /* BarView.swift */; };
 		80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80802BFE25D0700000DABCCC /* ValidateService.swift */; };
 		8088E3FE2602E08500CF74CA /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E3FD2602E08500CF74CA /* EventService.swift */; };
+		8088E40326039CEA00CF74CA /* EventAssetChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088E40226039CEA00CF74CA /* EventAssetChange.swift */; };
 		809F952225B39766007DE7F6 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952125B39766007DE7F6 /* GoalViewModel.swift */; };
 		809F952925B3986B007DE7F6 /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952825B3986B007DE7F6 /* NewGoalView.swift */; };
 		809F952F25B3E4D9007DE7F6 /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */; };
@@ -279,6 +280,7 @@
 		80802BFA25D0696400DABCCC /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		80802BFE25D0700000DABCCC /* ValidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateService.swift; sourceTree = "<group>"; };
 		8088E3FD2602E08500CF74CA /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		8088E40226039CEA00CF74CA /* EventAssetChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssetChange.swift; sourceTree = "<group>"; };
 		809F952125B39766007DE7F6 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		809F952825B3986B007DE7F6 /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
 		809F952E25B3E4D9007DE7F6 /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 		803E343E25E58577003A0A57 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				8088E40126039CDA00CF74CA /* EventAssetChange */,
 				80FD028D25E74FD500AE0001 /* NewEvent */,
 				803E344A25E59501003A0A57 /* EventDetail */,
 				803E344125E594B5003A0A57 /* Event */,
@@ -907,6 +910,14 @@
 				80802BFA25D0696400DABCCC /* BarView.swift */,
 			);
 			path = Bar;
+			sourceTree = "<group>";
+		};
+		8088E40126039CDA00CF74CA /* EventAssetChange */ = {
+			isa = PBXGroup;
+			children = (
+				8088E40226039CEA00CF74CA /* EventAssetChange.swift */,
+			);
+			path = EventAssetChange;
 			sourceTree = "<group>";
 		};
 		809F952725B3985F007DE7F6 /* NewGoal */ = {
@@ -1324,6 +1335,7 @@
 				809F955325B626E9007DE7F6 /* GoalEditViewModel.swift in Sources */,
 				8040729D25EC3F5B005C19A5 /* ChangeName.swift in Sources */,
 				8026B6BF258A5FF2006CB2FB /* LogInViewModel.swift in Sources */,
+				8088E40326039CEA00CF74CA /* EventAssetChange.swift in Sources */,
 				8026B6BB258A5FF2006CB2FB /* StartUpView.swift in Sources */,
 				804AEA6D259FC2E8005D414C /* Goal.swift in Sources */,
 				80479C75259AC60C00CDA3DA /* Color.swift in Sources */,
