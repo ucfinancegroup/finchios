@@ -17,7 +17,14 @@ struct LeaderboardView: View {
             
             ForEach(model.boards.indices, id: \.self) { index in
                 Divider()
-                LeaderboardItemView(board: $model.boards[index])
+                HStack {
+                    LeaderboardItemView(board: $model.boards[index])
+                    NavigationLink(
+                        destination: GoalView(),
+                        label: {
+                            Image("RightArrow")
+                        })
+                }
             }
         }
         .padding()

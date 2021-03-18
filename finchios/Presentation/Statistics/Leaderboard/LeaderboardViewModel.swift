@@ -15,14 +15,19 @@ class LeaderboardViewModel: ObservableObject, Identifiable {
     @Published var board_type: String = "Savings"
     
     func onAppear() {
-        LeaderboardService.leaderboard(type: board_type) { (success, error, result) in
-            DispatchQueue.main.async {
-                if success {
-                    if let result = result {
-                        self.boards = [result]
+        
+        boards = []
+        
+        for board_type in ["Savings", "Spending", "Income"] {
+            LeaderboardService.leaderboard(type: board_type) { (success, error, result) in
+                DispatchQueue.main.async {
+                    if success {
+                        if let result = result {
+                            self.boards.append(result)
+                        }
+                    } else {
+                        //ERROR
                     }
-                } else {
-                    //ERROR
                 }
             }
         }
