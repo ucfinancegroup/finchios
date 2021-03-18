@@ -16,7 +16,6 @@ struct LeaderboardItemView: View {
         VStack {
             Text(board.leaderboardType)
             Text("\(board.percentile)")
-            Text("HELLO")
         }
     }
 }

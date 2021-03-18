@@ -14,7 +14,9 @@ struct LeaderboardView: View {
     var body: some View {
         VStack {
             Text("Leaderboards")
-            ForEach(model.boards.indices) { index in
+            
+            ForEach(model.boards.indices, id: \.self) { index in
+                Divider()
                 LeaderboardItemView(board: $model.boards[index])
             }
         }
