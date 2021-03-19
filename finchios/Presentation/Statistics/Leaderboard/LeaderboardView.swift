@@ -20,7 +20,7 @@ struct LeaderboardView: View {
                 HStack {
                     LeaderboardItemView(board: model.boards[index])
                     NavigationLink(
-                        destination: GoalView(),
+                        destination: LeaderboardItemDetailsView(board: model.boards[index]),
                         label: {
                             Image("RightArrow")
                         })
