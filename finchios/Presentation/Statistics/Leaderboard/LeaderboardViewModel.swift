@@ -12,7 +12,6 @@ import os
 class LeaderboardViewModel: ObservableObject, Identifiable {
     
     @Published var boards: [LeaderboardResponse] = []
-    @Published var board_type: String = "Savings"
     
     func onAppear() {
         

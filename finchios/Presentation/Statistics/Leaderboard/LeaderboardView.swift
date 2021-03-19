@@ -18,7 +18,7 @@ struct LeaderboardView: View {
             ForEach(model.boards.indices, id: \.self) { index in
                 Divider()
                 HStack {
-                    LeaderboardItemView(board: $model.boards[index])
+                    LeaderboardItemView(board: model.boards[index])
                     NavigationLink(
                         destination: GoalView(),
                         label: {
