@@ -11,7 +11,7 @@ struct StatisticsView: View {
     @Binding var navBarHidden: Bool
 
     var body: some View {
-        ZStack {
+        ScrollView {
             LeaderboardView()
         }
         .navigationBarTitle(navBarHidden ? "" : "Statistics")
