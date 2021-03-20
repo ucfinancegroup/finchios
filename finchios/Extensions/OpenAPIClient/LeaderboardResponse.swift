@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import OpenAPIClient
+
+public extension LeaderboardResponse {
+    
+    static let dummy: LeaderboardResponse = LeaderboardResponse(leaderboardType: "Savings", description: "Savings Leaderboard", percentile: 50.0);
+    
+}
