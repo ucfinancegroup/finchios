@@ -21,7 +21,10 @@ struct LeaderboardItemView: View {
             }
             HStack {
                 Spacer()
-                Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(.green)
+                Text("Top")
+                Text(String(format: "%.1f%%", 100-board.percentile))
+                    .foregroundColor(.teal)
+                Text("of Users")
                 Spacer()
             }
         }
