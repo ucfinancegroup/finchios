@@ -7,7 +7,6 @@
 
 import Foundation
 import OpenAPIClient
-import os
 
 class LeaderboardViewModel: ObservableObject, Identifiable {
     
