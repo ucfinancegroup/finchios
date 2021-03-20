@@ -15,7 +15,7 @@ struct LeaderboardItemView: View {
     var body: some View {
         VStack {
             Text(board.leaderboardType)
-            Text("\(board.percentile)")
+            Text(String(format: "%.1f", 100-board.percentile)).foregroundColor(.green)
         }
     }
 }
