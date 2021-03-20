@@ -19,6 +19,7 @@ struct LeaderboardView: View {
                 Divider()
                 HStack {
                     LeaderboardItemView(board: model.boards[index])
+                    Spacer()
                     NavigationLink(
                         destination: LeaderboardItemDetailsView(board: model.boards[index]),
                         label: {

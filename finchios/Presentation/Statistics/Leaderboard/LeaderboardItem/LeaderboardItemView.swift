@@ -14,8 +14,16 @@ struct LeaderboardItemView: View {
     
     var body: some View {
         VStack {
-            Text(board.leaderboardType)
-            Text(String(format: "%.1f", 100-board.percentile)).foregroundColor(.green)
+            HStack {
+                Spacer()
+                Text(board.leaderboardType)
+                Spacer()
+            }
+            HStack {
+                Spacer()
+                Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(.green)
+                Spacer()
+            }
         }
     }
 }
