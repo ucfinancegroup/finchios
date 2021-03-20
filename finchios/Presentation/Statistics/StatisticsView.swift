@@ -19,3 +19,9 @@ struct StatisticsView: View {
         .navigationBarBackButtonHidden(navBarHidden)
     }
 }
+
+struct StatisticsView_Previews: PreviewProvider {
+    static var previews: some View {
+        StatisticsView(navBarHidden: .constant(Bool(false)))
+    }
+}
