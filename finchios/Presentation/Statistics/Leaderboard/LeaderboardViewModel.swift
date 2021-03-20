@@ -10,7 +10,7 @@ import OpenAPIClient
 
 class LeaderboardViewModel: ObservableObject, Identifiable {
     
-    @Published var boards: [LeaderboardResponse] = []
+    @Published var boards: [Iden<LeaderboardResponse>] = []
     
     func onAppear() {
         
@@ -21,7 +21,7 @@ class LeaderboardViewModel: ObservableObject, Identifiable {
                 DispatchQueue.main.async {
                     if success {
                         if let result = result {
-                            self.boards.append(result)
+                            self.boards.append(Iden(obj: result))
                         }
                     } else {
                         //ERROR

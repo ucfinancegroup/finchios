@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct LeaderboardItemView: View {
     
-    var board: LeaderboardResponse
+    @Binding var board: LeaderboardResponse
     
     var body: some View {
         VStack {
@@ -33,6 +33,6 @@ struct LeaderboardItemView: View {
 
 struct LeaderboardItemView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardItemView(board: LeaderboardResponse.dummy)
+        LeaderboardItemView(board: .constant(LeaderboardResponse.dummy))
     }
 }

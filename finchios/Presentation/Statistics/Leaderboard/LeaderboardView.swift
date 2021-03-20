@@ -15,13 +15,13 @@ struct LeaderboardView: View {
         VStack {
             Text("Leaderboards")
             
-            ForEach(model.boards.indices, id: \.self) { index in
+            ForEach(model.boards, id: \.id) { ranking in
                 Divider()
                 HStack {
-                    LeaderboardItemView(board: model.boards[index])
+                    LeaderboardItemView(board: .constant(ranking.obj))
                     Spacer()
                     NavigationLink(
-                        destination: LeaderboardItemDetailsView(board: model.boards[index]),
+                        destination: LeaderboardItemDetailsView(board: .constant(ranking.obj)),
                         label: {
                             Image("RightArrow")
                         })
