@@ -31,8 +31,8 @@ struct LeaderboardItemView: View {
     }
 }
 
-//struct LeaderboardItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LeaderboardItemView(board: LeaderboardResponse.dummy)
-//    }
-//}
+struct LeaderboardItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        LeaderboardItemView(board: LeaderboardResponse.dummy)
+    }
+}

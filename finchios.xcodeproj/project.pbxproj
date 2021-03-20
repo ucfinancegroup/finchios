@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		376886AD260486FD00250154 /* LeaderboardItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376886AC260486FD00250154 /* LeaderboardItemDetails.swift */; };
+		376886B12606568300250154 /* LeaderboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376886B02606568300250154 /* LeaderboardResponse.swift */; };
 		8008911E25EC4C5D0040D4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008911D25EC4C5D0040D4BB /* User.swift */; };
 		8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912225EC4EF50040D4BB /* ChangeFinancials.swift */; };
 		8008912725EC4F210040D4BB /* ChangeFinancialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */; };
@@ -187,6 +188,7 @@
 
 /* Begin PBXFileReference section */
 		376886AC260486FD00250154 /* LeaderboardItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItemDetails.swift; sourceTree = "<group>"; };
+		376886B02606568300250154 /* LeaderboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardResponse.swift; sourceTree = "<group>"; };
 		8008911D25EC4C5D0040D4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8008912225EC4EF50040D4BB /* ChangeFinancials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancials.swift; sourceTree = "<group>"; };
 		8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancialsModel.swift; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 				80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */,
 				8008911D25EC4C5D0040D4BB /* User.swift */,
 				80FC6C7025EC9A94008C373F /* Allocation.swift */,
+				376886B02606568300250154 /* LeaderboardResponse.swift */,
 			);
 			path = OpenAPIClient;
 			sourceTree = "<group>";
@@ -1356,6 +1359,7 @@
 				807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */,
 				803E344725E594C7003A0A57 /* EventModel.swift in Sources */,
 				809F953C25B520FF007DE7F6 /* GoalDetailView.swift in Sources */,
+				376886B12606568300250154 /* LeaderboardResponse.swift in Sources */,
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,

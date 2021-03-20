@@ -41,6 +41,6 @@ struct LeaderboardItemDetailsView: View {
 
 struct LeaderboardItemDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardItemDetailsView(board: LeaderboardResponse(leaderboardType: "Savings", description: "Savings Leaderboard", percentile: 50.0));
+        LeaderboardItemDetailsView(board: LeaderboardResponse.dummy);
     }
 }
