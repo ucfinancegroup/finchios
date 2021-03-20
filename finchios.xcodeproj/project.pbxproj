@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376886AD260486FD00250154 /* LeaderboardItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376886AC260486FD00250154 /* LeaderboardItemDetails.swift */; };
 		8008911E25EC4C5D0040D4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008911D25EC4C5D0040D4BB /* User.swift */; };
 		8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912225EC4EF50040D4BB /* ChangeFinancials.swift */; };
 		8008912725EC4F210040D4BB /* ChangeFinancialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */; };
@@ -185,6 +186,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		376886AC260486FD00250154 /* LeaderboardItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItemDetails.swift; sourceTree = "<group>"; };
 		8008911D25EC4C5D0040D4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8008912225EC4EF50040D4BB /* ChangeFinancials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancials.swift; sourceTree = "<group>"; };
 		8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancialsModel.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */,
+				376886AC260486FD00250154 /* LeaderboardItemDetails.swift */,
 			);
 			path = LeaderboardItem;
 			sourceTree = "<group>";
@@ -1418,6 +1421,7 @@
 				8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */,
 				8070314B25B2172600122CE7 /* RecurringEditView.swift in Sources */,
 				80479C7A259AC9FF00CDA3DA /* LeaderboardView.swift in Sources */,
+				376886AD260486FD00250154 /* LeaderboardItemDetails.swift in Sources */,
 				80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */,
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
 				80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */,
