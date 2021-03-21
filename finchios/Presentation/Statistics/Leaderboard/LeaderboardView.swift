@@ -13,10 +13,9 @@ struct LeaderboardView: View {
     
     var body: some View {
         VStack {
-            Text("Leaderboards")
+            Text("Leaderboards").font(.title)
             
             ForEach(model.boards, id: \.id) { ranking in
-                Divider()
                 HStack {
                     LeaderboardItemView(board: .constant(ranking.obj))
                     Spacer()
@@ -26,10 +25,11 @@ struct LeaderboardView: View {
                             Image("RightArrow")
                         })
                 }
+                .padding()
+                .bubble()
             }
         }
         .padding()
-        .bubble()
         .onAppear() {
             model.onAppear()
         }
