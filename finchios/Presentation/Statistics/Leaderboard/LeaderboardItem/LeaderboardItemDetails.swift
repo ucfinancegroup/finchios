@@ -15,7 +15,10 @@ struct LeaderboardItemDetailsView: View {
     var body: some View {
         VStack {
             Text("You are in the top").font(.title)
-            Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(.green)
+            
+            let color: Color = board.percentile < 50 ? .red : .green
+            
+            Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(color)
                 .font(.system(size: 25))
             Text("of Similar Users").font(.title)
             Text("by \(board.leaderboardType)!").font(.title)
