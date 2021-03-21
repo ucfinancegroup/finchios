@@ -25,13 +25,12 @@ struct RecurringEditView: View {
             
             Spacer()
             
-            TextField("Name", text: self.$model.name)
+            TextField("Name", text: self.$model.name).font(.largeTitle)
             
             Spacer()
             
             DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
             
-            Spacer()
             
             DatePicker("End", selection: self.$model.end, displayedComponents: .date)
             
@@ -42,7 +41,7 @@ struct RecurringEditView: View {
                     HStack {
                         
                         if self.type == .income {
-                            Text("$")
+                            Text("Annual Income: $")
                         }else {
                             Text("-$")
                         }
@@ -122,8 +121,21 @@ struct RecurringEditView: View {
     }
 }
 
-//struct RecurringEditView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecurringEditView()
-//    }
-//}
+struct RecurringEditViewPreview: View {
+    
+    @State var present = true
+    @State var type: RecurringItemType = .income
+    @State var recurring: Recurring = .dummyIncome
+    
+    
+    var body: some View {
+        RecurringEditView(present: $present, type: $type, recurring: $recurring, time: .overview)
+    }
+    
+}
+
+struct RecurringEditView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecurringEditViewPreview()
+    }
+}
