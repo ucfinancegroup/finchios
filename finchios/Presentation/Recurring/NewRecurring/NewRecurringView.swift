@@ -30,6 +30,9 @@ struct NewRecurringView: View {
             
             Text("Create a new \(type.rawValue.lowercased())")
                 .font(.title2)
+                .padding()
+            
+            Divider()
             
             Spacer()
             

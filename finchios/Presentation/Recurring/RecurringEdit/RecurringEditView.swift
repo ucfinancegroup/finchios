@@ -22,9 +22,14 @@ struct RecurringEditView: View {
     
     var body: some View {
         VStack {
+            Text("Edit \(type.rawValue)")
+                .font(.title2)
+                .padding()
+            
+            Divider()
+            
             let typ = model.typ.rawValue.capitalized == "Annually" ? "Annual" : model.typ.rawValue.capitalized
             
-            Spacer()
             
             TextField("Name", text: self.$model.name).font(.largeTitle)
             
@@ -108,8 +113,6 @@ struct RecurringEditView: View {
 
                 Spacer()
             }
-            
-            Spacer()
             
             Button {
                 self.model.edit(id: recurring.id!.oid, time: time, type: type)

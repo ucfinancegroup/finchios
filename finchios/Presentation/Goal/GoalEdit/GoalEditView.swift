@@ -19,7 +19,14 @@ struct GoalEditView: View {
     var body: some View {
         VStack {
             
+            Text("Edit goal")
+                .font(.title2)
+                .padding()
+            
+            Divider()
+            
             Group {
+                
                 
                 Spacer()
                 
@@ -37,7 +44,7 @@ struct GoalEditView: View {
                 
                 HStack {
                     
-                    Text("$")
+                    Text("\(self.model.metric.rawValue) Goal of $")
                     
                     NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
                     

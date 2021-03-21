@@ -18,6 +18,9 @@ struct NewGoalView: View {
         VStack {
             Text("Create a new goal")
                 .font(.title2)
+                .padding()
+            
+            Divider()
             
             Group {
                 
@@ -37,7 +40,7 @@ struct NewGoalView: View {
                 
                 HStack {
                     
-                    Text("$")
+                    Text("\(self.model.metric.rawValue) Goal of $")
                     
                     NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
                     
