@@ -75,6 +75,8 @@ struct RecurringEditView: View {
                         
                         NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
                             .frame(width: 150)
+                        
+                        Spacer()
                     }
                     
                 }

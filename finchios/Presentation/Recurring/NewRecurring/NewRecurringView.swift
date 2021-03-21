@@ -151,7 +151,7 @@ struct NewRecurringView: View {
 struct NewRecurringViewPreviews: View {
     
     @State var present: Bool = true
-    @State var type: RecurringItemType = .income
+    @State var type: RecurringItemType = .debt
     
     var body: some View {
         NewRecurringView(present: $present, type: $type, time: .overview)
