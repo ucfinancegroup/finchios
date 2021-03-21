@@ -55,6 +55,7 @@ struct NewRecurringView: View {
                         
                         
                         NumberField(text: $model.amountField, alignment: .natural, keyType: .decimalPad, placeholder: "Amount")
+                            .frame(width: 150)
                         
                         Spacer()
                     }
@@ -65,12 +66,20 @@ struct NewRecurringView: View {
                         Text("\(typ) Debt -$")
                         
                         NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
+                            .frame(width: 150)
                     }
                     
                     
                     Spacer()
                     
-                    NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
+                    HStack {
+                        Text("Interest: ")
+                        
+                        NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
+                            .frame(width: 150)
+                    }
+                    
+
                     
                 }
                 
