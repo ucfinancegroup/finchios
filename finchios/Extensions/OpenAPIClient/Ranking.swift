@@ -13,3 +13,9 @@ public extension Ranking {
     static let dummy: Ranking = Ranking(leaderboardType: "Savings", description: "Savings Leaderboard", percentile: 50.0);
     
 }
+
+enum BoardTypes : String, CaseIterable {
+    case Savings
+    case Spending
+    case Income
+}

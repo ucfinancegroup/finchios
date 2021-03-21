@@ -16,7 +16,7 @@ class LeaderboardViewModel: ObservableObject, Identifiable {
         
         boards = []
         
-        for board_type in ["Savings", "Spending", "Income"] {
+        for board_type in BoardTypes.allCases {
             LeaderboardService.leaderboard(type: board_type) { (success, error, result) in
                 DispatchQueue.main.async {
                     if success {
