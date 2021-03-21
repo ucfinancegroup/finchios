@@ -101,7 +101,7 @@ extension AccountsService {
 // Hide/unhide PUT
 
 extension AccountsService {
-    public static func hide(payload: SetAccountAsHiddenPayload, completion: @escaping ((Bool, Error?, ItemIdResponse?) -> Void)) {
+    public static func hide(payload: SetAccountAsHiddenPayload, completion: @escaping ((Bool, Error?, AccountsResponse?) -> Void)) {
         guard let url = getHideURL() else {
             completion(false, nil, nil)
             return
@@ -127,7 +127,7 @@ extension AccountsService {
                 return
             }
             
-            guard let response = try? JSONDecoder().decode(ItemIdResponse.self, from: data) else {
+            guard let response = try? JSONDecoder().decode(AccountsResponse.self, from: data) else {
                 completion(false, error, nil)
                 return
             }
