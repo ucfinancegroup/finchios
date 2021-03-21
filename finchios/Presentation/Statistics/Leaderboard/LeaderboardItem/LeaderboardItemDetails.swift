@@ -14,22 +14,22 @@ struct LeaderboardItemDetailsView: View {
     
     var body: some View {
         VStack {
-            Text("You are in the top").font(.system(size: 25))
+            Text("You are in the top").font(.title)
             Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(.green)
                 .font(.system(size: 25))
-            Text("of Similar Users").font(.system(size: 25))
-            Text("by \(board.leaderboardType)!").font(.system(size: 25))
+            Text("of Similar Users").font(.title)
+            Text("by \(board.leaderboardType)!").font(.title)
             ZStack {
                 Circle()
                     .stroke(lineWidth: 20.0)
                     .opacity(0.3)
-                    .frame(width:200)
+                    .scaleEffect(0.75)
                     .foregroundColor(Color.teal)
                 
                 Circle()
                     .trim(from: 0.0, to: CGFloat(board.percentile/100.0))
                     .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
-                    .frame(width:200)
+                    .scaleEffect(0.75)
                     .foregroundColor(Color.teal)
                     .rotationEffect(Angle(degrees: 270))
             }
