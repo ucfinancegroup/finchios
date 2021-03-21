@@ -23,16 +23,15 @@ struct LeaderboardItemDetailsView: View {
                 Circle()
                     .stroke(lineWidth: 20.0)
                     .opacity(0.3)
-                    .scaleEffect(0.75)
                     .foregroundColor(Color.teal)
                 
                 Circle()
                     .trim(from: 0.0, to: CGFloat(board.percentile/100.0))
                     .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
-                    .scaleEffect(0.75)
                     .foregroundColor(Color.teal)
                     .rotationEffect(Angle(degrees: 270))
             }
+            .padding()
             Spacer()
         }
         .navigationTitle(Text(board.leaderboardType))
