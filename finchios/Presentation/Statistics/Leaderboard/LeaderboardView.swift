@@ -29,7 +29,6 @@ struct LeaderboardView: View {
                 .bubble()
             }
         }
-        .padding()
         .onAppear() {
             model.onAppear()
         }
