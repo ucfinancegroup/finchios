@@ -10,6 +10,6 @@ import OpenAPIClient
 
 class LeaderboardViewModel: ObservableObject, Identifiable {
     
-    @Published var boards: [LeaderboardResponse] = []
+    @Published var boards: [Ranking] = []
     
 }

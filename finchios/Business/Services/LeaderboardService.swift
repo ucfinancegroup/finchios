@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct LeaderboardService {
     
-    static func leaderboard(type: String, completion: @escaping ((Bool, Error?, LeaderboardResponse?) -> Void)) {
+    static func leaderboard(type: String, completion: @escaping ((Bool, Error?, Ranking?) -> Void)) {
         guard let url = getURL(type: type) else {
             completion(false, nil, nil)
             return
@@ -31,7 +31,7 @@ struct LeaderboardService {
                 return
             }
             
-            guard let response = try? JSONDecoder().decode(LeaderboardResponse.self, from: data) else {
+            guard let response = try? JSONDecoder().decode(Ranking.self, from: data) else {
                 completion(false, error, nil)
                 return
             }

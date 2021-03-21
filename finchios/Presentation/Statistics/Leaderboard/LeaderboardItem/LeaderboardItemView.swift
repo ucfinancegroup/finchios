@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct LeaderboardItemView: View {
     
-    @Binding var board: LeaderboardResponse
+    @Binding var board: Ranking
     
     var body: some View {
         VStack {
