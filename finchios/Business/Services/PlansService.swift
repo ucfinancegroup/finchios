@@ -231,7 +231,7 @@ extension PlansService {
         PlansService.recurrings { (_, _, result) in
             if var existing = result {
                 for index in 0..<existing.count {
-                    if existing[index].id.oid == id {
+                    if existing[index].id!.oid == id {
                         existing[index].name = payload.name
                         existing[index].amount = payload.amount
                         existing[index].principal = payload.principal
@@ -257,7 +257,7 @@ extension PlansService {
             if var existing = result {
                 
                 
-                existing.removeAll { $0.id.oid == id }
+                existing.removeAll { $0.id!.oid == id }
                 
                 let update = PlanUpdatePayload(name: "Plan", recurrings: existing, allocations: nil, events: nil)
                 
@@ -294,11 +294,11 @@ extension PlansService {
         PlansService.events { (_, _, result) in
             if var existing = result {
                 
-                existing.removeAll { $0.id.oid == id }
+                existing.removeAll { $0.id!.oid == id }
                 
                 var copy = payload
                 
-                copy.id.oid = id
+                copy.id!.oid = id
                 
                 existing.append(copy)
                 
@@ -316,7 +316,7 @@ extension PlansService {
         PlansService.events { (_, _, result) in
             if var existing = result {
                 
-                existing.removeAll { $0.id.oid == id }
+                existing.removeAll { $0.id!.oid == id }
                 
                 let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: nil, events: existing)
                 
@@ -354,11 +354,11 @@ extension PlansService {
         PlansService.allocations { (_, _, result) in
             if var existing = result {
                 
-                existing.removeAll { $0.id.oid == id }
+                existing.removeAll { $0.id!.oid == id }
                 
                 var copy = payload
                 
-                copy.id.oid = id
+                copy.id!.oid = id
                 
                 existing.append(copy)
                 
@@ -376,7 +376,7 @@ extension PlansService {
         PlansService.allocations { (_, _, result) in
             if var existing = result {
                 
-                existing.removeAll { $0.id.oid == id }
+                existing.removeAll { $0.id!.oid == id }
                 
                 let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: existing, events: nil)
                 
