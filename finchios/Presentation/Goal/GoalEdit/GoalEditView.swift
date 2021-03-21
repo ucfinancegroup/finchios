@@ -35,7 +35,13 @@ struct GoalEditView: View {
                 
                 Spacer()
                 
-                NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
+                HStack {
+                    
+                    Text("$")
+                    
+                    NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
+                    
+                }
                 
                 Spacer()
                 
