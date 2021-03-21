@@ -16,7 +16,7 @@ struct LeaderboardItemView: View {
         let color: Color = board.percentile < 50 ? .red : .green
         VStack {
             HStack {
-                Text(board.leaderboardType).font(.title)
+                Text(board.leaderboardType).font(.largeTitle)
                 Spacer()
             }
             HStack {
