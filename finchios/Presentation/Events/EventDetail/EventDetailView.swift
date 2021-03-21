@@ -81,8 +81,8 @@ struct EventDetailView: View {
     }
 }
 
-//struct EventDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventDetailView()
-//    }
-//}
+struct EventDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        EventDetailView(shouldPop: .constant(false), event: .dummy)
+    }
+}

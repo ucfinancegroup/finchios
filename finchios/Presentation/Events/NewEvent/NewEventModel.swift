@@ -8,7 +8,7 @@
 import Foundation
 import OpenAPIClient
 
-class NewEventModel: ObservableObject, Identifiable {
+public class NewEventModel: ObservableObject, Identifiable {
     
     // Alerts
     @Published var showAlert: Bool = false
@@ -18,11 +18,11 @@ class NewEventModel: ObservableObject, Identifiable {
     
     @Published var showSuccess: Bool = false
     
-    @Published var start: Date = Date()
+    @Published public var start: Date = Date()
     
     @Published var examples: [Iden<Event>] = []
     
-    @Published var event: Event = .init(name: "", start: 0, transforms: []) {
+    @Published public var event: Event = .init(name: "", start: 0, transforms: []) {
         didSet {
             updateTransforms()
         }
@@ -30,7 +30,7 @@ class NewEventModel: ObservableObject, Identifiable {
     
     @Published var tranforms: [Iden<AssetClassChange>] = []
     
-    init() {
+    public init() {
         EventService.example { (success, _, result) in
             DispatchQueue.main.async {
                 if let result = result {
@@ -44,15 +44,15 @@ class NewEventModel: ObservableObject, Identifiable {
         }
     }
     
-    func setSelected(event: Event) {
+    public func setSelected(event: Event) {
         self.event = event
     }
     
-    func updateTransforms() {
+    public func updateTransforms() {
         self.tranforms = self.event.transforms.map { Iden<AssetClassChange>(obj: $0) }
     }
     
-    private func dateValid() -> Bool {
+    public func dateValid() -> Bool {
         // Make sure that the date is in the future
         return Date().timeIntervalSince1970 < start.timeIntervalSince1970
     }

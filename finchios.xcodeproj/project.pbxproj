@@ -108,6 +108,8 @@
 		80A44BAE25E03F62004ECED3 /* PublishedObject in Frameworks */ = {isa = PBXBuildFile; productRef = 80A44BAD25E03F62004ECED3 /* PublishedObject */; };
 		80A44BB525E04627004ECED3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BB425E04627004ECED3 /* AboutView.swift */; };
 		80A44BBE25E04E87004ECED3 /* SignUpFinancialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BBD25E04E87004ECED3 /* SignUpFinancialsView.swift */; };
+		80AD9A822607A0350007CEA5 /* NewEventModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD9A812607A0350007CEA5 /* NewEventModelTest.swift */; };
+		80AD9A862607A0C60007CEA5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD9A852607A0C60007CEA5 /* Event.swift */; };
 		80AF8929258AD81F00291B23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8928258AD81F00291B23 /* SettingsView.swift */; };
 		80AF892F258AD83700291B23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF892E258AD83700291B23 /* SettingsViewModel.swift */; };
 		80AF8933258ADA0900291B23 /* ProjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF8932258ADA0900291B23 /* ProjectionView.swift */; };
@@ -292,6 +294,8 @@
 		809F955225B626E9007DE7F6 /* GoalEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditViewModel.swift; sourceTree = "<group>"; };
 		80A44BB425E04627004ECED3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		80A44BBD25E04E87004ECED3 /* SignUpFinancialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinancialsView.swift; sourceTree = "<group>"; };
+		80AD9A812607A0350007CEA5 /* NewEventModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModelTest.swift; sourceTree = "<group>"; };
+		80AD9A852607A0C60007CEA5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		80AF8928258AD81F00291B23 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80AF892E258AD83700291B23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		80AF8932258ADA0900291B23 /* ProjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionView.swift; sourceTree = "<group>"; };
@@ -710,6 +714,7 @@
 				80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */,
 				8008911D25EC4C5D0040D4BB /* User.swift */,
 				80FC6C7025EC9A94008C373F /* Allocation.swift */,
+				80AD9A852607A0C60007CEA5 /* Event.swift */,
 			);
 			path = OpenAPIClient;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 			children = (
 				80725D15254C72020054787C /* Info.plist */,
 				80E2677825BD251200277E52 /* GoalEditViewModelTest.swift */,
+				80AD9A812607A0350007CEA5 /* NewEventModelTest.swift */,
 			);
 			path = finchiosTests;
 			sourceTree = "<group>";
@@ -1443,6 +1449,7 @@
 				80802BFF25D0700000DABCCC /* ValidateService.swift in Sources */,
 				8044719825E4B77600F11781 /* OverviewModel.swift in Sources */,
 				80FC6C7125EC9A94008C373F /* Allocation.swift in Sources */,
+				80AD9A862607A0C60007CEA5 /* Event.swift in Sources */,
 				8026B6BD258A5FF2006CB2FB /* IntroductionView.swift in Sources */,
 				8026B6B7258A5FF2006CB2FB /* SignUpPasswordView.swift in Sources */,
 				8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */,
@@ -1466,6 +1473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80E2677925BD251200277E52 /* GoalEditViewModelTest.swift in Sources */,
+				80AD9A822607A0350007CEA5 /* NewEventModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
