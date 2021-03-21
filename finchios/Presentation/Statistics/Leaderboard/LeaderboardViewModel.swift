@@ -10,7 +10,7 @@ import OpenAPIClient
 
 class LeaderboardViewModel: ObservableObject, Identifiable {
     
-    @Published var boards: [Iden<LeaderboardResponse>] = []
+    @Published var boards: [Iden<Ranking>] = []
     
     func onAppear() {
         

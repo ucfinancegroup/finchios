@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct LeaderboardItemView: View {
     
-    @Binding var board: LeaderboardResponse
+    @Binding var board: Ranking
     
     var body: some View {
         let color: Color = board.percentile < 50 ? .red : .green
@@ -34,6 +34,6 @@ struct LeaderboardItemView: View {
 
 struct LeaderboardItemView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardItemView(board: .constant(LeaderboardResponse.dummy))
+        LeaderboardItemView(board: .constant(Ranking.dummy))
     }
 }

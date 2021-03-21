@@ -8,8 +8,8 @@
 import Foundation
 import OpenAPIClient
 
-public extension LeaderboardResponse {
+public extension Ranking {
     
-    static let dummy: LeaderboardResponse = LeaderboardResponse(leaderboardType: "Savings", description: "Savings Leaderboard", percentile: 50.0);
+    static let dummy: Ranking = Ranking(leaderboardType: "Savings", description: "Savings Leaderboard", percentile: 50.0);
     
 }
