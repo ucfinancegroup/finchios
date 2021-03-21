@@ -31,11 +31,24 @@ struct AmountItemSummary: View {
                 }
                 
                 //TODO(): Add how many times annually
-                Text("\(self.type.rawValue) of $\(recurring.amount.format()) \(recurring.frequency.typ.rawValue)")
+                Text("\(self.type.rawValue) of $\(recurring.amount.format()) every \( recurring.frequency.content) \(convertTo(RecurringIntervalType.from(recurring.frequency.typ)))")
             }
         }
         .disabled(!navAble)
         .foregroundColor(.primary)
+    }
+    
+    public func convertTo(_ og: RecurringIntervalType) -> String {
+        switch og {
+        case .annually:
+            return "year(s)"
+        case .daily:
+            return "day(s)"
+        case .monthly:
+            return "month(s)"
+        case .weekly:
+            return "week(s)"
+        }
     }
 }
 

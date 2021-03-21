@@ -31,12 +31,24 @@ struct PrincipalItemSummary: View {
                     Spacer()
                 }
                 
-                //TODO(): Add how many times annually
-                Text("Debt of $\(recurring.principal.format()) compounding at \(recurring.interest.format())% \(recurring.frequency.typ.rawValue)")
+                Text("Debt of $\(recurring.principal.format()) compounding at \(recurring.interest.format())% every \(recurring.frequency.content) \(convertTo(RecurringIntervalType.from(recurring.frequency.typ)))")
             }
         }
         .disabled(!navAble)
         .foregroundColor(.primary)
+    }
+    
+    public func convertTo(_ og: RecurringIntervalType) -> String {
+        switch og {
+        case .annually:
+            return "year(s)"
+        case .daily:
+            return "day(s)"
+        case .monthly:
+            return "month(s)"
+        case .weekly:
+            return "week(s)"
+        }
     }
 }
 
