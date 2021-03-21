@@ -16,12 +16,10 @@ struct LeaderboardItemView: View {
         let color: Color = board.percentile < 50 ? .red : .green
         VStack {
             HStack {
-                Spacer()
-                Text(board.leaderboardType)
+                Text(board.leaderboardType).font(.title)
                 Spacer()
             }
             HStack {
-                Spacer()
                 Text("Top")
                 Text(String(format: "%.1f%%", 100-board.percentile))
                     .foregroundColor(color)

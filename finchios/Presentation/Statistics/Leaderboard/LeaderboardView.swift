@@ -13,8 +13,6 @@ struct LeaderboardView: View {
     
     var body: some View {
         VStack {
-            Text("Leaderboards").font(.title)
-            
             ForEach(model.boards, id: \.id) { ranking in
                 HStack {
                     LeaderboardItemView(board: .constant(ranking.obj))
