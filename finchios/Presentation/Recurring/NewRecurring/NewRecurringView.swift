@@ -67,6 +67,8 @@ struct NewRecurringView: View {
                         
                         NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
                             .frame(width: 150)
+                        
+                        Spacer()
                     }
                     
                     
@@ -77,6 +79,8 @@ struct NewRecurringView: View {
                         
                         NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
                             .frame(width: 150)
+                        
+                        Spacer()
                     }
                     
 
