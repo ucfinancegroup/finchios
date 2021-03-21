@@ -22,6 +22,7 @@ struct RecurringEditView: View {
     
     var body: some View {
         VStack {
+            let typ = model.typ.rawValue.capitalized == "Annually" ? "Annual" : model.typ.rawValue.capitalized
             
             Spacer()
             
@@ -41,9 +42,9 @@ struct RecurringEditView: View {
                     HStack {
                         
                         if self.type == .income {
-                            Text("Annual Income: $")
+                            Text("\(typ) Income: $")
                         }else {
-                            Text("-$")
+                            Text("\(typ) Expense: -$")
                         }
                         
                         
@@ -57,7 +58,7 @@ struct RecurringEditView: View {
                     
                     HStack {
                         
-                        Text("-$")
+                        Text("\(typ) Debt -$")
                         
                         NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
                         
@@ -71,11 +72,31 @@ struct RecurringEditView: View {
                     
                 }
                 
-                NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency")
+                Spacer()
                 
-                TextField("Interval Frequency", text: self.$model.freqContentField)
-                    .keyboardType(.numberPad)
+                HStack {
+                    Text("Occurs every ")
+                    
+                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency")
+                    
+                    Menu {
+                        ForEach(model.types, id: \.id) { c in
+                            Button(action: {
+                                self.model.typ = c.obj
+                            }, label: {
+                                Text(self.model.convertTo(og: c.obj))
+                            })
+                        }
+                    } label: {
+                        Text(self.model.convertTo(og: self.model.typ))
+                    }
+                    
+
+                    
+                    Spacer()
+                }
                 
+
                 Spacer()
             }
             

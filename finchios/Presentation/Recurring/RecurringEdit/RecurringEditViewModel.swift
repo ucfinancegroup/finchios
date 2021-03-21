@@ -30,6 +30,8 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
     @Published public var typ: RecurringIntervalType
     @Published public var freqContentField: String
     
+    public final var types: [Iden<RecurringIntervalType>] = RecurringIntervalType.allCases.map { Iden<RecurringIntervalType>(obj: $0) }
+    
     public init() {
         name = ""
         start = Date()
@@ -39,6 +41,19 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         interestField = ""
         typ = .annually
         freqContentField = ""
+    }
+    
+    public func convertTo(og: RecurringIntervalType) -> String {
+        switch og {
+        case .annually:
+            return "year(s)"
+        case .daily:
+            return "day(s)"
+        case .monthly:
+            return "month(s)"
+        case .weekly:
+            return "week(s)"
+        }
     }
     
     public func set(recurring: Recurring) {
