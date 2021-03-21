@@ -77,7 +77,7 @@ struct RecurringEditView: View {
                 HStack {
                     Text("Occurs every ")
                     
-                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency")
+                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Freq")
                     
                     Menu {
                         ForEach(model.types, id: \.id) { c in

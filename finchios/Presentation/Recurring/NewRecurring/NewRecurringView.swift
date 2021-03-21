@@ -25,104 +25,113 @@ struct NewRecurringView: View {
     }
     
     var body: some View {
-        
-        ScrollView {
-            VStack {
-                
-                Text("Create a new \(type.rawValue.lowercased())")
-                    .font(.title2)
-                
-                Spacer()
-                
-                TextField("Name", text: self.$model.name)
-                
-                Spacer()
-                
-                DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
-                
-                Spacer()
-                
-                DatePicker("End", selection: self.$model.end, displayedComponents: .date)
-                
-                Spacer()
-                
-                Group {
-                    if self.type == .income || self.type == .expense {
-                        HStack {
-                            
-                            if self.type == .income {
-                                Text("$")
-                            }else {
-                                Text("-$")
-                            }
-                            
-                            
-                            NumberField(text: $model.amountField, alignment: .natural, keyType: .decimalPad, placeholder: "Amount")
-                            
-                            Spacer()
+        VStack {
+            let typ = model.typ.rawValue.capitalized == "Annually" ? "Annual" : model.typ.rawValue.capitalized
+            
+            Text("Create a new \(type.rawValue.lowercased())")
+                .font(.title2)
+            
+            Spacer()
+            
+            TextField("Name", text: self.$model.name)
+            
+            Spacer()
+            
+            DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
+            
+            DatePicker("End", selection: self.$model.end, displayedComponents: .date)
+            
+            Spacer()
+            
+            Group {
+                if self.type == .income || self.type == .expense {
+                    HStack {
+                        
+                        if self.type == .income {
+                            Text("\(typ) Income: $")
+                        }else {
+                            Text("\(typ) Expense: -$")
                         }
                         
-                    }else {
                         
-                        HStack {
-                            Text("-$")
-                            
-                            NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
-                        }
-                        
+                        NumberField(text: $model.amountField, alignment: .natural, keyType: .decimalPad, placeholder: "Amount")
                         
                         Spacer()
-                        
-                        NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
-                        
                     }
+                    
+                }else {
+                    
+                    HStack {
+                        Text("\(typ) Debt -$")
+                        
+                        NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
+                    }
+                    
                     
                     Spacer()
                     
-                    Picker("Interval", selection: self.$model.typ) {
-                        ForEach(RecurringIntervalType.allCases, id: \.id) { type in
-                            Text(type.rawValue.capitalized)
+                    NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
+                    
+                }
+                
+                Spacer()
+                
+                HStack {
+                    Text("Occurs every ")
+                    
+                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Freq")
+                    
+                    Menu {
+                        ForEach(model.types, id: \.id) { c in
+                            Button(action: {
+                                self.model.typ = c.obj
+                            }, label: {
+                                Text(self.model.convertTo(og: c.obj))
+                            })
                         }
+                    } label: {
+                        Text(self.model.convertTo(og: self.model.typ))
                     }
                     
-                    Spacer()
                     
-                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency")
                     
                     Spacer()
                 }
                 
-                Group {
-                    Button(action: {
-                        self.model.create(time: time)
-                        UIApplication.shared.endEditing()
-                    }, label: {
-                        Text("Create")
-                    })
-                    
-                    Spacer()
-                }
-                
+                Spacer()
             }
-            .padding()
-            .alert(isPresented: $model.showAlert) { () -> Alert in
-                if model.showError {
-                    return Alert(title: Text("Failed to create"),
-                                 message: Text("Some fields aren't filled in or you don't have internet access. Error: \(self.model.errorString)"),
-                                 dismissButton: .destructive(Text("Okay")) {
-                                    self.model.showError = false
-                                 })
-                }
-                else { // success
-                    return Alert(title: Text("Success!"),
-                                 message: Text("This \(self.type.rawValue) has been successfully created!"),
-                                 dismissButton: .default(Text("Okay")) {
-                                    self.present = false
-                                    self.model.showError = false
-                                 })
-                }
+            
+            Group {
+                Button(action: {
+                    self.model.create(time: time)
+                    UIApplication.shared.endEditing()
+                }, label: {
+                    Text("Create")
+                })
+                
+                Spacer()
+            }
+            
+        }
+        .padding()
+        .alert(isPresented: $model.showAlert) { () -> Alert in
+            if model.showError {
+                return Alert(title: Text("Failed to create"),
+                             message: Text("Some fields aren't filled in or you don't have internet access. Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showError = false
+                             })
+            }
+            else { // success
+                return Alert(title: Text("Success!"),
+                             message: Text("This \(self.type.rawValue) has been successfully created!"),
+                             dismissButton: .default(Text("Okay")) {
+                                self.present = false
+                                self.model.showError = false
+                             })
             }
         }
+        
     }
 }
 
