@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376886AD260486FD00250154 /* LeaderboardItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376886AC260486FD00250154 /* LeaderboardItemDetails.swift */; };
+		376886B12606568300250154 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376886B02606568300250154 /* Ranking.swift */; };
 		8008911E25EC4C5D0040D4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008911D25EC4C5D0040D4BB /* User.swift */; };
 		8008912325EC4EF50040D4BB /* ChangeFinancials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912225EC4EF50040D4BB /* ChangeFinancials.swift */; };
 		8008912725EC4F210040D4BB /* ChangeFinancialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */; };
@@ -189,6 +191,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		376886AC260486FD00250154 /* LeaderboardItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItemDetails.swift; sourceTree = "<group>"; };
+		376886B02606568300250154 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		8008911D25EC4C5D0040D4BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8008912225EC4EF50040D4BB /* ChangeFinancials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancials.swift; sourceTree = "<group>"; };
 		8008912625EC4F210040D4BB /* ChangeFinancialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFinancialsModel.swift; sourceTree = "<group>"; };
@@ -691,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				80479C8A259ACB2B00CDA3DA /* LeaderboardItemView.swift */,
+				376886AC260486FD00250154 /* LeaderboardItemDetails.swift */,
 			);
 			path = LeaderboardItem;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				80C4A3E825DDADF100B56E3A /* MongoObjectID.swift */,
 				8008911D25EC4C5D0040D4BB /* User.swift */,
 				80FC6C7025EC9A94008C373F /* Allocation.swift */,
+				376886B02606568300250154 /* Ranking.swift */,
 				80AD9A852607A0C60007CEA5 /* Event.swift */,
 			);
 			path = OpenAPIClient;
@@ -1374,6 +1380,7 @@
 				807E3E2A25CB3A0F0039671E /* UIKeyboardType.swift in Sources */,
 				803E344725E594C7003A0A57 /* EventModel.swift in Sources */,
 				809F953C25B520FF007DE7F6 /* GoalDetailView.swift in Sources */,
+				376886B12606568300250154 /* Ranking.swift in Sources */,
 				80C97BB525A7701F008729A7 /* Recurring.swift in Sources */,
 				80B7B8D925AD3098007F605F /* RecurringIntervalType.swift in Sources */,
 				80D942FA259A3CA6001EA1B6 /* LogInService.swift in Sources */,
@@ -1440,6 +1447,7 @@
 				8026B6BE258A5FF2006CB2FB /* IntroductionViewModel.swift in Sources */,
 				8070314B25B2172600122CE7 /* RecurringEditView.swift in Sources */,
 				80479C7A259AC9FF00CDA3DA /* LeaderboardView.swift in Sources */,
+				376886AD260486FD00250154 /* LeaderboardItemDetails.swift in Sources */,
 				80479C64259AC2EA00CDA3DA /* AccountsSummaryView.swift in Sources */,
 				80F93707258F0B9100BBBE57 /* EventSummaryViewModel.swift in Sources */,
 				80535FA625A916F2006521D4 /* RecurringViewState.swift in Sources */,

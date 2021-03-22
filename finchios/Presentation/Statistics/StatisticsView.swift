@@ -11,11 +11,17 @@ struct StatisticsView: View {
     @Binding var navBarHidden: Bool
 
     var body: some View {
-        ZStack {
-            // Leaderboard
+        ScrollView {
+            LeaderboardView()
         }
         .navigationBarTitle(navBarHidden ? "" : "Statistics")
         .navigationBarHidden(navBarHidden)
         .navigationBarBackButtonHidden(navBarHidden)
+    }
+}
+
+struct StatisticsView_Previews: PreviewProvider {
+    static var previews: some View {
+        StatisticsView(navBarHidden: .constant(Bool(false)))
     }
 }

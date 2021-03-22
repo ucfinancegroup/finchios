@@ -13,9 +13,30 @@ struct LeaderboardView: View {
     
     var body: some View {
         VStack {
-            ForEach(model.boards.indices) { index in
-                LeaderboardItemView(board: $model.boards[index])
+            HStack {
+                Text("Leaderboards")
+                    .font(.largeTitle)
+                
+                Spacer()
             }
+            .padding()
+
+            ForEach(model.boards, id: \.id) { ranking in
+                HStack {
+                    LeaderboardItemView(board: .constant(ranking.obj))
+                    Spacer()
+                    NavigationLink(
+                        destination: LeaderboardItemDetailsView(board: .constant(ranking.obj)),
+                        label: {
+                            Image("RightArrow")
+                        })
+                }
+                .padding()
+                .bubble()
+            }
+        }
+        .onAppear() {
+            model.onAppear()
         }
     }
 }
