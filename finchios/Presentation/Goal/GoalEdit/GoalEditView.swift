@@ -19,7 +19,14 @@ struct GoalEditView: View {
     var body: some View {
         VStack {
             
+            Text("Edit goal")
+                .font(.title2)
+                .padding()
+            
+            Divider()
+            
             Group {
+                
                 
                 Spacer()
                 
@@ -27,15 +34,21 @@ struct GoalEditView: View {
                 
                 Spacer()
                 
-                DatePicker("Start", selection: self.$model.start)
+                DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
                 
                 Spacer()
                 
-                DatePicker("End", selection: self.$model.end)
+                DatePicker("End", selection: self.$model.end, displayedComponents: .date)
                 
                 Spacer()
                 
-                NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
+                HStack {
+                    
+                    Text("\(self.model.metric.rawValue) Goal of $")
+                    
+                    NumberField(text: $model.threshold, alignment: .natural, keyType: .decimalPad, placeholder: "Target")
+                    
+                }
                 
                 Spacer()
                 

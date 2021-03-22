@@ -37,7 +37,9 @@ struct AllocationView: View {
                                 }, label: {
                                     Image("Plus")
                                 })
-                                .sheet(isPresented: self.$modalCreate, content: {
+                                .sheet(isPresented: self.$modalCreate, onDismiss: {
+                                    model.onAppear()
+                                }, content: {
                                     NewAllocationView(present: self.$modalCreate)
                                 }))
     }

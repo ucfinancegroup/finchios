@@ -14,7 +14,7 @@ class AccountsSummaryViewModel: ObservableObject, Identifiable {
     
     func onAppear() {
         
-        AccountsService.accounts { (success, error, response) in
+        AccountsService.accounts(all: false) { (success, error, response) in
             DispatchQueue.main.async {
                 if let response = response {
                     

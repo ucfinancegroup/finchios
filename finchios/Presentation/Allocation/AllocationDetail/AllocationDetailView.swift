@@ -16,22 +16,72 @@ struct AllocationDetailView: View {
     
     @State var modalActive: Bool = false
     
-    @StateObject var model: RecurringDetailViewModel = RecurringDetailViewModel()
+    @StateObject var model: AllocationDetailModel = AllocationDetailModel()
+    
+    private let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MM/dd/yyyy"
+        return f
+    }()
     
     var body: some View {
         VStack {
-            Text("Hello")
+            Text("Beginning \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(allocation.date))))")
+                .font(.title3)
+            
+            PieView(entries: model.allocationConfiguration, legendEnabled: true, naked: false)
+                .frame(height: 300)
+            
+            Spacer()
+            
+            Button(action: {
+                self.model.delete(id: self.allocation.id!.oid)
+            }, label: {
+                HStack {
+                    Spacer()
+                    Text("Delete")
+                    Spacer()
+                }
+                .padding()
+                .bubble(.red)
+                .foregroundColor(.white)
+            })
         }
-        .navigationBarTitle("\(self.allocation.description)")
+        .onAppear() {
+            model.setup(alloc: allocation)
+        }
+        .navigationBarTitle(allocation.description.count > 0 ? allocation.description : "Unnamed")
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalActive = true
                                 }, label: {
                                     Text("Edit")
                                 })
-                                .sheet(isPresented: $modalActive, content: {
+                                .sheet(isPresented: $modalActive, onDismiss: {
+                                    
+                                }, content: {
                                     AllocationEditView(present: $modalActive, allocation: $allocation)
                                 }))
+        .alert(isPresented: $model.showAlert) { () -> Alert in
+            if model.showError {
+                return Alert(title: Text("Failed to delete"),
+                             message: Text("Failed to delete the allocation. Error: \(self.model.errorString)"),
+                             dismissButton: .destructive(Text("Okay")) {
+                                self.model.showAlert = false
+                                self.model.showError = false
+                                
+                             })
+            }
+            else { // success
+                return Alert(title: Text("Success!"),
+                             message: Text("This allocation has been successfully deleted."),
+                             dismissButton: .default(Text("Okay")) {
+                                self.model.showAlert = false
+                                self.model.showError = false
+                                self.shouldPop = false
+                             })
+            }
+        }
     }
 }
 

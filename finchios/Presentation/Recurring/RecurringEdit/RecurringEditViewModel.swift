@@ -30,6 +30,8 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
     @Published public var typ: RecurringIntervalType
     @Published public var freqContentField: String
     
+    public final var types: [Iden<RecurringIntervalType>] = RecurringIntervalType.allCases.map { Iden<RecurringIntervalType>(obj: $0) }
+    
     public init() {
         name = ""
         start = Date()
@@ -39,6 +41,19 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         interestField = ""
         typ = .annually
         freqContentField = ""
+    }
+    
+    public func convertTo(og: RecurringIntervalType) -> String {
+        switch og {
+        case .annually:
+            return "year(s)"
+        case .daily:
+            return "day(s)"
+        case .monthly:
+            return "month(s)"
+        case .weekly:
+            return "week(s)"
+        }
     }
     
     public func set(recurring: Recurring) {
@@ -222,6 +237,81 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
             }
         }
         
+    }
+    
+    public func createPropObj(original: Recurring, type: RecurringItemType) -> Recurring {
+        // Should NEVER occur is due to pre conditions of when this function is called.
+        var amount: Double = 0.0
+        var principal: Double = 0.0
+        var interest: Double = 0.0
+        
+        var content: Int = 0
+        
+        if let parse = Int(freqContentField) {
+            content = parse
+        }else {
+            // Should NEVER occur
+        }
+        
+        // Assume this is a debt object
+        if incomeEmpty() {
+            // Attempt to parse the principal and interest.
+            
+            if let parse = Double(principalField) {
+                principal = parse
+            }else {
+                // Should NEVER occur
+            }
+            
+            if let parse = Double(interestField) {
+                interest = parse
+            }else {
+                // Should NEVER occur
+            }
+        }
+        
+        // Assume this is an amount object
+        if debtEmpty() {
+            // Attempt to parse the amount
+            
+            if let parse = Double(amountField) {
+                amount = parse
+            }else {
+                // Should NEVER occur
+            }
+        }
+        
+        //TODO(): Fill in and then test whole method.
+        var timeInterval = TimeInterval(typ: .monthly, content: content)
+        switch typ {
+        case .annually:
+            timeInterval.typ = .annually
+        case .monthly:
+            timeInterval.typ = .monthly
+        case .weekly:
+            timeInterval.typ = .weekly
+        case .daily:
+            timeInterval.typ = .daily
+        }
+        
+        // If expense or debt, make negative
+        if type == .debt {
+            principal *= -1
+        }
+        if type == .expense {
+            amount *= -1
+        }
+        
+        let recurring = Recurring(id: original.id,
+                                  name: self.name,
+                                  start: Int64(self.start.timeIntervalSince1970),
+                                  end: Int64(self.end.timeIntervalSince1970),
+                                  principal: principal,
+                                  amount: amount,
+                                  interest: interest,
+                                  frequency: timeInterval)
+        
+        return recurring
     }
     
     public func resetAlertVars() {

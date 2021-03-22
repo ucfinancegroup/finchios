@@ -22,18 +22,23 @@ struct RecurringEditView: View {
     
     var body: some View {
         VStack {
+            Text("Edit \(type.rawValue)")
+                .font(.title2)
+                .padding()
+            
+            Divider()
+            
+            let typ = model.typ.rawValue.capitalized == "Annually" ? "Annual" : model.typ.rawValue.capitalized
+            
+            
+            TextField("Name", text: self.$model.name).font(.largeTitle)
             
             Spacer()
             
-            TextField("Name", text: self.$model.name)
+            DatePicker("Start", selection: self.$model.start, displayedComponents: .date)
             
-            Spacer()
             
-            DatePicker("Start", selection: self.$model.start)
-            
-            Spacer()
-            
-            DatePicker("End", selection: self.$model.end)
+            DatePicker("End", selection: self.$model.end, displayedComponents: .date)
             
             Spacer()
             
@@ -42,13 +47,14 @@ struct RecurringEditView: View {
                     HStack {
                         
                         if self.type == .income {
-                            Text("$")
+                            Text("\(typ) Income: $")
                         }else {
-                            Text("-$")
+                            Text("\(typ) Expense: -$")
                         }
                         
                         
                         NumberField(text: $model.amountField, alignment: .natural, keyType: .decimalPad, placeholder: "Amount")
+                            .frame(width: 150)
                         
                         Spacer()
                     }
@@ -58,9 +64,10 @@ struct RecurringEditView: View {
                     
                     HStack {
                         
-                        Text("-$")
+                        Text("\(typ) Debt -$")
                         
                         NumberField(text: $model.principalField, alignment: .natural, keyType: .decimalPad, placeholder: "Principal")
+                            .frame(width: 150)
                         
                         Spacer()
                     }
@@ -68,19 +75,44 @@ struct RecurringEditView: View {
                     
                     Spacer()
                     
-                    NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
+                    HStack {
+                        Text("Interest: ")
+                        
+                        NumberField(text: $model.interestField, alignment: .natural, keyType: .decimalPad, placeholder: "Interest (Percent)")
+                            .frame(width: 150)
+                        
+                        Spacer()
+                    }
                     
                 }
                 
-                NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Frequency")
+                Spacer()
                 
-                TextField("Interval Frequency", text: self.$model.freqContentField)
-                    .keyboardType(.numberPad)
+                HStack {
+                    Text("Occurs every ")
+                    
+                    NumberField(text: $model.freqContentField, alignment: .natural, keyType: .numberPad, placeholder: "Interval Freq")
+                    
+                    Menu {
+                        ForEach(model.types, id: \.id) { c in
+                            Button(action: {
+                                self.model.typ = c.obj
+                            }, label: {
+                                Text(self.model.convertTo(og: c.obj))
+                            })
+                        }
+                    } label: {
+                        Text(self.model.convertTo(og: self.model.typ))
+                    }
+                    
+
+                    
+                    Spacer()
+                }
                 
+
                 Spacer()
             }
-            
-            Spacer()
             
             Button {
                 self.model.edit(id: recurring.id!.oid, time: time, type: type)
@@ -106,6 +138,10 @@ struct RecurringEditView: View {
                 return Alert(title: Text("Success!"),
                              message: Text("This \(self.type.rawValue) has been successfully edited."),
                              dismissButton: .default(Text("Okay")) {
+                                
+                                // Propogate changes
+                                self.recurring = model.createPropObj(original: self.recurring, type: self.type)
+                                
                                 self.present = false
                              })
             }
@@ -118,8 +154,21 @@ struct RecurringEditView: View {
     }
 }
 
-//struct RecurringEditView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecurringEditView()
-//    }
-//}
+struct RecurringEditViewPreview: View {
+    
+    @State var present = true
+    @State var type: RecurringItemType = .expense
+    @State var recurring: Recurring = .dummyIncome
+    
+    
+    var body: some View {
+        RecurringEditView(present: $present, type: $type, recurring: $recurring, time: .overview)
+    }
+    
+}
+
+struct RecurringEditView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecurringEditViewPreview()
+    }
+}

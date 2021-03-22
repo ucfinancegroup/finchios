@@ -14,12 +14,19 @@ struct PieView: UIViewRepresentable {
     var entries: [PieChartDataEntry]
     
     var legendEnabled: Bool
+    
+    var naked: Bool
 
     func makeUIView(context: Context) -> PieChartView {
         let view = PieChartView()
         view.data = addData()
         
         view.legend.enabled = false
+        
+        if naked {
+            view.drawEntryLabelsEnabled = false
+        }
+        
         
         return view
     }
@@ -52,7 +59,7 @@ struct PieViewPreviewer: View {
         PieView(entries: [
             PieChartDataEntry(value: 5, label: "five"),
             PieChartDataEntry(value: 10, label: "ten")
-        ], legendEnabled: leg)
+        ], legendEnabled: leg, naked: false)
     }
 }
 

@@ -22,12 +22,9 @@ struct AccountDetailView: View {
             
             //Information
             Group {
-                Text(account.account.name)
-                
-                Spacer()
-                    .frame(height: 30)
 
                 Text("Balance of $\((Double(account.account.balance)).format())")
+                    .font(.headline)
                 
                 Spacer()
             }
@@ -35,11 +32,11 @@ struct AccountDetailView: View {
             Spacer()
             
             Button(action: {
-                self.model.delete(id: self.account.account.itemId)
+                self.model.delete(item: self.account.account)
             }, label: {
                 HStack {
                     Spacer()
-                    Text("Delete ALL accounts from this institution.")
+                    Text("Delete")
                         .multilineTextAlignment(.center)
                     Spacer()
                 }
@@ -49,10 +46,11 @@ struct AccountDetailView: View {
             })
         }
         .padding()
+        .navigationTitle(Text(account.account.name))
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
-                return Alert(title: Text("Failed to delete"),
-                             message: Text("Failed to delete the goal. Error: \(self.model.errorString)"),
+                return Alert(title: Text("Failed to hide"),
+                             message: Text("Failed to hide the account. Error: \(self.model.errorString)"),
                              dismissButton: .destructive(Text("Okay")) {
                                 self.model.showAlert = false
                                 self.model.showError = false
@@ -61,7 +59,7 @@ struct AccountDetailView: View {
             }
             else { // success
                 return Alert(title: Text("Success!"),
-                             message: Text("This goal has been successfully deleted."),
+                             message: Text("This account has been successfully hid."),
                              dismissButton: .default(Text("Okay")) {
                                 //self.present = false
                                 self.model.showAlert = false
@@ -77,7 +75,10 @@ struct AccountDetailViewPreview: View {
     
     @State var pop = false
     var body: some View {
-        AccountDetailView(shouldPop: $pop, account: .init(account: .dummy))
+        NavigationView {
+            AccountDetailView(shouldPop: $pop, account: .init(account: .dummy))
+        }
+        
     }
     
 }

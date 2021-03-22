@@ -18,6 +18,12 @@ struct GoalDetailView: View {
     
     @StateObject var model = GoalDetailViewModel()
     
+    private let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MM/dd/yyyy"
+        return f
+    }()
+    
     var body: some View {
         VStack {
             
@@ -28,6 +34,23 @@ struct GoalDetailView: View {
                         Spacer()
                     }
                     
+                    HStack {
+                        Text("Starts \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.start))))")
+
+                            
+                        Spacer()
+                    }
+                    .padding()
+                    
+                    
+                    HStack {
+                        Text("Ends \(formatter.string(from: Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.end))))")
+
+                            
+                        Spacer()
+                    }
+                    .padding()
+
                     Spacer()
                         .frame(height: 30)
                     
@@ -37,14 +60,10 @@ struct GoalDetailView: View {
                     
                     Spacer()
                     
-                    Text("\((goal.goalAndStatus.progress*100).format())% progress!")
+                    Text("\((goal.goalAndStatus.progress*100).format())% progress\(goal.goalAndStatus.progress >= 0.5 ? "!" : ".")")
                     
                     BarView(percent: $goal.goalAndStatus.progress)
 
-                    Spacer()
-                    
-                    Text("Begins on \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.start))) and ends \(Date(timeIntervalSince1970: TimeInterval(goal.goalAndStatus.goal.end)))")
-                        .padding()
                     
                     Spacer()
                 }

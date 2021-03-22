@@ -36,7 +36,9 @@ struct EventView: View {
                                 }, label: {
                                     Image("Plus")
                                 })
-                                .sheet(isPresented: self.$modalCreate, content: {
+                                .sheet(isPresented: self.$modalCreate, onDismiss: {
+                                    model.onAppear()
+                                }, content: {
                                     NewEventView(present: self.$modalCreate)
                                 }))
     }

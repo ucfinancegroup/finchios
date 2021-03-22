@@ -17,8 +17,11 @@ class AccountDetailViewModel: ObservableObject, Identifiable {
     @Published var showError: Bool = false
     @Published var errorString: String = ""
     
-    func delete(id: String) {
-        AccountsService.delete(itemID: id) { (success, error, result) in
+    func delete(item: Account) {
+        
+        let payload = SetAccountAsHiddenPayload(itemId: item.itemId, accountId: item.accountId, hideOrNot: true)
+        
+        AccountsService.hide(payload: payload) { (success, error, result) in
             DispatchQueue.main.async {
                 self.success = false
                 self.showError = false

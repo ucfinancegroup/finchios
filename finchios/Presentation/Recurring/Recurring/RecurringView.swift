@@ -45,14 +45,16 @@ struct RecurringView: View {
             self.isActive = false
             model.onAppear(type: type, time: time)
         }
-        .navigationTitle(Text(type.rawValue))
+        .navigationTitle(Text("\(time == .projection ? "Future " : "")\(type.rawValue)s"))
         .navigationBarItems(trailing:
                                 Button(action: {
                                     self.modalCreate = true
                                 }, label: {
                                     Image("Plus")
                                 })
-                                .sheet(isPresented: self.$modalCreate, content: {
+                                .sheet(isPresented: self.$modalCreate, onDismiss: {
+                                    model.onAppear(type: type, time: time)
+                                }, content: {
                                     NewRecurringView(present: self.$modalCreate, type: self.$type, time: time)
                                 }))
         

@@ -8,15 +8,18 @@
 import Foundation
 import OpenAPIClient
 
-class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtocol {
+class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtocol {    
     
     // Fields
     @Published var title: String = ""
     @Published var date: Date = Date()
     
-    @Published var classes: [(Iden<AssetClassAndApy>, Iden<Double>)] = []
+    @Published var ids: [UUID] = []
+    @Published var classes: [UUID: (Iden<AssetClassAndApy>, Iden<Double>)] = [:]
     
     @Published var classTypes: [Iden<AssetClassAndApy>] = []
+    
+    @Published var name: String = ""
     
     init() {
         
@@ -42,8 +45,10 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
         
         var sum = 0
         
-        for pair in classes {
-            sum += Int(pair.1.obj)
+        for id in ids {
+            if let obj = classes[id] {
+                sum += Int(obj.1.obj)
+            }
         }
         
         return sum
@@ -67,27 +72,50 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             return
         }
         
-        if Date().timeIntervalSince1970 < date.timeIntervalSince1970 {
+        // Is the date invalid
+        if Date().timeIntervalSince1970 >= date.timeIntervalSince1970 {
             errorString = "The specified date must be in the future."
             showError = true
             showAlert = true
+            return
         }
         
-        let prop = classes.map { AllocationProportion(
-            asset: Asset(name: $0.0.obj._class.typ.rawValue, _class: $0.0.obj._class, annualizedPerformance: $0.0.obj.apy),
-            proportion: $0.1.obj) }
+        if name.count == 0 {
+            errorString = "The name must be non-empty."
+            showError = true
+            showAlert = true
+            return
+        }
         
-        let alloc = Allocation(id: MongoObjectID(oid: ""),
-                               description: "",
+        var schema: [AllocationProportion] = []
+        
+        for id in ids {
+            if let obj = classes[id] {
+                
+                schema.append(AllocationProportion(
+                                asset: Asset(name: obj.0.obj._class.typ.rawValue, _class: obj.0.obj._class, annualizedPerformance: obj.0.obj.apy),
+                                proportion: obj.1.obj))
+                
+            }
+        }
+        
+        let alloc = Allocation(id: nil,
+                               description: name,
                                date: Int(date.timeIntervalSince1970),
-                               schema: prop)
+                               schema: schema)
         
         PlansService.newAllocation(payload: alloc) { (success, _, _, response) in
-            if let _ = response {
-                // success
-                self.showSuccess = true
-                self.showError = false
-                self.showAlert = true
+            DispatchQueue.main.async {
+                if let _ = response {
+                    // success
+                    self.showSuccess = true
+                    self.showError = false
+                    self.showAlert = true
+                }else {
+                    self.showError = true
+                    self.errorString = "Server error. Please try again."
+                    self.showAlert = true
+                }
             }
         }
         
@@ -98,12 +126,15 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             return
         }
         
-        classes.append((classTypes[0], Iden<Double>(obj: 0)))
+        let nid = UUID()
+        
+        ids.append(nid)
+        classes.updateValue((classTypes[0], Iden<Double>(obj: 0)), forKey: nid)
     }
     
-    func delete(c: UUID, amount: UUID) {
-        classes.removeAll(where: { $0.0.id == c })
+    func delete(uuid: UUID) {
+        ids.removeAll(where: { $0 == uuid })
+        classes.removeValue(forKey: uuid)
     }
-    
     
 }

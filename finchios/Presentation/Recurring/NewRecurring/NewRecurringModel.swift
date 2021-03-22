@@ -34,8 +34,24 @@ class NewRecurringModel: ObservableObject, Identifiable {
     // Type
     var type: RecurringItemType
     
+    // Final
+    public final var types: [Iden<RecurringIntervalType>] = RecurringIntervalType.allCases.map { Iden<RecurringIntervalType>(obj: $0) }
+    
     public init(type: RecurringItemType) {
         self.type = type
+    }
+    
+    public func convertTo(og: RecurringIntervalType) -> String {
+        switch og {
+        case .annually:
+            return "year(s)"
+        case .daily:
+            return "day(s)"
+        case .monthly:
+            return "month(s)"
+        case .weekly:
+            return "week(s)"
+        }
     }
     
     func create(time: OverviewProjection) {

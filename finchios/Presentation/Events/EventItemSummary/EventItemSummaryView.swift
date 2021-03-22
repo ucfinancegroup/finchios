@@ -19,12 +19,27 @@ struct EventItemSummaryView: View {
     var body: some View {
         NavigationLink(destination: EventDetailView(shouldPop: $isActive, event: event), isActive: $isActive) {
             VStack(alignment: .leading) {
-                Text(event.name)
-                    .font(.title3)
+                HStack {
+                    Text(event.name)
+                        .font(.title3)
+                    
+                    Spacer()
+                }
                 
-                Text("Starts \(event.start) day(s) from now")
+                
+                Text("Simulates \(getDays()) day(s) from now")
             }
         }
+        .disabled(!navAble)
+        .foregroundColor(.primary)
+    }
+    
+    func getDays() -> Int {
+        guard let ret = Calendar.current.dateComponents([.day], from: Date(), to: Date(timeIntervalSince1970: TimeInterval(event.start))).day else {
+            return 0
+        }
+        
+        return ret
     }
 }
 

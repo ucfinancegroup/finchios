@@ -10,7 +10,7 @@ import OpenAPIClient
 
 class EventSummaryViewModel: ObservableObject, Identifiable {
     
-    @Published var events: [Event] = []
+    @Published var events: [Iden<Event>] = []
     
     //TODO(): Consolidate into one getPlans call and filter data into models (getPlans is called for
     // events, recurrings, etc.) Wasteful to make multiple calls
@@ -18,7 +18,7 @@ class EventSummaryViewModel: ObservableObject, Identifiable {
         PlansService.events { (success, _, result) in
             DispatchQueue.main.async {
                 if let result = result {
-                    self.events = result
+                    self.events = result.map { Iden<Event>(obj: $0) }//result
                 }
             }
         }

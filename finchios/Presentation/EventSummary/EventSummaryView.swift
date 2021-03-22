@@ -27,9 +27,19 @@ struct EventSummaryView: View {
 
             }
             
-            ForEach(model.events.indices) { index in
-                EventItemSummaryView(event: model.events[index], navAble: false)
+            if model.events.count > 0 {
+                
+                Divider()
+                
+                ForEach(model.events, id:\.id) { item in
+                    EventItemSummaryView(event: item.obj, navAble: false)
+                }
             }
+            
+            
+        }
+        .onAppear() {
+            model.onAppear()
         }
         .padding()
         .bubble()

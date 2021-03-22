@@ -169,7 +169,8 @@ extension PlansService {
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         
-        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt]
+        request.allHTTPHeaderFields = [BusinessConstants.SET_COOKIE : CredentialsObject.shared.jwt,
+                                       "Content-Type": "application/json"]
         
         let jsonBody = try? JSONEncoder().encode(payload)
         
@@ -179,7 +180,7 @@ extension PlansService {
         }
         
         request.httpBody = unwrappedJsonBody
-
+        
         let task = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard data != nil else {
                 completion(false, error, nil)
@@ -212,7 +213,7 @@ extension PlansService {
         PlansService.recurrings { (_, _, result) in
             if var existing = result {
                 
-                let newRec = Recurring(id: MongoObjectID(oid: ""), name: payload.name, start: payload.start, end: payload.end, principal: payload.principal, amount: payload.amount, interest: payload.interest, frequency: payload.frequency)
+                let newRec = Recurring(id: nil, name: payload.name, start: payload.start, end: payload.end, principal: payload.principal, amount: payload.amount, interest: payload.interest, frequency: payload.frequency)
                 
                 existing.append(newRec)
                 
@@ -273,11 +274,14 @@ extension PlansService {
 extension PlansService {
     
     static func newEvent(payload: Event, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        // Make sure send id is nil
+        var send = payload
+        send.id = nil
         
         PlansService.events { (_, _, result) in
             if var existing = result {
                 
-                existing.append(payload)
+                existing.append(send)
                 
                 let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: nil, events: existing)
                 
@@ -333,11 +337,14 @@ extension PlansService {
 extension PlansService {
     
     static func newAllocation(payload: Allocation, completion: @escaping ((Bool, Error?, Recurring?, PlanResponse?) -> Void)) {
+        // Make sure send id is nil
+        var send = payload
+        send.id = nil
         
         PlansService.allocations { (_, _, result) in
             if var existing = result {
                 
-                existing.append(payload)
+                existing.append(send)
                 
                 let update = PlanUpdatePayload(name: "Plan", recurrings: nil, allocations: existing, events: nil)
                 

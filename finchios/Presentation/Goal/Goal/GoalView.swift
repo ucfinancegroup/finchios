@@ -47,7 +47,9 @@ struct GoalView: View {
                                 }, label: {
                                     Image("Plus")
                                 })
-                                .sheet(isPresented: self.$modalCreate, content: {
+                                .sheet(isPresented: self.$modalCreate, onDismiss: {
+                                    model.onAppear()
+                                }, content: {
                                     NewGoalView(present: self.$modalCreate)
                                 }))
         
