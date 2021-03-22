@@ -13,6 +13,14 @@ struct LeaderboardView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Text("Leaderboards")
+                    .font(.largeTitle)
+                
+                Spacer()
+            }
+            .padding()
+
             ForEach(model.boards, id: \.id) { ranking in
                 HStack {
                     LeaderboardItemView(board: .constant(ranking.obj))
