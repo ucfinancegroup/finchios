@@ -21,7 +21,7 @@ struct LeaderboardItemDetailsView: View {
             Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(color)
                 .font(.system(size: 25))
             Text("of Similar Users").font(.title)
-            Text("by \(board.leaderboardType.rawValue.capitalized)!").font(.title)
+            Text("by \(board.leaderboardType.rawValue)!").font(.title)
             ZStack {
                 Circle()
                     .stroke(lineWidth: 20.0)
