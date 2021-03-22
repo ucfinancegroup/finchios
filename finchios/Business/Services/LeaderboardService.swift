@@ -10,7 +10,7 @@ import OpenAPIClient
 
 struct LeaderboardService {
     
-    static func leaderboard(type: BoardTypes, completion: @escaping ((Bool, Error?, Ranking?) -> Void)) {
+    static func leaderboard(type: BoardType, completion: @escaping ((Bool, Error?, Ranking?) -> Void)) {
         guard let url = getURL(type: type.rawValue) else {
             completion(false, nil, nil)
             return
