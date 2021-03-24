@@ -34,6 +34,9 @@ struct LeaderboardView: View {
                 .padding()
                 .bubble()
             }
+            if model.boards.count == 0 {
+                Text("Error: No similar users to compare against.")
+            }
         }
         .onAppear() {
             model.onAppear()
