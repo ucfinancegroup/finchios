@@ -20,22 +20,23 @@ struct LeaderboardView: View {
                 Spacer()
             }
             .padding()
-
-            ForEach(model.boards, id: \.id) { ranking in
-                HStack {
-                    LeaderboardItemView(board: .constant(ranking.obj))
-                    Spacer()
-                    NavigationLink(
-                        destination: LeaderboardItemDetailsView(board: .constant(ranking.obj)),
-                        label: {
-                            Image("RightArrow")
-                        })
-                }
-                .padding()
-                .bubble()
-            }
+            
             if model.boards.count == 0 {
                 Text("Error: No similar users to compare against.")
+            } else {
+                ForEach(model.boards, id: \.id) { ranking in
+                    HStack {
+                        LeaderboardItemView(board: .constant(ranking.obj))
+                        Spacer()
+                        NavigationLink(
+                            destination: LeaderboardItemDetailsView(board: .constant(ranking.obj)),
+                            label: {
+                                Image("RightArrow")
+                            })
+                    }
+                    .padding()
+                    .bubble()
+                }
             }
         }
         .onAppear() {
