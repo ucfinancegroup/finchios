@@ -10,6 +10,6 @@ import OpenAPIClient
 
 public extension Ranking {
     
-    static let dummy: Ranking = Ranking(leaderboardType: .savings, description: "Savings Leaderboard", percentile: 50.0);
+    static let dummy: Ranking = Ranking(leaderboardType: .savings, description: "Savings Leaderboard", percentile: 45.0);
     
 }

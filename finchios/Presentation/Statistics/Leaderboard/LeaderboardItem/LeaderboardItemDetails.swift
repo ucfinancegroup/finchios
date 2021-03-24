@@ -29,7 +29,7 @@ struct LeaderboardItemDetailsView: View {
                     .foregroundColor(Color.teal)
                 
                 Circle()
-                    .trim(from: 0.0, to: CGFloat(board.percentile/100.0))
+                    .trim(from: 0.0, to: CGFloat(1-board.percentile/100.0))
                     .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
                     .foregroundColor(Color.teal)
                     .rotationEffect(Angle(degrees: 270))
