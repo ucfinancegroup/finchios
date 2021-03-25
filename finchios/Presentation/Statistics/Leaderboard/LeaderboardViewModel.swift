@@ -22,6 +22,9 @@ class LeaderboardViewModel: ObservableObject, Identifiable {
                     if success {
                         if let result = result {
                             self.boards.append(Iden(obj: result))
+                            self.boards.sort {
+                                $0.obj.leaderboardType.rawValue < $1.obj.leaderboardType.rawValue
+                            }
                         }
                     } else {
                         //ERROR
