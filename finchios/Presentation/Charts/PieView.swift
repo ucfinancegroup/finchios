@@ -37,6 +37,8 @@ struct PieView: UIViewRepresentable {
         
         dataset.colors = [.gray, .red, .blue, .green, .purple, .orange]
 
+        dataset.entryLabelColor = .black
+        
         dataset.drawIconsEnabled = false
         
         dataset.drawValuesEnabled = false
