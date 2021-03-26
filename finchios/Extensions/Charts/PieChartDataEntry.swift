@@ -15,4 +15,6 @@ public extension PieChartDataEntry {
         self.init(value: alloc.proportion, label: alloc.asset.name)
     }
     
+    static let cutoff: Int = 2
+    
 }

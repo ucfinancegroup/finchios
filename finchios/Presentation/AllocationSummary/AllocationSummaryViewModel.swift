@@ -21,7 +21,17 @@ class AllocationSummaryViewModel: ObservableObject, Identifiable {
                         return
                     }
                     
+                    let cutoff = PieChartDataEntry.cutoff
+                    
                     self.allocationConfiguration = first.schema.map { PieChartDataEntry(alloc: $0) }
+                    
+                    let smalls = self.allocationConfiguration.filter({ $0.value < Double(cutoff) })
+                    
+                    self.allocationConfiguration.removeAll { $0.value < Double(cutoff) }
+                    
+                    let sum = smalls.map({$0.value}).reduce(0, +)
+                    
+                    self.allocationConfiguration.append( PieChartDataEntry(value: sum, label: "Other") )
                 }
             }
         }
