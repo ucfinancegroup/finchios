@@ -61,7 +61,7 @@ struct EventDetailView: View {
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {
                 return Alert(title: Text("Failed to delete"),
-                             message: Text("Failed to delete the allocation. Error: \(self.model.errorString)"),
+                             message: Text("Failed to delete the event. Error: \(self.model.errorString)"),
                              dismissButton: .destructive(Text("Okay")) {
                                 self.model.showAlert = false
                                 self.model.showError = false
@@ -70,7 +70,7 @@ struct EventDetailView: View {
             }
             else { // success
                 return Alert(title: Text("Success!"),
-                             message: Text("This allocation has been successfully deleted."),
+                             message: Text("This event has been successfully deleted."),
                              dismissButton: .default(Text("Okay")) {
                                 self.model.showAlert = false
                                 self.model.showError = false

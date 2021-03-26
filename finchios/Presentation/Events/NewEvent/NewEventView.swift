@@ -63,7 +63,7 @@ struct NewEventView: View {
             }
             else { // success
                 return Alert(title: Text("Success!"),
-                             message: Text("This allocation has been successfully created!"),
+                             message: Text("This event has been successfully created!"),
                              dismissButton: .default(Text("Okay")) {
                                 self.present = false
                                 self.model.showError = false
