@@ -12,7 +12,7 @@ import OpenAPIClient
 struct TimeSeriesService {
     
     public static func get(completion: @escaping ((Bool, Error?, TimeSeriesResponse?) -> Void)) {
-        guard let url = getURL() else {
+        guard let url = getURL(years: 5) else {
             completion(false, nil, nil)
             return
         }
@@ -70,6 +70,7 @@ struct TimeSeriesService {
         return URL(string: address)
     }
     
+    // Default to 80 years like the web app
     private static func getURL() -> URL? {
         return getURL(years: 80)
     }
