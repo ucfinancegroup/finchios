@@ -17,7 +17,7 @@ struct BarView: View {
                 .frame(width: 200, height: 30)
                 .foregroundColor(.lightGray)
             Capsule()
-                .frame(width: CGFloat(max(100, percent*100))/100*200, height: 30)
+                .frame(width: CGFloat(min(100, percent*100))/100*200, height: 30)
                 .foregroundColor(Color.teal)
         }
     }
