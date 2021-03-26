@@ -64,10 +64,14 @@ struct TimeSeriesService {
         return URL(string: address)
     }
     
-    private static func getURL() -> URL? {
-        let address = "\(BusinessConstants.SERVER)/timeseries"
+    private static func getURL(years: Int) -> URL? {
+        let address = "\(BusinessConstants.SERVER)/timeseries/\(years * 365)"
         
         return URL(string: address)
+    }
+    
+    private static func getURL() -> URL? {
+        return getURL(years: 80)
     }
     
 }
