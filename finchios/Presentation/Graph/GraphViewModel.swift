@@ -55,6 +55,16 @@ class GraphViewModel: ObservableObject, Identifiable {
                         self.timeseries = response.series
                             .suffix(len - tillToday.count + 1)
                             .map { ChartDataEntry(timeseriesEntry: $0) }
+                        
+                        if let first = self.timeseries.first {
+                            self.timeseries = self.timeseries.enumerated().compactMap { index, element in index % 30 == 0 ? element : nil }
+                            
+                            // If i removed today, add it back in
+                            if self.timeseries[0].x != first.x {
+                                self.timeseries.insert(first, at: 0)
+                            }
+                        }
+                        
                     }
                     
                     // Set today's date
