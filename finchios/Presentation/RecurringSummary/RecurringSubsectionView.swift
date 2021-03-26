@@ -14,7 +14,7 @@ struct RecurringSubsectionView: View {
     
     @State var time: OverviewProjection
     
-    @Binding var recurrings: [Recurring]
+    @Binding var recurrings: [Iden<Recurring>]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -38,11 +38,12 @@ struct RecurringSubsectionView: View {
                 
                 Divider()
                 
-                ForEach(recurrings.indices) { index in
+                ForEach(recurrings, id: \.id) { rec in
+                //ForEach(recurrings.indices) { index in
                     if type == .debt {
-                        PrincipalItemSummary(type: $type, recurring: recurrings[index], navAble: true, time: time)
+                        PrincipalItemSummary(type: $type, recurring: rec.obj, navAble: true, time: time)
                     }else {
-                        AmountItemSummary(type: $type, recurring: recurrings[index], navAble: false, time: time)
+                        AmountItemSummary(type: $type, recurring: rec.obj, navAble: false, time: time)
                     }
                 }
             }else {
@@ -58,7 +59,8 @@ struct RecurringSubsectionViewPreview: View {
     
     @State var type: RecurringItemType = .income
     
-    @State var recurrings: [Recurring] = [.dummyIncome, .dummyIncome]
+    @State var recurrings: [Iden<Recurring>] = [Iden<Recurring>(obj:.dummyIncome),
+                                                Iden<Recurring>(obj:.dummyIncome)]
     
     var body: some View {
         RecurringSubsectionView(type: type, time: .overview, recurrings: $recurrings)

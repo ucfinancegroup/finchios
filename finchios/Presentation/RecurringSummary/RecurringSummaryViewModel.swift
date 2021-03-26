@@ -10,9 +10,9 @@ import OpenAPIClient
 
 class RecurringSummaryViewModel: ObservableObject, Identifiable {
     
-    @Published var incomes: [Recurring] = []
-    @Published var expenses: [Recurring] = []
-    @Published var debts: [Recurring] = []
+    @Published var incomes: [Iden<Recurring>] = []
+    @Published var expenses: [Iden<Recurring>] = []
+    @Published var debts: [Iden<Recurring>] = []
     
     // Fetch subset of recurrings
     func onAppear(type: OverviewProjection) {
@@ -31,7 +31,7 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
             }
             
             DispatchQueue.main.async {
-                self.incomes = Array(result.prefix(3))
+                self.incomes = Array(result.prefix(3).map { Iden<Recurring>(obj: $0)})
             }
         }
         
@@ -41,7 +41,7 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
             }
             
             DispatchQueue.main.async {
-                self.expenses = Array(result.prefix(3))
+                self.expenses = Array(result.prefix(3).map { Iden<Recurring>(obj: $0)})
             }
         }
         
@@ -51,7 +51,7 @@ class RecurringSummaryViewModel: ObservableObject, Identifiable {
             }
             
             DispatchQueue.main.async {
-                self.debts = Array(result.prefix(3))
+                self.debts = Array(result.prefix(3).map { Iden<Recurring>(obj: $0)})
             }
         }
     }
