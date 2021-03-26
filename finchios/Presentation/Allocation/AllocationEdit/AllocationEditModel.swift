@@ -91,12 +91,14 @@ class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProto
             errorString = "The specified date must be in the future."
             showError = true
             showAlert = true
+            return
         }
         
         if name.count == 0 {
             errorString = "The name must be non-empty."
             showError = true
             showAlert = true
+            return
         }
         
         let alloc = getAllocationObject(original: original)
