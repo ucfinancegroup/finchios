@@ -35,7 +35,7 @@ struct PieView: UIViewRepresentable {
         let data = PieChartData()
         let dataset = PieChartDataSet(entries: entries)
         
-        dataset.colors = [.gray, .red, .blue, .green, .purple, .orange]
+        dataset.colors = [.gray, .red, .teal, .green, .purple, .orange]
 
         dataset.entryLabelColor = .black
         
@@ -60,7 +60,11 @@ struct PieViewPreviewer: View {
     var body: some View {
         PieView(entries: [
             PieChartDataEntry(value: 5, label: "five"),
-            PieChartDataEntry(value: 10, label: "ten")
+            PieChartDataEntry(value: 10, label: "ten"),
+            PieChartDataEntry(value: 5, label: "five"),
+            PieChartDataEntry(value: 10, label: "ten"),
+            PieChartDataEntry(value: 5, label: "five"),
+            PieChartDataEntry(value: 10, label: "ten"),
         ], legendEnabled: leg, naked: false)
     }
 }
