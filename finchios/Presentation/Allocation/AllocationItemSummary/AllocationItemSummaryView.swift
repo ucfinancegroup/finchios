@@ -35,9 +35,11 @@ struct AllocationItemSummaryView: View {
         
         config.removeAll { $0.value < Double(cutoff) }
         
-        let sum = smalls.map({$0.value}).reduce(0, +)
-        
-        config.append( PieChartDataEntry(value: sum, label: "Other") )
+        if smalls.count > 0 {
+            let sum = smalls.map({$0.value}).reduce(0, +)
+            
+            config.append( PieChartDataEntry(value: sum, label: "Other") )
+        }
         
         _allocationConfiguration = .init(initialValue: config)
     }
