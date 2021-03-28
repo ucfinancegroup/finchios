@@ -17,13 +17,30 @@ struct AllocationItemSummaryView: View {
     
     @State var navAble: Bool
     
-    @State var allocationConfiguration: [PieChartDataEntry] = [PieChartDataEntry(value: 1)]
+    @State var allocationConfiguration: [PieChartDataEntry]
     
     private let formatter: DateFormatter = {
         let f = DateFormatter()
         f.dateFormat = "MM/dd/yyyy"
         return f
     }()
+    
+    public init(newAllocation: Allocation, newNavAble: Bool) {
+        _allocation = .init(initialValue: newAllocation)
+        _navAble = .init(initialValue: newNavAble)
+        var config = newAllocation.schema.map { PieChartDataEntry(alloc: $0) }
+        let cutoff = PieChartDataEntry.cutoff
+        
+        let smalls = config.filter({ $0.value < Double(cutoff) })
+        
+        config.removeAll { $0.value < Double(cutoff) }
+        
+        let sum = smalls.map({$0.value}).reduce(0, +)
+        
+        config.append( PieChartDataEntry(value: sum, label: "Other") )
+        
+        _allocationConfiguration = .init(initialValue: config)
+    }
     
     
     var body: some View {
@@ -48,19 +65,6 @@ struct AllocationItemSummaryView: View {
             }
             
         }
-        .onAppear() {
-            allocationConfiguration = allocation.schema.map { PieChartDataEntry(alloc: $0) }
-            
-            let cutoff = PieChartDataEntry.cutoff
-            
-            let smalls = self.allocationConfiguration.filter({ $0.value < Double(cutoff) })
-            
-            self.allocationConfiguration.removeAll { $0.value < Double(cutoff) }
-            
-            let sum = smalls.map({$0.value}).reduce(0, +)
-            
-            self.allocationConfiguration.append( PieChartDataEntry(value: sum, label: "Other") )
-        }
         .disabled(!navAble)
         .foregroundColor(.primary)
     }
@@ -73,7 +77,7 @@ struct AllocationItemSummaryPreviews: View {
     @State var alloc = Allocation.dummy
 
     var body: some View {
-        AllocationItemSummaryView(allocation: alloc, navAble: false)
+        AllocationItemSummaryView(newAllocation: alloc, newNavAble: false)
     }
     
 }

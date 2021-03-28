@@ -20,7 +20,7 @@ struct AllocationView: View {
         ScrollView {
             LazyVStack {
                 ForEach(model.allocations, id: \.id) { alloc in
-                    AllocationItemSummaryView(allocation: alloc.obj, navAble: true)
+                    AllocationItemSummaryView(newAllocation: alloc.obj, newNavAble: true)
                         .padding()
                         .bubble()
                 }
