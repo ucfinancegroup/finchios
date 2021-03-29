@@ -54,6 +54,9 @@ struct IntroductionView: View {
                 }
 
             }
+            .onAppear() {
+                self.navBarHidden = true
+            }
             .navigationBarTitle("")
             .navigationBarHidden(self.navBarHidden)
             .navigationBarBackButtonHidden(self.navBarHidden)
