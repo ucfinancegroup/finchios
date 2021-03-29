@@ -72,7 +72,7 @@ struct TimeSeriesService {
     
     // Default to 80 years like the web app
     private static func getURL() -> URL? {
-        return getURL(years: 80)
+        return getURL(years: 20)
     }
     
 }
