@@ -83,6 +83,9 @@ struct GoalEditView: View {
                 return Alert(title: Text("Success!"),
                              message: Text("This goal has been successfully edited."),
                              dismissButton: .default(Text("Okay")) {
+                                
+                                self.goal = self.model.getGoal(goal: self.goal)
+                                
                                 self.present = false
                              })
             }

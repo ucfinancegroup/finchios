@@ -107,7 +107,9 @@ struct RecurringDetailView: View {
                                 }, label: {
                                     Text("Edit")
                                 })
-                                .sheet(isPresented: $modalActive, content: {
+                                .sheet(isPresented: $modalActive, onDismiss: {
+                                    
+                                }, content: {
                                     RecurringEditView(present: $modalActive, type: $type, recurring: $recurring, time: time)
                                 }))
         .alert(isPresented: $model.showAlert) { () -> Alert in

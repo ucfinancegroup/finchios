@@ -21,6 +21,8 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
     @Published public var threshold: String = ""
     @Published public var metric: GoalMetricIdentifiable = .savings
     
+    private var updator: GoalAndStatus?
+    
     // Override to make public
     public init() { }
     
@@ -44,6 +46,15 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
             break
         }
         
+    }
+    
+    public func getGoal(goal: GoalAndStatus) -> GoalAndStatus {
+        // Assume all fields are valid
+        
+        if let update = updator {
+            return update
+        }
+        return goal
     }
     
     public func getPayload() -> GoalNewPayload? {
@@ -99,8 +110,9 @@ public class GoalEditViewModel: ObservableObject, Identifiable {
         let payload = getPayload()
         
         if let payload = payload {
-            GoalsService.updateGoal(id: id, payload: payload) { (success, error, _) in
+            GoalsService.updateGoal(id: id, payload: payload) { (success, error, result) in
                 DispatchQueue.main.async {
+                    self.updator = result
                     if success {
                         // show a success alert and then from there set the presentation bool to false.
                         self.alertType = .success
