@@ -60,7 +60,7 @@ public class RecurringEditViewModel: ObservableObject, Identifiable {
         name = recurring.name
         
         start = Date(timeIntervalSince1970: TimeInterval(recurring.start))
-        end = Date(timeIntervalSince1970: TimeInterval(recurring.start))
+        end = Date(timeIntervalSince1970: TimeInterval(recurring.end))
         
         if recurring.principal == 0 {
             amountField = "\(abs((recurring.amount)))"
