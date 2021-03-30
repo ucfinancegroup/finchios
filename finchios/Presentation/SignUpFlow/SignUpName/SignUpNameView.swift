@@ -63,6 +63,7 @@ struct SignUpNameView: View {
             }
         }
         .onAppear {
+            self.navBarHidden = false
             self.model.onAppear()
         }
         .onDisappear {

@@ -12,7 +12,7 @@ import OpenAPIClient
 struct TimeSeriesService {
     
     public static func get(completion: @escaping ((Bool, Error?, TimeSeriesResponse?) -> Void)) {
-        guard let url = getURL(years: 80) else {
+        guard let url = getURL() else {
             completion(false, nil, nil)
             return
         }

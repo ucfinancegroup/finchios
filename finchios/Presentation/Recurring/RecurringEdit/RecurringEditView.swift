@@ -31,7 +31,7 @@ struct RecurringEditView: View {
             let typ = model.typ.rawValue.capitalized == "Annually" ? "Annual" : model.typ.rawValue.capitalized
             
             
-            TextField("Name", text: self.$model.name).font(.largeTitle)
+            TextField("Name", text: self.$model.name)
             
             Spacer()
             

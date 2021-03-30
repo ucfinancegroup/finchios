@@ -78,6 +78,9 @@ struct LogInView: View {
                 }
             }
             .padding(20)
+            .onAppear {
+                self.navBarHidden = false
+            }
             //TODO(): Make nav bar disappear on login
 //            .onDisappear {
 //                self.navBarHidden = true
