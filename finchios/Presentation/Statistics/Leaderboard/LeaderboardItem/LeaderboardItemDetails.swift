@@ -14,13 +14,13 @@ struct LeaderboardItemDetailsView: View {
     
     var body: some View {
         VStack {
-            Text("You are in the top").font(.title)
+            Text("You are in the").font(.title)
             
             let color: Color = board.percentile < 50 ? .red : .green
             
-            Text(String(format: "%.1f%%", 100-board.percentile)).foregroundColor(color)
-                .font(.system(size: 25))
-            Text("of Similar Users").font(.title)
+            Text(String(format: "%.1fth", board.percentile)).foregroundColor(color)
+                .font(.title)
+            Text("percentile of Similar Users").font(.title)
             Text("by \(board.leaderboardType.rawValue)!").font(.title)
             ZStack {
                 Circle()
@@ -29,7 +29,7 @@ struct LeaderboardItemDetailsView: View {
                     .foregroundColor(Color.teal)
                 
                 Circle()
-                    .trim(from: 0.0, to: CGFloat(1-board.percentile/100.0))
+                    .trim(from: 0.0, to: CGFloat(board.percentile/100.0))
                     .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
                     .foregroundColor(Color.teal)
                     .rotationEffect(Angle(degrees: 270))
