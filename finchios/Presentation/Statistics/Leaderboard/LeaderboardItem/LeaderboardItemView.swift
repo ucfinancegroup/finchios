@@ -20,6 +20,7 @@ struct LeaderboardItemView: View {
                 Spacer()
             }
             HStack {
+                Text("You're in the ")
                 Text(String(format: "%.1fth", board.percentile))
                     .foregroundColor(color)
                 Text("percentile")
@@ -32,5 +33,6 @@ struct LeaderboardItemView: View {
 struct LeaderboardItemView_Previews: PreviewProvider {
     static var previews: some View {
         LeaderboardItemView(board: .constant(Ranking.dummy))
+            .padding()
     }
 }

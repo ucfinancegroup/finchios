@@ -20,7 +20,7 @@ struct LeaderboardItemDetailsView: View {
             
             Text(String(format: "%.1fth", board.percentile)).foregroundColor(color)
                 .font(.title)
-            Text("percentile of Similar Users").font(.title)
+            Text("percentile of similar users").font(.title)
             Text("by \(board.leaderboardType.rawValue)!").font(.title)
             ZStack {
                 Circle()
