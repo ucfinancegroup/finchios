@@ -68,6 +68,11 @@ struct AllocationEditView: View {
             })
             
         }
+        .onChange(of: model.shouldPop, perform: { value in
+            // Prop changes
+            self.allocation = self.model.getAllocationObject(original: self.allocation)
+            self.present = false
+        })
         // TODO(): Not showing because it is a modal sheet?
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {

@@ -21,6 +21,8 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
     
     @Published var name: String = ""
     
+    @Published var shouldPop: Bool = false
+    
     init() {
         
         AssetService.get { (success, error, result) in
@@ -108,9 +110,7 @@ class NewAllocationModel: ObservableObject, Identifiable, AllocationSliderProtoc
             DispatchQueue.main.async {
                 if let _ = response {
                     // success
-                    self.showSuccess = true
-                    self.showError = false
-                    self.showAlert = true
+                    self.shouldPop = true
                 }else {
                     self.showError = true
                     self.errorString = "Server error. Please try again."

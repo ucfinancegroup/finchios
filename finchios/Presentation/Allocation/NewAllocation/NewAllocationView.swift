@@ -61,6 +61,9 @@ struct NewAllocationView: View {
                 Text("Create")
             })
         }
+        .onChange(of: model.shouldPop, perform: { value in
+            self.present = false
+        })
         .padding()
         .alert(isPresented: $model.showAlert) { () -> Alert in
             if model.showError {

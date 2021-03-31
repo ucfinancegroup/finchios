@@ -28,6 +28,8 @@ class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProto
     
     @Published var classTypes: [Iden<AssetClassAndApy>] = []
     
+    @Published var shouldPop: Bool = false
+    
     init() {
         
         AssetService.get { (success, error, result) in
@@ -108,9 +110,7 @@ class AllocationEditModel: ObservableObject, Identifiable, AllocationSliderProto
             DispatchQueue.main.async {
                 if let _ = response {
                     // success
-                    self.success = true
-                    self.showError = false
-                    self.showAlert = true
+                    self.shouldPop = true
                 }else {
                     self.showError = true
                     self.errorString = "Server error. Please try again."

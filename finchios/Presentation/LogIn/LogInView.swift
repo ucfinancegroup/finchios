@@ -81,10 +81,9 @@ struct LogInView: View {
             .onAppear {
                 self.navBarHidden = false
             }
-            //TODO(): Make nav bar disappear on login
-//            .onDisappear {
-//                self.navBarHidden = true
-//            }
+            .onChange(of: model.shouldLogIn, perform: { value in
+                self.transition = true
+            })
             .navigationBarHidden(self.navBarHidden)
             .navigationBarBackButtonHidden(self.navBarHidden)
             .alert(isPresented: $model.showAlert) { () -> Alert in

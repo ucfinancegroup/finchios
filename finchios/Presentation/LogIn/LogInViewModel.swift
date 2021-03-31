@@ -22,6 +22,8 @@ class LogInViewModel: ObservableObject, Identifiable {
 
     var trying: Bool = false
     
+    @Published var shouldLogIn: Bool = false
+    
     // Try to perform user log-in.
     func logInTapped() {
         if trying {
@@ -33,8 +35,8 @@ class LogInViewModel: ObservableObject, Identifiable {
             DispatchQueue.main.async {
                 if success {
                     // login success
-                    self.logInSuccess = true
-                    self.logInError = false
+                    self.shouldLogIn = true
+                    self.trying = false
                 } else {
                     // login failed
                     self.logInSuccess = false
@@ -42,9 +44,11 @@ class LogInViewModel: ObservableObject, Identifiable {
                     if let error = error {
                         self.errorStr = "\(error)"
                     }
+                    
+                    self.showAlert = true
+                    self.trying = false
                 }
-                self.showAlert = true
-                self.trying = false
+                
             }
         }
     }
