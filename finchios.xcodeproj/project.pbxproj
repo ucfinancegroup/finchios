@@ -144,6 +144,7 @@
 		80F9EE2C25993A58007CD06C /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80F9EE2B25993A58007CD06C /* OpenAPIClient */; };
 		80F9EE3125994349007CD06C /* BusinessConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3025994349007CD06C /* BusinessConstants.swift */; };
 		80F9EE3825994394007CD06C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9EE3725994394007CD06C /* SignUpService.swift */; };
+		80FBEBF72614146600B521A2 /* DoubleFormatTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FBEBF62614146600B521A2 /* DoubleFormatTest.swift */; };
 		80FC6C6025EC95BB008C373F /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C5F25EC95BB008C373F /* NewEventView.swift */; };
 		80FC6C6425EC95C6008C373F /* NewEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6325EC95C6008C373F /* NewEventModel.swift */; };
 		80FC6C6925EC97BF008C373F /* AllocationItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */; };
@@ -331,6 +332,7 @@
 		80F93706258F0B9100BBBE57 /* EventSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSummaryViewModel.swift; sourceTree = "<group>"; };
 		80F9EE3025994349007CD06C /* BusinessConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessConstants.swift; sourceTree = "<group>"; };
 		80F9EE3725994394007CD06C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		80FBEBF62614146600B521A2 /* DoubleFormatTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleFormatTest.swift; sourceTree = "<group>"; };
 		80FC6C5F25EC95BB008C373F /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		80FC6C6325EC95C6008C373F /* NewEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModel.swift; sourceTree = "<group>"; };
 		80FC6C6825EC97BF008C373F /* AllocationItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationItemSummaryView.swift; sourceTree = "<group>"; };
@@ -861,6 +863,7 @@
 				80725D15254C72020054787C /* Info.plist */,
 				80E2677825BD251200277E52 /* GoalEditViewModelTest.swift */,
 				80AD9A812607A0350007CEA5 /* NewEventModelTest.swift */,
+				80FBEBF62614146600B521A2 /* DoubleFormatTest.swift */,
 			);
 			path = finchiosTests;
 			sourceTree = "<group>";
@@ -1481,6 +1484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80E2677925BD251200277E52 /* GoalEditViewModelTest.swift in Sources */,
+				80FBEBF72614146600B521A2 /* DoubleFormatTest.swift in Sources */,
 				80AD9A822607A0350007CEA5 /* NewEventModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,13 +7,17 @@
 
 import Foundation
 
-extension Double {
+public extension Double {
 
     static func format(amt: Double) -> String {
-        return "\(String(format:"%.02f", amt))"
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        return formatter.string(for: amt) ?? "0.00"//"\(String(format:"%.02f", amt))"
     }
     
-    public func format() -> String {
+    func format() -> String {
         return Double.format(amt: self)
     }
     
