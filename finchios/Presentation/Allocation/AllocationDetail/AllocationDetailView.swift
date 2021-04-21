@@ -58,7 +58,7 @@ struct AllocationDetailView: View {
                                     Text("Edit")
                                 })
                                 .sheet(isPresented: $modalActive, onDismiss: {
-                                    
+                                    model.setup(alloc: allocation)
                                 }, content: {
                                     AllocationEditView(present: $modalActive, allocation: $allocation)
                                 }))
